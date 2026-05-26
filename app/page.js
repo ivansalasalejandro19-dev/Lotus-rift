@@ -889,7 +889,7 @@ const roster = {
       <img
         src={teamLogos[team]}
         alt={team}
-        className="w-24 h-24 object-contain rounded-xl"
+        className="w-28 h-28 object-contain rounded-xl"
       />
     </div>
   </div>
