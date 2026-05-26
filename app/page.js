@@ -174,7 +174,7 @@ const roster = {
 
 
           <a
-            href={bracketLink}
+            href="/brackets"
             target="_blank"
             className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-violet-500 font-bold hover:scale-105 transition shadow-xl shadow-pink-500/20"
           >
@@ -212,7 +212,7 @@ const roster = {
 
           <div className="flex flex-wrap gap-5 mt-12">
             <a
-              href={bracketLink}
+              href="/brackets"
               target="_blank"
               className="px-8 py-4 rounded-3xl bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 font-black text-lg hover:scale-105 transition shadow-2xl shadow-pink-500/30"
             >
@@ -511,7 +511,7 @@ const roster = {
 
 
             <a
-              href={bracketLink}
+              href="/brackets"
               target="_blank"
               className="inline-flex mt-12 px-12 py-6 rounded-3xl bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 text-2xl font-black hover:scale-105 transition shadow-2xl shadow-pink-500/30"
             >
