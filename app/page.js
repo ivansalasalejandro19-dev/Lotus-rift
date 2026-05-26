@@ -67,20 +67,20 @@ const teamLogos = {
   // Nahuales
   'Nahuales': '/logos/nahuales.png',
 
-  // Bowsix
-  'Bowsix': '/logos/bowsix.png',
+  // Ice Gold
+  'Ice Gold': '/logos/ice_gold.png',
 
   // Leales Dragon
   'Leales Dragon': '/logos/leales_dragon.png',
 
-  // EQUIPO 11
-  'Equipo 11': '/logos/equipo11.png',
+  // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
+  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
 
-  // EQUIPO 12
-  'Equipo 12': '/logos/equipo12.png',
+  // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
+  'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': '/logos/new_alliance.png',
 
-  // EQUIPO 13
-  'Equipo 13': '/logos/equipo13.png',
+  // Fʟᴀᴡʟᴇss
+  'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
 
   // EQUIPO 14
   'Equipo 14': '/logos/equipo14.png',
@@ -114,11 +114,11 @@ const teams = [
   'HaTsu',
   'Golden Dragons',
   'Nahuales',
-  'Bowsix',
-  'Leales Dragon',
-  'Equipo 11',
-  'Equipo 12',
-  'Equipo 13',
+  'Ice Gold',
+  'Leales Dragons',
+  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
+  'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ',
+  'Fʟᴀᴡʟᴇss',
   'Equipo 14',
   'Equipo 15',
   'Equipo 16'
@@ -353,7 +353,38 @@ const roster = {
   // ======================================================
 
   'HaTsu': [
-    {}, {}, {}, {}, {}, {}, {}
+    {
+      id: 'HTS Unfair#9090',
+      role: 'TOP',
+      captain: true
+    }, 
+    
+    {
+      id: 'HTS JAYCE BALVIN#9828',
+      role: 'JUNGLA',
+    }, 
+    
+    {
+      id: 'HTS Jochelo#1308',
+      role: 'MID',
+    }, 
+    
+    {
+      id: ' HTS Jhintonic#Four',
+      role: 'ADC',
+    }, 
+    
+    {
+      id: ' HTS Nacatamalita#nica',
+      role: 'SUP',
+    }, 
+    
+    {
+      id: 'HTS PAN#hts',
+      role: 'SUPLENTE',
+
+    }, {}
+
   ],
 
 
@@ -401,11 +432,48 @@ const roster = {
 
 
   // ======================================================
-  // Bowsix
+  // Ice Gold
   // ======================================================
 
-  'Bowsix': [
-    {}, {}, {}, {}, {}, {}
+  'Ice Gold': [
+    {
+      id: 'G7 Lugia ツ#2502',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'G7 Vanderrr#Zzz',
+      role: 'JUNGLA',
+      captain: true
+    }, 
+    
+    {
+      id: '大綠色格林奇先生#Всегд',
+      role: 'MID'
+    }, 
+    
+    {
+      id: 'Burbuja#Ice88',
+      role: 'ADC'
+    }, 
+    
+    {
+      id: 'BKI Muss#CEO',
+      role: 'SUP',
+    },
+    
+    {
+      id: 'G7 Aren Woka#Nea',
+      role: 'SUPLENTE'
+    }, 
+    
+    {
+      id: 'G7 Tyki Pon#Mikk',
+      role: 'SUPLENTE 2'
+    }
+
+
+
   ],
 
 
@@ -419,28 +487,28 @@ const roster = {
 
 
   // ======================================================
-  // EQUIPO 11
+  // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
   // ======================================================
 
-  'Equipo 11': [
+  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': [
     {}, {}, {}, {}, {}, {}, {}
   ],
 
 
   // ======================================================
-  // EQUIPO 12
+  // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
   // ======================================================
 
-  'Equipo 12': [
+  'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': [
     {}, {}, {}, {}, {}, {}, {}
   ],
 
 
   // ======================================================
-  // EQUIPO 13
+  // Fʟᴀᴡʟᴇss
   // ======================================================
 
-  'Equipo 13': [
+  'Fʟᴀᴡʟᴇss': [
     {}, {}, {}, {}, {}, {}, {}
   ],
 
