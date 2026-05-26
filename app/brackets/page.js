@@ -1,26 +1,28 @@
 "use client"
 
 export default function LotusRiftSite() {
-  const matches = [
-    {
-      date: '4 JULIO',
-      games: [
-        ['TBD', 'TBD'],
-        ['TBD', 'TBD'],
-        ['TBD', 'TBD'],
-        ['TBD', 'TBD']
-      ]
-    },
-    {
-      date: '5 JULIO',
-      games: [
-        ['TBD', 'TBD'],
-        ['TBD', 'TBD'],
-        ['TBD', 'TBD'],
-        ['TBD', 'TBD']
-      ]
-    }
-  ]
+const matches = [
+  {
+    date: "4 JULIO",
+    time: "19:00",
+    games: [
+      ["TBD", "TBD"],
+      ["TBD", "TBD"],
+      ["TBD", "TBD"],
+      ["TBD", "TBD"]
+    ]
+  },
+  {
+    date: "5 JULIO",
+    time: "19:00",
+    games: [
+      ["TBD", "TBD"],
+      ["TBD", "TBD"],
+      ["TBD", "TBD"],
+      ["TBD", "TBD"]
+    ]
+  }
+]
 
 
   return (
@@ -68,123 +70,80 @@ export default function LotusRiftSite() {
 
 
       {/* SCHEDULE */}
-      <section id="schedule" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex items-center justify-between mb-12">
-          <div>
-            <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
-              CALENDARIO
-            </p>
+     <section id="schedule" className="max-w-7xl mx-auto px-6 py-24">
 
+  <div className="mb-12">
+    <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
+      CALENDARIO
+    </p>
+    <h2 className="text-5xl font-black">PARTIDOS</h2>
+  </div>
 
-            <h2 className="text-5xl font-black">PARTIDOS</h2>
-          </div>
+  <div className="space-y-14">
+
+    {matches.map((day, idx) => (
+      <div key={idx}>
+
+        {/* FECHA */}
+        <h3 className="text-3xl font-bold mb-3 text-white">
+          {day.date}
+        </h3>
+
+        {/* UNA SOLA HORA POR DÍA */}
+        <div className="inline-block mb-6 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-300">
+          🕒 {day.time}
         </div>
 
+        {/* PARTIDOS */}
+        <div className="space-y-4">
 
-        <div className="space-y-10">
-          {matches.map((day, idx) => (
-            <div key={idx}>
-              <h3 className="text-2xl font-bold mb-5 text-zinc-100">
-                {day.date}
-              </h3>
+          {day.games.map((game, i) => (
+            <div
+              key={i}
+              className="rounded-3xl border border-white/10 bg-zinc-950 hover:border-violet-500/40 transition p-6"
+            >
 
+              <div className="flex items-center justify-between gap-6">
 
-              <div className="space-y-5">
-                {day.games.map((game, i) => (
-                  <div
-                    key={i}
-                    className="group rounded-3xl border border-white/10 bg-gradient-to-r from-zinc-900 to-zinc-950 hover:border-violet-500/50 transition p-6"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                      {/* MATCH */}
-                      <div className="flex items-center justify-center gap-5 w-full">
-                        
-                        {/* TEAM 1 */}
-                        <div className="flex items-center gap-4 flex-1 justify-end">
-                          <div className="text-right">
-                            <p className="text-xs text-zinc-500 mb-1">
-                              TEAM 1
-                            </p>
-
-
-                            <h3 className="font-bold text-lg md:text-2xl">
-                              {game[0]}
-                            </h3>
-                          </div>
-
-
-                          <div className="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/20" />
-                        </div>
-
-
-                        {/* SCORE CENTER */}
-                        <div className="relative">
-                          <div className="px-6 py-3 rounded-2xl border border-white/10 bg-black/60 backdrop-blur-xl">
-                            <div className="flex items-center gap-4">
-                              <span className="text-2xl font-black text-white">
-                                ?
-                              </span>
-
-
-                              <span className="text-zinc-600 font-bold">
-                                :
-                              </span>
-
-
-                              <span className="text-2xl font-black text-white">
-                                ?
-                              </span>
-                            </div>
-                          </div>
-
-
-                          {/* ANTI SPOILER */}
-                          <div className="absolute inset-0 rounded-2xl bg-black/95 flex items-center justify-center opacity-100 hover:opacity-0 transition duration-500 cursor-pointer">
-                            <span className="text-xs tracking-[0.25em] text-violet-300">
-                              MOSTRAR RESULTADO
-                            </span>
-                          </div>
-                        </div>
-
-
-                        {/* TEAM 2 */}
-                        <div className="flex items-center gap-4 flex-1">
-                          <div className="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/20" />
-
-
-                          <div>
-                            <p className="text-xs text-zinc-500 mb-1">
-                              TEAM 2
-                            </p>
-
-
-                            <h3 className="font-bold text-lg md:text-2xl">
-                              {game[1]}
-                            </h3>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      {/* INFO */}
-                      <div className="flex items-center justify-center gap-4">
-                        <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-300">
-                          19:00
-                        </div>
-
-
-                        <div className="px-4 py-2 rounded-xl bg-violet-500/15 text-violet-300 border border-violet-500/20">
-                          PRÓXIMAMENTE
-                        </div>
-                      </div>
-                    </div>
+                {/* LEFT TEAM */}
+                <div className="flex items-center gap-3 w-1/3">
+                  <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                    🪷
                   </div>
-                ))}
+                  <span className="font-semibold text-white/70">
+                    {game[0]}
+                  </span>
+                </div>
+
+                {/* CENTER VS */}
+                <div className="flex flex-col items-center">
+                  <span className="text-violet-400 font-black">VS</span>
+                </div>
+
+                {/* RIGHT TEAM */}
+                <div className="flex items-center justify-end gap-3 w-1/3">
+                  <span className="font-semibold text-white/70">
+                    {game[1]}
+                  </span>
+
+                  <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                    🪷
+                  </div>
+                </div>
+
               </div>
+
             </div>
           ))}
+
         </div>
-      </section>
+
+      </div>
+    ))}
+
+  </div>
+
+</section>
 
 
       {/* BRACKET */}
@@ -335,68 +294,6 @@ export default function LotusRiftSite() {
         </div>
       </section>
 
-
-      {/* TEAMS */}
-      <section id="teams" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="mb-14">
-          <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
-            COMPETIDORES
-          </p>
-
-
-          <h2 className="text-5xl font-black">16 EQUIPOS</h2>
-        </div>
-
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {Array.from({ length: 16 }).map((_, i) => (
-            <div
-              key={i}
-              className="rounded-3xl border border-white/10 bg-zinc-950 hover:border-violet-500/50 transition p-8 text-center group"
-            >
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-violet-500/10 border border-violet-500/20 mb-5 group-hover:scale-110 transition" />
-
-
-              <p className="font-semibold">TBD</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
-      {/* RULES */}
-      <section
-        id="rules"
-        className="max-w-7xl mx-auto px-6 py-24 border-t border-white/5"
-      >
-        <div className="mb-12">
-          <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
-            REGLAMENTO
-          </p>
-
-
-          <h2 className="text-5xl font-black">REGLAS</h2>
-        </div>
-
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            'Prohibido uso de hacks o exploits.',
-            'Respeto obligatorio entre jugadores.',
-            'Los horarios deben cumplirse.',
-            'Las decisiones del staff son finales.'
-          ].map((rule, i) => (
-            <div
-              key={i}
-              className="rounded-3xl border border-white/10 bg-zinc-950 p-7"
-            >
-              <p className="text-zinc-300">{rule}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-10 text-center text-zinc-500">
         <h3 className="text-2xl font-black tracking-[0.3em] text-violet-400 mb-3">
@@ -404,7 +301,7 @@ export default function LotusRiftSite() {
         </h3>
 
 
-        <p>Gracias por leer • Staff Lotus Rift</p>
+        <p>Gracias por ver • Staff Lotus Rift</p>
       </footer>
     </div>
   )
