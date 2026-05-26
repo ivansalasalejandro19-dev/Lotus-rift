@@ -869,15 +869,31 @@ const roster = {
           {openTeam === team ? 'Volver' : 'Abrir'}
         </button>
 
-        {/* PLANTITA */}
-        <div className="mb-4 flex justify-center">
-  <img
-    src={teamLogos[team]}
-    alt={team}
-    className="w-28 h-28 object-contain"
-  />
+      {/* LOGO */}
+<div className="mb-4 flex justify-center">
+  <div
+    className="
+      p-[3px]
+      rounded-2xl
+      bg-gradient-to-br
+      from-pink-500
+      via-purple-500
+      to-cyan-400
+      shadow-lg shadow-pink-500/30
+      transition-all duration-300
+      hover:scale-105
+      hover:shadow-cyan-400/40
+    "
+  >
+    <div className="bg-[#14081f] rounded-2xl p-2">
+      <img
+        src={teamLogos[team]}
+        alt={team}
+        className="w-28 h-28 object-contain rounded-xl"
+      />
+    </div>
+  </div>
 </div>
-
         {/* NOMBRE */}
         <h3 className="text-2xl font-black text-white">
           {team}
