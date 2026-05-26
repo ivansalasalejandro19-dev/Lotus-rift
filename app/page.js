@@ -737,15 +737,10 @@ const roster = {
         className="relative cursor-pointer rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center"
       >
 
-        {/* LOGO */}
-        <div className="absolute top-3 left-3">
-          {teamLogos[team] && (
-            <img
-              src={teamLogos[team]}
-              className="w-10 h-10 rounded-xl object-cover"
-            />
-          )}
-        </div>
+      {/* LOTO */}
+<div className="absolute top-3 left-3 text-3xl opacity-70">
+  🪷
+</div>
 
         {/* BOTÓN */}
         <button
