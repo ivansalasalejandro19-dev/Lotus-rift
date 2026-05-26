@@ -52,8 +52,8 @@ const teamLogos = {
   // Rokurominos
   'Rokurominos': '/logos/rku.png',
 
-  // overexteded
-  'overexteded': '/logos/overexteded.png',
+  // overextended
+  'overextended': '/logos/overextended.png',
 
   // Huesitos Proyect
   'Huesitos Proyect': '/logos/huesitos.png',
@@ -109,7 +109,7 @@ const teams = [
   'Equipo 1',
   'T502',
   'Rokurominos',
-  'Overexteded',
+  'overextended',
   'Huesitos Proyect',
   'HaTsu',
   'Golden Dragons',
@@ -278,10 +278,10 @@ const roster = {
 
 
   // ======================================================
-  // overexteded
+  // overextended
   // ======================================================
 
-  'overexteded': [
+  'overextended': [
     {
       id: 'M3XC1T4#D1FF',
       role: 'TOP'
@@ -497,7 +497,7 @@ const roster = {
     { name: 'Equipo 1', points: 0 },
     { name: 'T502', points: 0 },
     { name: 'Rokurominos', points: 0 },
-    { name: 'overexteded', points: 0 }
+    { name: 'overextended', points: 0 }
   ]
 
 
