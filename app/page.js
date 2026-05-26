@@ -1,9 +1,24 @@
 'use client'
 
 export default function LotusRiftTournamentPage() {
+
+  const [openTeam, setOpenTeam] = useState(null)
+const [teamLogos, setTeamLogos] = useState({})
+
+const roster = {
+  Liz: [
+    { id: 'Ryn#没惩戒', role: 'ADC', captain: true },
+    { id: 'RAGNAROKt#6555', role: 'TOP' },
+    { id: 'K Λ Mønspeet#8887', role: 'MID' },
+    { id: '愛 Dαı#没蓝了', role: 'SUP' },
+    { id: 'Zen#Odev', role: 'JUNGLA' }
+  ]
+}
+
   const tournamentInfo = {
-    name: 'LOTUS RIFT',
-    subtitle: 'Torneo LAN Espiritual',
+    name: '🪷 LOTUS RIFT 🪷',
+    subtitle: 'Torneo LAN',
+    description: '',
     season: 'Season 1',
     viewers: '0',
     players: '16 Equipos',
@@ -342,6 +357,27 @@ export default function LotusRiftTournamentPage() {
           <h3 className="text-5xl font-black mt-3">
             Equipos
           </h3>
+
+          {openTeam === team && roster[team] && (
+  <div className="mt-4 space-y-2">
+    {roster[team].map((p, idx) => (
+      <div
+        key={idx}
+        className="flex items-center justify-between bg-white/10 p-2 rounded-xl"
+      >
+        <span>
+          {p.captain && '👑 '}
+          {p.id}
+        </span>
+
+        <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
+          {p.role}
+        </span>
+      </div>
+    ))}
+  </div>
+)}
+
         </div>
 
 
@@ -349,8 +385,29 @@ export default function LotusRiftTournamentPage() {
           {teams.map((team, index) => (
             <div
               key={index}
-              className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-6 hover:bg-white/10 transition text-center"
+              onClick={() => setOpenTeam(openTeam === team ? null : team)}
+className="cursor-pointer"
+            className="relative rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center"
             >
+             <div className="absolute top-3 left-3">
+  {teamLogos[team] && (
+    <img
+      src={teamLogos[team]}
+      className="w-10 h-10 rounded-xl object-cover"
+    />
+  )}
+</div>
+
+<button
+  onClick={(e) => {
+    e.stopPropagation()
+    setOpenTeam(openTeam === team ? null : team)
+  }}
+  className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg"
+>
+  {openTeam === team ? 'Volver' : 'Abrir'}
+</button>
+
               <div className="text-5xl mb-4">🪷</div>
 
 
