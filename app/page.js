@@ -348,84 +348,85 @@ const roster = {
 
 
       {/* EQUIPOS */}
-      <section id="equipos" className="relative z-10 px-8 lg:px-20 pb-24">
-        <div className="mb-12">
-          <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
-            Participantes
-          </p>
+<section id="equipos" className="relative z-10 px-8 lg:px-20 pb-24">
 
+  <div className="mb-12">
+    <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
+      Participantes
+    </p>
 
-          <h3 className="text-5xl font-black mt-3">
-            Equipos
-          </h3>
+    <h3 className="text-5xl font-black mt-3">
+      Equipos
+    </h3>
+  </div>
 
-          {openTeam === team && roster[team] && (
-  <div className="mt-4 space-y-2">
-    {roster[team].map((p, idx) => (
+  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    {teams.map((team, index) => (
       <div
-        key={idx}
-        className="flex items-center justify-between bg-white/10 p-2 rounded-xl"
+        key={index}
+        onClick={() => setOpenTeam(openTeam === team ? null : team)}
+        className="relative cursor-pointer rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center"
       >
-        <span>
-          {p.captain && '👑 '}
-          {p.id}
-        </span>
 
-        <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
-          {p.role}
-        </span>
+        {/* LOGO */}
+        <div className="absolute top-3 left-3">
+          {teamLogos[team] && (
+            <img
+              src={teamLogos[team]}
+              className="w-10 h-10 rounded-xl object-cover"
+            />
+          )}
+        </div>
+
+        {/* BOTÓN */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            setOpenTeam(openTeam === team ? null : team)
+          }}
+          className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg"
+        >
+          {openTeam === team ? 'Volver' : 'Abrir'}
+        </button>
+
+        {/* PLANTITA */}
+        <div className="text-5xl mb-4">🪷</div>
+
+        {/* NOMBRE */}
+        <h3 className="text-2xl font-black text-white">
+          {team}
+        </h3>
+
+        {/* ROSTER */}
+        {openTeam === team && roster[team] && (
+          <div className="mt-4 space-y-2">
+
+            {roster[team].map((p, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-between bg-white/10 p-2 rounded-xl"
+              >
+                <span>
+                  {p.captain && '👑 '}
+                  {p.id}
+                </span>
+
+                <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
+                  {p.role}
+                </span>
+              </div>
+            ))}
+
+          </div>
+        )}
+
       </div>
     ))}
+
   </div>
-)}
 
-        </div>
-
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teams.map((team, index) => (
-  <div
-    key={index}
-    onClick={() => setOpenTeam(openTeam === team ? null : team)}
-    className="relative cursor-pointer rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center"
-  >
-
-    {/* LOGO */}
-    <div className="absolute top-3 left-3">
-      {teamLogos[team] && (
-        <img
-          src={teamLogos[team]}
-          className="w-10 h-10 rounded-xl object-cover"
-        />
-      )}
-    </div>
-
-    {/* BOTÓN */}
-    <button
-      onClick={(e) => {
-        e.stopPropagation()
-        setOpenTeam(openTeam === team ? null : team)
-      }}
-      className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg"
-    >
-      {openTeam === team ? 'Volver' : 'Abrir'}
-    </button>
-
-              <div className="text-5xl mb-4">🪷</div>
-
-
-              <h4 className="text-2xl font-black text-white">
-                {team}
-              </h4>
-
-
-              <p className="text-white/40 uppercase tracking-widest text-xs mt-3">
-                Lotus Team
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+</section>
 
 
       {/* MATCHES */}
