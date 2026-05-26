@@ -501,12 +501,12 @@ const roster = {
 
 
             <h3 className="text-6xl font-black mt-5">
-              Brackets en Vivo
+            
             </h3>
 
 
             <p className="mt-8 text-white/65 max-w-3xl mx-auto text-xl leading-relaxed">
-              .
+              
             </p>
 
 
