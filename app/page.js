@@ -47,7 +47,7 @@ const teamLogos = {
   'Equipo 1': '/logos/equipo1.png',
 
   // T502
-  'T502': '/logos/t502.png',
+  'T502': '/logos/T502.png',
 
   // Rokurominos
   'Rokurominos': '/logos/rku.png',
@@ -759,7 +759,13 @@ const roster = {
         </button>
 
         {/* PLANTITA */}
-        <div className="text-5xl mb-4">🪷</div>
+        <div className="mb-4 flex justify-center">
+  <img
+    src={teamLogos[team]}
+    alt={team}
+    className="w-16 h-16 object-contain"
+  />
+</div>
 
         {/* NOMBRE */}
         <h3 className="text-2xl font-black text-white">
