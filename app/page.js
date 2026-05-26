@@ -384,30 +384,32 @@ const roster = {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {teams.map((team, index) => (
-            <div
-              key={index}
-              onClick={() => setOpenTeam(openTeam === team ? null : team)}
-className="cursor-pointer"
-            className="relative rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center"
-            >
-             <div className="absolute top-3 left-3">
-  {teamLogos[team] && (
-    <img
-      src={teamLogos[team]}
-      className="w-10 h-10 rounded-xl object-cover"
-    />
-  )}
-</div>
+  <div
+    key={index}
+    onClick={() => setOpenTeam(openTeam === team ? null : team)}
+    className="relative cursor-pointer rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center"
+  >
 
-<button
-  onClick={(e) => {
-    e.stopPropagation()
-    setOpenTeam(openTeam === team ? null : team)
-  }}
-  className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg"
->
-  {openTeam === team ? 'Volver' : 'Abrir'}
-</button>
+    {/* LOGO */}
+    <div className="absolute top-3 left-3">
+      {teamLogos[team] && (
+        <img
+          src={teamLogos[team]}
+          className="w-10 h-10 rounded-xl object-cover"
+        />
+      )}
+    </div>
+
+    {/* BOTÓN */}
+    <button
+      onClick={(e) => {
+        e.stopPropagation()
+        setOpenTeam(openTeam === team ? null : team)
+      }}
+      className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg"
+    >
+      {openTeam === team ? 'Volver' : 'Abrir'}
+    </button>
 
               <div className="text-5xl mb-4">🪷</div>
 
