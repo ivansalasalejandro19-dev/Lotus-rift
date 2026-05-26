@@ -206,8 +206,7 @@ const roster = {
 
 
           <p className="mt-8 text-lg text-white/70 max-w-xl leading-relaxed">
-            Sistema de torneo de eliminación directa.
-            Formato competitivo 5v5 con modalidad Fearless draft.
+            Unete a la comunidad de discord y disfruta del bracket en vivo.
           </p>
 
 
@@ -217,7 +216,7 @@ const roster = {
               target="_blank"
               className="px-8 py-4 rounded-3xl bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 font-black text-lg hover:scale-105 transition shadow-2xl shadow-pink-500/30"
             >
-              Entrar al Portal
+              Entrar al bracket oficial
             </a>
 
 
@@ -247,7 +246,7 @@ const roster = {
 
 
               <p className="mt-4 text-white/60 leading-relaxed">
-                Torneo competitivo 5v5.
+                Donde el loto florece en combate.
               </p>
             </div>
           </div>
@@ -445,7 +444,7 @@ const roster = {
 
 
           <div className="px-5 py-3 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-200 text-sm backdrop-blur-xl">
-          
+           5 de Julio - 19:00 PM
           </div>
         </div>
 
@@ -497,7 +496,7 @@ const roster = {
 
 
             <p className="uppercase tracking-[0.4em] text-pink-300 text-sm">
-              Portal de Resurrección
+             Bracket en Vivo
             </p>
 
 
@@ -507,8 +506,7 @@ const roster = {
 
 
             <p className="mt-8 text-white/65 max-w-3xl mx-auto text-xl leading-relaxed">
-              Conectá este portal a Challonge, Battlefy, Toornament,
-              Start.gg o cualquier sistema de brackets online.
+              .
             </p>
 
 
@@ -517,7 +515,7 @@ const roster = {
               target="_blank"
               className="inline-flex mt-12 px-12 py-6 rounded-3xl bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 text-2xl font-black hover:scale-105 transition shadow-2xl shadow-pink-500/30"
             >
-              Entrar al Portal Astral
+              Bracket Oficial
             </a>
           </div>
         </div>
