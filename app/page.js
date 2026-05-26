@@ -320,7 +320,31 @@ const roster = {
   // ======================================================
 
   'Huesitos Proyect': [
-    {}, {}, {}, {}, {}, {}, {}
+    {
+      id: 'junedvs#NBA',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'JACOP#JGL',
+      role: 'JUNGLA',
+    }, 
+    
+    {
+      id: 'TikTokPrimordial#1103',
+      role: 'MID',
+    }, 
+    
+    {
+      id: 'ID: I Blóód I#Moon',
+      role: 'ADC',
+    }, 
+    
+    {
+      id: 'SpearDiff Marc#SMITE',
+      role: 'SUP',
+      captain: true
+    }, {}, {}
   ],
 
 
@@ -338,7 +362,31 @@ const roster = {
   // ======================================================
 
   'Golden Dragons': [
-    {}, {}, {}, {}, {}, {}, {}
+    {
+      id: 'G7龙 Alejoo#Ñupra',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'Just Supra#Ling',
+      role: 'JUNGLA'
+    },
+    
+    {
+      id: 'G7龙 Cheemz#ñupra',
+      role: 'MID'
+    }, 
+    
+    {
+      id: 'Wirtz#Key',
+      role: 'ADC'
+    }, 
+    
+    {
+      id: 'G7龙 ŽhêrØ#Ñupra',
+      role: 'SUP',
+      captain: true
+    }, {}, {}
   ],
 
 
