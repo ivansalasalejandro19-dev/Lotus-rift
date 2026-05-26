@@ -775,7 +775,11 @@ const roster = {
     <div className="space-y-2">
 
       {roster[team]
-        .filter((p) => p.role !== 'SUPLENTE')
+        .filter(
+  (p) =>
+    p.role &&
+    !p.role.includes('SUPLENTE')
+)
         .map((p, idx) => (
 
           <div
@@ -813,32 +817,48 @@ const roster = {
 
 
     {/* SUPLENTES */}
-    <div className="space-y-2">
+<div className="space-y-2">
 
-      <div className="text-xs uppercase tracking-[0.3em] text-white/40 mb-2">
-        Suplentes
+  <div className="text-xs uppercase tracking-[0.3em] text-white/40 mb-2">
+    Suplentes
+  </div>
+
+  {roster[team]
+    .filter(
+      (p) =>
+        p.role &&
+        p.role.includes('SUPLENTE')
+    )
+    .map((p, idx) => (
+
+      <div
+        key={idx}
+        className="flex items-center justify-between bg-white/5 border border-white/10 p-2 rounded-xl mt-3"
+      >
+
+        {/* PLAYER */}
+        <div className="flex flex-col items-start">
+
+          {p.captain && (
+            <span className="text-yellow-300 text-xs font-bold">
+              👑 CAPITÁN
+            </span>
+          )}
+
+          <span>{p.id}</span>
+
+        </div>
+
+        {/* ROLE */}
+        <span className="text-xs bg-white/10 px-2 py-1 rounded-full">
+          {p.role}
+        </span>
+
       </div>
 
-      {roster[team]
-        .filter((p) => p.role === 'SUPLENTE')
-        .map((p, idx) => (
+  ))}
 
-          <div
-            key={idx}
-            className="flex items-center justify-between bg-white/5 border border-white/10 p-2 rounded-xl"
-          >
-
-            <span>{p.id}</span>
-
-            <span className="text-xs bg-white/10 px-2 py-1 rounded-full">
-              SUB
-            </span>
-
-          </div>
-
-      ))}
-
-    </div>
+</div>
 
   </div>
 
