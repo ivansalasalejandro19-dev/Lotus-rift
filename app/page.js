@@ -98,7 +98,7 @@ const roster = {
 
   const matches = [
     {
-      teamA: 'Equipo 1',
+      teamA: 'Liz',
       teamB: 'Equipo 2',
       score: '0 - 0',
       status: 'Pendiente'
@@ -125,7 +125,7 @@ const roster = {
 
 
   const leaderboard = [
-    { name: 'Equipo 1', points: 0 },
+    { name: 'Liz', points: 0 },
     { name: 'Equipo 2', points: 0 },
     { name: 'Equipo 3', points: 0 },
     { name: 'Equipo 4', points: 0 }
