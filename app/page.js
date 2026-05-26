@@ -38,7 +38,7 @@ const roster = {
 
 
   const teams = [
-    'ryn pro',
+    'Liz',
     'Equipo 2',
     'Equipo 3',
     'Equipo 4',
