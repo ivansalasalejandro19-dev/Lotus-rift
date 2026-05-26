@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from "react"
 export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
@@ -37,7 +38,7 @@ const roster = {
 
 
   const teams = [
-    'Equipo 1',
+    'ryn pro',
     'Equipo 2',
     'Equipo 3',
     'Equipo 4',
