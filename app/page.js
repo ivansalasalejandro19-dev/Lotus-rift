@@ -20,10 +20,10 @@ const roster = {
     name: '🪷 LOTUS RIFT 🪷',
     subtitle: 'Torneo LAN',
     description: '',
-    season: 'Season 1',
-    viewers: '0',
+    season: 'S',
+    pricepool: '180 USDT',
     players: '16 Equipos',
-    status: 'INSCRIPCIONES ABIERTAS',
+    status: 'INSCRIPCIONES ABIERTAS HASTA 15 DE JUNIO',
     startTime: '19:00 PM MX'
   }
 
@@ -206,8 +206,8 @@ const roster = {
 
 
           <p className="mt-8 text-lg text-white/70 max-w-xl leading-relaxed">
-            Un torneo competitivo inspirado en la energía espiritual,
-            flores de loto y dimensiones astrales.
+            Sistema de torneo de eliminación directa.
+            Formato competitivo 5v5 con modalidad Fearless draft.
           </p>
 
 
@@ -222,7 +222,7 @@ const roster = {
 
 
             <a
-              href={discordLink}
+              href="https://discord.gg/ZfE9uCyw"
               target="_blank"
               className="px-8 py-4 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition"
             >
@@ -242,12 +242,12 @@ const roster = {
 
 
               <h3 className="text-4xl font-black mt-5 text-pink-200">
-                Spirit Realm
+                Lotus arena
               </h3>
 
 
               <p className="mt-4 text-white/60 leading-relaxed">
-                16 equipos lucharán por despertar el poder del loto.
+                Torneo competitivo 5v5.
               </p>
             </div>
           </div>
@@ -434,7 +434,7 @@ const roster = {
         <div className="mb-12 flex items-center justify-between">
           <div>
             <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
-              Editable
+              
             </p>
 
 
@@ -445,7 +445,7 @@ const roster = {
 
 
           <div className="px-5 py-3 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-200 text-sm backdrop-blur-xl">
-            Editá equipos y resultados manualmente
+          
           </div>
         </div>
 
