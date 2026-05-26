@@ -4,17 +4,6 @@ import { useState } from "react"
 export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
-const [teamLogos, setTeamLogos] = useState({})
-
-const roster = {
-  Liz: [
-    { id: 'Ryn#没惩戒', role: 'ADC', captain: true },
-    { id: 'RAGNAROKt#6555', role: 'TOP' },
-    { id: 'K Λ Mønspeet#8887', role: 'MID' },
-    { id: '愛 Dαı#没蓝了', role: 'SUP' },
-    { id: 'Zen#Odev', role: 'JUNGLA' }
-  ]
-}
 
   const tournamentInfo = {
     name: '🪷 LOTUS RIFT 🪷',
@@ -37,24 +26,404 @@ const roster = {
   const discordLink = 'https://discord.gg/tu-server'
 
 
-  const teams = [
-    'Liz',
-    'Equipo 2',
-    'Equipo 3',
-    'Equipo 4',
-    'Equipo 5',
-    'Equipo 6',
-    'Equipo 7',
-    'Equipo 8',
-    'Equipo 9',
-    'Equipo 10',
-    'Equipo 11',
-    'Equipo 12',
-    'Equipo 13',
-    'Equipo 14',
-    'Equipo 15',
-    'Equipo 16'
+ // ======================================================
+// LOGOS OFICIALES
+// ======================================================
+//
+// GUARDAR TODOS LOS LOGOS EN:
+//
+// /public/logos/
+//
+// EJEMPLOS:
+//
+// /public/logos/equipo1.png
+// /public/logos/equipo2.png
+//
+// ======================================================
+
+const teamLogos = {
+
+  // EQUIPO 1
+  'Equipo 1': '/logos/equipo1.png',
+
+  // T502
+  'T502': '/logos/t502.png',
+
+  // Rokurominos
+  'Rokurominos': '/logos/rku.png',
+
+  // overexteded
+  'overexteded': '/logos/overexteded.png',
+
+  // Huesitos Proyect
+  'Huesitos Proyect': '/logos/huesitos.png',
+
+  // HaTsu
+  'HaTsu': '/logos/hatsu.png',
+
+  // Golden Dragons
+  'Golden Dragons': '/logos/golden_dragons.png',
+
+  // Nahuales
+  'Nahuales': '/logos/nahuales.png',
+
+  // Bowsix
+  'Bowsix': '/logos/bowsix.png',
+
+  // Leales Dragon
+  'Leales Dragon': '/logos/leales_dragon.png',
+
+  // EQUIPO 11
+  'Equipo 11': '/logos/equipo11.png',
+
+  // EQUIPO 12
+  'Equipo 12': '/logos/equipo12.png',
+
+  // EQUIPO 13
+  'Equipo 13': '/logos/equipo13.png',
+
+  // EQUIPO 14
+  'Equipo 14': '/logos/equipo14.png',
+
+  // EQUIPO 15
+  'Equipo 15': '/logos/equipo15.png',
+
+  // EQUIPO 16
+  'Equipo 16': '/logos/equipo16.png'
+
+}
+
+
+// ======================================================
+// NOMBRES OFICIALES DE LOS EQUIPOS
+// ======================================================
+//
+// IMPORTANTE:
+// EL NOMBRE DEBE SER EXACTAMENTE IGUAL
+// AL DEL ROSTER Y TEAMLOGOS
+//
+// ======================================================
+
+const teams = [
+
+  'Equipo 1',
+  'T502',
+  'Rokurominos',
+  'Overexteded',
+  'Huesitos Proyect',
+  'HaTsu',
+  'Golden Dragons',
+  'Nahuales',
+  'Bowsix',
+  'Leales Dragon',
+  'Equipo 11',
+  'Equipo 12',
+  'Equipo 13',
+  'Equipo 14',
+  'Equipo 15',
+  'Equipo 16'
+
+]
+
+
+// ======================================================
+// ROSTERS OFICIALES
+// ======================================================
+//
+// captain: true = coronita 👑
+//
+// ROLES:
+//
+// TOP
+// JUNGLA
+// MID
+// ADC
+// SUP
+// SUPLENTE
+//
+// TODOS LOS EQUIPOS:
+// 5 TITULARES
+// 1 SUPLENTE
+//
+// ======================================================
+
+const roster = {
+
+
+  // ======================================================
+  // EQUIPO 1
+  // ======================================================
+
+  'Equipo 1': [
+
+    // TOP
+    {
+      id: 'TOP#0000',
+      role: 'TOP'
+    },
+
+    // JUNGLA
+    {
+      id: 'JG#0000',
+      role: 'JUNGLA'
+    },
+
+    // MID
+    {
+      id: 'MID#0000',
+      role: 'MID',
+      captain: true
+    },
+
+    // ADC
+    {
+      id: 'ADC#0000',
+      role: 'ADC'
+    },
+
+    // SUPPORT
+    {
+      id: 'SUP#0000',
+      role: 'SUP'
+    },
+
+    // SUPLENTE
+    {
+      id: 'SUB#0000',
+      role: 'SUPLENTE'
+    }, {}
+
+  ],
+
+
+  // ======================================================
+  // T502
+  // ======================================================
+
+  'T502': [
+
+    {
+      id: 'playerslinky#5799',
+      role: 'TOP'
+    },
+
+    {
+      id: '愛 Liu Kam 愛#馬圖爾',
+      role: 'JUNGLA',
+    
+    },
+
+    {
+      id: 'LW TheAngel#8589',
+      role: 'MID'
+    },
+
+    {
+      id: 'G0DZILLAKN1GHT#8650',
+      role: 'ADC'
+    },
+
+    {
+      id: 'lilO#8593',
+      role: 'SUP'
+    },
+
+    {
+      id: 'Nahomi#Naø',
+      role: 'SUPLENTE',
+      captain: true
+    }, 
+    
+    {
+      id: 'Azzel#7331',
+      role: 'SUPLENTE 2'
+    }
+
+  ],
+
+
+  // ======================================================
+  // Rokurominos
+  // ======================================================
+
+  'Rokurominos': [
+    {
+    id: 'Better#lvysf',
+     role: 'TOP'
+    },
+     
+    {
+      id: 'SojaCarbo#1830',
+      role: 'JUNGLA'
+    }, 
+    
+    {
+      id: 'Dropex13#LAN',
+      role: 'MID',
+    }, 
+    
+    {
+      id: 'Mata perros#Aletz',
+      role: 'ADC',
+    }, 
+    
+    {
+      id: '루발  GawrNikho メ#lulu',
+      role: 'SUP',
+      captain: true
+    }, 
+    
+    {}, {}
+  ],
+
+
+  // ======================================================
+  // overexteded
+  // ======================================================
+
+  'overexteded': [
+    {
+      id: 'M3XC1T4#D1FF',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'Aplastador99#9247',
+      role: 'JUNGLA',
+      captain: true
+    }, 
+    
+    {
+      id: 'Passionfruit#GGmid',
+      role: 'MID',
+    },
+    
+    {
+      id: 'Da Vinci#4034',
+      role: 'ADC',
+    }, 
+    
+    {
+      id: 'sebdra#4417',
+      role: 'SUP',
+    }, 
+    
+    {
+      id: 'Nexo Simon#7403',
+      role: 'SUPLENTE',
+    }, {}
+  ],
+
+
+  // ======================================================
+  // Huesitos Proyect
+  // ======================================================
+
+  'Huesitos Proyect': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // HaTsu
+  // ======================================================
+
+  'HaTsu': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  //======================================================
+  // Golden Dragons
+  // ======================================================
+
+  'Golden Dragons': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // Nahuales
+  // ======================================================
+
+  'Nahuales': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+
+  // ======================================================
+  // Bowsix
+  // ======================================================
+
+  'Bowsix': [
+    {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // Leales Dragon
+  // ======================================================
+
+  'Leales Dragon': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // EQUIPO 11
+  // ======================================================
+
+  'Equipo 11': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // EQUIPO 12
+  // ======================================================
+
+  'Equipo 12': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // EQUIPO 13
+  // ======================================================
+
+  'Equipo 13': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // EQUIPO 14
+  // ======================================================
+
+  'Equipo 14': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // EQUIPO 15
+  // ======================================================
+
+  'Equipo 15': [
+    {}, {}, {}, {}, {}, {}, {}
+  ],
+
+
+  // ======================================================
+  // EQUIPO 16
+  // ======================================================
+
+  'Equipo 16': [
+    {}, {}, {}, {}, {}, {}, {}
   ]
+
+}
 
 
   const schedule = [
@@ -98,26 +467,26 @@ const roster = {
 
   const matches = [
     {
-      teamA: 'Liz',
-      teamB: 'Equipo 2',
+      teamA: 'TBD',
+      teamB: 'TBD',
       score: '0 - 0',
       status: 'Pendiente'
     },
     {
-      teamA: 'Equipo 3',
-      teamB: 'Equipo 4',
+      teamA: 'TBD',
+      teamB: 'TBD',
       score: '0 - 0',
       status: 'Pendiente'
     },
     {
-      teamA: 'Equipo 5',
-      teamB: 'Equipo 6',
+      teamA: 'TBD',
+      teamB: 'TBD',
       score: '0 - 0',
       status: 'Pendiente'
     },
     {
-      teamA: 'Equipo 7',
-      teamB: 'Equipo 8',
+      teamA: 'TBD',
+      teamB: 'TBD',
       score: '0 - 0',
       status: 'Pendiente'
     }
@@ -125,10 +494,10 @@ const roster = {
 
 
   const leaderboard = [
-    { name: 'Liz', points: 0 },
-    { name: 'Equipo 2', points: 0 },
-    { name: 'Equipo 3', points: 0 },
-    { name: 'Equipo 4', points: 0 }
+    { name: 'Equipo 1', points: 0 },
+    { name: 'T502', points: 0 },
+    { name: 'Rokurominos', points: 0 },
+    { name: 'overexteded', points: 0 }
   ]
 
 
@@ -397,28 +766,83 @@ const roster = {
           {team}
         </h3>
 
-        {/* ROSTER */}
-        {openTeam === team && roster[team] && (
-          <div className="mt-4 space-y-2">
+      {/* ROSTER */}
+{openTeam === team && roster[team] && (
 
-            {roster[team].map((p, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-between bg-white/10 p-2 rounded-xl"
-              >
-                <span>
-                  {p.captain && '👑 '}
-                  {p.id}
-                </span>
+  <div className="mt-4">
 
-                <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
-                  {p.role}
+    {/* TITULARES */}
+    <div className="space-y-2">
+
+      {roster[team]
+        .filter((p) => p.role !== 'SUPLENTE')
+        .map((p, idx) => (
+
+          <div
+            key={idx}
+            className="flex items-center justify-between bg-white/10 p-2 rounded-xl"
+          >
+
+            {/* PLAYER */}
+            <div className="flex flex-col items-start">
+
+              {p.captain && (
+                <span className="text-yellow-300 text-xs font-bold">
+                  👑 CAPITÁN
                 </span>
-              </div>
-            ))}
+              )}
+
+              <span>{p.id}</span>
+
+            </div>
+
+            {/* ROLE */}
+            <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
+              {p.role}
+            </span>
 
           </div>
-        )}
+
+      ))}
+
+    </div>
+
+
+    {/* SEPARACIÓN */}
+    <div className="my-4 border-t border-white/10" />
+
+
+    {/* SUPLENTES */}
+    <div className="space-y-2">
+
+      <div className="text-xs uppercase tracking-[0.3em] text-white/40 mb-2">
+        Suplentes
+      </div>
+
+      {roster[team]
+        .filter((p) => p.role === 'SUPLENTE')
+        .map((p, idx) => (
+
+          <div
+            key={idx}
+            className="flex items-center justify-between bg-white/5 border border-white/10 p-2 rounded-xl"
+          >
+
+            <span>{p.id}</span>
+
+            <span className="text-xs bg-white/10 px-2 py-1 rounded-full">
+              SUB
+            </span>
+
+          </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+)}
 
       </div>
     ))}
