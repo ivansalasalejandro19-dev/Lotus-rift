@@ -43,8 +43,8 @@ export default function LotusRiftTournamentPage() {
 
 const teamLogos = {
 
-  // EQUIPO 1
-  'Equipo 1': '/logos/equipo1.png',
+  // Sᴍᴀᴄᴋᴅᴏᴡɴ
+  'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
 
   // T502
   'T502': '/logos/T502.png',
@@ -70,8 +70,8 @@ const teamLogos = {
   // Ice Gold
   'Ice Gold': '/logos/ice_gold.png',
 
-  // Leales Dragon
-  'Leales Dragon': '/logos/leales_dragon.png',
+  // ÆSIIR Go Legends
+  'ÆSIIR Go Legends': '/logos/ae_siir_go_legends.png',
 
   // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
   'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
@@ -82,11 +82,11 @@ const teamLogos = {
   // Fʟᴀᴡʟᴇss
   'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
 
-  // EQUIPO 14
-  'Equipo 14': '/logos/equipo14.png',
+  // Secret Society
+  'Secret Society': '/logos/secret_society.png',
 
-  // EQUIPO 15
-  'Equipo 15': '/logos/equipo15.png',
+  // Cosa nostra
+  'Cosa nostra': '/logos/cosa_nostra.png',
 
   // EQUIPO 16
   'Equipo 16': '/logos/equipo16.png'
@@ -106,7 +106,7 @@ const teamLogos = {
 
 const teams = [
 
-  'Equipo 1',
+  'Sᴍᴀᴄᴋᴅᴏᴡɴ',
   'T502',
   'Rokurominos',
   'overextended',
@@ -115,12 +115,12 @@ const teams = [
   'Golden Dragons',
   'Nahuales',
   'Ice Gold',
-  'Leales Dragons',
+  'ÆSIIR Go Legends',
   'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
   'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ',
   'Fʟᴀᴡʟᴇss',
-  'Equipo 14',
-  'Equipo 15',
+  'Secret Society',
+  'Cosa nostra',
   'Equipo 16'
 
 ]
@@ -151,47 +151,52 @@ const roster = {
 
 
   // ======================================================
-  // EQUIPO 1
+  // Sᴍᴀᴄᴋᴅᴏᴡɴ
   // ======================================================
 
-  'Equipo 1': [
+  'Sᴍᴀᴄᴋᴅᴏᴡɴ': [
 
     // TOP
     {
-      id: 'TOP#0000',
+      id: 'QQl#KKXX',
       role: 'TOP'
     },
 
     // JUNGLA
     {
-      id: 'JG#0000',
-      role: 'JUNGLA'
+      id: 'Zen#Odev',
+      role: 'JUNGLA',
+      captain: true
     },
 
     // MID
     {
-      id: 'MID#0000',
+      id: 'SD Zoldk#mid',
       role: 'MID',
-      captain: true
     },
 
     // ADC
     {
-      id: 'ADC#0000',
+      id: 'Hakuuuuuiiiii#True',
       role: 'ADC'
     },
 
     // SUPPORT
     {
-      id: 'SUP#0000',
+      id: 'Sunny CSS#Hope',
       role: 'SUP'
     },
 
     // SUPLENTE
     {
-      id: 'SUB#0000',
+      id: 'banshoot3rve#2802',
       role: 'SUPLENTE'
-    }, {}
+    }, 
+    
+    {
+      id: 'Addy#Moon',
+      role: 'SUPLENTE 2'
+    }
 
   ],
 
@@ -478,11 +483,44 @@ const roster = {
 
 
   // ======================================================
-  // Leales Dragon
+  // ÆSIIR Go Legends
   // ======================================================
 
-  'Leales Dragon': [
-    {}, {}, {}, {}, {}, {}, {}
+  'ÆSIIR Go Legends': [
+    {
+      id: 'Koer#fr15',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'Hxdès Pérez#3312',
+      role: 'JUNGLA'
+    }, 
+    
+    {
+      id: 'Robi#Yuyu',
+      role: 'MID'
+    }, 
+    
+    {
+      id: 'Kino 縁#0609',
+      role: 'ADC'
+    }, 
+    
+    {
+      id: 'The Unforgiven#NoFun',
+      role: 'SUP'
+    }, 
+    
+    {
+      id: 'Tiffany69#LAN',
+      role: 'SUPLENTE'
+    }, 
+    
+    {
+      id: 'Who is Jxss愛#Kensy',
+      role: 'SUPLENTE 2'
+    }
   ],
 
 
@@ -509,24 +547,52 @@ const roster = {
   // ======================================================
 
   'Fʟᴀᴡʟᴇss': [
+    {
+      id: 'LR BausSon#2121',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'RitroxZ#RAZN',
+      role: 'JUNGLA'
+    }, 
+    
+    {
+      id: 'Hide on LATAM#2517',
+      role: 'MID'
+    }, 
+    
+    {
+      id: 'Anazthazia#CR420',
+      role: 'ADC'
+    }, 
+    
+    {
+      id: 'Meffy#2195',
+      role: 'SUP'
+    }, 
+    
+    {
+      id: 'Hide on WęęĐ#CRC',
+      role: 'SUPLENTE'
+    }, {}
+  ],
+
+
+  // ======================================================
+  // Secret Society
+  // ======================================================
+
+  'Secret Society': [
     {}, {}, {}, {}, {}, {}, {}
   ],
 
 
   // ======================================================
-  // EQUIPO 14
+  // Cosa nostra
   // ======================================================
 
-  'Equipo 14': [
-    {}, {}, {}, {}, {}, {}, {}
-  ],
-
-
-  // ======================================================
-  // EQUIPO 15
-  // ======================================================
-
-  'Equipo 15': [
+  'Cosa nostra': [
     {}, {}, {}, {}, {}, {}, {}
   ],
 
