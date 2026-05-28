@@ -534,7 +534,35 @@ const roster = {
   // ======================================================
 
   'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': [
-    {}, {}, {}, {}, {}, {}, {}
+    {
+      id: 'Ackerman 死 ツ#Azpi',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'SerCh#2000',
+      role: 'JUNGLA'
+    }, 
+    
+    {
+      id: 'Arcament#maker',
+      role: 'MID'
+    }, 
+    
+    {
+      id: 'KΞX償 D i a b l o#TOP',
+      role: 'ADC'
+    }, 
+    
+    {
+      id: 'MarcecGD#LAS',
+      role: 'SUP'
+    }, 
+    
+    {
+      id: 'Dreigun#龍EGO',
+      role: 'SUPLENTE'
+    }, {}
   ],
 
 
@@ -559,7 +587,8 @@ const roster = {
     
     {
       id: 'RitroxZ#RAZN',
-      role: 'JUNGLA'
+      role: 'JUNGLA',
+      captain: true
     }, 
     
     {
