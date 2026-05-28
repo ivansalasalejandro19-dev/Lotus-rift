@@ -1,9 +1,9 @@
 "use client"
 
+
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
-  Trophy,
   Play,
   MessageCircle,
   MessagesSquare,
@@ -61,189 +61,222 @@ const initialOctavos = [
     score2: 0,
   },
 ]
-useEffect(() => {
-  const winnersOctavos = octavos.map((m) => {
-    if (m.score1 >= 1) return m.team1
-    if (m.score2 >= 1) return m.team2
-    return null
-  })
 
-  setCuartos([
-    {
-      team1: winnersOctavos[0],
-      team2: winnersOctavos[1],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winnersOctavos[2],
-      team2: winnersOctavos[3],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winnersOctavos[4],
-      team2: winnersOctavos[5],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winnersOctavos[6],
-      team2: winnersOctavos[7],
-      score1: 0,
-      score2: 0,
-    },
-  ])
-}, [octavos])
 
-useEffect(() => {
-  const winners = cuartos.map((m) => {
-    if (m.score1 >= 2) return m.team1
-    if (m.score2 >= 2) return m.team2
-    return null
-  })
+const MatchCard = ({
+  match,
+  round,
+  onScore,
+}) => {
 
-  setSemis([
-    {
-      team1: winners[0],
-      team2: winners[1],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winners[2],
-      team2: winners[3],
-      score1: 0,
-      score2: 0,
-    },
-  ])
-}, [cuartos])
 
-useEffect(() => {
-  const winners = semis.map((m) => {
-    if (m.score1 >= 3) return m.team1
-    if (m.score2 >= 3) return m.team2
-    return null
-  })
+  const needed =
+    round === "octavos"
+      ? 1
+      : round === "cuartos"
+      ? 2
+      : 3
 
-  setFinal([
-    {
-      team1: winners[0],
-      team2: winners[1],
-      score1: 0,
-      score2: 0,
-    },
-  ])
-}, [semis])
 
-useEffect(() => {
-  if (!final[0]) return
+  return (
+    <div className="relative">
 
-  if (final[0].score1 >= 3) {
-    setChampion(final[0].team1)
-  }
 
-  if (final[0].score2 >= 3) {
-    setChampion(final[0].team2)
-  }
-}, [final])
+      <div className="w-[290px] rounded-3xl border border-violet-500/20 bg-black/60 backdrop-blur-xl p-5 shadow-[0_0_40px_rgba(168,85,247,0.15)]">
+
+
+        {[1, 2].map((teamNum) => {
+
+
+          const isWinner =
+            teamNum === 1
+              ? match.score1 >= needed
+              : match.score2 >= needed
+
+
+          const isLoser =
+            teamNum === 1
+              ? match.score2 >= needed
+              : match.score1 >= needed
+
+
+          const team =
+            teamNum === 1
+              ? match.team1
+              : match.team2
+
+
+          return (
+            <div
+              key={teamNum}
+              className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all mb-3 border ${
+                isWinner
+                  ? "border-pink-400 bg-pink-500/20 shadow-[0_0_30px_rgba(255,0,170,0.3)]"
+                  : "border-white/10 bg-white/[0.03]"
+              } ${isLoser ? "opacity-30 grayscale" : ""}`}
+            >
+
+
+              <div className="flex items-center gap-3">
+
+
+                <img
+                  src={team?.logo || "/teams/placeholder.png"}
+                  className="w-11 h-11 rounded-xl object-cover border border-white/10"
+                />
+
+
+                <span className="font-bold">
+                  {team?.name || "TBD"}
+                </span>
+
+
+              </div>
+
+
+              <button
+                onClick={() => onScore(teamNum)}
+                className="w-9 h-9 rounded-xl bg-violet-500/20 hover:bg-violet-500/40 font-black"
+              >
+                +
+              </button>
+
+
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 
 export default function LotusRift() {
 
+
+  const [octavos, setOctavos] = useState(initialOctavos)
   const [cuartos, setCuartos] = useState([])
-const [semis, setSemis] = useState([])
-const [final, setFinal] = useState([])
-const [champion, setChampion] = useState(null)
-useEffect(() => {
-  const winnersOctavos = octavos.map((m) => {
-    if (m.score1 >= 1) return m.team1
-    if (m.score2 >= 1) return m.team2
-    return null
-  })
+  const [semis, setSemis] = useState([])
+  const [final, setFinal] = useState([])
+  const [champion, setChampion] = useState(null)
 
-  setCuartos([
-    {
-      team1: winnersOctavos[0],
-      team2: winnersOctavos[1],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winnersOctavos[2],
-      team2: winnersOctavos[3],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winnersOctavos[4],
-      team2: winnersOctavos[5],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winnersOctavos[6],
-      team2: winnersOctavos[7],
-      score1: 0,
-      score2: 0,
-    },
-  ])
-}, [octavos])
 
-useEffect(() => {
-  const winners = cuartos.map((m) => {
-    if (m.score1 >= 2) return m.team1
-    if (m.score2 >= 2) return m.team2
-    return null
-  })
+  useEffect(() => {
 
-  setSemis([
-    {
-      team1: winners[0],
-      team2: winners[1],
-      score1: 0,
-      score2: 0,
-    },
-    {
-      team1: winners[2],
-      team2: winners[3],
-      score1: 0,
-      score2: 0,
-    },
-  ])
-}, [cuartos])
 
-useEffect(() => {
-  const winners = semis.map((m) => {
-    if (m.score1 >= 3) return m.team1
-    if (m.score2 >= 3) return m.team2
-    return null
-  })
+    const winnersOctavos = octavos.map((m) => {
+      if (m.score1 >= 1) return m.team1
+      if (m.score2 >= 1) return m.team2
+      return null
+    })
 
-  setFinal([
-    {
-      team1: winners[0],
-      team2: winners[1],
-      score1: 0,
-      score2: 0,
-    },
-  ])
-}, [semis])
 
-useEffect(() => {
-  if (!final[0]) return
+    setCuartos([
+      {
+        team1: winnersOctavos[0],
+        team2: winnersOctavos[1],
+        score1: 0,
+        score2: 0,
+      },
+      {
+        team1: winnersOctavos[2],
+        team2: winnersOctavos[3],
+        score1: 0,
+        score2: 0,
+      },
+      {
+        team1: winnersOctavos[4],
+        team2: winnersOctavos[5],
+        score1: 0,
+        score2: 0,
+      },
+      {
+        team1: winnersOctavos[6],
+        team2: winnersOctavos[7],
+        score1: 0,
+        score2: 0,
+      },
+    ])
 
-  if (final[0].score1 >= 3) {
-    setChampion(final[0].team1)
-  }
 
-  if (final[0].score2 >= 3) {
-    setChampion(final[0].team2)
-  }
-}, [final])
+  }, [octavos])
+
+
+  useEffect(() => {
+
+
+    const winners = cuartos.map((m) => {
+      if (m.score1 >= 2) return m.team1
+      if (m.score2 >= 2) return m.team2
+      return null
+    })
+
+
+    setSemis([
+      {
+        team1: winners[0],
+        team2: winners[1],
+        score1: 0,
+        score2: 0,
+      },
+      {
+        team1: winners[2],
+        team2: winners[3],
+        score1: 0,
+        score2: 0,
+      },
+    ])
+
+
+  }, [cuartos])
+
+
+  useEffect(() => {
+
+
+    const winners = semis.map((m) => {
+      if (m.score1 >= 3) return m.team1
+      if (m.score2 >= 3) return m.team2
+      return null
+    })
+
+
+    setFinal([
+      {
+        team1: winners[0],
+        team2: winners[1],
+        score1: 0,
+        score2: 0,
+      },
+    ])
+
+
+  }, [semis])
+
+
+  useEffect(() => {
+
+
+    if (!final[0]) return
+
+
+    if (final[0].score1 >= 3) {
+      setChampion(final[0].team1)
+    }
+
+
+    if (final[0].score2 >= 3) {
+      setChampion(final[0].team2)
+    }
+
+
+  }, [final])
+
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
+
+
       {/* BACKGROUND */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-black" />
@@ -262,6 +295,8 @@ useEffect(() => {
       {/* HEADER */}
       <header className="border-b border-pink-500/10 backdrop-blur-xl sticky top-0 z-50 bg-black/50">
         <div className="max-w-7xl mx-auto px-5 py-5 flex items-center justify-between">
+
+
           <div>
             <h1 className="text-2xl font-black tracking-[0.35em] uppercase bg-gradient-to-r from-pink-400 via-fuchsia-300 to-pink-200 bg-clip-text text-transparent">
               LOTUS RIFT
@@ -272,19 +307,26 @@ useEffect(() => {
               ESPORTS TOURNAMENT
             </p>
           </div>
+
+
         </div>
       </header>
 
 
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-5 pt-16 pb-20">
+
+
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT */}
+
+
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
+
+
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-pink-500/20 bg-pink-500/10 text-pink-200 text-sm tracking-[0.2em] uppercase">
               🌸 INSCRIPCIONES ABIERTAS
             </div>
@@ -292,6 +334,8 @@ useEffect(() => {
 
             <h2 className="mt-8 text-7xl md:text-8xl font-black leading-none">
               <span className="text-white">LOTUS</span>
+
+
               <br />
 
 
@@ -302,13 +346,13 @@ useEffect(() => {
 
 
             <p className="mt-7 text-zinc-400 text-lg max-w-xl">
-              Unite a la comunidad de Discord y disfrutá del
-              bracket en vivo de Wild Rift.
+              Unite a la comunidad de Discord y disfrutá del bracket en vivo de Wild Rift.
             </p>
 
 
             <div className="mt-10 flex flex-wrap gap-4">
-              {/* WHATSAPP */}
+
+
               <a
                 href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
                 target="_blank"
@@ -319,7 +363,6 @@ useEffect(() => {
               </a>
 
 
-              {/* DISCORD */}
               <a
                 href="https://discord.gg/nVyrHkeCn5"
                 target="_blank"
@@ -328,17 +371,20 @@ useEffect(() => {
                 <MessagesSquare size={20} />
                 Discord
               </a>
+
+
             </div>
           </motion.div>
 
 
-          {/* RIGHT LOGO */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
+
+
             <div className="absolute inset-0 bg-pink-500/30 blur-[140px] rounded-full" />
 
 
@@ -347,15 +393,22 @@ useEffect(() => {
               alt="Lotus Rift"
               className="relative z-10 w-full max-w-[600px] mx-auto opacity-95"
             />
+
+
           </motion.div>
+
+
         </div>
       </section>
 
 
       {/* STREAM */}
       <section className="max-w-7xl mx-auto px-5 pb-24">
-        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 overflow-
-         shadow-[0_0_80px_rgba(255,0,170,0.12)]">
+
+
+        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 shadow-[0_0_80px_rgba(255,0,170,0.12)]">
+
+
           <div className="px-6 py-5 border-b border-pink-500/10 flex items-center gap-3">
             <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
 
@@ -372,229 +425,212 @@ useEffect(() => {
             height="650"
             allowFullScreen
           />
+
+
         </div>
       </section>
 
 
+      {/* BRACKET */}
       <section className="py-24 overflow-x-auto">
 
-  <div className="min-w-[1700px] flex justify-center gap-20">
 
-    {/* OCTAVOS */}
-    <div className="space-y-6">
-      <h2 className="text-center font-black text-violet-300">
-        OCTAVOS
-      </h2>
+        <div className="min-w-[1700px] flex justify-center gap-20">
 
-      {octavos.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="octavos"
-          onScore={(team) => {
-            const updated = [...octavos]
 
-            if (team === 1)
-              updated[i].score1 = 1
+          {/* OCTAVOS */}
+          <div className="space-y-6">
 
-            if (team === 2)
-              updated[i].score2 = 1
 
-            setOctavos(updated)
-          }}
-        />
-      ))}
-    </div>
-
-    {/* CUARTOS */}
-    <div className="space-y-20 mt-24">
-      <h2 className="text-center font-black text-violet-300">
-        CUARTOS
-      </h2>
-
-      {cuartos.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="cuartos"
-          onScore={(team) => {
-            const updated = [...cuartos]
-
-            if (team === 1)
-              updated[i].score1++
-
-            if (team === 2)
-              updated[i].score2++
-
-            setCuartos(updated)
-          }}
-        />
-      ))}
-    </div>
-
-    {/* SEMIS */}
-    <div className="space-y-44 mt-52">
-      <h2 className="text-center font-black text-pink-300">
-        SEMIFINALES
-      </h2>
-
-      {semis.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="semis"
-          onScore={(team) => {
-            const updated = [...semis]
-
-            if (team === 1)
-              updated[i].score1++
-
-            if (team === 2)
-              updated[i].score2++
-
-            setSemis(updated)
-          }}
-        />
-      ))}
-    </div>
-
-    {/* FINAL */}
-    <div className="mt-[350px] relative">
-
-      <h2 className="text-center font-black text-pink-300 mb-10">
-        FINAL
-      </h2>
-
-      {final.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="final"
-          onScore={(team) => {
-            const updated = [...final]
-
-            if (team === 1)
-              updated[i].score1++
-
-            if (team === 2)
-              updated[i].score2++
-
-            setFinal(updated)
-          }}
-        />
-      ))}
-
-      <AnimatePresence>
-        {champion && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            exit={{ opacity: 0 }}
-            className="absolute top-[-220px] left-1/2 -translate-x-1/2 text-center"
-          >
-            <motion.div
-              animate={{
-                rotate: [0, 10, -10, 0],
-                scale: [1, 1.15, 1],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 2,
-              }}
-              className="w-44 h-44 rounded-full bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-[0_0_120px_rgba(255,0,180,0.6)]"
-            >
-              <Crown size={80} />
-            </motion.div>
-
-            <h2 className="mt-6 text-5xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
-              {champion.name}
+            <h2 className="text-center font-black text-violet-300">
+              OCTAVOS
             </h2>
 
-            <p className="mt-2 tracking-[0.3em] text-pink-300">
-              CAMPEÓN
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
-    </div>
-
-  </div>
-
-</section>
+            {octavos.map((match, i) => (
+              <MatchCard
+                key={i}
+                match={match}
+                round="octavos"
+                onScore={(team) => {
 
 
-      {/* PARTIDOS */}
-      <section className="max-w-7xl mx-auto px-5 pb-32">
-        <div className="flex items-center gap-3 mb-10">
-          <Play className="text-pink-400" />
+                  const updated = [...octavos]
 
 
-          <h3 className="text-5xl font-black uppercase">
-            PRÓXIMOS PARTIDOS
-          </h3>
-        </div>
+                  if (team === 1)
+                    updated[i].score1 = 1
 
 
-        <div className="space-y-5">
-          {quarterFinals.map((match, index) => (
-            <div
-              key={index}
-              className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
-            >
-              <div>
-                <p className="text-pink-300 font-bold">
-                  19:00
-                </p>
+                  if (team === 2)
+                    updated[i].score2 = 1
 
 
-                <p className="text-zinc-500 text-sm">
-                  4 DE JULIO
-                </p>
-              </div>
+                  setOctavos(updated)
+                }}
+              />
+            ))}
+          </div>
 
 
-              <div className="flex items-center gap-4">
-                <img
-                  src={match.logo1}
-                  className="w-10 h-10 rounded-xl"
-                />
+          {/* CUARTOS */}
+          <div className="space-y-20 mt-24">
 
 
-                <span className="font-semibold">
-                  {match.team1}
-                </span>
-              </div>
+            <h2 className="text-center font-black text-violet-300">
+              CUARTOS
+            </h2>
 
 
-              <div className="text-pink-400 font-black text-2xl">
-                VS
-              </div>
+            {cuartos.map((match, i) => (
+              <MatchCard
+                key={i}
+                match={match}
+                round="cuartos"
+                onScore={(team) => {
 
 
-              <div className="flex items-center gap-4">
-                <span className="font-semibold">
-                  {match.team2}
-                </span>
+                  const updated = [...cuartos]
 
 
-                <img
-                  src={match.logo2}
-                  className="w-10 h-10 rounded-xl"
-                />
-              </div>
+                  if (team === 1)
+                    updated[i].score1++
 
 
-              <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
-                VER DETALLES
-              </button>
-            </div>
-          ))}
+                  if (team === 2)
+                    updated[i].score2++
+
+
+                  setCuartos(updated)
+                }}
+              />
+            ))}
+          </div>
+
+
+          {/* SEMIS */}
+          <div className="space-y-44 mt-52">
+
+
+            <h2 className="text-center font-black text-pink-300">
+              SEMIFINALES
+            </h2>
+
+
+            {semis.map((match, i) => (
+              <MatchCard
+                key={i}
+                match={match}
+                round="semis"
+                onScore={(team) => {
+
+
+                  const updated = [...semis]
+
+
+                  if (team === 1)
+                    updated[i].score1++
+
+
+                  if (team === 2)
+                    updated[i].score2++
+
+
+                  setSemis(updated)
+                }}
+              />
+            ))}
+          </div>
+
+
+          {/* FINAL */}
+          <div className="mt-[350px] relative">
+
+
+            <h2 className="text-center font-black text-pink-300 mb-10">
+              FINAL
+            </h2>
+
+
+            {final.map((match, i) => (
+              <MatchCard
+                key={i}
+                match={match}
+                round="final"
+                onScore={(team) => {
+
+
+                  const updated = [...final]
+
+
+                  if (team === 1)
+                    updated[i].score1++
+
+
+                  if (team === 2)
+                    updated[i].score2++
+
+
+                  setFinal(updated)
+                }}
+              />
+            ))}
+
+
+            <AnimatePresence>
+
+
+              {champion && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  exit={{ opacity: 0 }}
+                  className="absolute top-[-220px] left-1/2 -translate-x-1/2 text-center"
+                >
+
+
+                  <motion.div
+                    animate={{
+                      rotate: [0, 10, -10, 0],
+                      scale: [1, 1.15, 1],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 2,
+                    }}
+                    className="w-44 h-44 rounded-full bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-[0_0_120px_rgba(255,0,180,0.6)]"
+                  >
+                    <Crown size={80} />
+                  </motion.div>
+
+
+                  <h2 className="mt-6 text-5xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+                    {champion.name}
+                  </h2>
+
+
+                  <p className="mt-2 tracking-[0.3em] text-pink-300">
+                    CAMPEÓN
+                  </p>
+
+
+                </motion.div>
+              )}
+
+
+            </AnimatePresence>
+
+
+          </div>
+
+
         </div>
       </section>
+
+
     </main>
   )
 }
