@@ -23,7 +23,7 @@ export default function LotusRiftTournamentPage() {
 
 
   const bracketLink = 'https://tus-brackets.com'
-  const discordLink = 'https://discord.gg/tu-server'
+  const discordLink = 'https://discord.gg/nVyrHkeCn5'
 
 
  // ======================================================
@@ -868,7 +868,7 @@ const roster = {
 
 
             <a
-              href="https://discord.gg/ZfE9uCyw"
+              href="https://discord.gg/nVyrHkeCn5"
               target="_blank"
               className="px-8 py-4 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition"
             >

@@ -1,44 +1,248 @@
 "use client"
 
-
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   Trophy,
   Play,
   MessageCircle,
   MessagesSquare,
+  Crown,
 } from "lucide-react"
 
 
-const quarterFinals = [
+const quarterFinals = [const initialOctavos = [
   {
-    team1: "TBD",
-    logo1: "/teams/team1.png",
-    team2: "TBD",
-    logo2: "/teams/team2.png",
+    team1: { name: "TEAM 1", logo: "/teams/team1.png" },
+    team2: { name: "TEAM 2", logo: "/teams/team2.png" },
+    score1: 0,
+    score2: 0,
   },
   {
-    team1: "TBD",
-    logo1: "/teams/team3.png",
-    team2: "TBD",
-    logo2: "/teams/team4.png",
+    team1: { name: "TEAM 3", logo: "/teams/team3.png" },
+    team2: { name: "TEAM 4", logo: "/teams/team4.png" },
+    score1: 0,
+    score2: 0,
   },
   {
-    team1: "TBD",
-    logo1: "/teams/team5.png",
-    team2: "TBD",
-    logo2: "/teams/team6.png",
+    team1: { name: "TEAM 5", logo: "/teams/team5.png" },
+    team2: { name: "TEAM 6", logo: "/teams/team6.png" },
+    score1: 0,
+    score2: 0,
   },
   {
-    team1: "TBD",
-    logo1: "/teams/team7.png",
-    team2: "TBD",
-    logo2: "/teams/team8.png",
+    team1: { name: "TEAM 7", logo: "/teams/team7.png" },
+    team2: { name: "TEAM 8", logo: "/teams/team8.png" },
+    score1: 0,
+    score2: 0,
+  },
+  {
+    team1: { name: "TEAM 9", logo: "/teams/team9.png" },
+    team2: { name: "TEAM 10", logo: "/teams/team10.png" },
+    score1: 0,
+    score2: 0,
+  },
+  {
+    team1: { name: "TEAM 11", logo: "/teams/team11.png" },
+    team2: { name: "TEAM 12", logo: "/teams/team12.png" },
+    score1: 0,
+    score2: 0,
+  },
+  {
+    team1: { name: "TEAM 13", logo: "/teams/team13.png" },
+    team2: { name: "TEAM 14", logo: "/teams/team14.png" },
+    score1: 0,
+    score2: 0,
+  },
+  {
+    team1: { name: "TEAM 15", logo: "/teams/team15.png" },
+    team2: { name: "TEAM 16", logo: "/teams/team16.png" },
+    score1: 0,
+    score2: 0,
   },
 ]
+useEffect(() => {
+  const winnersOctavos = octavos.map((m) => {
+    if (m.score1 >= 1) return m.team1
+    if (m.score2 >= 1) return m.team2
+    return null
+  })
+
+  setCuartos([
+    {
+      team1: winnersOctavos[0],
+      team2: winnersOctavos[1],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winnersOctavos[2],
+      team2: winnersOctavos[3],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winnersOctavos[4],
+      team2: winnersOctavos[5],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winnersOctavos[6],
+      team2: winnersOctavos[7],
+      score1: 0,
+      score2: 0,
+    },
+  ])
+}, [octavos])
+
+useEffect(() => {
+  const winners = cuartos.map((m) => {
+    if (m.score1 >= 2) return m.team1
+    if (m.score2 >= 2) return m.team2
+    return null
+  })
+
+  setSemis([
+    {
+      team1: winners[0],
+      team2: winners[1],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winners[2],
+      team2: winners[3],
+      score1: 0,
+      score2: 0,
+    },
+  ])
+}, [cuartos])
+
+useEffect(() => {
+  const winners = semis.map((m) => {
+    if (m.score1 >= 3) return m.team1
+    if (m.score2 >= 3) return m.team2
+    return null
+  })
+
+  setFinal([
+    {
+      team1: winners[0],
+      team2: winners[1],
+      score1: 0,
+      score2: 0,
+    },
+  ])
+}, [semis])
+
+useEffect(() => {
+  if (!final[0]) return
+
+  if (final[0].score1 >= 3) {
+    setChampion(final[0].team1)
+  }
+
+  if (final[0].score2 >= 3) {
+    setChampion(final[0].team2)
+  }
+}, [final])
 
 
 export default function LotusRift() {
+
+  const [octavos, setOctavos] = useState(initialOctavos)
+const [cuartos, setCuartos] = useState<any[]>([])
+const [semis, setSemis] = useState<any[]>([])
+const [final, setFinal] = useState<any[]>([])
+const [champion, setChampion] = useState<any>(null)
+useEffect(() => {
+  const winnersOctavos = octavos.map((m) => {
+    if (m.score1 >= 1) return m.team1
+    if (m.score2 >= 1) return m.team2
+    return null
+  })
+
+  setCuartos([
+    {
+      team1: winnersOctavos[0],
+      team2: winnersOctavos[1],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winnersOctavos[2],
+      team2: winnersOctavos[3],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winnersOctavos[4],
+      team2: winnersOctavos[5],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winnersOctavos[6],
+      team2: winnersOctavos[7],
+      score1: 0,
+      score2: 0,
+    },
+  ])
+}, [octavos])
+
+useEffect(() => {
+  const winners = cuartos.map((m) => {
+    if (m.score1 >= 2) return m.team1
+    if (m.score2 >= 2) return m.team2
+    return null
+  })
+
+  setSemis([
+    {
+      team1: winners[0],
+      team2: winners[1],
+      score1: 0,
+      score2: 0,
+    },
+    {
+      team1: winners[2],
+      team2: winners[3],
+      score1: 0,
+      score2: 0,
+    },
+  ])
+}, [cuartos])
+
+useEffect(() => {
+  const winners = semis.map((m) => {
+    if (m.score1 >= 3) return m.team1
+    if (m.score2 >= 3) return m.team2
+    return null
+  })
+
+  setFinal([
+    {
+      team1: winners[0],
+      team2: winners[1],
+      score1: 0,
+      score2: 0,
+    },
+  ])
+}, [semis])
+
+useEffect(() => {
+  if (!final[0]) return
+
+  if (final[0].score1 >= 3) {
+    setChampion(final[0].team1)
+  }
+
+  if (final[0].score2 >= 3) {
+    setChampion(final[0].team2)
+  }
+}, [final])
+
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
       {/* BACKGROUND */}
@@ -173,402 +377,153 @@ export default function LotusRift() {
       </section>
 
 
-      {/* BRACKET */}
-<section
-  id="bracket"
-  className="relative py-24 px-6 overflow-hidden border-y border-white/5"
->
+      <section className="py-24 overflow-x-auto">
 
+  <div className="min-w-[1700px] flex justify-center gap-20">
 
-  {/* BACKGROUND */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.14),transparent_60%)]" />
-
-
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-violet-500/10 blur-3xl animate-pulse" />
-
-
-  {/* PARTICLES */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-
-    {[...Array(25)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute w-1 h-1 bg-violet-400/30 rounded-full animate-pulse"
-        style={{
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 4}s`,
-          animationDuration: `${3 + Math.random() * 5}s`
-        }}
-      />
-    ))}
-
-
-  </div>
-
-
-  <div className="max-w-[1700px] mx-auto relative z-10">
-
-
-    {/* TITLE */}
-    <div className="mb-16 text-center">
-
-
-      <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
-        LOTUS ARENA
-      </p>
-
-
-      <h2 className="text-6xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
-        BRACKET
+    {/* OCTAVOS */}
+    <div className="space-y-6">
+      <h2 className="text-center font-black text-violet-300">
+        OCTAVOS
       </h2>
 
+      {octavos.map((match, i) => (
+        <MatchCard
+          key={i}
+          match={match}
+          round="octavos"
+          onScore={(team: number) => {
+            const updated = [...octavos]
 
-      <div className="mt-5 w-40 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent mx-auto" />
+            if (team === 1)
+              updated[i].score1 = 1
 
+            if (team === 2)
+              updated[i].score2 = 1
 
+            setOctavos(updated)
+          }}
+        />
+      ))}
     </div>
 
-
-    <div className="overflow-x-auto">
-
-
-      <div className="min-w-[1450px] flex items-center justify-center gap-16">
-
-
-        {/* OCTAVOS */}
-        <div className="flex flex-col justify-center">
-
-
-          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-            OCTAVOS
-          </h3>
-
-
-          <div className="space-y-6">
-
-
-            {[1,2,3,4,5,6,7,8].map((item) => (
-              <div
-                key={item}
-                className="w-[260px] rounded-2xl bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-5 hover:border-violet-500/40 hover:scale-[1.02] transition duration-300"
-              >
-
-
-                <div className="space-y-3">
-
-
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold">
-                      TBD
-                    </span>
-
-
-                    <span className="text-violet-400">
-                      🪷
-                    </span>
-                  </div>
-
-
-                  <div className="h-px bg-white/5" />
-
-
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold">
-                      TBD
-                    </span>
-
-
-                    <span className="text-violet-400">
-                      🪷
-                    </span>
-                  </div>
-
-
-                </div>
-
-
-              </div>
-            ))}
-
-
-          </div>
-
-
-        </div>
-
-
-        {/* CUARTOS */}
-        <div className="flex flex-col justify-center">
-
-
-          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-            CUARTOS
-          </h3>
-
-
-          <div className="space-y-20">
-
-
-            {[1,2,3,4].map((item) => (
-              <div key={item} className="relative">
-
-
-                {/* CONNECTOR */}
-                <div className="absolute -left-12 top-1/2 flex items-center">
-
-
-                  <div className="w-6 h-px bg-violet-500/40" />
-
-
-                  <div className="w-6 h-24 border-l border-b border-violet-500/20 rounded-bl-2xl" />
-
-
-                </div>
-
-
-                <div className="w-[280px] rounded-3xl bg-gradient-to-br from-violet-500/10 to-black border border-violet-500/20 p-6 shadow-[0_0_35px_rgba(168,85,247,0.12)] hover:scale-[1.02] transition duration-300">
-
-
-                  <div className="space-y-4">
-
-
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold">
-                        TBD
-                      </span>
-
-
-                      <span className="text-violet-400">
-                        ✦
-                      </span>
-                    </div>
-
-
-                    <div className="h-px bg-white/10" />
-
-
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold">
-                        TBD
-                      </span>
-
-
-                      <span className="text-violet-400">
-                        ✦
-                      </span>
-                    </div>
-
-
-                  </div>
-
-
-                </div>
-
-
-              </div>
-            ))}
-
-
-          </div>
-
-
-        </div>
-
-
-        {/* SEMIS */}
-        <div className="flex flex-col justify-center">
-
-
-          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-            SEMIFINALES
-          </h3>
-
-
-          <div className="space-y-44">
-
-
-            {[1,2].map((item) => (
-              <div key={item} className="relative">
-
-
-                {/* CONNECTOR */}
-                <div className="absolute -left-14 top-1/2 flex items-center">
-
-
-                  <div className="w-7 h-px bg-pink-400/40" />
-
-
-                  <div className="w-7 h-40 border-l border-b border-pink-400/20 rounded-bl-2xl" />
-
-
-                </div>
-
-
-                <div className="w-[300px] rounded-3xl bg-gradient-to-br from-pink-500/10 to-violet-500/10 border border-pink-400/20 p-7 shadow-[0_0_45px_rgba(168,85,247,0.18)] hover:scale-[1.02] transition duration-300">
-
-
-                  <div className="space-y-4">
-
-
-                    <div className="flex items-center justify-between">
-                      <span className="font-black text-lg">
-                        TBD
-                      </span>
-
-
-                      <span className="text-pink-300">
-                        ✦
-                      </span>
-                    </div>
-
-
-                    <div className="h-px bg-white/10" />
-
-
-                    <div className="flex items-center justify-between">
-                      <span className="font-black text-lg">
-                        TBD
-                      </span>
-
-
-                      <span className="text-pink-300">
-                        ✦
-                      </span>
-                    </div>
-
-
-                  </div>
-
-
-                </div>
-
-
-              </div>
-            ))}
-
-
-          </div>
-
-
-        </div>
-
-
-        {/* FINAL */}
-        <div className="flex flex-col justify-center">
-
-
-          <h3 className="mb-8 text-center font-bold text-pink-300 tracking-[0.2em]">
-            FINAL
-          </h3>
-
-
-          <div className="relative">
-
-
-            {/* GLOW */}
-            <div className="absolute inset-0 bg-violet-500/30 blur-3xl rounded-full animate-pulse" />
-
-
-            <div className="relative w-[340px] rounded-[2rem] border border-pink-400/30 bg-gradient-to-br from-pink-500/20 via-violet-500/10 to-black p-10 shadow-[0_0_70px_rgba(168,85,247,0.3)] backdrop-blur-2xl">
-
-
-              {/* LOTUS CORE */}
-              <div className="text-center mb-10">
-
-
-                <div className="relative w-28 h-28 mx-auto mb-6">
-
-
-                  <div className="absolute inset-0 rounded-full bg-violet-500/30 blur-2xl animate-pulse" />
-
-
-                  <div className="relative w-full h-full rounded-full border border-violet-400/40 bg-gradient-to-br from-pink-500/20 to-violet-500/20 flex items-center justify-center text-5xl shadow-[0_0_60px_rgba(168,85,247,0.45)]">
-                    🪷
-                  </div>
-
-
-                </div>
-
-
-                <p className="text-pink-300 tracking-[0.3em] text-sm mb-3">
-                  LOTUS RIFT 2026
-                </p>
-
-
-                <h4 className="text-5xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
-                  FINAL
-                </h4>
-
-
-              </div>
-
-
-              {/* TEAMS */}
-              <div className="space-y-5">
-
-
-                <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
-                  <span className="font-bold text-xl">
-                    TBD
-                  </span>
-
-
-                  <span className="text-pink-300">
-                    🪷
-                  </span>
-                </div>
-
-
-                <div className="flex justify-center">
-
-
-                  <div className="px-5 py-2 rounded-xl bg-black/50 border border-violet-500/20 font-black text-violet-300">
-                    BO5
-                  </div>
-
-
-                </div>
-
-
-                <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
-                  <span className="font-bold text-xl">
-                    TBD
-                  </span>
-
-
-                  <span className="text-pink-300">
-                    🪷
-                  </span>
-                </div>
-
-
-              </div>
-
-
-              <div className="mt-8 text-center text-zinc-500 text-sm tracking-[0.2em]">
-                Quien se lleva el 🪷?
-              </div>
-
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
+    {/* CUARTOS */}
+    <div className="space-y-20 mt-24">
+      <h2 className="text-center font-black text-violet-300">
+        CUARTOS
+      </h2>
+
+      {cuartos.map((match, i) => (
+        <MatchCard
+          key={i}
+          match={match}
+          round="cuartos"
+          onScore={(team: number) => {
+            const updated = [...cuartos]
+
+            if (team === 1)
+              updated[i].score1++
+
+            if (team === 2)
+              updated[i].score2++
+
+            setCuartos(updated)
+          }}
+        />
+      ))}
     </div>
 
+    {/* SEMIS */}
+    <div className="space-y-44 mt-52">
+      <h2 className="text-center font-black text-pink-300">
+        SEMIFINALES
+      </h2>
+
+      {semis.map((match, i) => (
+        <MatchCard
+          key={i}
+          match={match}
+          round="semis"
+          onScore={(team: number) => {
+            const updated = [...semis]
+
+            if (team === 1)
+              updated[i].score1++
+
+            if (team === 2)
+              updated[i].score2++
+
+            setSemis(updated)
+          }}
+        />
+      ))}
+    </div>
+
+    {/* FINAL */}
+    <div className="mt-[350px] relative">
+
+      <h2 className="text-center font-black text-pink-300 mb-10">
+        FINAL
+      </h2>
+
+      {final.map((match, i) => (
+        <MatchCard
+          key={i}
+          match={match}
+          round="final"
+          onScore={(team: number) => {
+            const updated = [...final]
+
+            if (team === 1)
+              updated[i].score1++
+
+            if (team === 2)
+              updated[i].score2++
+
+            setFinal(updated)
+          }}
+        />
+      ))}
+
+      <AnimatePresence>
+        {champion && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            exit={{ opacity: 0 }}
+            className="absolute top-[-220px] left-1/2 -translate-x-1/2 text-center"
+          >
+            <motion.div
+              animate={{
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+              }}
+              className="w-44 h-44 rounded-full bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-[0_0_120px_rgba(255,0,180,0.6)]"
+            >
+              <Crown size={80} />
+            </motion.div>
+
+            <h2 className="mt-6 text-5xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+              {champion.name}
+            </h2>
+
+            <p className="mt-2 tracking-[0.3em] text-pink-300">
+              CAMPEÓN
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </div>
 
   </div>
-
 
 </section>
 
