@@ -124,7 +124,7 @@ const roundGlow =
  <div
   className={`
     relative
-    w-[240px]
+    w-[210px]
     rounded-[2rem]
     border
     ${cardStyles}
@@ -654,7 +654,7 @@ export default function LotusRift() {
       </h2>
     </div>
 
-    <div className="min-w-[1350px] grid grid-cols-4 gap-16">
+    <div className="min-w-[1200px] grid grid-cols-4 gap-16">
 
       {/* OCTAVOS */}
       <div>
@@ -682,7 +682,7 @@ export default function LotusRift() {
           CUARTOS
         </h2>
 
-        <div className="flex flex-col gap-[9rem] pt-[7rem]">
+        <div className="flex flex-col gap-[7rem] pt-[5rem]">
           {cuartos.map((match, i) => (
             <MatchCard
               key={i}
@@ -702,7 +702,7 @@ export default function LotusRift() {
           SEMIFINALES
         </h2>
 
-        <div className="flex flex-col gap-[18rem] pt-[16rem]">
+        <div className="flex flex-col gap-[13.5rem] pt-[10.5rem]">
           {semis.map((match, i) => (
             <MatchCard
               key={i}
@@ -722,7 +722,7 @@ export default function LotusRift() {
           FINAL
         </h2>
 
-        <div className="pt-[26rem] flex justify-center">
+        <div className="pt-[17rem] flex justify-center">
           {final.map((match, i) => (
             <MatchCard
               key={i}
