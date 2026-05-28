@@ -121,7 +121,7 @@ const roundGlow =
   ">
 
     <div className={`absolute inset-0 bg-gradient-to-br ${roundGlow}`} />
-    
+
         {[1, 2].map((teamNum) => {
           const isWinner =
             teamNum === 1
@@ -427,36 +427,54 @@ export default function LotusRift() {
 
   return (
     <main className="min-h-screen bg-[#050507] text-white overflow-hidden">
-      {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 12,
-          }}
-          className="absolute top-[-20%] left-[-10%] w-[700px] h-[700px] bg-pink-500/20 blur-[180px] rounded-full"
-        />
 
+  {/* BACKGROUND */}
+  <div className="fixed inset-0 -z-10 overflow-hidden">
 
-        <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 14,
-          }}
-          className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] bg-fuchsia-600/20 blur-[180px] rounded-full"
-        />
+    <motion.div
+      animate={{
+        x: [0, 70, 0],
+        y: [0, -50, 0],
+        scale: [1, 1.08, 1],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 14,
+        ease: "easeInOut",
+      }}
+      className="absolute top-[-20%] left-[-10%] w-[750px] h-[750px] bg-pink-500/20 blur-[180px] rounded-full"
+    />
 
+    <motion.div
+      animate={{
+        x: [0, -80, 0],
+        y: [0, 60, 0],
+        scale: [1, 1.12, 1],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 16,
+        ease: "easeInOut",
+      }}
+      className="absolute bottom-[-20%] right-[-10%] w-[750px] h-[750px] bg-fuchsia-600/20 blur-[180px] rounded-full"
+    />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.15),transparent_50%)]" />
+    <motion.div
+      animate={{
+        scale: [1, 1.15, 1],
+        opacity: [0.2, 0.4, 0.2],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 10,
+        ease: "easeInOut",
+      }}
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] bg-violet-500/10 blur-[180px] rounded-full"
+    />
 
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.12),transparent_55%)]" />
+
+  </div>
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-violet-500/10 blur-[180px] rounded-full" />
 
