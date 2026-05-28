@@ -83,10 +83,28 @@ const MatchCard = ({
 
   return (
     <div className="relative group">
-      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-pink-500/10 via-fuchsia-500/10 to-violet-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
+  <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-pink-500/10 via-fuchsia-500/10 to-violet-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
-      <div className="relative w-[280px] rounded-[2rem] border border-pink-500/15 bg-black/60 backdrop-blur-xl p-5 shadow-[0_0_40px_rgba(255,0,170,0.08)]">
+  <div className="
+    relative
+    w-[250px]
+    rounded-[2rem]
+    border
+    border-pink-500/20
+    bg-gradient-to-br
+    from-[#120914]/95
+    via-[#1a1023]/90
+    to-[#09090f]/95
+    backdrop-blur-2xl
+    p-5
+    shadow-[0_0_45px_rgba(255,0,180,0.12)]
+    overflow-hidden
+  ">
+
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,0,180,0.12),transparent_45%)]" />
+
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.12),transparent_45%)]" />
         {[1, 2].map((teamNum) => {
           const isWinner =
             teamNum === 1
