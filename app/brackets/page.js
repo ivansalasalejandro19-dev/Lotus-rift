@@ -759,4 +759,84 @@ export default function LotusRift() {
             .map((match, index) => (
               <div
                 key={index}
-                className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between hover:border-pink-500/30 tr
+                className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between hover:border-pink-500/30 transition-all duration-300"
+              >
+                <div>
+                  <p className="text-pink-300 font-bold">
+                    19:00
+                  </p>
+
+                  <p className="text-zinc-500 text-sm">
+                    4 DE JULIO
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <img
+                    src={match.team1.logo}
+                    className="w-10 h-10 rounded-xl object-cover"
+                  />
+
+                  <span className="font-semibold">
+                    {match.team1.name}
+                  </span>
+                </div>
+
+                <div className="text-pink-400 font-black text-2xl">
+                  VS
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <span className="font-semibold">
+                    {match.team2.name}
+                  </span>
+
+                  <img
+                    src={match.team2.logo}
+                    className="w-10 h-10 rounded-xl object-cover"
+                  />
+                </div>
+
+                <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
+                  VER DETALLES
+                </button>
+              </div>
+            ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-pink-500/10 bg-black/40 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h2 className="text-2xl font-black tracking-[0.3em] bg-gradient-to-r from-pink-400 via-fuchsia-300 to-pink-200 bg-clip-text text-transparent">
+              LOTUS RIFT
+            </h2>
+
+            <p className="text-zinc-500 text-sm mt-2">
+              Torneo competitivo de Wild Rift
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="https://discord.gg/nVyrHkeCn5"
+              target="_blank"
+              className="px-6 py-3 rounded-2xl border border-pink-500/20 bg-white/5 hover:bg-white/10 transition-all"
+            >
+              Discord
+            </a>
+
+            <a
+              href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
+              target="_blank"
+              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all"
+            >
+              Comunidad
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
+}
