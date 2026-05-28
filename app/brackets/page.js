@@ -100,9 +100,26 @@ const roundGlow =
 
 
   return (
-    <div className="relative group">
+    <div className="relative group flex justify-center">
 
-  <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-pink-500/10 via-fuchsia-500/10 to-violet-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+      <div
+  className="
+    absolute
+    inset-[-12px]
+    rounded-[2.5rem]
+    bg-gradient-to-r
+    from-pink-500/20
+    via-fuchsia-500/20
+    to-violet-500/20
+    blur-3xl
+    opacity-0
+    group-hover:opacity-100
+    transition-all
+    duration-500
+    -z-10
+    pointer-events-none
+  "
+/>
 
  <div
   className={`
@@ -111,18 +128,15 @@ const roundGlow =
     rounded-[2rem]
     border
     ${cardStyles}
-    bg-gradient-to-br
-    from-[#120914]/95
-    via-[#1a1023]/90
-    to-[#09090f]/95
+    bg-[#120914]/90
     backdrop-blur-2xl
     p-5
-    shadow-[0_0_45px_rgba(255,0,180,0.12)]
-    overflow-hidden
+    overflow-visible
+    isolate
   `}
 >
 
-    <div className={`absolute inset-0 bg-gradient-to-br ${roundGlow}`} />
+    <div className={`absolute inset-0 rounded-[2rem] bg-gradient-to-br ${roundGlow} opacity-70`} />
 
         {[1, 2].map((teamNum) => {
           const isWinner =
@@ -431,7 +445,7 @@ export default function LotusRift() {
 
 
   return (
-    <main className="min-h-screen bg-[#050507] text-white overflow-hidden">
+    <main className="min-h-screen bg-[#050507] text-white overflow-visible">
 
   {/* BACKGROUND */}
   <div className="fixed inset-0 -z-10 overflow-hidden">
