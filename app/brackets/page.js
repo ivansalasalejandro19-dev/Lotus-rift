@@ -151,11 +151,10 @@ useEffect(() => {
 
 export default function LotusRift() {
 
-  const [octavos, setOctavos] = useState(initialOctavos)
-const [cuartos, setCuartos] = useState<any[]>([])
-const [semis, setSemis] = useState<any[]>([])
-const [final, setFinal] = useState<any[]>([])
-const [champion, setChampion] = useState<any>(null)
+  const [cuartos, setCuartos] = useState([])
+const [semis, setSemis] = useState([])
+const [final, setFinal] = useState([])
+const [champion, setChampion] = useState(null)
 useEffect(() => {
   const winnersOctavos = octavos.map((m) => {
     if (m.score1 >= 1) return m.team1
@@ -392,7 +391,7 @@ useEffect(() => {
           key={i}
           match={match}
           round="octavos"
-          onScore={(team: number) => {
+          onScore={(team) => {
             const updated = [...octavos]
 
             if (team === 1)
@@ -418,7 +417,7 @@ useEffect(() => {
           key={i}
           match={match}
           round="cuartos"
-          onScore={(team: number) => {
+          onScore={(team) => {
             const updated = [...cuartos]
 
             if (team === 1)
@@ -444,7 +443,7 @@ useEffect(() => {
           key={i}
           match={match}
           round="semis"
-          onScore={(team: number) => {
+          onScore={(team) => {
             const updated = [...semis]
 
             if (team === 1)
@@ -471,7 +470,7 @@ useEffect(() => {
           key={i}
           match={match}
           round="final"
-          onScore={(team: number) => {
+          onScore={(team) => {
             const updated = [...final]
 
             if (team === 1)
