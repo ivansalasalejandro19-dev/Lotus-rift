@@ -108,10 +108,10 @@ const roundGlow =
     inset-[-12px]
     rounded-[2.5rem]
     bg-gradient-to-r
-    from-pink-500/20
+    from-pink-500/10
     via-fuchsia-500/20
     to-violet-500/20
-    blur-3xl
+    blur-2xl
     opacity-0
     group-hover:opacity-100
     transition-all
@@ -124,7 +124,7 @@ const roundGlow =
  <div
   className={`
     relative
-    w-[210px]
+    w-[185px]
     rounded-[2rem]
     border
     ${cardStyles}
@@ -174,7 +174,7 @@ const roundGlow =
                 justify-between
                 rounded-2xl
                 px-4
-                py-4
+                py-3
                 mb-3
                 border
                 transition-all
@@ -226,7 +226,7 @@ const roundGlow =
 
 
                 <div>
-                  <p className="font-black text-[15px] tracking-wide uppercase">
+                  <p className="font-black text-[13px] tracking-wide uppercase">
                     {team?.name || "TBD"}
                   </p>
 
@@ -682,7 +682,7 @@ export default function LotusRift() {
           CUARTOS
         </h2>
 
-        <div className="flex flex-col gap-[7rem] pt-[5rem]">
+        <div className="flex flex-col gap-[5.5rem] pt-[4rem]>
           {cuartos.map((match, i) => (
             <MatchCard
               key={i}
@@ -702,7 +702,7 @@ export default function LotusRift() {
           SEMIFINALES
         </h2>
 
-        <div className="flex flex-col gap-[13.5rem] pt-[10.5rem]">
+        <div className="flex flex-col gap-[11rem] pt-[9rem]">
           {semis.map((match, i) => (
             <MatchCard
               key={i}
@@ -722,7 +722,7 @@ export default function LotusRift() {
           FINAL
         </h2>
 
-        <div className="pt-[17rem] flex justify-center">
+        <div className="pt-[14rem] flex justify-center">
           {final.map((match, i) => (
             <MatchCard
               key={i}
