@@ -655,40 +655,42 @@ export default function LotusRift() {
           </div>
 
 
-          <div className="min-w-[1200px] grid grid-cols-4 gap-10 items-center">
+         <div className="min-w-[1400px] grid grid-cols-4 gap-24 items-center">
 
   {/* OCTAVOS */}
-  <div className="flex flex-col gap-4">
-    <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-4">
+  <div className="flex flex-col">
+    <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
       OCTAVOS
     </h2>
 
-    {octavos.map((match, i) => (
-      <MatchCard
-        key={i}
-        match={match}
-        round="octavos"
-        onScore={(team, change) =>
-          updateScore(
-            setOctavos,
-            octavos,
-            i,
-            team,
-            change,
-            1
-          )
-        }
-      />
-    ))}
+    <div className="flex flex-col gap-6">
+      {octavos.map((match, i) => (
+        <MatchCard
+          key={i}
+          match={match}
+          round="octavos"
+          onScore={(team, change) =>
+            updateScore(
+              setOctavos,
+              octavos,
+              i,
+              team,
+              change,
+              1
+            )
+          }
+        />
+      ))}
+    </div>
   </div>
 
   {/* CUARTOS */}
-  <div className="flex flex-col justify-around h-full py-20">
-    <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-4">
+  <div className="flex flex-col">
+    <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
       CUARTOS
     </h2>
 
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-[7.5rem] pt-[5.5rem]">
       {cuartos.map((match, i) => (
         <MatchCard
           key={i}
@@ -710,12 +712,12 @@ export default function LotusRift() {
   </div>
 
   {/* SEMIS */}
-  <div className="flex flex-col justify-center h-full">
-    <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-4">
+  <div className="flex flex-col">
+    <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
       SEMIFINALES
     </h2>
 
-    <div className="flex flex-col gap-32">
+    <div className="flex flex-col gap-[15rem] pt-[13rem]">
       {semis.map((match, i) => (
         <MatchCard
           key={i}
@@ -737,28 +739,30 @@ export default function LotusRift() {
   </div>
 
   {/* FINAL */}
-  <div className="flex flex-col items-center justify-center relative">
+  <div className="flex flex-col items-center">
     <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
       FINAL
     </h2>
 
-    {final.map((match, i) => (
-      <MatchCard
-        key={i}
-        match={match}
-        round="final"
-        onScore={(team, change) =>
-          updateScore(
-            setFinal,
-            final,
-            i,
-            team,
-            change,
-            3
-          )
-        }
-      />
-    ))}
+    <div className="pt-[21rem]">
+      {final.map((match, i) => (
+        <MatchCard
+          key={i}
+          match={match}
+          round="final"
+          onScore={(team, change) =>
+            updateScore(
+              setFinal,
+              final,
+              i,
+              team,
+              change,
+              3
+            )
+          }
+        />
+      ))}
+    </div>
 
     <AnimatePresence>
       {champion && (
@@ -794,9 +798,10 @@ export default function LotusRift() {
           </p>
         </motion.div>
       )}
-            </AnimatePresence>
-      </div>
-    </div>
+    </AnimatePresence>
+  </div>
+
+</div>
   </div>
 </section>
 
