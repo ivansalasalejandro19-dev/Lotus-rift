@@ -783,6 +783,7 @@ export default function LotusRift() {
     </AnimatePresence>
   </div>
 </div>
+</section>
 
 
       {/* PROXIMOS PARTIDOS */}
