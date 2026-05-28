@@ -395,7 +395,7 @@ export default function LotusRift() {
 
 
                 <p className="text-zinc-500 text-sm">
-                  4 JULIO
+                  4 JULI
                 </p>
               </div>
 
