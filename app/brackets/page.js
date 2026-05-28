@@ -107,7 +107,7 @@ export default function LotusRift() {
             <div className="mt-10 flex flex-wrap gap-4">
               {/* WHATSAPP */}
               <a
-                href="https://chat.whatsapp.com/TULINK"
+                href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
                 target="_blank"
                 className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
               >
@@ -118,7 +118,7 @@ export default function LotusRift() {
 
               {/* DISCORD */}
               <a
-                href="https://discord.gg/TUSERVIDOR"
+                href="https://discord.gg/nVyrHkeCn5"
                 target="_blank"
                 className="px-8 py-4 rounded-2xl border border-pink-500/20 bg-white/5 hover:bg-white/10 transition-all flex items-center gap-2"
               >
