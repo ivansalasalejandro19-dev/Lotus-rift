@@ -66,7 +66,6 @@ const initialOctavos = [
 const MatchCard = ({
   match,
   round,
-  onScore,
 }) => {
 
 
@@ -78,11 +77,18 @@ const MatchCard = ({
       : 3
 
 
+  const winner1 = match.score1 >= needed
+  const winner2 = match.score2 >= needed
+
+
   return (
-    <div className="relative">
+    <div className="relative group">
 
 
-      <div className="w-[290px] rounded-3xl border border-violet-500/20 bg-black/60 backdrop-blur-xl p-5 shadow-[0_0_40px_rgba(168,85,247,0.15)]">
+      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-pink-500/10 via-fuchsia-500/10 to-violet-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+
+      <div className="relative w-[320px] rounded-[2rem] border border-pink-500/15 bg-black/60 backdrop-blur-xl p-5 shadow-[0_0_40px_rgba(255,0,170,0.08)]">
 
 
         {[1, 2].map((teamNum) => {
@@ -90,14 +96,14 @@ const MatchCard = ({
 
           const isWinner =
             teamNum === 1
-              ? match.score1 >= needed
-              : match.score2 >= needed
+              ? winner1
+              : winner2
 
 
           const isLoser =
             teamNum === 1
-              ? match.score2 >= needed
-              : match.score1 >= needed
+              ? winner2
+              : winner1
 
 
           const team =
@@ -106,45 +112,119 @@ const MatchCard = ({
               : match.team2
 
 
+          const score =
+            teamNum === 1
+              ? match.score1
+              : match.score2
+
+
           return (
             <div
               key={teamNum}
-              className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all mb-3 border ${
-                isWinner
-                  ? "border-pink-400 bg-pink-500/20 shadow-[0_0_30px_rgba(255,0,170,0.3)]"
-                  : "border-white/10 bg-white/[0.03]"
-              } ${isLoser ? "opacity-30 grayscale" : ""}`}
+              className={`
+                relative
+                overflow-hidden
+                flex
+                items-center
+                justify-between
+                rounded-2xl
+                px-4
+                py-4
+                mb-3
+                border
+                transition-all
+                duration-500
+
+
+                ${
+                  isWinner
+                    ? "border-pink-400 bg-gradient-to-r from-pink-500/30 to-fuchsia-500/20 shadow-[0_0_40px_rgba(255,0,180,0.35)] scale-[1.02]"
+                    : "border-white/10 bg-white/[0.03]"
+                }
+
+
+                ${
+                  isLoser
+                    ? "opacity-25 grayscale saturate-0"
+                    : ""
+                }
+              `}
             >
 
 
-              <div className="flex items-center gap-3">
+              {isWinner && (
+                <div className="absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.08),transparent)] animate-[shine_3s_linear_infinite]" />
+              )}
 
 
-                <img
-                  src={team?.logo || "/teams/placeholder.png"}
-                  className="w-11 h-11 rounded-xl object-cover border border-white/10"
-                />
+              <div className="relative flex items-center gap-4">
 
 
-                <span className="font-bold">
-                  {team?.name || "TBD"}
-                </span>
+                <div className={`
+                  relative
+                  rounded-2xl
+                  p-[2px]
+
+
+                  ${
+                    isWinner
+                      ? "bg-gradient-to-br from-pink-400 to-violet-400"
+                      : "bg-white/10"
+                  }
+                `}>
+
+
+                  <img
+                    src={team?.logo || "/teams/placeholder.png"}
+                    className="w-14 h-14 rounded-2xl object-cover bg-black"
+                  />
+
+
+                </div>
+
+
+                <div>
+                  <p className="font-black text-[15px] tracking-wide uppercase">
+                    {team?.name || "TBD"}
+                  </p>
+
+
+                  <p className="text-xs text-zinc-500 uppercase tracking-[0.2em]">
+                    TEAM
+                  </p>
+                </div>
 
 
               </div>
 
 
-              <button
-                onClick={() => onScore(teamNum)}
-                className="w-9 h-9 rounded-xl bg-violet-500/20 hover:bg-violet-500/40 font-black"
-              >
-                +
-              </button>
+              <div className={`
+                min-w-[52px]
+                h-[52px]
+                rounded-2xl
+                flex
+                items-center
+                justify-center
+                text-2xl
+                font-black
+                border
+
+
+                ${
+                  isWinner
+                    ? "bg-pink-500/20 border-pink-400 text-pink-200"
+                    : "bg-white/[0.03] border-white/10 text-white"
+                }
+              `}>
+                {score}
+              </div>
 
 
             </div>
           )
         })}
+
+
       </div>
     </div>
   )
@@ -278,17 +358,38 @@ export default function LotusRift() {
 
 
       {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-black" />
+      <div className="fixed inset-0 -z-10 overflow-hidden">
 
 
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-pink-500/20 blur-[180px] rounded-full" />
+        <motion.div
+          animate={{
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 12,
+          }}
+          className="absolute top-[-20%] left-[-10%] w-[700px] h-[700px] bg-pink-500/20 blur-[180px] rounded-full"
+        />
 
 
-        <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-fuchsia-600/20 blur-[180px] rounded-full" />
+        <motion.div
+          animate={{
+            x: [0, -60, 0],
+            y: [0, 40, 0],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 14,
+          }}
+          className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] bg-fuchsia-600/20 blur-[180px] rounded-full"
+        />
 
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.15),transparent_50%)]" />
+
+
       </div>
 
 
@@ -346,7 +447,7 @@ export default function LotusRift() {
 
 
             <p className="mt-7 text-zinc-400 text-lg max-w-xl">
-              Unite a la comunidad de Discord y disfrutá del bracket en vivo de Wild Rift.
+              Unite a la comunidad y seguí el bracket en vivo.
             </p>
 
 
@@ -374,13 +475,25 @@ export default function LotusRift() {
 
 
             </div>
+
+
           </motion.div>
 
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: [0, -12, 0],
+            }}
+            transition={{
+              duration: 0.8,
+              y: {
+                repeat: Infinity,
+                duration: 4,
+              }
+            }}
             className="relative"
           >
 
@@ -406,7 +519,7 @@ export default function LotusRift() {
       <section className="max-w-7xl mx-auto px-5 pb-24">
 
 
-        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 shadow-[0_0_80px_rgba(255,0,170,0.12)]">
+        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 shadow-[0_0_80px_rgba(255,0,170,0.12)] overflow-hidden">
 
 
           <div className="px-6 py-5 border-b border-pink-500/10 flex items-center gap-3">
@@ -435,145 +548,141 @@ export default function LotusRift() {
       <section className="py-24 overflow-x-auto">
 
 
-        <div className="min-w-[1700px] flex justify-center gap-20">
+        <div className="min-w-[1800px] px-20 flex items-center justify-center gap-28 relative">
+
+
+          {/* LINEAS */}
+          <div className="absolute inset-0 pointer-events-none opacity-30">
+
+
+            <div className="absolute left-[24%] top-0 h-full w-px bg-gradient-to-b from-transparent via-pink-500 to-transparent" />
+
+
+            <div className="absolute left-[49%] top-0 h-full w-px bg-gradient-to-b from-transparent via-violet-500 to-transparent" />
+
+
+            <div className="absolute left-[74%] top-0 h-full w-px bg-gradient-to-b from-transparent via-fuchsia-500 to-transparent" />
+
+
+          </div>
 
 
           {/* OCTAVOS */}
-          <div className="space-y-6">
+          <div className="flex flex-col gap-8">
 
 
-            <h2 className="text-center font-black text-violet-300">
+            <h2 className="text-center text-xl font-black tracking-[0.3em] text-violet-300 mb-4">
               OCTAVOS
             </h2>
 
 
             {octavos.map((match, i) => (
-              <MatchCard
-                key={i}
-                match={match}
-                round="octavos"
-                onScore={(team) => {
+              <div key={i} className="relative">
 
 
-                  const updated = [...octavos]
+                <div className="absolute -right-14 top-1/2 w-14 h-px bg-gradient-to-r from-pink-500 to-transparent" />
 
 
-                  if (team === 1)
-                    updated[i].score1 = 1
+                <MatchCard
+                  match={match}
+                  round="octavos"
+                />
 
 
-                  if (team === 2)
-                    updated[i].score2 = 1
-
-
-                  setOctavos(updated)
-                }}
-              />
+              </div>
             ))}
+
+
           </div>
 
 
           {/* CUARTOS */}
-          <div className="space-y-20 mt-24">
+          <div className="flex flex-col gap-28 mt-28">
 
 
-            <h2 className="text-center font-black text-violet-300">
+            <h2 className="text-center text-xl font-black tracking-[0.3em] text-violet-300 mb-4">
               CUARTOS
             </h2>
 
 
             {cuartos.map((match, i) => (
-              <MatchCard
-                key={i}
-                match={match}
-                round="cuartos"
-                onScore={(team) => {
+              <div key={i} className="relative">
 
 
-                  const updated = [...cuartos]
+                <div className="absolute -left-14 top-1/2 w-14 h-px bg-gradient-to-l from-violet-500 to-transparent" />
 
 
-                  if (team === 1)
-                    updated[i].score1++
+                <div className="absolute -right-14 top-1/2 w-14 h-px bg-gradient-to-r from-violet-500 to-transparent" />
 
 
-                  if (team === 2)
-                    updated[i].score2++
+                <MatchCard
+                  match={match}
+                  round="cuartos"
+                />
 
 
-                  setCuartos(updated)
-                }}
-              />
+              </div>
             ))}
+
+
           </div>
 
 
           {/* SEMIS */}
-          <div className="space-y-44 mt-52">
+          <div className="flex flex-col gap-[230px] mt-[180px]">
 
 
-            <h2 className="text-center font-black text-pink-300">
+            <h2 className="text-center text-xl font-black tracking-[0.3em] text-pink-300 mb-4">
               SEMIFINALES
             </h2>
 
 
             {semis.map((match, i) => (
-              <MatchCard
-                key={i}
-                match={match}
-                round="semis"
-                onScore={(team) => {
+              <div key={i} className="relative">
 
 
-                  const updated = [...semis]
+                <div className="absolute -left-14 top-1/2 w-14 h-px bg-gradient-to-l from-pink-500 to-transparent" />
 
 
-                  if (team === 1)
-                    updated[i].score1++
+                <div className="absolute -right-14 top-1/2 w-14 h-px bg-gradient-to-r from-pink-500 to-transparent" />
 
 
-                  if (team === 2)
-                    updated[i].score2++
+                <MatchCard
+                  match={match}
+                  round="semis"
+                />
 
 
-                  setSemis(updated)
-                }}
-              />
+              </div>
             ))}
+
+
           </div>
 
 
           {/* FINAL */}
-          <div className="mt-[350px] relative">
+          <div className="mt-[420px] relative">
 
 
-            <h2 className="text-center font-black text-pink-300 mb-10">
+            <h2 className="text-center text-xl font-black tracking-[0.3em] text-pink-300 mb-10">
               FINAL
             </h2>
 
 
             {final.map((match, i) => (
-              <MatchCard
-                key={i}
-                match={match}
-                round="final"
-                onScore={(team) => {
+              <div key={i} className="relative">
 
 
-                  const updated = [...final]
+                <div className="absolute -left-14 top-1/2 w-14 h-px bg-gradient-to-l from-fuchsia-500 to-transparent" />
 
 
-                  if (team === 1)
-                    updated[i].score1++
+                <MatchCard
+                  match={match}
+                  round="final"
+                />
 
 
-                  if (team === 2)
-                    updated[i].score2++
-
-
-                  setFinal(updated)
-                }}
-              />
+              </div>
             ))}
 
 
@@ -588,31 +697,31 @@ export default function LotusRift() {
                     scale: 1,
                   }}
                   exit={{ opacity: 0 }}
-                  className="absolute top-[-220px] left-1/2 -translate-x-1/2 text-center"
+                  className="absolute top-[-260px] left-1/2 -translate-x-1/2 text-center"
                 >
 
 
                   <motion.div
                     animate={{
-                      rotate: [0, 10, -10, 0],
-                      scale: [1, 1.15, 1],
+                      rotate: [0, 8, -8, 0],
+                      scale: [1, 1.08, 1],
                     }}
                     transition={{
                       repeat: Infinity,
-                      duration: 2,
+                      duration: 3,
                     }}
-                    className="w-44 h-44 rounded-full bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-[0_0_120px_rgba(255,0,180,0.6)]"
+                    className="w-48 h-48 rounded-full bg-gradient-to-br from-pink-500 via-fuchsia-500 to-violet-500 flex items-center justify-center shadow-[0_0_140px_rgba(255,0,180,0.55)]"
                   >
-                    <Crown size={80} />
+                    <Crown size={90} />
                   </motion.div>
 
 
-                  <h2 className="mt-6 text-5xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+                  <h2 className="mt-6 text-5xl font-black bg-gradient-to-r from-pink-300 via-fuchsia-200 to-violet-300 bg-clip-text text-transparent">
                     {champion.name}
                   </h2>
 
 
-                  <p className="mt-2 tracking-[0.3em] text-pink-300">
+                  <p className="mt-2 tracking-[0.4em] text-pink-300 text-sm">
                     CAMPEÓN
                   </p>
 
@@ -628,6 +737,92 @@ export default function LotusRift() {
 
 
         </div>
+
+
+        {/* PROXIMOS PARTIDOS */}
+        <div className="max-w-7xl mx-auto px-5 mt-28">
+
+
+          <div className="rounded-[2rem] border border-pink-500/20 bg-black/60 backdrop-blur-xl p-8 shadow-[0_0_70px_rgba(255,0,180,0.08)]">
+
+
+            <div className="flex items-center gap-3 mb-8">
+              <Play className="text-pink-400" />
+
+
+              <h3 className="text-3xl font-black uppercase">
+                Próximos Partidos
+              </h3>
+            </div>
+
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+              {octavos
+                .filter((m) => m.score1 === 0 && m.score2 === 0)
+                .slice(0, 6)
+                .map((match, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:border-pink-500/30 transition-all"
+                  >
+
+
+                    <div className="flex items-center justify-between">
+
+
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={match.team1.logo}
+                          className="w-10 h-10 rounded-lg object-cover"
+                        />
+
+
+                        <span className="font-bold">
+                          {match.team1.name}
+                        </span>
+                      </div>
+
+
+                      <span className="text-zinc-500 font-black">
+                        VS
+                      </span>
+
+
+                      <div className="flex items-center gap-3">
+
+
+                        <span className="font-bold">
+                          {match.team2.name}
+                        </span>
+
+
+                        <img
+                          src={match.team2.logo}
+                          className="w-10 h-10 rounded-lg object-cover"
+                        />
+
+
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+                ))}
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
       </section>
 
 

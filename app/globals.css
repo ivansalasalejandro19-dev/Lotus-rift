@@ -35,3 +35,12 @@ body {
     0 0 10px rgba(168,85,247,.5),
     0 0 20px rgba(236,72,153,.3);
 }
+@keyframes shine {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(120%);
+  }
+}
