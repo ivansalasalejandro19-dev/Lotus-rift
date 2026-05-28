@@ -780,9 +780,10 @@ export default function LotusRift() {
           </p>
         </motion.div>
       )}
-    </AnimatePresence>
+            </AnimatePresence>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
 
