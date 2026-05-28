@@ -123,13 +123,13 @@ const roundGlow =
  <div
   className={`
     relative
-    w-[240px]
+    w-[220px]
     rounded-[2rem]
     border
     ${cardStyles}
     bg-[#120914]/90
     backdrop-blur-2xl
-    p-5
+    p-3
     overflow-visible
     isolate
   `}
@@ -173,7 +173,7 @@ const roundGlow =
                 justify-between
                 rounded-2xl
                 px-4
-                py-4
+                py-2
                 mb-3
                 border
                 transition-all
@@ -217,15 +217,15 @@ const roundGlow =
                   <Image
   src={team?.logo || "/teams/placeholder.png"}
   alt={team?.name || "Team"}
-  width={42}
-  height={42}
+  width={28}
+  height={28}
   className="rounded-2xl object-cover bg-black"
 />
                 </div>
 
 
                 <div>
-                  <p className="font-black text-[13px] tracking-wide uppercase">
+                  <p className="font-black text-[11px] tracking-wide uppercase">
                     {team?.name || "TBD"}
                   </p>
 
@@ -240,7 +240,7 @@ const roundGlow =
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => onScore(teamNum, -1)}
-                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10"
+                  className="w-6 h-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10"
                 >
                   -
                 </button>
@@ -248,13 +248,13 @@ const roundGlow =
 
                 <div
                   className={`
-                min-w-[52px]
-                h-[52px]
+                min-w-[28px]
+                h-[28px]
                 rounded-2xl
                 flex
                 items-center
                 justify-center
-                text-2xl
+                text-sm
                 font-black
                 border
 
@@ -775,7 +775,7 @@ export default function LotusRift() {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
                   <Image
   src={match.team1.logo}
   alt={match.team1.name}
