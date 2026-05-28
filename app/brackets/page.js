@@ -11,7 +11,7 @@ import {
 } from "lucide-react"
 
 
-const quarterFinals = [const initialOctavos = [
+const initialOctavos = [
   {
     team1: { name: "TEAM 1", logo: "/teams/team1.png" },
     team2: { name: "TEAM 2", logo: "/teams/team2.png" },
