@@ -45,6 +45,12 @@ export default function LotusRiftSite() {
             </h1>
 
 
+            <p className="text-xs text-zinc-400 tracking-[0.4em]">
+              Torneo LAN
+            </p>
+          </div>
+
+
           <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-300">
             <a href="#schedule" className="hover:text-violet-400 transition">
               Partidos
