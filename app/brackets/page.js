@@ -123,7 +123,7 @@ const roundGlow =
  <div
   className={`
     relative
-    w-[220px]
+    w-[190px]
     rounded-[2rem]
     border
     ${cardStyles}
@@ -172,7 +172,7 @@ const roundGlow =
                 items-center
                 justify-between
                 rounded-2xl
-                px-4
+                px-3
                 py-2
                 mb-3
                 border
@@ -199,7 +199,7 @@ const roundGlow =
               )}
 
 
-              <div className="relative flex items-center gap-4">
+              <div className="relative flex items-center gap-2">
                 <div
                   className={`
                   relative
@@ -653,15 +653,15 @@ export default function LotusRift() {
       </h2>
     </div>
 
-    <div className="min-w-[1250px] grid grid-cols-4 gap-20 items-start">
+    <div className="min-w-[1450px] flex items-center justify-center gap-24">
 
       {/* OCTAVOS */}
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center">
         <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
           OCTAVOS
         </h2>
 
-        <div className="flex flex-col gap-6">
+        <div className="space-y-6">
           {octavos.map((match, i) => (
             <MatchCard
               key={i}
@@ -681,17 +681,29 @@ export default function LotusRift() {
           CUARTOS
         </h2>
 
-        <div className="flex flex-col gap-[8.3rem] pt-[5.2rem]">
-          {cuartos.map((match, i) => (
-            <MatchCard
-              key={i}
-              match={match}
-              round="cuartos"
-              onScore={(team, change) =>
-                updateScore(setCuartos, cuartos, i, team, change, 2)
-              }
-            />
-          ))}
+        <div className="space-y-20 pt-[6rem]">
+         {cuartos.map((match, i) => (
+  <div key={i} className="relative">
+
+    {/* CONECTOR */}
+    <div className="absolute -left-14 top-1/2 flex items-center">
+
+      <div className="w-7 h-px bg-pink-500/30" />
+
+      <div className="w-7 h-24 border-l border-b border-pink-500/20 rounded-bl-2xl" />
+
+    </div>
+
+    <MatchCard
+      match={match}
+      round="cuartos"
+      onScore={(team, change) =>
+        updateScore(setCuartos, cuartos, i, team, change, 2)
+      }
+    />
+
+  </div>
+))}
         </div>
       </div>
 
@@ -701,39 +713,76 @@ export default function LotusRift() {
           SEMIFINALES
         </h2>
 
-        <div className="flex flex-col gap-[17rem] pt-[13.5rem]">
+        <div className="space-y-44 pt-[15rem]">
           {semis.map((match, i) => (
-            <MatchCard
-              key={i}
-              match={match}
-              round="semis"
-              onScore={(team, change) =>
-                updateScore(setSemis, semis, i, team, change, 3)
-              }
-            />
+          <div key={i} className="relative">
+
+  <div className="absolute -left-20 top-1/2 -translate-y-1/2">
+
+  {/* glow */}
+  <div className="absolute inset-0 blur-xl bg-fuchsia-500/20" />
+
+  {/* linea horizontal */}
+  <div className="absolute left-0 top-1/2 w-10 h-px bg-gradient-to-r from-fuchsia-500/70 to-transparent" />
+
+  {/* curva superior */}
+  <div className="absolute left-10 -top-20 w-10 h-20 border-r border-b border-fuchsia-500/30 rounded-br-3xl" />
+
+  {/* curva inferior */}
+  <div className="absolute left-10 top-0 w-10 h-20 border-r border-t border-fuchsia-500/30 rounded-tr-3xl" />
+
+</div>
+
+  <MatchCard
+    match={match}
+    round="semis"
+    onScore={(team, change) =>
+      updateScore(setSemis, semis, i, team, change, 3)
+    }
+  />
+</div>
           ))}
         </div>
       </div>
 
-      {/* FINAL */}
-      <div className="flex flex-col items-center">
-        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
-          FINAL
-        </h2>
+     {/* FINAL */}
+<div className="flex flex-col items-center">
+  <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
+    FINAL
+  </h2>
 
-        <div className="pt-[22rem]">
-          {final.map((match, i) => (
-            <MatchCard
-              key={i}
-              match={match}
-              round="final"
-              onScore={(team, change) =>
-                updateScore(setFinal, final, i, team, change, 3)
-              }
-            />
-          ))}
-        </div>
-      </div>
+  <div className="pt-[22rem] relative flex items-center justify-center">
+
+    {/* FINAL GLOW */}
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="w-[500px] h-[500px] bg-fuchsia-500/30 blur-[200px] rounded-full animate-pulse" />
+
+    {/* CONECTOR FINAL */}
+    <div className="absolute -left-24 top-1/2 -translate-y-1/2">
+
+      <div className="absolute inset-0 blur-2xl bg-pink-500/20" />
+
+      <div className="absolute left-0 top-1/2 w-14 h-px bg-gradient-to-r from-pink-500/80 to-transparent" />
+
+      <div className="absolute left-14 -top-28 w-14 h-28 border-r border-b border-pink-500/30 rounded-br-[40px]" />
+
+      <div className="absolute left-14 top-0 w-14 h-28 border-r border-t border-pink-500/30 rounded-tr-[40px]" />
+
+    </div>
+
+    {final.map((match, i) => (
+      <MatchCard
+        key={i}
+        match={match}
+        round="final"
+        onScore={(team, change) =>
+          updateScore(setFinal, final, i, team, change, 3)
+        }
+      />
+    ))}
+
+  </div>
+</div>
 
     </div>
   </div>
@@ -775,7 +824,7 @@ export default function LotusRift() {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-4">
                   <Image
   src={match.team1.logo}
   alt={match.team1.name}
