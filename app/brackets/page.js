@@ -682,7 +682,7 @@ export default function LotusRift() {
           CUARTOS
         </h2>
 
-        <div className="flex flex-col gap-[5.5rem] pt-[4rem]>
+        <div className="flex flex-col gap-[5.5rem] pt-[4rem]">
           {cuartos.map((match, i) => (
             <MatchCard
               key={i}
