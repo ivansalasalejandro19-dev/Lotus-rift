@@ -756,6 +756,7 @@ export default function LotusRift() {
     {/* FINAL GLOW */}
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
       <div className="w-[500px] h-[500px] bg-fuchsia-500/30 blur-[200px] rounded-full animate-pulse" />
+</div>
 
     {/* CONECTOR FINAL */}
     <div className="absolute -left-24 top-1/2 -translate-y-1/2">
