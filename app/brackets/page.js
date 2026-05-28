@@ -98,7 +98,6 @@ const roundGlow =
   const winner1 = match.score1 >= needed
   const winner2 = match.score2 >= needed
 
-
   return (
     <div className="relative group flex justify-center">
 
@@ -124,7 +123,7 @@ const roundGlow =
  <div
   className={`
     relative
-    w-[185px]
+    w-[240px]
     rounded-[2rem]
     border
     ${cardStyles}
@@ -174,7 +173,7 @@ const roundGlow =
                 justify-between
                 rounded-2xl
                 px-4
-                py-3
+                py-4
                 mb-3
                 border
                 transition-all
@@ -640,7 +639,7 @@ export default function LotusRift() {
       </section>
 
 
-      {/* BRACKET */}
+     {/* BRACKET */}
 <section className="relative py-24 overflow-x-auto border-y border-white/5">
   <div className="max-w-[1800px] mx-auto px-10 relative z-10">
 
@@ -654,11 +653,11 @@ export default function LotusRift() {
       </h2>
     </div>
 
-    <div className="min-w-[1200px] grid grid-cols-4 gap-16">
+    <div className="min-w-[1250px] grid grid-cols-4 gap-20 items-start">
 
       {/* OCTAVOS */}
-      <div>
-        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-12">
+      <div className="flex flex-col">
+        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
           OCTAVOS
         </h2>
 
@@ -677,12 +676,12 @@ export default function LotusRift() {
       </div>
 
       {/* CUARTOS */}
-      <div>
-        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-12">
+      <div className="flex flex-col">
+        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
           CUARTOS
         </h2>
 
-        <div className="flex flex-col gap-[5.5rem] pt-[4rem]">
+        <div className="flex flex-col gap-[8.3rem] pt-[5.2rem]">
           {cuartos.map((match, i) => (
             <MatchCard
               key={i}
@@ -697,12 +696,12 @@ export default function LotusRift() {
       </div>
 
       {/* SEMIS */}
-      <div>
-        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-12">
+      <div className="flex flex-col">
+        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
           SEMIFINALES
         </h2>
 
-        <div className="flex flex-col gap-[11rem] pt-[9rem]">
+        <div className="flex flex-col gap-[17rem] pt-[13.5rem]">
           {semis.map((match, i) => (
             <MatchCard
               key={i}
@@ -717,12 +716,12 @@ export default function LotusRift() {
       </div>
 
       {/* FINAL */}
-      <div>
-        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-12">
+      <div className="flex flex-col items-center">
+        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
           FINAL
         </h2>
 
-        <div className="pt-[14rem] flex justify-center">
+        <div className="pt-[22rem]">
           {final.map((match, i) => (
             <MatchCard
               key={i}
