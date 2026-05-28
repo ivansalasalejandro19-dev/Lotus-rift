@@ -88,8 +88,8 @@ const teamLogos = {
   // Cosa nostra
   'Cosa nostra': '/logos/cosa_nostra.png',
 
-  // EQUIPO 16
-  'Equipo 16': '/logos/equipo16.png'
+  // Joyita Gaming
+  'Joyita Gaming': '/logos/joyita_gaming.png'
 
 }
 
@@ -121,7 +121,7 @@ const teams = [
   'Fʟᴀᴡʟᴇss',
   'Secret Society',
   'Cosa nostra',
-  'Equipo 16'
+  'Joyita Gaming'
 
 ]
 
@@ -419,10 +419,15 @@ const roster = {
     }, 
     
     {
+      id: 'G7 Nestior#001',
+      role: 'SUP'
+    }, 
+    
+    {
       id: 'G7龙 ŽhêrØ#Ñupra',
-      role: 'SUP',
+      role: 'SUPLENTE',
       captain: true
-    }, {}, {}
+    }, {}
   ],
 
 
@@ -584,7 +589,41 @@ const roster = {
   // ======================================================
 
   'Secret Society': [
-    {}, {}, {}, {}, {}, {}, {}
+    {
+      id: 'EzLane DieGod ツ#Mich',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'Twitch EzGiaan#Poro',
+      role: 'JUNGLA'
+    }, 
+    
+    {
+      id: 'SS Brocoli#Zoe',
+      role: 'MID',
+      captain: true
+    }, 
+    
+    {
+      id: 'Soujinn#ADC',
+      role: 'ADC'
+    }, 
+    
+    {
+      id: 'SS Show#Kbras',
+      role: 'SUP'
+    }, 
+    
+    {
+      id: 'KatEvolved#HWL',
+      role: 'SUPLENTE'
+    }, 
+    
+    {
+      id: 'Andy#V2007',
+      role: 'SUPLENTE 2'
+    }
   ],
 
 
@@ -598,11 +637,39 @@ const roster = {
 
 
   // ======================================================
-  // EQUIPO 16
+  // Joyita Gaming
   // ======================================================
 
-  'Equipo 16': [
-    {}, {}, {}, {}, {}, {}, {}
+  'Joyita Gaming': [
+    {
+      id: 'xHiroyukix#gamer',
+      role: 'TOP'
+    }, 
+    
+    {
+      id: 'Jhon Wuju Alfa#Jhon',
+      role: 'JUNGLA'
+    }, 
+    
+    {
+      id: 'Zerohz#NICA',
+      role: 'MID'
+    }, 
+    
+    {
+      id: 'Luminous 고수#Kanto',
+      role: 'ADC'
+    }, 
+    
+    {
+      id: 'Elophobia#0301',
+      role: 'SUP'
+    }, 
+    
+    {
+      id: '莉莉丝丨EVE#XOXO ',
+      role: 'SUPLENTE'
+    }
   ]
 
 }
@@ -1087,7 +1154,7 @@ const roster = {
 
 
           <div className="px-5 py-3 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-200 text-sm backdrop-blur-xl">
-           5 de Julio - 19:00 PM
+           4 de Julio - 19:00 PM Hr MX
           </div>
         </div>
 
