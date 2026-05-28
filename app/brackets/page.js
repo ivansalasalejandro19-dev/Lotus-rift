@@ -1,517 +1,59 @@
 "use client"
 
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import {
+  Trophy,
   Play,
   MessageCircle,
   MessagesSquare,
-  Crown,
 } from "lucide-react"
 
 
-const initialOctavos = [
+const quarterFinals = [
   {
-    team1: { name: "TEAM 1", logo: "/teams/team1.png" },
-    team2: { name: "TEAM 2", logo: "/teams/team2.png" },
-    score1: 0,
-    score2: 0,
+    team1: "TBD",
+    logo1: "/teams/team1.png",
+    team2: "TBD",
+    logo2: "/teams/team2.png",
   },
   {
-    team1: { name: "TEAM 3", logo: "/teams/team3.png" },
-    team2: { name: "TEAM 4", logo: "/teams/team4.png" },
-    score1: 0,
-    score2: 0,
+    team1: "TBD",
+    logo1: "/teams/team3.png",
+    team2: "TBD",
+    logo2: "/teams/team4.png",
   },
   {
-    team1: { name: "TEAM 5", logo: "/teams/team5.png" },
-    team2: { name: "TEAM 6", logo: "/teams/team6.png" },
-    score1: 0,
-    score2: 0,
+    team1: "TBD",
+    logo1: "/teams/team5.png",
+    team2: "TBD",
+    logo2: "/teams/team6.png",
   },
   {
-    team1: { name: "TEAM 7", logo: "/teams/team7.png" },
-    team2: { name: "TEAM 8", logo: "/teams/team8.png" },
-    score1: 0,
-    score2: 0,
-  },
-  {
-    team1: { name: "TEAM 9", logo: "/teams/team9.png" },
-    team2: { name: "TEAM 10", logo: "/teams/team10.png" },
-    score1: 0,
-    score2: 0,
-  },
-  {
-    team1: { name: "TEAM 11", logo: "/teams/team11.png" },
-    team2: { name: "TEAM 12", logo: "/teams/team12.png" },
-    score1: 0,
-    score2: 0,
-  },
-  {
-    team1: { name: "TEAM 13", logo: "/teams/team13.png" },
-    team2: { name: "TEAM 14", logo: "/teams/team14.png" },
-    score1: 0,
-    score2: 0,
-  },
-  {
-    team1: { name: "TEAM 15", logo: "/teams/team15.png" },
-    team2: { name: "TEAM 16", logo: "/teams/team16.png" },
-    score1: 0,
-    score2: 0,
+    team1: "TBD",
+    logo1: "/teams/team7.png",
+    team2: "TBD",
+    logo2: "/teams/team8.png",
   },
 ]
 
 
-const MatchCard = ({
-  match,
-  round,
-  onScore,
-}) => {
-  const needed =
-  round === "octavos"
-    ? 1
-    : round === "cuartos"
-    ? 2
-    : 3
-
-const cardStyles =
-  round === "octavos"
-    ? "border-violet-500/20 shadow-[0_0_30px_rgba(168,85,247,0.10)]"
-    : round === "cuartos"
-    ? "border-pink-500/25 shadow-[0_0_50px_rgba(255,0,180,0.16)] scale-[1.02]"
-    : round === "semis"
-    ? "border-fuchsia-400/30 shadow-[0_0_70px_rgba(255,0,200,0.22)] scale-[1.04]"
-    : "border-pink-300/40 shadow-[0_0_100px_rgba(255,0,220,0.35)] scale-[1.06]"
-
-const roundGlow =
-  round === "octavos"
-    ? "from-violet-500/10 to-transparent"
-    : round === "cuartos"
-    ? "from-pink-500/15 to-violet-500/10"
-    : round === "semis"
-    ? "from-fuchsia-500/20 to-pink-500/10"
-    : "from-pink-400/30 via-fuchsia-500/20 to-violet-500/20"
-
-
-  const winner1 = match.score1 >= needed
-  const winner2 = match.score2 >= needed
-
-  return (
-    <div className="relative group flex justify-center">
-
-      <div
-  className="
-    absolute
-    inset-[-12px]
-    rounded-[2.5rem]
-    bg-gradient-to-r
-    from-pink-500/10
-    via-fuchsia-500/20
-    to-violet-500/20
-    blur-2xl
-    opacity-0
-    group-hover:opacity-100
-    transition-all
-    duration-500
-    -z-10
-    pointer-events-none
-  "
-/>
-
- <div
-  className={`
-    relative
-    w-[190px]
-    rounded-[2rem]
-    border
-    ${cardStyles}
-    bg-[#120914]/90
-    backdrop-blur-2xl
-    p-3
-    overflow-visible
-    isolate
-  `}
->
-
-    <div className={`absolute inset-0 rounded-[2rem] bg-gradient-to-br ${roundGlow} opacity-70`} />
-
-        {[1, 2].map((teamNum) => {
-          const isWinner =
-            teamNum === 1
-              ? winner1
-              : winner2
-
-
-          const isLoser =
-            teamNum === 1
-              ? winner2
-              : winner1
-
-
-          const team =
-            teamNum === 1
-              ? match.team1
-              : match.team2
-
-
-          const score =
-            teamNum === 1
-              ? match.score1
-              : match.score2
-
-
-          return (
-            <div
-              key={teamNum}
-              className={`
-                relative
-                overflow-hidden
-                flex
-                items-center
-                justify-between
-                rounded-2xl
-                px-3
-                py-2
-                mb-3
-                border
-                transition-all
-                duration-500
-
-
-                ${
-                  isWinner
-                    ? "border-pink-400 bg-gradient-to-r from-pink-500/30 to-fuchsia-500/20 shadow-[0_0_40px_rgba(255,0,180,0.35)] scale-[1.02]"
-                    : "border-white/10 bg-white/[0.03]"
-                }
-
-
-                ${
-                  isLoser
-                    ? "opacity-25 grayscale saturate-0"
-                    : ""
-                }
-              `}
-            >
-              {isWinner && (
-                <div className="absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(255,255,255,0.08),transparent)] animate-[shine_3s_linear_infinite]" />
-              )}
-
-
-              <div className="relative flex items-center gap-2">
-                <div
-                  className={`
-                  relative
-                  rounded-2xl
-                  p-[2px]
-
-
-                  ${
-                    isWinner
-                      ? "bg-gradient-to-br from-pink-400 to-violet-400"
-                      : "bg-white/10"
-                  }
-                `}
-                >
-                  <Image
-  src={team?.logo || "/teams/placeholder.png"}
-  alt={team?.name || "Team"}
-  width={28}
-  height={28}
-  className="rounded-2xl object-cover bg-black"
-/>
-                </div>
-
-
-                <div>
-                  <p className="font-black text-[11px] tracking-wide uppercase">
-                    {team?.name || "TBD"}
-                  </p>
-
-
-                  <p className="text-xs text-zinc-500 uppercase tracking-[0.2em]">
-                    TEAM
-                  </p>
-                </div>
-              </div>
-
-
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => onScore(teamNum, -1)}
-                  className="w-6 h-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10"
-                >
-                  -
-                </button>
-
-
-                <div
-                  className={`
-                min-w-[28px]
-                h-[28px]
-                rounded-2xl
-                flex
-                items-center
-                justify-center
-                text-sm
-                font-black
-                border
-
-
-                ${
-                  isWinner
-                    ? "bg-pink-500/20 border-pink-400 text-pink-200"
-                    : "bg-white/[0.03] border-white/10 text-white"
-                }
-              `}
-                >
-                  {score}
-                </div>
-
-
-                <button
-                  onClick={() => onScore(teamNum, 1)}
-                  className="w-9 h-9 rounded-xl bg-pink-500/20 border border-pink-500/20 hover:bg-pink-500/40"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-
 export default function LotusRift() {
-  const [octavos, setOctavos] = useState(initialOctavos)
-  const [cuartos, setCuartos] = useState([])
-  const [semis, setSemis] = useState([])
-  const [final, setFinal] = useState([])
-  const [champion, setChampion] = useState(null)
-
-
-  useEffect(() => {
-    const winnersOctavos = octavos.map((m) => {
-      if (m.score1 >= 1) return m.team1
-      if (m.score2 >= 1) return m.team2
-      return null
-    })
-
-
-    setCuartos([
-      {
-        team1: winnersOctavos[0],
-        team2: winnersOctavos[1],
-        score1: 0,
-        score2: 0,
-      },
-      {
-        team1: winnersOctavos[2],
-        team2: winnersOctavos[3],
-        score1: 0,
-        score2: 0,
-      },
-      {
-        team1: winnersOctavos[4],
-        team2: winnersOctavos[5],
-        score1: 0,
-        score2: 0,
-      },
-      {
-        team1: winnersOctavos[6],
-        team2: winnersOctavos[7],
-        score1: 0,
-        score2: 0,
-      },
-    ])
-  }, [octavos])
-
-
-  useEffect(() => {
-    const winners = cuartos.map((m) => {
-      if (m.score1 >= 2) return m.team1
-      if (m.score2 >= 2) return m.team2
-      return null
-    })
-
-
-    setSemis([
-      {
-        team1: winners[0],
-        team2: winners[1],
-        score1: 0,
-        score2: 0,
-      },
-      {
-        team1: winners[2],
-        team2: winners[3],
-        score1: 0,
-        score2: 0,
-      },
-    ])
-  }, [cuartos])
-
-
-  useEffect(() => {
-    const winners = semis.map((m) => {
-      if (m.score1 >= 3) return m.team1
-      if (m.score2 >= 3) return m.team2
-      return null
-    })
-
-
-    setFinal([
-      {
-        team1: winners[0],
-        team2: winners[1],
-        score1: 0,
-        score2: 0,
-      },
-    ])
-  }, [semis])
-
-
-  useEffect(() => {
-    if (!final[0]) return
-
-
-    if (final[0].score1 >= 3) {
-      setChampion(final[0].team1)
-    }
-
-
-    if (final[0].score2 >= 3) {
-      setChampion(final[0].team2)
-    }
-  }, [final])
-
-
-  const updateScore = (
-    setter,
-    matches,
-    index,
-    team,
-    change,
-    needed
-  ) => {
-    const updated = [...matches]
-
-
-    if (team === 1) {
-      updated[index].score1 = Math.max(
-        0,
-        Math.min(
-          needed,
-          updated[index].score1 + change
-        )
-      )
-    }
-
-
-    if (team === 2) {
-      updated[index].score2 = Math.max(
-        0,
-        Math.min(
-          needed,
-          updated[index].score2 + change
-        )
-      )
-    }
-
-
-    if (updated[index].score1 >= needed) {
-      updated[index].score2 = Math.min(
-        updated[index].score2,
-        needed - 1
-      )
-    }
-
-
-    if (updated[index].score2 >= needed) {
-      updated[index].score1 = Math.min(
-        updated[index].score1,
-        needed - 1
-      )
-    }
-
-
-    setter(updated)
-  }
-
-
   return (
-    <main className="min-h-screen bg-[#050507] text-white overflow-visible">
+    <main className="min-h-screen bg-black text-white overflow-hidden">
+      {/* BACKGROUND */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-black" />
 
-  {/* BACKGROUND */}
-  <div className="fixed inset-0 -z-10 overflow-hidden">
 
-    <motion.div
-      animate={{
-        x: [0, 70, 0],
-        y: [0, -50, 0],
-        scale: [1, 1.08, 1],
-      }}
-      transition={{
-        repeat: Infinity,
-        duration: 14,
-        ease: "easeInOut",
-      }}
-      className="absolute top-[-20%] left-[-10%] w-[750px] h-[750px] bg-pink-500/20 blur-[180px] rounded-full"
-    />
+        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-pink-500/20 blur-[180px] rounded-full" />
 
-    <motion.div
-      animate={{
-        x: [0, -80, 0],
-        y: [0, 60, 0],
-        scale: [1, 1.12, 1],
-      }}
-      transition={{
-        repeat: Infinity,
-        duration: 16,
-        ease: "easeInOut",
-      }}
-      className="absolute bottom-[-20%] right-[-10%] w-[750px] h-[750px] bg-fuchsia-600/20 blur-[180px] rounded-full"
-    />
 
-    <motion.div
-      animate={{
-        scale: [1, 1.15, 1],
-        opacity: [0.2, 0.4, 0.2],
-      }}
-      transition={{
-        repeat: Infinity,
-        duration: 10,
-        ease: "easeInOut",
-      }}
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] bg-violet-500/10 blur-[180px] rounded-full"
-    />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-fuchsia-600/20 blur-[180px] rounded-full" />
 
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.12),transparent_55%)]" />
 
-  {[...Array(35)].map((_, i) => (
-    <motion.div
-      key={i}
-      animate={{
-        y: [0, -25, 0],
-        opacity: [0.2, 1, 0.2],
-      }}
-      transition={{
-        repeat: Infinity,
-        duration: 3 + i % 5,
-      }}
-      className="absolute w-1 h-1 bg-pink-400/40 rounded-full"
-      style={{
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-      }}
-    />
-  ))}
-
-</div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.15),transparent_50%)]" />
+      </div>
 
 
       {/* HEADER */}
@@ -534,6 +76,7 @@ export default function LotusRift() {
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-5 pt-16 pb-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
@@ -546,8 +89,6 @@ export default function LotusRift() {
 
             <h2 className="mt-8 text-7xl md:text-8xl font-black leading-none">
               <span className="text-white">LOTUS</span>
-
-
               <br />
 
 
@@ -558,11 +99,13 @@ export default function LotusRift() {
 
 
             <p className="mt-7 text-zinc-400 text-lg max-w-xl">
-              Unite a la comunidad y seguí el bracket en vivo.
+              Unite a la comunidad de Discord y disfrutá del
+              bracket en vivo de Wild Rift.
             </p>
 
 
             <div className="mt-10 flex flex-wrap gap-4">
+              {/* WHATSAPP */}
               <a
                 href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
                 target="_blank"
@@ -573,6 +116,7 @@ export default function LotusRift() {
               </a>
 
 
+              {/* DISCORD */}
               <a
                 href="https://discord.gg/nVyrHkeCn5"
                 target="_blank"
@@ -585,32 +129,21 @@ export default function LotusRift() {
           </motion.div>
 
 
+          {/* RIGHT LOGO */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: [0, -12, 0],
-            }}
-            transition={{
-              duration: 0.8,
-              y: {
-                repeat: Infinity,
-                duration: 4,
-              },
-            }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
             className="relative"
           >
             <div className="absolute inset-0 bg-pink-500/30 blur-[140px] rounded-full" />
 
 
-            <Image
-  src="/lotus-logo.png"
-  alt="Lotus Rift"
-  width={600}
-  height={600}
-  className="relative z-10 w-full h-auto max-w-[600px] mx-auto opacity-95"
-/>
+            <img
+              src="/lotus-logo.png"
+              alt="Lotus Rift"
+              className="relative z-10 w-full max-w-[600px] mx-auto opacity-95"
+            />
           </motion.div>
         </div>
       </section>
@@ -618,7 +151,8 @@ export default function LotusRift() {
 
       {/* STREAM */}
       <section className="max-w-7xl mx-auto px-5 pb-24">
-        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 shadow-[0_0_80px_rgba(255,0,170,0.12)] overflow-hidden">
+        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 overflow-
+         shadow-[0_0_80px_rgba(255,0,170,0.12)]">
           <div className="px-6 py-5 border-b border-pink-500/10 flex items-center gap-3">
             <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
 
@@ -639,159 +173,408 @@ export default function LotusRift() {
       </section>
 
 
-     {/* BRACKET */}
-<section className="relative py-24 overflow-x-auto border-y border-white/5">
-  <div className="max-w-[1800px] mx-auto px-10 relative z-10">
+      {/* BRACKET */}
+<section
+  id="bracket"
+  className="relative py-24 px-6 overflow-hidden border-y border-white/5"
+>
 
-    <div className="text-center mb-20">
+
+  {/* BACKGROUND */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.14),transparent_60%)]" />
+
+
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-violet-500/10 blur-3xl animate-pulse" />
+
+
+  {/* PARTICLES */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+
+
+    {[...Array(25)].map((_, i) => (
+      <div
+        key={i}
+        className="absolute w-1 h-1 bg-violet-400/30 rounded-full animate-pulse"
+        style={{
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 4}s`,
+          animationDuration: `${3 + Math.random() * 5}s`
+        }}
+      />
+    ))}
+
+
+  </div>
+
+
+  <div className="max-w-[1700px] mx-auto relative z-10">
+
+
+    {/* TITLE */}
+    <div className="mb-16 text-center">
+
+
       <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
         LOTUS ARENA
       </p>
 
+
       <h2 className="text-6xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
         BRACKET
       </h2>
+
+
+      <div className="mt-5 w-40 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent mx-auto" />
+
+
     </div>
 
-    <div className="min-w-[1450px] flex items-center justify-center gap-24">
 
-      {/* OCTAVOS */}
-      <div className="flex flex-col justify-center">
-        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
-          OCTAVOS
-        </h2>
+    <div className="overflow-x-auto">
 
-        <div className="space-y-6">
-          {octavos.map((match, i) => (
-            <MatchCard
-              key={i}
-              match={match}
-              round="octavos"
-              onScore={(team, change) =>
-                updateScore(setOctavos, octavos, i, team, change, 1)
-              }
-            />
-          ))}
+
+      <div className="min-w-[1450px] flex items-center justify-center gap-16">
+
+
+        {/* OCTAVOS */}
+        <div className="flex flex-col justify-center">
+
+
+          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
+            OCTAVOS
+          </h3>
+
+
+          <div className="space-y-6">
+
+
+            {[1,2,3,4,5,6,7,8].map((item) => (
+              <div
+                key={item}
+                className="w-[260px] rounded-2xl bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-5 hover:border-violet-500/40 hover:scale-[1.02] transition duration-300"
+              >
+
+
+                <div className="space-y-3">
+
+
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold">
+                      TBD
+                    </span>
+
+
+                    <span className="text-violet-400">
+                      🪷
+                    </span>
+                  </div>
+
+
+                  <div className="h-px bg-white/5" />
+
+
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold">
+                      TBD
+                    </span>
+
+
+                    <span className="text-violet-400">
+                      🪷
+                    </span>
+                  </div>
+
+
+                </div>
+
+
+              </div>
+            ))}
+
+
+          </div>
+
+
         </div>
+
+
+        {/* CUARTOS */}
+        <div className="flex flex-col justify-center">
+
+
+          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
+            CUARTOS
+          </h3>
+
+
+          <div className="space-y-20">
+
+
+            {[1,2,3,4].map((item) => (
+              <div key={item} className="relative">
+
+
+                {/* CONNECTOR */}
+                <div className="absolute -left-12 top-1/2 flex items-center">
+
+
+                  <div className="w-6 h-px bg-violet-500/40" />
+
+
+                  <div className="w-6 h-24 border-l border-b border-violet-500/20 rounded-bl-2xl" />
+
+
+                </div>
+
+
+                <div className="w-[280px] rounded-3xl bg-gradient-to-br from-violet-500/10 to-black border border-violet-500/20 p-6 shadow-[0_0_35px_rgba(168,85,247,0.12)] hover:scale-[1.02] transition duration-300">
+
+
+                  <div className="space-y-4">
+
+
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold">
+                        TBD
+                      </span>
+
+
+                      <span className="text-violet-400">
+                        ✦
+                      </span>
+                    </div>
+
+
+                    <div className="h-px bg-white/10" />
+
+
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold">
+                        TBD
+                      </span>
+
+
+                      <span className="text-violet-400">
+                        ✦
+                      </span>
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+
+
+              </div>
+            ))}
+
+
+          </div>
+
+
+        </div>
+
+
+        {/* SEMIS */}
+        <div className="flex flex-col justify-center">
+
+
+          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
+            SEMIFINALES
+          </h3>
+
+
+          <div className="space-y-44">
+
+
+            {[1,2].map((item) => (
+              <div key={item} className="relative">
+
+
+                {/* CONNECTOR */}
+                <div className="absolute -left-14 top-1/2 flex items-center">
+
+
+                  <div className="w-7 h-px bg-pink-400/40" />
+
+
+                  <div className="w-7 h-40 border-l border-b border-pink-400/20 rounded-bl-2xl" />
+
+
+                </div>
+
+
+                <div className="w-[300px] rounded-3xl bg-gradient-to-br from-pink-500/10 to-violet-500/10 border border-pink-400/20 p-7 shadow-[0_0_45px_rgba(168,85,247,0.18)] hover:scale-[1.02] transition duration-300">
+
+
+                  <div className="space-y-4">
+
+
+                    <div className="flex items-center justify-between">
+                      <span className="font-black text-lg">
+                        TBD
+                      </span>
+
+
+                      <span className="text-pink-300">
+                        ✦
+                      </span>
+                    </div>
+
+
+                    <div className="h-px bg-white/10" />
+
+
+                    <div className="flex items-center justify-between">
+                      <span className="font-black text-lg">
+                        TBD
+                      </span>
+
+
+                      <span className="text-pink-300">
+                        ✦
+                      </span>
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+
+
+              </div>
+            ))}
+
+
+          </div>
+
+
+        </div>
+
+
+        {/* FINAL */}
+        <div className="flex flex-col justify-center">
+
+
+          <h3 className="mb-8 text-center font-bold text-pink-300 tracking-[0.2em]">
+            FINAL
+          </h3>
+
+
+          <div className="relative">
+
+
+            {/* GLOW */}
+            <div className="absolute inset-0 bg-violet-500/30 blur-3xl rounded-full animate-pulse" />
+
+
+            <div className="relative w-[340px] rounded-[2rem] border border-pink-400/30 bg-gradient-to-br from-pink-500/20 via-violet-500/10 to-black p-10 shadow-[0_0_70px_rgba(168,85,247,0.3)] backdrop-blur-2xl">
+
+
+              {/* LOTUS CORE */}
+              <div className="text-center mb-10">
+
+
+                <div className="relative w-28 h-28 mx-auto mb-6">
+
+
+                  <div className="absolute inset-0 rounded-full bg-violet-500/30 blur-2xl animate-pulse" />
+
+
+                  <div className="relative w-full h-full rounded-full border border-violet-400/40 bg-gradient-to-br from-pink-500/20 to-violet-500/20 flex items-center justify-center text-5xl shadow-[0_0_60px_rgba(168,85,247,0.45)]">
+                    🪷
+                  </div>
+
+
+                </div>
+
+
+                <p className="text-pink-300 tracking-[0.3em] text-sm mb-3">
+                  LOTUS RIFT 2026
+                </p>
+
+
+                <h4 className="text-5xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+                  FINAL
+                </h4>
+
+
+              </div>
+
+
+              {/* TEAMS */}
+              <div className="space-y-5">
+
+
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
+                  <span className="font-bold text-xl">
+                    TBD
+                  </span>
+
+
+                  <span className="text-pink-300">
+                    🪷
+                  </span>
+                </div>
+
+
+                <div className="flex justify-center">
+
+
+                  <div className="px-5 py-2 rounded-xl bg-black/50 border border-violet-500/20 font-black text-violet-300">
+                    BO5
+                  </div>
+
+
+                </div>
+
+
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
+                  <span className="font-bold text-xl">
+                    TBD
+                  </span>
+
+
+                  <span className="text-pink-300">
+                    🪷
+                  </span>
+                </div>
+
+
+              </div>
+
+
+              <div className="mt-8 text-center text-zinc-500 text-sm tracking-[0.2em]">
+                Quien se lleva el 🪷?
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
       </div>
 
-      {/* CUARTOS */}
-      <div className="flex flex-col">
-        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
-          CUARTOS
-        </h2>
-
-        <div className="space-y-20 pt-[6rem]">
-         {cuartos.map((match, i) => (
-  <div key={i} className="relative">
-
-    {/* CONECTOR */}
-    <div className="absolute -left-14 top-1/2 flex items-center">
-
-      <div className="w-7 h-px bg-pink-500/30" />
-
-      <div className="w-7 h-24 border-l border-b border-pink-500/20 rounded-bl-2xl" />
 
     </div>
 
-    <MatchCard
-      match={match}
-      round="cuartos"
-      onScore={(team, change) =>
-        updateScore(setCuartos, cuartos, i, team, change, 2)
-      }
-    />
 
   </div>
-))}
-        </div>
-      </div>
 
-      {/* SEMIS */}
-      <div className="flex flex-col">
-        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
-          SEMIFINALES
-        </h2>
 
-        <div className="space-y-44 pt-[15rem]">
-          {semis.map((match, i) => (
-          <div key={i} className="relative">
-
-  <div className="absolute -left-20 top-1/2 -translate-y-1/2">
-
-  {/* glow */}
-  <div className="absolute inset-0 blur-xl bg-fuchsia-500/20" />
-
-  {/* linea horizontal */}
-  <div className="absolute left-0 top-1/2 w-10 h-px bg-gradient-to-r from-fuchsia-500/70 to-transparent" />
-
-  {/* curva superior */}
-  <div className="absolute left-10 -top-20 w-10 h-20 border-r border-b border-fuchsia-500/30 rounded-br-3xl" />
-
-  {/* curva inferior */}
-  <div className="absolute left-10 top-0 w-10 h-20 border-r border-t border-fuchsia-500/30 rounded-tr-3xl" />
-
-</div>
-
-  <MatchCard
-    match={match}
-    round="semis"
-    onScore={(team, change) =>
-      updateScore(setSemis, semis, i, team, change, 3)
-    }
-  />
-</div>
-          ))}
-        </div>
-      </div>
-
-     {/* FINAL */}
-<div className="flex flex-col items-center">
-  <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
-    FINAL
-  </h2>
-
-  <div className="pt-[22rem] relative flex items-center justify-center">
-
-    {/* FINAL GLOW */}
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div className="w-[500px] h-[500px] bg-fuchsia-500/30 blur-[200px] rounded-full animate-pulse" />
-</div>
-
-    {/* CONECTOR FINAL */}
-    <div className="absolute -left-24 top-1/2 -translate-y-1/2">
-
-      <div className="absolute inset-0 blur-2xl bg-pink-500/20" />
-
-      <div className="absolute left-0 top-1/2 w-14 h-px bg-gradient-to-r from-pink-500/80 to-transparent" />
-
-      <div className="absolute left-14 -top-28 w-14 h-28 border-r border-b border-pink-500/30 rounded-br-[40px]" />
-
-      <div className="absolute left-14 top-0 w-14 h-28 border-r border-t border-pink-500/30 rounded-tr-[40px]" />
-
-    </div>
-
-    {final.map((match, i) => (
-      <MatchCard
-        key={i}
-        match={match}
-        round="final"
-        onScore={(team, change) =>
-          updateScore(setFinal, final, i, team, change, 3)
-        }
-      />
-    ))}
-
-  </div>
-</div>
-
-    </div>
-  </div>
 </section>
 
 
-      {/* PROXIMOS PARTIDOS */}
-      <section className="max-w-7xl mx-auto px-5 py-28">
+      {/* PARTIDOS */}
+      <section className="max-w-7xl mx-auto px-5 pb-32">
         <div className="flex items-center gap-3 mb-10">
           <Play className="text-pink-400" />
 
@@ -802,101 +585,62 @@ export default function LotusRift() {
         </div>
 
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {octavos
-            .filter(
-              (m) =>
-                m.score1 === 0 &&
-                m.score2 === 0
-            )
-            .slice(0, 4)
-            .map((match, index) => (
-              <div
-                key={index}
-                className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between hover:border-pink-500/30 transition-all duration-300"
-              >
-                <div>
-                  <p className="text-pink-300 font-bold">
-                    19:00
-                  </p>
+        <div className="space-y-5">
+          {quarterFinals.map((match, index) => (
+            <div
+              key={index}
+              className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
+            >
+              <div>
+                <p className="text-pink-300 font-bold">
+                  19:00
+                </p>
 
-                  <p className="text-zinc-500 text-sm">
-                    4 DE JULIO
-                  </p>
-                </div>
 
-                <div className="flex items-center gap-4">
-                  <Image
-  src={match.team1.logo}
-  alt={match.team1.name}
-  width={40}
-  height={40}
-  className="rounded-xl object-cover"
-/>
-
-                  <span className="font-semibold">
-                    {match.team1.name}
-                  </span>
-                </div>
-
-                <div className="text-pink-400 font-black text-2xl">
-                  VS
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <span className="font-semibold">
-                    {match.team2.name}
-                  </span>
-
-                  <Image
-  src={match.team2.logo}
-  alt={match.team2.name}
-  width={40}
-  height={40}
-  className="rounded-xl object-cover"
-/>
-                </div>
-
-                <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
-                  VER DETALLES
-                </button>
+                <p className="text-zinc-500 text-sm">
+                  4 DE JULIO
+                </p>
               </div>
-            ))}
+
+
+              <div className="flex items-center gap-4">
+                <img
+                  src={match.logo1}
+                  className="w-10 h-10 rounded-xl"
+                />
+
+
+                <span className="font-semibold">
+                  {match.team1}
+                </span>
+              </div>
+
+
+              <div className="text-pink-400 font-black text-2xl">
+                VS
+              </div>
+
+
+              <div className="flex items-center gap-4">
+                <span className="font-semibold">
+                  {match.team2}
+                </span>
+
+
+                <img
+                  src={match.logo2}
+                  className="w-10 h-10 rounded-xl"
+                />
+              </div>
+
+
+              <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
+                VER DETALLES
+              </button>
+            </div>
+          ))}
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-pink-500/10 bg-black/40 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h2 className="text-2xl font-black tracking-[0.3em] bg-gradient-to-r from-pink-400 via-fuchsia-300 to-pink-200 bg-clip-text text-transparent">
-              LOTUS RIFT
-            </h2>
-
-            <p className="text-zinc-500 text-sm mt-2">
-              Torneo competitivo de Wild Rift
-            </p>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="https://discord.gg/nVyrHkeCn5"
-              target="_blank"
-              className="px-6 py-3 rounded-2xl border border-pink-500/20 bg-white/5 hover:bg-white/10 transition-all"
-            >
-              Discord
-            </a>
-
-            <a
-              href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
-              target="_blank"
-              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all"
-            >
-              Comunidad
-            </a>
-          </div>
-        </div>
-      </footer>
     </main>
   )
 }
