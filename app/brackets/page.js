@@ -2,13 +2,13 @@
 
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import {
   Play,
   MessageCircle,
   MessagesSquare,
   Crown,
-  Trophy,
 } from "lucide-react"
 
 
@@ -104,7 +104,8 @@ const roundGlow =
 
   <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-pink-500/10 via-fuchsia-500/10 to-violet-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
-  <div className="
+ <div
+  className={`
     relative
     w-[250px]
     rounded-[2rem]
@@ -118,7 +119,8 @@ const roundGlow =
     p-5
     shadow-[0_0_45px_rgba(255,0,180,0.12)]
     overflow-hidden
-  ">
+  `}
+>
 
     <div className={`absolute inset-0 bg-gradient-to-br ${roundGlow}`} />
 
@@ -199,10 +201,13 @@ const roundGlow =
                   }
                 `}
                 >
-                  <img
-                    src={team?.logo || "/teams/placeholder.png"}
-                    className="w-14 h-14 rounded-2xl object-cover bg-black"
-                  />
+                  <Image
+  src={team?.logo || "/teams/placeholder.png"}
+  alt={team?.name || "Team"}
+  width={56}
+  height={56}
+  className="rounded-2xl object-cover bg-black"
+/>
                 </div>
 
 
@@ -474,30 +479,26 @@ export default function LotusRift() {
 
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.12),transparent_55%)]" />
 
-  </div>
+  {[...Array(35)].map((_, i) => (
+    <motion.div
+      key={i}
+      animate={{
+        y: [0, -25, 0],
+        opacity: [0.2, 1, 0.2],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 3 + i % 5,
+      }}
+      className="absolute w-1 h-1 bg-pink-400/40 rounded-full"
+      style={{
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+      }}
+    />
+  ))}
 
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-violet-500/10 blur-[180px] rounded-full" />
-
-
-        {[...Array(35)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              y: [0, -25, 0],
-              opacity: [0.2, 1, 0.2],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 3 + i % 5,
-            }}
-            className="absolute w-1 h-1 bg-pink-400/40 rounded-full"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
-      </div>
+</div>
 
 
       {/* HEADER */}
@@ -590,11 +591,13 @@ export default function LotusRift() {
             <div className="absolute inset-0 bg-pink-500/30 blur-[140px] rounded-full" />
 
 
-            <img
-              src="/lotus-logo.png"
-              alt="Lotus Rift"
-              className="relative z-10 w-full max-w-[600px] mx-auto opacity-95"
-            />
+            <Image
+  src="/lotus-logo.png"
+  alt="Lotus Rift"
+  width={600}
+  height={600}
+  className="relative z-10 w-full h-auto max-w-[600px] mx-auto opacity-95"
+/>
           </motion.div>
         </div>
       </section>
@@ -825,10 +828,13 @@ export default function LotusRift() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <img
-                    src={match.team1.logo}
-                    className="w-10 h-10 rounded-xl object-cover"
-                  />
+                  <Image
+  src={match.team1.logo}
+  alt={match.team1.name}
+  width={40}
+  height={40}
+  className="rounded-xl object-cover"
+/>
 
                   <span className="font-semibold">
                     {match.team1.name}
@@ -844,10 +850,13 @@ export default function LotusRift() {
                     {match.team2.name}
                   </span>
 
-                  <img
-                    src={match.team2.logo}
-                    className="w-10 h-10 rounded-xl object-cover"
-                  />
+                  <Image
+  src={match.team2.logo}
+  alt={match.team2.name}
+  width={40}
+  height={40}
+  className="rounded-xl object-cover"
+/>
                 </div>
 
                 <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
