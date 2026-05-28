@@ -70,11 +70,29 @@ const MatchCard = ({
   onScore,
 }) => {
   const needed =
-    round === "octavos"
-      ? 1
-      : round === "cuartos"
-      ? 2
-      : 3
+  round === "octavos"
+    ? 1
+    : round === "cuartos"
+    ? 2
+    : 3
+
+const cardStyles =
+  round === "octavos"
+    ? "border-violet-500/20 shadow-[0_0_30px_rgba(168,85,247,0.10)]"
+    : round === "cuartos"
+    ? "border-pink-500/25 shadow-[0_0_50px_rgba(255,0,180,0.16)] scale-[1.02]"
+    : round === "semis"
+    ? "border-fuchsia-400/30 shadow-[0_0_70px_rgba(255,0,200,0.22)] scale-[1.04]"
+    : "border-pink-300/40 shadow-[0_0_100px_rgba(255,0,220,0.35)] scale-[1.06]"
+
+const roundGlow =
+  round === "octavos"
+    ? "from-violet-500/10 to-transparent"
+    : round === "cuartos"
+    ? "from-pink-500/15 to-violet-500/10"
+    : round === "semis"
+    ? "from-fuchsia-500/20 to-pink-500/10"
+    : "from-pink-400/30 via-fuchsia-500/20 to-violet-500/20"
 
 
   const winner1 = match.score1 >= needed
@@ -91,7 +109,7 @@ const MatchCard = ({
     w-[250px]
     rounded-[2rem]
     border
-    border-pink-500/20
+    ${cardStyles}
     bg-gradient-to-br
     from-[#120914]/95
     via-[#1a1023]/90
@@ -102,9 +120,8 @@ const MatchCard = ({
     overflow-hidden
   ">
 
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,0,180,0.12),transparent_45%)]" />
-
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.12),transparent_45%)]" />
+    <div className={`absolute inset-0 bg-gradient-to-br ${roundGlow}`} />
+    
         {[1, 2].map((teamNum) => {
           const isWinner =
             teamNum === 1
