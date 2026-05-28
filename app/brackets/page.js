@@ -88,7 +88,7 @@ const MatchCard = ({
       <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-pink-500/10 via-fuchsia-500/10 to-violet-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
 
-      <div className="relative w-[320px] rounded-[2rem] border border-pink-500/15 bg-black/60 backdrop-blur-xl p-5 shadow-[0_0_40px_rgba(255,0,170,0.08)]">
+      <div className="relative w-[250px] rounded-[2rem] border border-pink-500/15 bg-black/60 backdrop-blur-xl p-5 shadow-[0_0_40px_rgba(255,0,170,0.08)]">
 
 
         {[1, 2].map((teamNum) => {
@@ -354,43 +354,42 @@ export default function LotusRift() {
 
 
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden">
+    <main className="min-h-screen bg-[#050507] text-white overflow-hidden">
 
 
       {/* BACKGROUND */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
+<div className="fixed inset-0 -z-10 overflow-hidden">
 
+  <motion.div
+    animate={{
+      x: [0, 60, 0],
+      y: [0, -40, 0],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 12,
+    }}
+    className="absolute top-[-20%] left-[-10%] w-[700px] h-[700px] bg-pink-500/20 blur-[180px] rounded-full"
+  />
 
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 12,
-          }}
-          className="absolute top-[-20%] left-[-10%] w-[700px] h-[700px] bg-pink-500/20 blur-[180px] rounded-full"
-        />
+  <motion.div
+    animate={{
+      x: [0, -60, 0],
+      y: [0, 40, 0],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 14,
+    }}
+    className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] bg-fuchsia-600/20 blur-[180px] rounded-full"
+  />
 
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.15),transparent_50%)]" />
 
-        <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 14,
-          }}
-          className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] bg-fuchsia-600/20 blur-[180px] rounded-full"
-        />
+  {/* ESTE */}
+  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-violet-500/10 blur-[180px] rounded-full" />
 
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.15),transparent_50%)]" />
-
-
-      </div>
+</div>
 
 
       {/* HEADER */}
@@ -548,7 +547,7 @@ export default function LotusRift() {
       <section className="py-24 overflow-x-auto">
 
 
-        <div className="min-w-[1800px] px-20 flex items-center justify-center gap-28 relative">
+        <div className="min-w-[1450px] px-10 flex items-center justify-center gap-10 relative">
 
 
           {/* LINEAS */}
@@ -568,7 +567,7 @@ export default function LotusRift() {
 
 
           {/* OCTAVOS */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-5">
 
 
             <h2 className="text-center text-xl font-black tracking-[0.3em] text-violet-300 mb-4">
@@ -580,7 +579,7 @@ export default function LotusRift() {
               <div key={i} className="relative">
 
 
-                <div className="absolute -right-14 top-1/2 w-14 h-px bg-gradient-to-r from-pink-500 to-transparent" />
+                <div className="absolute -right-10 top-1/2 w-10 h-[2px] bg-gradient-to-r from-pink-500 to-transparent rounded-full" />
 
 
                 <MatchCard
@@ -597,7 +596,7 @@ export default function LotusRift() {
 
 
           {/* CUARTOS */}
-          <div className="flex flex-col gap-28 mt-28">
+          <div className="flex flex-col gap-20 mt-16">
 
 
             <h2 className="text-center text-xl font-black tracking-[0.3em] text-violet-300 mb-4">
@@ -629,7 +628,7 @@ export default function LotusRift() {
 
 
           {/* SEMIS */}
-          <div className="flex flex-col gap-[230px] mt-[180px]">
+          <div className="flex flex-col gap-[160px] mt-[110px]">
 
 
             <h2 className="text-center text-xl font-black tracking-[0.3em] text-pink-300 mb-4">
@@ -661,7 +660,7 @@ export default function LotusRift() {
 
 
           {/* FINAL */}
-          <div className="mt-[420px] relative">
+          <div className="mt-[250px] relative">
 
 
             <h2 className="text-center text-xl font-black tracking-[0.3em] text-pink-300 mb-10">
@@ -710,13 +709,13 @@ export default function LotusRift() {
                       repeat: Infinity,
                       duration: 3,
                     }}
-                    className="w-48 h-48 rounded-full bg-gradient-to-br from-pink-500 via-fuchsia-500 to-violet-500 flex items-center justify-center shadow-[0_0_140px_rgba(255,0,180,0.55)]"
+                    className="w-32 h-32 rounded-full bg-gradient-to-br from-pink-500 via-fuchsia-500 to-violet-500 flex items-center justify-center shadow-[0_0_140px_rgba(255,0,180,0.55)]"
                   >
                     <Crown size={90} />
                   </motion.div>
 
 
-                  <h2 className="mt-6 text-5xl font-black bg-gradient-to-r from-pink-300 via-fuchsia-200 to-violet-300 bg-clip-text text-transparent">
+                  <h2 className="mt-6 text-3xl font-black bg-gradient-to-r from-pink-300 via-fuchsia-200 to-violet-300 bg-clip-text text-transparent">
                     {champion.name}
                   </h2>
 
