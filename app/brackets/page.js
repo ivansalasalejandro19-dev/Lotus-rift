@@ -124,7 +124,7 @@ const roundGlow =
  <div
   className={`
     relative
-    w-[220px]
+    w-[240px]
     rounded-[2rem]
     border
     ${cardStyles}
@@ -641,167 +641,102 @@ export default function LotusRift() {
 
 
       {/* BRACKET */}
-      <section className="relative py-24 overflow-x-auto border-y border-white/5">
-        <div className="max-w-[1800px] mx-auto px-10 relative z-10">
-          <div className="text-center mb-20">
-            <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
-              LOTUS ARENA
-            </p>
+<section className="relative py-24 overflow-x-auto border-y border-white/5">
+  <div className="max-w-[1800px] mx-auto px-10 relative z-10">
 
+    <div className="text-center mb-20">
+      <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
+        LOTUS ARENA
+      </p>
 
-            <h2 className="text-6xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
-              BRACKET
-            </h2>
-          </div>
-
-
-         <div className="min-w-[1400px] grid grid-cols-4 gap-24 items-center">
-
-  {/* OCTAVOS */}
-  <div className="flex flex-col">
-    <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
-      OCTAVOS
-    </h2>
-
-    <div className="flex flex-col gap-6">
-      {octavos.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="octavos"
-          onScore={(team, change) =>
-            updateScore(
-              setOctavos,
-              octavos,
-              i,
-              team,
-              change,
-              1
-            )
-          }
-        />
-      ))}
-    </div>
-  </div>
-
-  {/* CUARTOS */}
-  <div className="flex flex-col">
-    <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-10">
-      CUARTOS
-    </h2>
-
-    <div className="flex flex-col gap-[7.5rem] pt-[5.5rem]">
-      {cuartos.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="cuartos"
-          onScore={(team, change) =>
-            updateScore(
-              setCuartos,
-              cuartos,
-              i,
-              team,
-              change,
-              2
-            )
-          }
-        />
-      ))}
-    </div>
-  </div>
-
-  {/* SEMIS */}
-  <div className="flex flex-col">
-    <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
-      SEMIFINALES
-    </h2>
-
-    <div className="flex flex-col gap-[15rem] pt-[13rem]">
-      {semis.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="semis"
-          onScore={(team, change) =>
-            updateScore(
-              setSemis,
-              semis,
-              i,
-              team,
-              change,
-              3
-            )
-          }
-        />
-      ))}
-    </div>
-  </div>
-
-  {/* FINAL */}
-  <div className="flex flex-col items-center">
-    <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-10">
-      FINAL
-    </h2>
-
-    <div className="pt-[21rem]">
-      {final.map((match, i) => (
-        <MatchCard
-          key={i}
-          match={match}
-          round="final"
-          onScore={(team, change) =>
-            updateScore(
-              setFinal,
-              final,
-              i,
-              team,
-              change,
-              3
-            )
-          }
-        />
-      ))}
+      <h2 className="text-6xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
+        BRACKET
+      </h2>
     </div>
 
-    <AnimatePresence>
-      {champion && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
-          exit={{ opacity: 0 }}
-          className="absolute top-[-220px] text-center"
-        >
-          <motion.div
-            animate={{
-              rotate: [0, 8, -8, 0],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 3,
-            }}
-            className="w-32 h-32 rounded-full bg-gradient-to-br from-pink-500 via-fuchsia-500 to-violet-500 flex items-center justify-center shadow-[0_0_140px_rgba(255,0,180,0.55)]"
-          >
-            <Crown size={80} />
-          </motion.div>
+    <div className="min-w-[1350px] grid grid-cols-4 gap-16">
 
-          <h2 className="mt-6 text-4xl font-black bg-gradient-to-r from-pink-300 via-fuchsia-200 to-violet-300 bg-clip-text text-transparent">
-            {champion.name}
-          </h2>
+      {/* OCTAVOS */}
+      <div>
+        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-12">
+          OCTAVOS
+        </h2>
 
-          <p className="mt-2 tracking-[0.4em] text-pink-300 text-sm">
-            CAMPEÓN
-          </p>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
+        <div className="flex flex-col gap-6">
+          {octavos.map((match, i) => (
+            <MatchCard
+              key={i}
+              match={match}
+              round="octavos"
+              onScore={(team, change) =>
+                updateScore(setOctavos, octavos, i, team, change, 1)
+              }
+            />
+          ))}
+        </div>
+      </div>
 
-</div>
+      {/* CUARTOS */}
+      <div>
+        <h2 className="text-center font-black text-violet-300 tracking-[0.3em] mb-12">
+          CUARTOS
+        </h2>
+
+        <div className="flex flex-col gap-[9rem] pt-[7rem]">
+          {cuartos.map((match, i) => (
+            <MatchCard
+              key={i}
+              match={match}
+              round="cuartos"
+              onScore={(team, change) =>
+                updateScore(setCuartos, cuartos, i, team, change, 2)
+              }
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* SEMIS */}
+      <div>
+        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-12">
+          SEMIFINALES
+        </h2>
+
+        <div className="flex flex-col gap-[18rem] pt-[16rem]">
+          {semis.map((match, i) => (
+            <MatchCard
+              key={i}
+              match={match}
+              round="semis"
+              onScore={(team, change) =>
+                updateScore(setSemis, semis, i, team, change, 3)
+              }
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* FINAL */}
+      <div>
+        <h2 className="text-center font-black text-pink-300 tracking-[0.3em] mb-12">
+          FINAL
+        </h2>
+
+        <div className="pt-[26rem] flex justify-center">
+          {final.map((match, i) => (
+            <MatchCard
+              key={i}
+              match={match}
+              round="final"
+              onScore={(team, change) =>
+                updateScore(setFinal, final, i, team, change, 3)
+              }
+            />
+          ))}
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
