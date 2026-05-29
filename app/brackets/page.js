@@ -2,6 +2,7 @@
 
 
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import {
   Trophy,
   Play,
@@ -9,36 +10,104 @@ import {
   MessagesSquare,
 } from "lucide-react"
 
-
-const quarterFinals = [
-  {
-    team1: "TBD",
-    logo1: "/teams/team1.png",
-    team2: "TBD",
-    logo2: "/teams/team2.png",
-  },
-  {
-    team1: "TBD",
-    logo1: "/teams/team3.png",
-    team2: "TBD",
-    logo2: "/teams/team4.png",
-  },
-  {
-    team1: "TBD",
-    logo1: "/teams/team5.png",
-    team2: "TBD",
-    logo2: "/teams/team6.png",
-  },
-  {
-    team1: "TBD",
-    logo1: "/teams/team7.png",
-    team2: "TBD",
-    logo2: "/teams/team8.png",
-  },
-]
-
-
 export default function LotusRift() {
+
+  // 1. STATE
+  const [quarters, setQuarters] = useState([])
+const [semis, setSemis] = useState([])
+const [finalMatch, setFinalMatch] = useState(null)
+
+  // 2. DATA (octavos)
+  const octavos = [
+    {
+      team1: { name: "Lotus", logo: "/teams/team1.png", score: 2 },
+      team2: { name: "Nova", logo: "/teams/team2.png", score: 1 },
+    },
+    {
+      team1: { name: "Shadow", logo: "/teams/team3.png", score: 0 },
+      team2: { name: "Phoenix", logo: "/teams/team4.png", score: 2 },
+    },
+    {
+      team1: { name: "Reapers", logo: "/teams/team5.png", score: 2 },
+      team2: { name: "Zenith", logo: "/teams/team6.png", score: 1 },
+    },
+    {
+      team1: { name: "Vortex", logo: "/teams/team7.png", score: 2 },
+      team2: { name: "Drake", logo: "/teams/team8.png", score: 0 },
+    },
+  ]
+
+  // 3. WINNER LOGIC
+  const getWinner = (match, format = "bo1") => {
+  const score1 = Number(match.team1.score || 0)
+  const score2 = Number(match.team2.score || 0)
+
+  if (score1 === score2) return null
+
+  // reglas BO
+  const needed =
+    format === "bo1" ? 1 :
+    format === "bo3" ? 2 :
+    3 // bo5
+
+  // si todavía no se alcanzó condición mínima, no hay winner
+  if (score1 < needed && score2 < needed) return null
+
+  return score1 > score2 ? match.team1 : match.team2
+}
+
+  // 4. EFFECT (CUARTOS AUTOMÁTICOS)
+  useEffect(() => {
+  // =========================
+  // OCTAVOS (BO1)
+  // =========================
+  const winnersR1 = octavos
+  .map((m) => getWinner(m, "bo1"))
+  .filter(Boolean)
+
+  const quartersTemp = []
+  for (let i = 0; i < winnersR1.length; i += 2) {
+    if (winnersR1[i] && winnersR1[i + 1]) {
+      quartersTemp.push({
+        team1: winnersR1[i],
+        team2: winnersR1[i + 1],
+      })
+    }
+  }
+
+  setQuarters(quartersTemp)
+
+  // =========================
+  // CUARTOS (BO3)
+  // =========================
+  const winnersR2 = quartersTemp.map((m) => getWinner(m, "bo3"))
+
+  const semisTemp = []
+  for (let i = 0; i < winnersR2.length; i += 2) {
+    if (winnersR2[i] && winnersR2[i + 1]) {
+      semisTemp.push({
+        team1: winnersR2[i],
+        team2: winnersR2[i + 1],
+      })
+    }
+  }
+
+  setSemis(semisTemp)
+
+  // =========================
+  // SEMIS (BO5)
+  // =========================
+  const winnersR3 = semisTemp.map((m) => getWinner(m, "bo5"))
+
+  if (winnersR3[0] && winnersR3[1]) {
+    setFinalMatch({
+      team1: winnersR3[0],
+      team2: winnersR3[1],
+    })
+  }
+}, [])
+
+  // 👇 AQUÍ EMPIEZA EL RETURN
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
       {/* BACKGROUND */}
@@ -151,8 +220,7 @@ export default function LotusRift() {
 
       {/* STREAM */}
       <section className="max-w-7xl mx-auto px-5 pb-24">
-        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 overflow-
-         shadow-[0_0_80px_rgba(255,0,170,0.12)]">
+        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 overflow-hidden shadow-[0_0_80px_rgba(255,0,170,0.12)]">
           <div className="px-6 py-5 border-b border-pink-500/10 flex items-center gap-3">
             <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
 
@@ -164,7 +232,7 @@ export default function LotusRift() {
 
 
           <iframe
-            src="https://player.twitch.tv/?channel=riotgames&parent=localhost"
+            src="https://player.twitch.tv/?channel=riotgames&parent=tu-dominio.com"
             width="100%"
             height="650"
             allowFullScreen
@@ -238,83 +306,83 @@ export default function LotusRift() {
 
 
         {/* OCTAVOS */}
-        <div className="flex flex-col justify-center">
+<div className="flex flex-col justify-center">
 
+  <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
+    OCTAVOS
+  </h3>
 
-          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-            OCTAVOS
-          </h3>
+  <div className="space-y-6">
 
+    {octavos.map((match, index) => {
+      const winner =
+        match.team1.score > match.team2.score
+          ? "team1"
+          : "team2"
 
-          <div className="space-y-6">
+      return (
+        <div
+          key={index}
+          className="w-[260px] rounded-2xl bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-5 hover:border-violet-500/40 hover:scale-[1.02] transition duration-300"
+        >
 
+          <div className="space-y-3">
 
-            {[1,2,3,4,5,6,7,8].map((item) => (
-              <div
-                key={item}
-                className="w-[260px] rounded-2xl bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-5 hover:border-violet-500/40 hover:scale-[1.02] transition duration-300"
-              >
+            {/* TEAM 1 */}
+            <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
+              
+              <div className="flex items-center gap-3 flex-1">
+                <img
+                  src={match.team1.logo}
+                  alt="team"
+                  className="w-8 h-8 rounded-lg object-cover"
+                />
 
-
-                <div className="space-y-3">
-
-  {/* TEAM 1 */}
-  <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
-    
-    <div className="flex items-center gap-3 flex-1">
-      <img
-        src="/teams/team1.png"
-        alt="team"
-        className="w-8 h-8 rounded-lg object-cover"
-      />
-
-      <div className="flex-1 text-center">
-        <span className="font-semibold text-white">
-          TEAM 1
-        </span>
-      </div>
-    </div>
-
-    <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
-      2
-    </div>
-  </div>
-
-  <div className="h-px bg-white/5" />
-
-  {/* TEAM 2 */}
-  <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
-    
-    <div className="flex items-center gap-3 flex-1">
-      <img
-        src="/teams/team2.png"
-        alt="team"
-        className="w-8 h-8 rounded-lg object-cover"
-      />
-
-      <div className="flex-1 text-center">
-        <span className="font-semibold text-white">
-          TEAM 2
-        </span>
-      </div>
-    </div>
-
-    <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
-      1
-    </div>
-  </div>
-
-</div>
-
-
+                <div className="flex-1 text-center">
+                  <span className="font-semibold text-white">
+                    {match.team1.name}
+                  </span>
+                </div>
               </div>
-            ))}
 
+              <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
+                {match.team1.score}
+              </div>
+            </div>
+
+            <div className="h-px bg-white/5" />
+
+            {/* TEAM 2 */}
+            <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
+              
+              <div className="flex items-center gap-3 flex-1">
+                <img
+                  src={match.team2.logo}
+                  alt="team"
+                  className="w-8 h-8 rounded-lg object-cover"
+                />
+
+                <div className="flex-1 text-center">
+                  <span className="font-semibold text-white">
+                    {match.team2.name}
+                  </span>
+                </div>
+              </div>
+
+              <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
+                {match.team2.score}
+              </div>
+            </div>
 
           </div>
 
-
         </div>
+      )
+    })}
+
+  </div>
+
+</div>
 
 
         {/* CUARTOS */}
@@ -327,10 +395,8 @@ export default function LotusRift() {
 
 
           <div className="space-y-20">
-
-
-            {[1,2,3,4].map((item) => (
-              <div key={item} className="relative">
+  {quarters.map((match, index) => (
+    <div key={index} className="relative">
 
 
                 {/* CONNECTOR */}
@@ -367,14 +433,14 @@ export default function LotusRift() {
     {/* NOMBRE CENTRADO */}
     <div className="flex-1 text-center">
       <span className="font-bold text-white">
-        TEAM NAME
+        {match.team1.name}
       </span>
     </div>
   </div>
 
   {/* SCORE */}
   <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-    2
+    {match.team1.score}
   </div>
 </div>
 
@@ -393,13 +459,13 @@ export default function LotusRift() {
 
     <div className="flex-1 text-center">
       <span className="font-bold text-white">
-        TEAM NAME
+        {match.team2.name}
       </span>
     </div>
   </div>
 
   <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-    1
+    {match.team2.score}
   </div>
 </div>
 
@@ -432,8 +498,8 @@ export default function LotusRift() {
           <div className="space-y-44">
 
 
-            {[1,2].map((item) => (
-              <div key={item} className="relative">
+            {semis.map((match, index) => (
+  <div key={index}>
 
 
                 {/* CONNECTOR */}
@@ -464,14 +530,12 @@ export default function LotusRift() {
       />
 
       <div className="flex-1 text-center">
-        <span className="font-black text-lg text-white">
-          TEAM 1
-        </span>
+        {match.team1.name}
       </div>
     </div>
 
     <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
-      3
+      {match.team1.score}
     </div>
   </div>
 
@@ -487,14 +551,12 @@ export default function LotusRift() {
       />
 
       <div className="flex-1 text-center">
-        <span className="font-black text-lg text-white">
-          TEAM 2
-        </span>
+        {match.team2.name}
       </div>
     </div>
 
     <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
-      2
+      {match.team2.score}
     </div>
   </div>
 
@@ -578,13 +640,13 @@ export default function LotusRift() {
 
       <div className="flex-1 text-center">
         <span className="font-black text-2xl text-white">
-          TEAM 1
-        </span>
+  {finalMatch?.team1?.name || "TBD"}
+</span>
       </div>
     </div>
 
     <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
-      3
+      {finalMatch?.team1?.score ?? 0}
     </div>
   </div>
 
@@ -607,13 +669,13 @@ export default function LotusRift() {
 
       <div className="flex-1 text-center">
         <span className="font-black text-2xl text-white">
-          TEAM 2
-        </span>
+  {finalMatch?.team2?.name || "TBD"}
+</span>
       </div>
     </div>
 
     <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
-      1
+      {finalMatch?.team2?.score ?? 0}
     </div>
   </div>
 
@@ -647,73 +709,61 @@ export default function LotusRift() {
 
 
       {/* PARTIDOS */}
-      <section className="max-w-7xl mx-auto px-5 pb-32">
-        <div className="flex items-center gap-3 mb-10">
-          <Play className="text-pink-400" />
+<section className="max-w-7xl mx-auto px-5 pb-32">
+  <div className="flex items-center gap-3 mb-10">
+    <Play className="text-pink-400" />
 
+    <h3 className="text-5xl font-black uppercase">
+      PRÓXIMOS PARTIDOS
+    </h3>
+  </div>
 
-          <h3 className="text-5xl font-black uppercase">
-            PRÓXIMOS PARTIDOS
-          </h3>
+  <div className="space-y-5">
+    {quarters.map((match, index) => (
+      <div
+        key={index}
+        className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
+      >
+        {/* FECHA */}
+        <div>
+          <p className="text-pink-300 font-bold">19:00</p>
+          <p className="text-zinc-500 text-sm">4 DE JULIO</p>
         </div>
 
-
-        <div className="space-y-5">
-          {quarterFinals.map((match, index) => (
-            <div
-              key={index}
-              className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
-            >
-              <div>
-                <p className="text-pink-300 font-bold">
-                  19:00
-                </p>
-
-
-                <p className="text-zinc-500 text-sm">
-                  4 DE JULIO
-                </p>
-              </div>
-
-
-              <div className="flex items-center gap-4">
-                <img
-                  src={match.logo1}
-                  className="w-10 h-10 rounded-xl"
-                />
-
-
-                <span className="font-semibold">
-                  {match.team1}
-                </span>
-              </div>
-
-
-              <div className="text-pink-400 font-black text-2xl">
-                VS
-              </div>
-
-
-              <div className="flex items-center gap-4">
-                <span className="font-semibold">
-                  {match.team2}
-                </span>
-
-
-                <img
-                  src={match.logo2}
-                  className="w-10 h-10 rounded-xl"
-                />
-              </div>
-
-
-              <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
-                VER DETALLES
-              </button>
-            </div>
-          ))}
+        {/* TEAM 1 */}
+        <div className="flex items-center gap-4">
+          <img
+            src={match.team1.logo}
+            className="w-10 h-10 rounded-xl"
+          />
+          <span>{match.team1.name}</span>
         </div>
-      </section>
+
+        {/* VS */}
+        <div className="text-pink-400 font-black text-2xl">
+          VS
+        </div>
+
+        {/* TEAM 2 */}
+        <div className="flex items-center gap-4">
+          <span className="font-semibold">
+            {match.team2.name}
+          </span>
+
+          <img
+            src={match.team2.logo}
+            className="w-10 h-10 rounded-xl"
+          />
+        </div>
+
+        {/* BUTTON */}
+        <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
+          VER DETALLES
+        </button>
+      </div>
+    ))}
+  </div>
+</section>
     </main>
   )
 }
