@@ -643,7 +643,7 @@ export default function LotusRift() {
 
         <div className="space-y-5">
 
-          {quarterFinals.map((match, index) => (
+          {octavos.slice(0, 4).map((match, index) => (
             <div
               key={index}
               className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
