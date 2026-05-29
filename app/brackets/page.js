@@ -637,7 +637,7 @@ export default function LotusRift() {
           </div>
 
           <div className="text-zinc-500 text-sm tracking-[0.25em] uppercase">
-            Quarter Finals
+            Octavos - Jornada 1
           </div>
         </div>
 
