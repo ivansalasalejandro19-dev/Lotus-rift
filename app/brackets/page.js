@@ -61,28 +61,28 @@ const octavos = [
 ]
 const quarterFinals = [
   {
-    team1: "TBD",
-    logo1: "/teams/team1.png",
-    team2: "TBD",
-    logo2: "/teams/team2.png",
+    team1: "Nᴀʜᴜᴀʟᴇs",
+    logo1: "/logos/nahuales.png",
+    team2: "Fʟᴀᴡʟᴇss",
+    logo2: "/logos/flawless.png",
   },
   {
-    team1: "TBD",
-    logo1: "/teams/team3.png",
-    team2: "TBD",
-    logo2: "/teams/team4.png",
+    team1: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs",
+    logo1: "/logos/ae_siir_go_legends.png",
+    team2: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ",
+    logo2: "/logos/joyita_gaming.png",
   },
   {
-    team1: "TBD",
-    logo1: "/teams/team5.png",
-    team2: "TBD",
-    logo2: "/teams/team6.png",
+    team1: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ",
+    logo1: "/logos/overextended.png",
+    team2: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs",
+    logo2: "/logos/golden_dragons.png",
   },
   {
-    team1: "TBD",
-    logo1: "/teams/team7.png",
-    team2: "TBD",
-    logo2: "/teams/team8.png",
+    team1: "T502",
+    logo1: "/logos/T502.png",
+    team2: "Sᴍᴀᴄᴋᴅᴏᴡɴ",
+    logo2: "/logos/smackdown.png",
   },
 ]
 
