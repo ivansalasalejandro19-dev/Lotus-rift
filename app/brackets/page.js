@@ -91,6 +91,32 @@ const octavos = [
     score2: 0,
   },
 ]
+const quarterFinals = [
+  {
+    team1: "TBD",
+    logo1: "/teams/team1.png",
+    team2: "TBD",
+    logo2: "/teams/team2.png",
+  },
+  {
+    team1: "TBD",
+    logo1: "/teams/team3.png",
+    team2: "TBD",
+    logo2: "/teams/team4.png",
+  },
+  {
+    team1: "TBD",
+    logo1: "/teams/team5.png",
+    team2: "TBD",
+    logo2: "/teams/team6.png",
+  },
+  {
+    team1: "TBD",
+    logo1: "/teams/team7.png",
+    team2: "TBD",
+    logo2: "/teams/team8.png",
+  },
+]
 
 
 export default function LotusRift() {
