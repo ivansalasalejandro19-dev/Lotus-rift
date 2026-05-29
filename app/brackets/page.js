@@ -456,10 +456,11 @@ const finalMatch =
   <div className="flex items-center gap-3 flex-1">
     
     {/* LOGO */}
-    <img src={match.team1.logo} />
-      alt="team"
-      className="w-9 h-9 rounded-lg object-cover"
-    />
+    <img
+  src={match.team1.logo}
+  alt="team"
+  className="w-9 h-9 rounded-lg object-cover"
+/>
 
     {/* NOMBRE CENTRADO */}
     <div className="flex-1 text-center">
@@ -482,10 +483,11 @@ const finalMatch =
                     <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
   
   <div className="flex items-center gap-3 flex-1">
-    <img src={match.team2.logo} />
-      alt="team"
-      className="w-9 h-9 rounded-lg object-cover"
-    />
+    <img
+  src={match.team2.logo}
+  alt="team"
+  className="w-9 h-9 rounded-lg object-cover"
+/>
 
     <div className="flex-1 text-center">
       <span className="font-bold text-white">
