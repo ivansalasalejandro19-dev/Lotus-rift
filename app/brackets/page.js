@@ -403,14 +403,14 @@ export default function LotusRift() {
     {/* NOMBRE CENTRADO */}
     <div className="flex-1 text-center">
       <span className="font-bold text-white">
-        TEAM NAME
+        TBD
       </span>
     </div>
   </div>
 
   {/* SCORE */}
   <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-    2
+    0
   </div>
 </div>
 
@@ -429,13 +429,13 @@ export default function LotusRift() {
 
     <div className="flex-1 text-center">
       <span className="font-bold text-white">
-        TEAM NAME
+        TBD
       </span>
     </div>
   </div>
 
   <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-    1
+    0
   </div>
 </div>
 
