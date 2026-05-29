@@ -501,13 +501,13 @@ export default function LotusRift() {
 
       <div className="flex-1 text-center">
         <span className="font-black text-lg text-white">
-          TEAM 1
+          TBD
         </span>
       </div>
     </div>
 
     <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
-      3
+      0
     </div>
   </div>
 
@@ -524,13 +524,13 @@ export default function LotusRift() {
 
       <div className="flex-1 text-center">
         <span className="font-black text-lg text-white">
-          TEAM 2
+          TBD
         </span>
       </div>
     </div>
 
     <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
-      2
+      0
     </div>
   </div>
 
@@ -614,13 +614,13 @@ export default function LotusRift() {
 
       <div className="flex-1 text-center">
         <span className="font-black text-2xl text-white">
-          TEAM 1
+          TBD
         </span>
       </div>
     </div>
 
     <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
-      3
+      0
     </div>
   </div>
 
@@ -643,13 +643,13 @@ export default function LotusRift() {
 
       <div className="flex-1 text-center">
         <span className="font-black text-2xl text-white">
-          TEAM 2
+          TBD
         </span>
       </div>
     </div>
 
     <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
-      1
+      0
     </div>
   </div>
 
