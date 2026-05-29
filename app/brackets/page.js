@@ -428,20 +428,24 @@ export default function LotusRift() {
 
                                 <div className="flex items-center gap-3 flex-1">
 
-                                  <img
-                                    src={team.logo}
-                                    className="w-9 h-9 rounded-lg object-cover"
-                                  />
+                                  {team ? (
+  <img
+    src={team.logo}
+    className="w-9 h-9 rounded-lg object-cover"
+  />
+) : (
+  <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10" />
+)}
 
                                   <div className="flex-1 text-center">
                                     <span className="font-bold text-white">
-                                      {team.name}
+                                      {team?.name || "TBD"}
                                     </span>
                                   </div>
                                 </div>
 
                                 <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-                                  {team.score}
+                                  {team?.score || 0}
                                 </div>
                               </div>
 
@@ -486,20 +490,24 @@ export default function LotusRift() {
 
                                 <div className="flex items-center gap-3 flex-1">
 
-                                  <img
-                                    src={team.logo}
-                                    className="w-10 h-10 rounded-xl object-cover"
-                                  />
+                                 {team ? (
+  <img
+    src={team.logo}
+    className="w-10 h-10 rounded-xl object-cover"
+  />
+) : (
+  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10" />
+)}
 
                                   <div className="flex-1 text-center">
                                     <span className="font-black text-lg text-white">
-                                      {team.name}
+                                      {team?.name || "TBD"}
                                     </span>
                                   </div>
                                 </div>
 
                                 <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
-                                  {team.score}
+                                  {team?.score || 0}
                                 </div>
                               </div>
 
@@ -559,20 +567,24 @@ export default function LotusRift() {
 
                             <div className="flex items-center gap-4 flex-1">
 
-                              <img
-                                src={team.logo}
-                                className="w-12 h-12 rounded-xl object-cover"
-                              />
+                              {team ? (
+  <img
+    src={team.logo}
+    className="w-12 h-12 rounded-xl object-cover"
+  />
+) : (
+  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10" />
+)}
 
                               <div className="flex-1 text-center">
                                 <span className="font-black text-2xl text-white">
-                                  {team.name}
+                                  {team?.name || "TBD"}
                                 </span>
                               </div>
                             </div>
 
                             <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
-                              {team.score}
+                              {team?.score || 0}
                             </div>
                           </div>
 
