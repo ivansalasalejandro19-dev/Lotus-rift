@@ -258,35 +258,53 @@ export default function LotusRift() {
 
                 <div className="space-y-3">
 
+  {/* TEAM 1 */}
+  <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
+    
+    <div className="flex items-center gap-3 flex-1">
+      <img
+        src="/teams/team1.png"
+        alt="team"
+        className="w-8 h-8 rounded-lg object-cover"
+      />
 
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold">
-                      TBD
-                    </span>
+      <div className="flex-1 text-center">
+        <span className="font-semibold text-white">
+          TEAM 1
+        </span>
+      </div>
+    </div>
 
+    <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
+      2
+    </div>
+  </div>
 
-                    <span className="text-violet-400">
-                      🪷
-                    </span>
-                  </div>
+  <div className="h-px bg-white/5" />
 
+  {/* TEAM 2 */}
+  <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
+    
+    <div className="flex items-center gap-3 flex-1">
+      <img
+        src="/teams/team2.png"
+        alt="team"
+        className="w-8 h-8 rounded-lg object-cover"
+      />
 
-                  <div className="h-px bg-white/5" />
+      <div className="flex-1 text-center">
+        <span className="font-semibold text-white">
+          TEAM 2
+        </span>
+      </div>
+    </div>
 
+    <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
+      1
+    </div>
+  </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold">
-                      TBD
-                    </span>
-
-
-                    <span className="text-violet-400">
-                      🪷
-                    </span>
-                  </div>
-
-
-                </div>
+</div>
 
 
               </div>
