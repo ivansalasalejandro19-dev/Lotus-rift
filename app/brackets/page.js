@@ -274,15 +274,6 @@ export default function LotusRift() {
             className="relative"
           >
 
-            <div className="absolute inset-0 bg-pink-500/30 blur-[140px] rounded-full" />
-
-            <img
-              src="/lotus-logo.png"
-              alt="Lotus Rift"
-              className="relative z-10 w-full max-w-[600px] mx-auto opacity-95"
-            />
-          </motion.div>
-
         </div>
       </section>
 
