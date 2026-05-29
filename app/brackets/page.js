@@ -357,13 +357,13 @@ export default function LotusRift() {
                         <div className="flex items-center gap-3 flex-1">
 
                           <img
-                            src={match.team1.logo}
+                            src={match.team1?.logo}
                             className="w-8 h-8 rounded-lg object-cover"
                           />
 
                           <div className="flex-1 text-center">
                             <span className="font-semibold text-white">
-                              {match.team1.name}
+                              {match.team1?.name || "TBD"}
                             </span>
                           </div>
                         </div>
@@ -380,13 +380,13 @@ export default function LotusRift() {
                         <div className="flex items-center gap-3 flex-1">
 
                           <img
-                            src={match.team2.logo}
+                            src={match.team2?.logo}
                             className="w-8 h-8 rounded-lg object-cover"
                           />
 
                           <div className="flex-1 text-center">
                             <span className="font-semibold text-white">
-                              {match.team2.name}
+                              {match.team2?.name || "TBD"}
                             </span>
                           </div>
                         </div>
@@ -640,12 +640,12 @@ export default function LotusRift() {
               <div className="flex items-center gap-4 w-[320px]">
 
                 <img
-                  src={match.team1.logo}
+                  src={match.team1?.logo}
                   className="w-10 h-10 rounded-xl"
                 />
 
                 <span className="font-semibold">
-                  {match.team1.name}
+                  {match.team1?.name || "TBD"}
                 </span>
               </div>
 
@@ -656,11 +656,11 @@ export default function LotusRift() {
               <div className="flex items-center justify-end gap-4 w-[320px]">
 
                 <span className="font-semibold text-right">
-                  {match.team2.name}
+                  {match.team2?.name || "TBD"}
                 </span>
 
                 <img
-                  src={match.team2.logo}
+                  src={match.team2?.logo}
                   className="w-10 h-10 rounded-xl"
                 />
               </div>
