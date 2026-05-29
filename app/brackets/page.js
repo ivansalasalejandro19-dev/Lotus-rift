@@ -12,83 +12,63 @@ import {
 
 const octavos = [
   {
-    team1: "Nᴀʜᴜᴀʟᴇs",
-    logo1: "/logos/nahuales.png",
-    score1: 0,
+    team1: { name: "Nᴀʜᴜᴀʟᴇs", logo: "/logos/nahuales.png", score: 0 }
 
-    team2: "Fʟᴀᴡʟᴇss",
-    logo2: "/logos/flawless.png",
-    score2: 0,
+    team2: { name: "Fʟᴀᴡʟᴇss", logo: "/logos/flawless.png", score: 0 },
   },
 
   {
-    team1: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs",
+    team1: { name: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs", logo: "/logos/ae_siir_go_legends.png", score: 0 }
     logo1: "/logos/ae_siir_go_legends.png",
     score1: 0,
 
-    team2: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ",
+    team2: { name: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ", logo: "/logos/joyita_gaming.png", score: 0 },
     logo2: "/logos/joyita_gaming.png",
     score2: 0,
   },
 
   {
-    team1: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ",
+    team1: { name: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ", logo: "/logos/overextended.png", score: 0 },
     logo1: "/logos/overextended.png",
     score1: 0,
 
-    team2: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs",
+    team2: { name: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs", logo: "/logos/golden_dragons.png", score: 0 },
     logo2: "/logos/golden_dragons.png",
     score2: 0,
   },
 
   {
-    team1: "T502",
+    team1: { name: "T502", logo: "/logos/T502.png", score: 0 },
     logo1: "/logos/T502.png",
     score1: 0,
 
-    team2: "Sᴍᴀᴄᴋᴅᴏᴡɴ",
+    team2: { name: "Sᴍᴀᴄᴋᴅᴏᴡɴ", logo: "/logos/smackdown.png", score: 0 },
     logo2: "/logos/smackdown.png",
     score2: 0,
   },
 
   {
-    team1: "Cᴏsᴀ Nᴏsᴛʀᴀ",
-    logo1: "/logos/cosa_nostra.png",
-    score1: 0,
+    team1: { name: "Cᴏsᴀ Nᴏsᴛʀᴀ", logo: "/logos/cosa_nostra.png", score: 0 },
 
-    team2: "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ",
-    logo2: "/logos/huesitos.png",
-    score2: 0,
+    team2: { name: "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ", logo: "/logos/huesitos.png", score: 0 },
   },
 
   {
-    team1: "Iᴄᴇ ɢᴏʟᴅ",
-    logo1: "/logos/ice_gold.png",
-    score1: 0,
+    team1: { name: "Iᴄᴇ ɢᴏʟᴅ", logo: "/logos/ice_gold.png", score: 0 },
 
-    team2: "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs",
-    logo2: "/logos/shadow_reapers.png",
-    score2: 0,
+    team2: { name: "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs", logo: "/logos/shadow_reapers.png", score: 0 },
   },
 
   {
-    team1: "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ",
-    logo1: "/logos/secret_society.png",
-    score1: 0,
+    team1: { name: "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ", logo: "/logos/secret_society.png", score: 0 },
 
-    team2: "Rᴏᴋᴜʀᴏᴍɪɴᴏs",
-    logo2: "/logos/rku.png",
-    score2: 0,
+    team2: { name: "Rᴏᴋᴜʀᴏᴍɪɴᴏs", logo: "/logos/rku.png", score: 0 },
   },
 
   {
-    team1: "HᴀTsᴜ",
-    logo1: "/logos/hatsu.png",
-    score1: 0,
+    team1: { name: "HᴀTsᴜ", logo: "/logos/hatsu.png", score: 0 },
 
-    team2: "Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ",
-    logo2: "/logos/new_alliance.png",
-    score2: 0,
+    team2: { name: "Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ", logo: "/logos/new_alliance.png", score: 0 },
   },
 ]
 const quarterFinals = [
