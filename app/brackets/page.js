@@ -7,78 +7,188 @@ import {
   MessagesSquare,
 } from "lucide-react"
 
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function getWinner(match, winsNeeded) {
+  if (match.team1.score >= winsNeeded) return match.team1
+  if (match.team2.score >= winsNeeded) return match.team2
+  return null
+}
+
+function getLoser(match, winsNeeded) {
+  if (match.team1.score >= winsNeeded) return match.team2
+  if (match.team2.score >= winsNeeded) return match.team1
+  return null
+}
+
+function TeamSlot({ team, loser = false, large = false }) {
+  if (!team) {
+    return (
+      <div className="flex items-center gap-3 flex-1 opacity-40">
+        <div className={`${large ? "w-10 h-10" : "w-9 h-9"} rounded-xl bg-white/5 border border-white/10`} />
+        <div className="flex-1 text-center">
+          <span className={`font-bold text-zinc-500 ${large ? "text-lg" : ""}`}>
+            TBD
+          </span>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className={`flex items-center gap-3 flex-1 transition-all ${loser ? "opacity-30 grayscale" : ""}`}>
+      <img
+        src={team.logo}
+        alt={team.name}
+        className={`${large ? "w-10 h-10" : "w-9 h-9"} rounded-xl object-cover`}
+      />
+
+      <div className="flex-1 text-center">
+        <span className={`font-bold text-white ${large ? "text-lg font-black" : ""}`}>
+          {team.name}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+/* =========================================================
+   OCTAVOS
+========================================================= */
+
 const octavos = [
   {
     team1: { name: "Nᴀʜᴜᴀʟᴇs", logo: "/logos/nahuales.png", score: 0 },
     team2: { name: "Fʟᴀᴡʟᴇss", logo: "/logos/flawless.png", score: 0 },
   },
-
   {
     team1: { name: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs", logo: "/logos/ae_siir_go_legends.png", score: 0 },
     team2: { name: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ", logo: "/logos/joyita_gaming.png", score: 0 },
   },
-
   {
     team1: { name: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ", logo: "/logos/overextended.png", score: 0 },
     team2: { name: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs", logo: "/logos/golden_dragons.png", score: 0 },
   },
-
   {
     team1: { name: "T502", logo: "/logos/T502.png", score: 0 },
     team2: { name: "Sᴍᴀᴄᴋᴅᴏᴡɴ", logo: "/logos/smackdown.png", score: 0 },
   },
-
   {
     team1: { name: "Cᴏsᴀ Nᴏsᴛʀᴀ", logo: "/logos/cosa_nostra.png", score: 0 },
     team2: { name: "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ", logo: "/logos/huesitos.png", score: 0 },
   },
-
   {
     team1: { name: "Iᴄᴇ ɢᴏʟᴅ", logo: "/logos/ice_gold.png", score: 0 },
     team2: { name: "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs", logo: "/logos/shadow_reapers.png", score: 0 },
   },
-
   {
     team1: { name: "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ", logo: "/logos/secret_society.png", score: 0 },
     team2: { name: "Rᴏᴋᴜʀᴏᴍɪɴᴏs", logo: "/logos/rku.png", score: 0 },
   },
-
   {
     team1: { name: "HᴀTsᴜ", logo: "/logos/hatsu.png", score: 0 },
     team2: { name: "Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ", logo: "/logos/new_alliance.png", score: 0 },
   },
 ]
 
-const quarterFinals = Array.from({ length: 4 }, (_, i) => {
-  const match1 = octavos[i * 2]
-  const match2 = octavos[i * 2 + 1]
+/* =========================================================
+   CUARTOS (BO3)
+========================================================= */
 
-  return {
+const quarterFinals = [
+  {
+    team1: getWinner(octavos[0], 1),
+    team2: getWinner(octavos[1], 1),
+    score1: 0,
+    score2: 0,
+  },
+  {
+    team1: getWinner(octavos[2], 1),
+    team2: getWinner(octavos[3], 1),
+    score1: 0,
+    score2: 0,
+  },
+  {
+    team1: getWinner(octavos[4], 1),
+    team2: getWinner(octavos[5], 1),
+    score1: 0,
+    score2: 0,
+  },
+  {
+    team1: getWinner(octavos[6], 1),
+    team2: getWinner(octavos[7], 1),
+    score1: 0,
+    score2: 0,
+  },
+]
+
+/* =========================================================
+   SEMIS (BO5)
+========================================================= */
+
+const semiFinals = [
+  {
     team1:
-      match1.team1.score >= match1.team2.score
-        ? match1.team1
-        : match1.team2,
+      quarterFinals[0].score1 >= 2
+        ? quarterFinals[0].team1
+        : quarterFinals[0].score2 >= 2
+        ? quarterFinals[0].team2
+        : null,
 
     team2:
-      match2.team1.score >= match2.team2.score
-        ? match2.team1
-        : match2.team2,
-  }
-})
+      quarterFinals[1].score1 >= 2
+        ? quarterFinals[1].team1
+        : quarterFinals[1].score2 >= 2
+        ? quarterFinals[1].team2
+        : null,
 
-const semiFinals = Array.from({ length: 2 }, (_, i) => {
-  const match1 = quarterFinals[i * 2]
-  const match2 = quarterFinals[i * 2 + 1]
+    score1: 0,
+    score2: 0,
+  },
 
-  return {
-    team1: match1.team1,
-    team2: match2.team1,
-  }
-})
+  {
+    team1:
+      quarterFinals[2].score1 >= 2
+        ? quarterFinals[2].team1
+        : quarterFinals[2].score2 >= 2
+        ? quarterFinals[2].team2
+        : null,
+
+    team2:
+      quarterFinals[3].score1 >= 2
+        ? quarterFinals[3].team1
+        : quarterFinals[3].score2 >= 2
+        ? quarterFinals[3].team2
+        : null,
+
+    score1: 0,
+    score2: 0,
+  },
+]
+
+/* =========================================================
+   FINAL
+========================================================= */
 
 const finalMatch = {
-  team1: semiFinals[0]?.team1,
-  team2: semiFinals[1]?.team1,
+  team1:
+    semiFinals[0].score1 >= 3
+      ? semiFinals[0].team1
+      : semiFinals[0].score2 >= 3
+      ? semiFinals[0].team2
+      : null,
+
+  team2:
+    semiFinals[1].score1 >= 3
+      ? semiFinals[1].team1
+      : semiFinals[1].score2 >= 3
+      ? semiFinals[1].team2
+      : null,
+
+  score1: 0,
+  score2: 0,
 }
 
 export default function LotusRift() {
@@ -88,12 +198,8 @@ export default function LotusRift() {
       {/* BACKGROUND */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-black" />
-
         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-pink-500/20 blur-[180px] rounded-full" />
-
         <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-fuchsia-600/20 blur-[180px] rounded-full" />
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,120,0.15),transparent_50%)]" />
       </div>
 
       {/* HEADER */}
