@@ -207,11 +207,10 @@ export default function LotusRift() {
       </section>
 
 
-      {/* BRACKET */}
-<section
-  id="bracket"
-  className="relative py-24 px-6 overflow-hidden border-y border-white/5"
->
+       {/* BRACKET */}
+      <section className="relative py-24 px-6 overflow-hidden border-y border-white/5">
+
+        <div className="max-w-[1700px] mx-auto relative z-10">
 
 
   {/* BACKGROUND */}
@@ -271,175 +270,61 @@ export default function LotusRift() {
       <div className="min-w-[1450px] flex items-center justify-center gap-16">
 
 
-        {/* OCTAVOS */}
-        <div className="flex flex-col justify-center">
-
-
-          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-            OCTAVOS
-          </h3>
-
-
+       {/* OCTAVOS */}
           <div className="space-y-6">
-
-
             {octavos.map((match, index) => (
-  <div key={index} className="w-[260px] rounded-2xl bg-zinc-900/80 border border-white/10 p-5">
+              <div key={index} className="w-[260px] rounded-2xl bg-zinc-900/80 border border-white/10 p-5">
 
-    {/* TEAM 1 */}
-    <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
-      <div className="flex items-center gap-3 flex-1">
-       <img
-  src={match.team1.logo}
-  onError={(e) => {
-    e.currentTarget.src = "/logos/default.png"
-  }}
-  className="w-8 h-8 rounded-lg object-cover"
-/>
+                <div className="flex items-center justify-between">
+                  <img
+                    src={match.team1.logo}
+                    onError={(e) => (e.currentTarget.src = defaultLogo)}
+                    className="w-8 h-8 rounded-lg"
+                  />
+                  <span>{match.team1.name}</span>
+                  <span>{match.team1.score}</span>
+                </div>
 
-        <div className="flex-1 text-center">
-          <span className="font-semibold text-white">
-            {match.team1.name}
-          </span>
-        </div>
-      </div>
+                <div className="flex items-center justify-between mt-3">
+                  <img
+                    src={match.team2.logo}
+                    onError={(e) => (e.currentTarget.src = defaultLogo)}
+                    className="w-8 h-8 rounded-lg"
+                  />
+                  <span>{match.team2.name}</span>
+                  <span>{match.team2.score}</span>
+                </div>
 
-      <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
-        {match.team1.score}
-      </div>
-    </div>
-
-    <div className="h-px bg-white/5" />
-
-    {/* TEAM 2 */}
-    <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
-      <div className="flex items-center gap-3 flex-1">
-        <img
-  src={match.team2.logo}
-  onError={(e) => {
-    e.currentTarget.src = "/logos/default.png"
-  }}
-  className="w-8 h-8 rounded-lg object-cover"
-/>
-
-        <div className="flex-1 text-center">
-          <span className="font-semibold text-white">
-            {match.team2.name}
-          </span>
-        </div>
-      </div>
-
-      <div className="ml-3 min-w-[30px] h-7 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-bold text-violet-300 text-sm">
-        {match.team2.score}
-      </div>
-    </div>
-
-  </div>
-))}
-
-
+              </div>
+            ))}
           </div>
 
 
         </div>
 
 
-        {/* CUARTOS */}
-        <div className="flex flex-col justify-center">
+         {/* CUARTOS FIX (ANTES ERROR match) */}
+          <div className="space-y-20 mt-20">
+            {[1, 2, 3, 4].map((item) => (
+              <div key={item} className="w-[280px]">
 
-
-          <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-            CUARTOS
-          </h3>
-
-
-          <div className="space-y-20">
-
-
-            {[1,2,3,4].map((item) => (
-              <div key={item} className="relative">
-
-
-                {/* CONNECTOR */}
-                <div className="absolute -left-12 top-1/2 flex items-center">
-
-
-                  <div className="w-6 h-px bg-violet-500/40" />
-
-
-                  <div className="w-6 h-24 border-l border-b border-violet-500/20 rounded-bl-2xl" />
-
-
+                <div className="flex items-center justify-between">
+                  <img
+                    src={quarterFinals[item - 1]?.logo1 || defaultLogo}
+                    onError={(e) => (e.currentTarget.src = defaultLogo)}
+                    className="w-8 h-8"
+                  />
+                  <span>{quarterFinals[item - 1]?.team1}</span>
                 </div>
 
-
-                <div className="w-[280px] rounded-3xl bg-gradient-to-br from-violet-500/10 to-black border border-violet-500/20 p-6 shadow-[0_0_35px_rgba(168,85,247,0.12)] hover:scale-[1.02] transition duration-300">
-
-
-                  <div className="space-y-4">
-
-
-                    <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
-  
-  {/* IZQUIERDA */}
-  <div className="flex items-center gap-3 flex-1">
-    
-    {/* LOGO */}
-   <img
-  src={match.team1.logo}
-  onError={(e) => {
-    e.currentTarget.src = "/logos/default.png"
-  }}
-  className="w-8 h-8 rounded-lg object-cover"
-/>
-
-    {/* NOMBRE CENTRADO */}
-    <div className="flex-1 text-center">
-      <span className="font-bold text-white">
-        TBD
-      </span>
-    </div>
-  </div>
-
-  {/* SCORE */}
-  <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-    0
-  </div>
-</div>
-
-
-                    <div className="h-px bg-white/10" />
-
-
-                    <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
-  
-  <div className="flex items-center gap-3 flex-1">
-    <img
-  src={match.team2.logo}
-  onError={(e) => {
-    e.currentTarget.src = "/logos/default.png"
-  }}
-  className="w-8 h-8 rounded-lg object-cover"
-/>
-
-    <div className="flex-1 text-center">
-      <span className="font-bold text-white">
-        TBD
-      </span>
-    </div>
-  </div>
-
-  <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-    0
-  </div>
-</div>
-
-
-                  </div>
-
-
+                <div className="flex items-center justify-between mt-3">
+                  <img
+                    src={quarterFinals[item - 1]?.logo2 || defaultLogo}
+                    onError={(e) => (e.currentTarget.src = defaultLogo)}
+                    className="w-8 h-8"
+                  />
+                  <span>{quarterFinals[item - 1]?.team2}</span>
                 </div>
-
 
               </div>
             ))}
