@@ -189,7 +189,7 @@ export default function LotusRift() {
 
 
             <img
-              src="/lotus-logo.png"
+              src="logos/lotus-logo.png"
               alt="Lotus Rift"
               className="relative z-10 w-full max-w-[600px] mx-auto opacity-95"
             />
@@ -304,10 +304,13 @@ export default function LotusRift() {
     {/* TEAM 1 */}
     <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
       <div className="flex items-center gap-3 flex-1">
-        <img
-          src={match.team1.logo}
-          className="w-8 h-8 rounded-lg object-cover"
-        />
+       <img
+  src={match.team1.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
         <div className="flex-1 text-center">
           <span className="font-semibold text-white">
@@ -327,9 +330,12 @@ export default function LotusRift() {
     <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
       <div className="flex items-center gap-3 flex-1">
         <img
-          src={match.team2.logo}
-          className="w-8 h-8 rounded-lg object-cover"
-        />
+  src={match.team2.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
         <div className="flex-1 text-center">
           <span className="font-semibold text-white">
@@ -394,11 +400,13 @@ export default function LotusRift() {
   <div className="flex items-center gap-3 flex-1">
     
     {/* LOGO */}
-    <img
-      src="/teams/team1.png"
-      alt="team"
-      className="w-9 h-9 rounded-lg object-cover"
-    />
+   <img
+  src={match.team1.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
     {/* NOMBRE CENTRADO */}
     <div className="flex-1 text-center">
@@ -422,10 +430,12 @@ export default function LotusRift() {
   
   <div className="flex items-center gap-3 flex-1">
     <img
-      src="/teams/team2.png"
-      alt="team"
-      className="w-9 h-9 rounded-lg object-cover"
-    />
+  src={match.team2.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
     <div className="flex-1 text-center">
       <span className="font-bold text-white">
@@ -494,10 +504,12 @@ export default function LotusRift() {
     
     <div className="flex items-center gap-3 flex-1">
       <img
-        src="/teams/team1.png"
-        alt="team"
-        className="w-10 h-10 rounded-xl object-cover"
-      />
+  src={match.team1.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
       <div className="flex-1 text-center">
         <span className="font-black text-lg text-white">
@@ -517,10 +529,12 @@ export default function LotusRift() {
     
     <div className="flex items-center gap-3 flex-1">
       <img
-        src="/teams/team2.png"
-        alt="team"
-        className="w-10 h-10 rounded-xl object-cover"
-      />
+  src={match.team2.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
       <div className="flex-1 text-center">
         <span className="font-black text-lg text-white">
@@ -607,10 +621,12 @@ export default function LotusRift() {
     
     <div className="flex items-center gap-4 flex-1">
       <img
-        src="/teams/team1.png"
-        alt="team"
-        className="w-12 h-12 rounded-xl object-cover"
-      />
+  src={match.team1.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
       <div className="flex-1 text-center">
         <span className="font-black text-2xl text-white">
@@ -636,10 +652,12 @@ export default function LotusRift() {
     
     <div className="flex items-center gap-4 flex-1">
       <img
-        src="/teams/team2.png"
-        alt="team"
-        className="w-12 h-12 rounded-xl object-cover"
-      />
+  src={match.team2.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
       <div className="flex-1 text-center">
         <span className="font-black text-2xl text-white">
@@ -714,9 +732,12 @@ export default function LotusRift() {
 
               <div className="flex items-center gap-4">
                 <img
-                  src={match.logo1}
-                  className="w-10 h-10 rounded-xl"
-                />
+  src={match.team1.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
 
 
                 <span className="font-semibold">
@@ -737,9 +758,12 @@ export default function LotusRift() {
 
 
                 <img
-                  src={match.logo2}
-                  className="w-10 h-10 rounded-xl"
-                />
+  src={match.team2.logo}
+  onError={(e) => {
+    e.currentTarget.src = "/logos/default.png"
+  }}
+  className="w-8 h-8 rounded-lg object-cover"
+/>
               </div>
 
 
