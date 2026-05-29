@@ -334,31 +334,56 @@ export default function LotusRift() {
                   <div className="space-y-4">
 
 
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold">
-                        TBD
-                      </span>
+                    <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
+  
+  {/* IZQUIERDA */}
+  <div className="flex items-center gap-3 flex-1">
+    
+    {/* LOGO */}
+    <img
+      src="/teams/team1.png"
+      alt="team"
+      className="w-9 h-9 rounded-lg object-cover"
+    />
 
+    {/* NOMBRE CENTRADO */}
+    <div className="flex-1 text-center">
+      <span className="font-bold text-white">
+        TEAM NAME
+      </span>
+    </div>
+  </div>
 
-                      <span className="text-violet-400">
-                        ✦
-                      </span>
-                    </div>
+  {/* SCORE */}
+  <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
+    2
+  </div>
+</div>
 
 
                     <div className="h-px bg-white/10" />
 
 
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold">
-                        TBD
-                      </span>
+                    <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
+  
+  <div className="flex items-center gap-3 flex-1">
+    <img
+      src="/teams/team2.png"
+      alt="team"
+      className="w-9 h-9 rounded-lg object-cover"
+    />
 
+    <div className="flex-1 text-center">
+      <span className="font-bold text-white">
+        TEAM NAME
+      </span>
+    </div>
+  </div>
 
-                      <span className="text-violet-400">
-                        ✦
-                      </span>
-                    </div>
+  <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
+    1
+  </div>
+</div>
 
 
                   </div>
@@ -409,38 +434,53 @@ export default function LotusRift() {
                 <div className="w-[300px] rounded-3xl bg-gradient-to-br from-pink-500/10 to-violet-500/10 border border-pink-400/20 p-7 shadow-[0_0_45px_rgba(168,85,247,0.18)] hover:scale-[1.02] transition duration-300">
 
 
-                  <div className="space-y-4">
+                  <div className="space-y-3">
 
+  <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-3">
+    
+    <div className="flex items-center gap-3 flex-1">
+      <img
+        src="/teams/team1.png"
+        alt="team"
+        className="w-10 h-10 rounded-xl object-cover"
+      />
 
-                    <div className="flex items-center justify-between">
-                      <span className="font-black text-lg">
-                        TBD
-                      </span>
+      <div className="flex-1 text-center">
+        <span className="font-black text-lg text-white">
+          TEAM 1
+        </span>
+      </div>
+    </div>
 
+    <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
+      3
+    </div>
+  </div>
 
-                      <span className="text-pink-300">
-                        ✦
-                      </span>
-                    </div>
+  <div className="h-px bg-white/10" />
 
+  <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-3">
+    
+    <div className="flex items-center gap-3 flex-1">
+      <img
+        src="/teams/team2.png"
+        alt="team"
+        className="w-10 h-10 rounded-xl object-cover"
+      />
 
-                    <div className="h-px bg-white/10" />
+      <div className="flex-1 text-center">
+        <span className="font-black text-lg text-white">
+          TEAM 2
+        </span>
+      </div>
+    </div>
 
+    <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
+      2
+    </div>
+  </div>
 
-                    <div className="flex items-center justify-between">
-                      <span className="font-black text-lg">
-                        TBD
-                      </span>
-
-
-                      <span className="text-pink-300">
-                        ✦
-                      </span>
-                    </div>
-
-
-                  </div>
-
+</div>
 
                 </div>
 
@@ -508,43 +548,58 @@ export default function LotusRift() {
               {/* TEAMS */}
               <div className="space-y-5">
 
+  {/* TEAM 1 */}
+  <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
+    
+    <div className="flex items-center gap-4 flex-1">
+      <img
+        src="/teams/team1.png"
+        alt="team"
+        className="w-12 h-12 rounded-xl object-cover"
+      />
 
-                <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
-                  <span className="font-bold text-xl">
-                    TBD
-                  </span>
+      <div className="flex-1 text-center">
+        <span className="font-black text-2xl text-white">
+          TEAM 1
+        </span>
+      </div>
+    </div>
 
+    <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
+      3
+    </div>
+  </div>
 
-                  <span className="text-pink-300">
-                    🪷
-                  </span>
-                </div>
+  {/* BO5 */}
+  <div className="flex justify-center">
+    <div className="px-5 py-2 rounded-xl bg-black/50 border border-violet-500/20 font-black text-violet-300">
+      BO5
+    </div>
+  </div>
 
+  {/* TEAM 2 */}
+  <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
+    
+    <div className="flex items-center gap-4 flex-1">
+      <img
+        src="/teams/team2.png"
+        alt="team"
+        className="w-12 h-12 rounded-xl object-cover"
+      />
 
-                <div className="flex justify-center">
+      <div className="flex-1 text-center">
+        <span className="font-black text-2xl text-white">
+          TEAM 2
+        </span>
+      </div>
+    </div>
 
+    <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
+      1
+    </div>
+  </div>
 
-                  <div className="px-5 py-2 rounded-xl bg-black/50 border border-violet-500/20 font-black text-violet-300">
-                    BO5
-                  </div>
-
-
-                </div>
-
-
-                <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
-                  <span className="font-bold text-xl">
-                    TBD
-                  </span>
-
-
-                  <span className="text-pink-300">
-                    🪷
-                  </span>
-                </div>
-
-
-              </div>
+</div>
 
 
               <div className="mt-8 text-center text-zinc-500 text-sm tracking-[0.2em]">
