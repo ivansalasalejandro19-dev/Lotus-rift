@@ -211,7 +211,7 @@ export default function LotusRift() {
             </h1>
 
             <p className="text-xs tracking-[0.3em] text-zinc-500 uppercase mt-1">
-              ESPORTS TOURNAMENT
+              TORNEO LAN
             </p>
           </div>
         </div>
@@ -228,7 +228,7 @@ export default function LotusRift() {
           >
 
             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-pink-500/20 bg-pink-500/10 text-pink-200 text-sm tracking-[0.2em] uppercase">
-              🌸 INSCRIPCIONES ABIERTAS
+              🌸 INSCRIPCIONES CERRADAS
             </div>
 
             <h2 className="mt-8 text-7xl md:text-8xl font-black leading-none">
@@ -241,8 +241,7 @@ export default function LotusRift() {
             </h2>
 
             <p className="mt-7 text-zinc-400 text-lg max-w-xl">
-              Unite a la comunidad de Discord y disfrutá del
-              bracket en vivo de Wild Rift.
+              Unite a la comunidad de Discord y WhatsApp para estar al tanto de las últimas noticias, actualizaciones y sorpresas exclusivas del torneo.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -253,7 +252,7 @@ export default function LotusRift() {
                 className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
               >
                 <MessageCircle size={20} />
-                Comunidad
+                Comunidad de Whatsapp
               </a>
 
               <a
@@ -288,25 +287,46 @@ export default function LotusRift() {
       </section>
 
       {/* STREAM */}
-      <section className="max-w-7xl mx-auto px-5 pb-24">
-        <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 overflow-hidden shadow-[0_0_80px_rgba(255,0,170,0.12)]">
+<section className="max-w-7xl mx-auto px-5 pb-24">
+  <div className="rounded-[2rem] border border-pink-500/20 bg-black/70 overflow-hidden shadow-[0_0_80px_rgba(255,0,170,0.12)]">
 
-          <div className="px-6 py-5 border-b border-pink-500/10 flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
+    <div className="px-6 py-5 border-b border-pink-500/10 flex items-center gap-3">
+      <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
 
-            <h3 className="text-2xl font-black uppercase">
-              EN VIVO
-            </h3>
-          </div>
+      <h3 className="text-2xl font-black uppercase">
+        EN VIVO
+      </h3>
+    </div>
 
-          <iframe
-            src="https://player.twitch.tv/?channel=riotgames&parent=localhost"
-            width="100%"
-            height="650"
-            allowFullScreen
-          />
+    <a
+      href="https://www.twitch.tv/riotgames"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block relative group"
+    >
+
+      <img
+        src="/banner-live.jpg"
+        alt="Live Stream"
+        className="w-full h-[650px] object-cover transition duration-300 group-hover:scale-[1.02]"
+      />
+
+      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-all" />
+
+      <div className="absolute inset-0 flex items-center justify-center">
+
+        <div className="w-24 h-24 rounded-full bg-pink-500/80 backdrop-blur-xl flex items-center justify-center shadow-[0_0_50px_rgba(255,0,170,0.45)]">
+
+          <Play className="w-10 h-10 fill-white text-white ml-1" />
+
         </div>
-      </section>
+
+      </div>
+
+    </a>
+
+  </div>
+</section>
 
       {/* BRACKET */}
       <section

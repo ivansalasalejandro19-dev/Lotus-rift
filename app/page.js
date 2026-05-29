@@ -12,7 +12,7 @@ export default function LotusRiftTournamentPage() {
     season: 'S',
     pricepool: '180 USDT',
     players: '16 Equipos',
-    status: 'INSCRIPCIONES ABIERTAS HASTA 15 DE JUNIO',
+    status: 'INSCRIPCIONES CERRADAS',
     startTime: '19:00 PM MX'
   }
 
