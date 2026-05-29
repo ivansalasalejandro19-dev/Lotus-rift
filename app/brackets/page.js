@@ -352,7 +352,7 @@ const finalMatch = {
   </div>
 
 </div>
-      ```jsx
+      
 {/* PARTIDOS */}
 <section className="max-w-7xl mx-auto px-5 pb-32">
   <div className="flex items-center gap-3 mb-10">
@@ -425,8 +425,3 @@ const finalMatch = {
     ))}
   </div>
 </section>
-```
-
-    </main>
-  )
-}
