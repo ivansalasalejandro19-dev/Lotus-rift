@@ -13,9 +13,41 @@ import {
 export default function LotusRift() {
 
   // 1. STATE
-  const [quarters, setQuarters] = useState([])
-const [semis, setSemis] = useState([])
-const [finalMatch, setFinalMatch] = useState(null)
+ const winnersOctavos = octavos
+  .map((m) => getWinner(m, "bo1"))
+  .filter(Boolean)
+
+const quarters = []
+for (let i = 0; i < winnersOctavos.length; i += 2) {
+  quarters.push({
+    team1: winnersOctavos[i],
+    team2: winnersOctavos[i + 1],
+  })
+}
+
+const winnersCuartos = quarters
+  .map((m) => getWinner(m, "bo3"))
+  .filter(Boolean)
+
+const semis = []
+for (let i = 0; i < winnersCuartos.length; i += 2) {
+  semis.push({
+    team1: winnersCuartos[i],
+    team2: winnersCuartos[i + 1],
+  })
+}
+
+const winnersSemis = semis
+  .map((m) => getWinner(m, "bo5"))
+  .filter(Boolean)
+
+const finalMatch =
+  winnersSemis.length >= 2
+    ? {
+        team1: winnersSemis[0],
+        team2: winnersSemis[1],
+      }
+    : null
 
   // 2. DATA (octavos)
   const octavos = [
@@ -424,8 +456,7 @@ const [finalMatch, setFinalMatch] = useState(null)
   <div className="flex items-center gap-3 flex-1">
     
     {/* LOGO */}
-    <img
-      src="/teams/team1.png"
+    <img src={match.team1.logo} />
       alt="team"
       className="w-9 h-9 rounded-lg object-cover"
     />
@@ -451,8 +482,7 @@ const [finalMatch, setFinalMatch] = useState(null)
                     <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
   
   <div className="flex items-center gap-3 flex-1">
-    <img
-      src="/teams/team2.png"
+    <img src={match.team2.logo} />
       alt="team"
       className="w-9 h-9 rounded-lg object-cover"
     />
