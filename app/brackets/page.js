@@ -274,6 +274,10 @@ export default function LotusRift() {
             className="relative"
           >
 
+            <div className="absolute inset-0 bg-pink-500/30 blur-[140px] rounded-full" />
+
+          </motion.div>
+
         </div>
       </section>
 
