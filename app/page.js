@@ -804,7 +804,7 @@ const roster = {
         </div>
 
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="flex items-center gap-4">
           <a
             href="#cronograma"
             className="px-5 py-2 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
