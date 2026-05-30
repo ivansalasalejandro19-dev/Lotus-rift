@@ -234,8 +234,21 @@ const matchDetails = [
     team2: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ",
     logo2: "/logos/joyita_gaming.png",
 
-    players1: [],
-    players2: [],
+    players1: [
+      { name: "Jugador 1", flag: "🇦🇷" },
+      { name: "Jugador 2", flag: "🇨🇱" },
+      { name: "Jugador 3", flag: "🇲🇽" },
+      { name: "Jugador 4", flag: "🇨🇴" },
+      { name: "Jugador 5", flag: "🇵🇪" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇻🇪" },
+      { name: "Jugador 2", flag: "🇦🇷" },
+      { name: "Jugador 3", flag: "🇨🇱" },
+      { name: "Jugador 4", flag: "🇨🇴" },
+      { name: "Jugador 5", flag: "🇲🇽" },
+    ],
 
     votes1: 50,
     votes2: 50,
@@ -252,8 +265,21 @@ const matchDetails = [
     team2: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs",
     logo2: "/logos/golden_dragons.png",
 
-    players1: [],
-    players2: [],
+    players1: [
+      { name: "Jugador 1", flag: "🇵🇪" },
+      { name: "Jugador 2", flag: "🇨🇴" },
+      { name: "Jugador 3", flag: "🇻🇪" },
+      { name: "Jugador 4", flag: "🇦🇷" },
+      { name: "Jugador 5", flag: "🇲🇽" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇨🇱" },
+      { name: "Jugador 2", flag: "🇵🇪" },
+      { name: "Jugador 3", flag: "🇨🇴" },
+      { name: "Jugador 4", flag: "🇻🇪" },
+      { name: "Jugador 5", flag: "🇦🇷" },
+    ],
 
     votes1: 50,
     votes2: 50,
@@ -270,8 +296,145 @@ const matchDetails = [
     team2: "Sᴍᴀᴄᴋᴅᴏᴡɴ",
     logo2: "/logos/smackdown.png",
 
-    players1: [],
-    players2: [],
+    players1: [
+      { name: "Jugador 1", flag: "🇲🇽" },
+      { name: "Jugador 2", flag: "🇦🇷" },
+      { name: "Jugador 3", flag: "🇵🇪" },
+      { name: "Jugador 4", flag: "🇨🇱" },
+      { name: "Jugador 5", flag: "🇨🇴" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇻🇪" },
+      { name: "Jugador 2", flag: "🇲🇽" },
+      { name: "Jugador 3", flag: "🇦🇷" },
+      { name: "Jugador 4", flag: "🇵🇪" },
+      { name: "Jugador 5", flag: "🇨🇱" },
+    ],
+
+    votes1: 50,
+    votes2: 50,
+    totalVotes: 0,
+  },
+
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "Cᴏsᴀ Nᴏsᴛʀᴀ",
+    logo1: "/logos/cosa_nostra.png",
+
+    team2: "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ",
+    logo2: "/logos/huesitos.png",
+
+    players1: [
+      { name: "Jugador 1", flag: "🇦🇷" },
+      { name: "Jugador 2", flag: "🇨🇱" },
+      { name: "Jugador 3", flag: "🇲🇽" },
+      { name: "Jugador 4", flag: "🇨🇴" },
+      { name: "Jugador 5", flag: "🇵🇪" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇻🇪" },
+      { name: "Jugador 2", flag: "🇦🇷" },
+      { name: "Jugador 3", flag: "🇨🇱" },
+      { name: "Jugador 4", flag: "🇨🇴" },
+      { name: "Jugador 5", flag: "🇲🇽" },
+    ],
+
+    votes1: 50,
+    votes2: 50,
+    totalVotes: 0,
+  },
+
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "Iᴄᴇ ɢᴏʟᴅ",
+    logo1: "/logos/ice_gold.png",
+
+    team2: "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs",
+    logo2: "/logos/shadow_reapers.png",
+
+    players1: [
+      { name: "Jugador 1", flag: "🇵🇪" },
+      { name: "Jugador 2", flag: "🇨🇴" },
+      { name: "Jugador 3", flag: "🇻🇪" },
+      { name: "Jugador 4", flag: "🇦🇷" },
+      { name: "Jugador 5", flag: "🇲🇽" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇨🇱" },
+      { name: "Jugador 2", flag: "🇵🇪" },
+      { name: "Jugador 3", flag: "🇨🇴" },
+      { name: "Jugador 4", flag: "🇻🇪" },
+      { name: "Jugador 5", flag: "🇦🇷" },
+    ],
+
+    votes1: 50,
+    votes2: 50,
+    totalVotes: 0,
+  },
+
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ",
+    logo1: "/logos/secret_society.png",
+
+    team2: "Rᴏᴋᴜʀᴏᴍɪɴᴏs",
+    logo2: "/logos/rku.png",
+
+    players1: [
+      { name: "Jugador 1", flag: "🇲🇽" },
+      { name: "Jugador 2", flag: "🇦🇷" },
+      { name: "Jugador 3", flag: "🇵🇪" },
+      { name: "Jugador 4", flag: "🇨🇱" },
+      { name: "Jugador 5", flag: "🇨🇴" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇻🇪" },
+      { name: "Jugador 2", flag: "🇲🇽" },
+      { name: "Jugador 3", flag: "🇦🇷" },
+      { name: "Jugador 4", flag: "🇵🇪" },
+      { name: "Jugador 5", flag: "🇨🇱" },
+    ],
+
+    votes1: 50,
+    votes2: 50,
+    totalVotes: 0,
+  },
+
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "HᴀTsᴜ",
+    logo1: "/logos/hatsu.png",
+
+    team2: "Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ",
+    logo2: "/logos/new_alliance.png",
+
+    players1: [
+      { name: "Jugador 1", flag: "🇨🇴" },
+      { name: "Jugador 2", flag: "🇻🇪" },
+      { name: "Jugador 3", flag: "🇦🇷" },
+      { name: "Jugador 4", flag: "🇲🇽" },
+      { name: "Jugador 5", flag: "🇵🇪" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇨🇱" },
+      { name: "Jugador 2", flag: "🇨🇴" },
+      { name: "Jugador 3", flag: "🇻🇪" },
+      { name: "Jugador 4", flag: "🇦🇷" },
+      { name: "Jugador 5", flag: "🇲🇽" },
+    ],
 
     votes1: 50,
     votes2: 50,
@@ -282,6 +445,13 @@ const matchDetails = [
 export default function LotusRift() {
 
   const [selectedMatch, setSelectedMatch] = useState(null)
+  const [votes, setVotes] = useState({})
+  const handleVote = (team) => {
+  setVotes((prev) => ({
+    ...prev,
+    [team]: (prev[team] || 0) + 1,
+  }))
+}
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -528,7 +698,10 @@ export default function LotusRift() {
 
                         <div className="space-y-4">
 
-                          {[match.team1, match.team2].map((team, i) => (
+                          {[
+  { team: match.team1, score: match.score1 },
+  { team: match.team2, score: match.score2 },
+].map(({ team, score }, i) => (
                             <div key={i}>
                               <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-2">
 
@@ -551,7 +724,7 @@ export default function LotusRift() {
                                 </div>
 
                                 <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
-                                  {team?.score || 0}
+                                  {score}
                                 </div>
                               </div>
 
@@ -590,7 +763,10 @@ export default function LotusRift() {
 
                         <div className="space-y-3">
 
-                          {[match.team1, match.team2].map((team, i) => (
+                          {[
+  { team: match.team1, score: match.score1 },
+  { team: match.team2, score: match.score2 },
+].map(({ team, score }, i) => (
                             <div key={i}>
                               <div className="flex items-center justify-between rounded-xl bg-black/20 px-3 py-3">
 
@@ -613,7 +789,7 @@ export default function LotusRift() {
                                 </div>
 
                                 <div className="ml-3 min-w-[38px] h-9 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300">
-                                  {team?.score || 0}
+                                  {score}
                                 </div>
                               </div>
 
@@ -666,7 +842,10 @@ export default function LotusRift() {
 
                     <div className="space-y-5">
 
-                      {[finalMatch.team1, finalMatch.team2].map((team, i) => (
+                      {[
+  { team: finalMatch.team1, score: finalMatch.score1 },
+  { team: finalMatch.team2, score: finalMatch.score2 },
+].map(({ team, score }, i) => (
                         <div key={i}>
 
                           <div className="rounded-2xl border border-white/10 bg-black/30 p-4 flex items-center justify-between">
@@ -690,7 +869,7 @@ export default function LotusRift() {
                             </div>
 
                             <div className="ml-4 min-w-[42px] h-10 rounded-xl bg-pink-500/20 border border-pink-400/20 flex items-center justify-center font-black text-pink-300 text-lg">
-                              {team?.score || 0}
+                              {score}
                             </div>
                           </div>
 
@@ -794,6 +973,72 @@ export default function LotusRift() {
           ))}
 
         </div>
+
+        <div className="mt-16 mb-8 flex items-center justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
+
+  <div>
+    <p className="text-pink-300 font-black text-2xl">
+      19:00
+    </p>
+
+    <p className="text-zinc-500 tracking-[0.2em] text-sm mt-1">
+      5 DE JULIO
+    </p>
+  </div>
+
+  <div className="text-zinc-500 text-sm tracking-[0.25em] uppercase">
+    Octavos - Jornada 2
+  </div>
+
+</div>
+
+<div className="space-y-5">
+
+  {octavos.slice(4, 8).map((match, index) => (
+
+    <div
+      key={index + 4}
+      className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
+    >
+
+      <div className="flex items-center gap-4 w-[320px]">
+        <img
+          src={match.team1?.logo}
+          className="w-10 h-10 rounded-xl"
+        />
+
+        <span className="font-semibold">
+          {match.team1?.name || "TBD"}
+        </span>
+      </div>
+
+      <div className="text-pink-400 font-black text-2xl">
+        VS
+      </div>
+
+      <div className="flex items-center justify-end gap-4 w-[320px]">
+        <span className="font-semibold text-right">
+          {match.team2?.name || "TBD"}
+        </span>
+
+        <img
+          src={match.team2?.logo}
+          className="w-10 h-10 rounded-xl"
+        />
+      </div>
+
+      <button
+        onClick={() => setSelectedMatch(matchDetails[index + 4])}
+        className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
+      >
+        VER DETALLES
+      </button>
+
+    </div>
+
+  ))}
+
+</div>
       </section>
 {selectedMatch && (
   <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-md p-5">
@@ -886,6 +1131,75 @@ export default function LotusRift() {
         </div>
 
       </div>
+      {/* VOTACIONES */}
+
+<div className="mt-10">
+
+  <div className="flex items-center justify-between mb-3">
+
+    <span className="font-bold text-pink-300">
+      Predicción de la comunidad
+    </span>
+
+    <span className="text-zinc-400 text-sm">
+      {selectedMatch.totalVotes} votos
+    </span>
+
+  </div>
+
+  <div className="w-full h-5 rounded-full bg-white/5 overflow-hidden flex">
+
+    <div
+      className="bg-gradient-to-r from-pink-500 to-fuchsia-500 transition-all"
+      style={{ width: `${selectedMatch.votes1}%` }}
+    />
+
+    <div
+      className="bg-zinc-700 transition-all"
+      style={{ width: `${selectedMatch.votes2}%` }}
+    />
+
+  </div>
+
+  <div className="flex justify-between mt-3 text-sm">
+
+    <span className="font-bold text-pink-300">
+      {selectedMatch.team1} ({selectedMatch.votes1}%)
+    </span>
+
+    <span className="font-bold text-zinc-300">
+      {selectedMatch.team2} ({selectedMatch.votes2}%)
+    </span>
+
+  </div>
+  <div className="grid grid-cols-2 gap-4 mt-6">
+
+  <button
+  onClick={() => handleVote(selectedMatch.team1)}
+  className="py-3 rounded-xl bg-pink-500/20 border border-pink-500/30 hover:bg-pink-500/30 transition-all font-bold"
+>
+  Votar por {selectedMatch.team1}
+</button>
+
+  <button
+  onClick={() => handleVote(selectedMatch.team2)}
+  className="py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all font-bold"
+>
+  Votar por {selectedMatch.team2}
+</button>
+
+</div>
+<div className="mt-4 text-center text-zinc-400 text-sm">
+
+  {selectedMatch.team1}: {votes[selectedMatch.team1] || 0}
+
+  {" • "}
+
+  {selectedMatch.team2}: {votes[selectedMatch.team2] || 0}
+
+</div>
+
+</div>
 
     </div>
 
