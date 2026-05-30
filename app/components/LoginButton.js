@@ -29,7 +29,10 @@ export default function LoginButton() {
 
   return (
     <button
-      onClick={loginGoogle}
+      onClick={() => {
+  console.log("BOTON FUNCIONA")
+  loginGoogle()
+}}
       className="px-4 py-2 bg-blue-500 rounded"
     >
       Iniciar sesión con Google
