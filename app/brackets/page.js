@@ -191,7 +191,97 @@ const finalMatch = {
   score2: 0,
 }
 
+const matchDetails = [
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "Nᴀʜᴜᴀʟᴇs",
+    logo1: "/logos/nahuales.png",
+
+    team2: "Fʟᴀᴡʟᴇss",
+    logo2: "/logos/flawless.png",
+
+    players1: [
+      { name: "Ragnarok", flag: "🇨🇴" },
+      { name: "Zen", flag: "🇻🇪" },
+      { name: "Moset", flag: "🇻🇪" },
+      { name: "Ryn", flag: "🇦🇷" },
+      { name: "Dai", flag: "🇲🇽" },
+    ],
+
+    players2: [
+      { name: "Jugador 1", flag: "🇦🇷" },
+      { name: "Jugador 2", flag: "🇨🇱" },
+      { name: "Jugador 3", flag: "🇨🇴" },
+      { name: "Jugador 4", flag: "🇻🇪" },
+      { name: "Jugador 5", flag: "🇲🇽" },
+    ],
+
+    votes1: 65,
+    votes2: 35,
+    totalVotes: 100,
+  },
+
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs",
+    logo1: "/logos/ae_siir_go_legends.png",
+
+    team2: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ",
+    logo2: "/logos/joyita_gaming.png",
+
+    players1: [],
+    players2: [],
+
+    votes1: 50,
+    votes2: 50,
+    totalVotes: 0,
+  },
+
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ",
+    logo1: "/logos/overextended.png",
+
+    team2: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs",
+    logo2: "/logos/golden_dragons.png",
+
+    players1: [],
+    players2: [],
+
+    votes1: 50,
+    votes2: 50,
+    totalVotes: 0,
+  },
+
+  {
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    team1: "T502",
+    logo1: "/logos/T502.png",
+
+    team2: "Sᴍᴀᴄᴋᴅᴏᴡɴ",
+    logo2: "/logos/smackdown.png",
+
+    players1: [],
+    players2: [],
+
+    votes1: 50,
+    votes2: 50,
+    totalVotes: 0,
+  },
+]
+
 export default function LotusRift() {
+
+  const [selectedMatch, setSelectedMatch] = useState(null)
+
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
 
@@ -692,16 +782,114 @@ export default function LotusRift() {
                 />
               </div>
 
-              <button className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all">
-                VER DETALLES
-              </button>
+              <button
+  onClick={() => setSelectedMatch(matchDetails[index])}
+  className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
+>
+  VER DETALLES
+</button>
 
             </div>
           ))}
 
         </div>
       </section>
+{selectedMatch && (
+  <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-md p-5">
 
+    <div className="w-full max-w-5xl rounded-[2rem] border border-pink-500/20 bg-zinc-950 p-8 relative">
+
+      <button
+        onClick={() => setSelectedMatch(null)}
+        className="absolute top-5 right-5 text-zinc-400 hover:text-white"
+      >
+        ✕
+      </button>
+
+      <div className="text-center mb-8">
+
+        <p className="text-pink-300 tracking-[0.3em] text-sm">
+          {selectedMatch.stage}
+        </p>
+
+      </div>
+
+      <div className="grid grid-cols-[1fr_auto_1fr] gap-8 items-center mb-10">
+
+        <div className="text-center">
+
+          <img
+            src={selectedMatch.logo1}
+            className="w-24 h-24 mx-auto rounded-2xl object-cover mb-4"
+          />
+
+          <h3 className="text-2xl font-black">
+            {selectedMatch.team1}
+          </h3>
+
+        </div>
+
+        <div className="text-center">
+
+          <div className="text-3xl font-black text-pink-400 mb-3">
+            VS
+          </div>
+
+          <div className="px-5 py-2 rounded-xl border border-pink-500/20 bg-pink-500/10 font-black">
+            {selectedMatch.format}
+          </div>
+
+        </div>
+
+        <div className="text-center">
+
+          <img
+            src={selectedMatch.logo2}
+            className="w-24 h-24 mx-auto rounded-2xl object-cover mb-4"
+          />
+
+          <h3 className="text-2xl font-black">
+            {selectedMatch.team2}
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-10">
+
+        <div className="space-y-3">
+
+          {selectedMatch.players1.map((player, i) => (
+            <div
+              key={i}
+              className="rounded-xl bg-white/5 p-3 text-center"
+            >
+              {player.name} {player.flag}
+            </div>
+          ))}
+
+        </div>
+
+        <div className="space-y-3">
+
+          {selectedMatch.players2.map((player, i) => (
+            <div
+              key={i}
+              className="rounded-xl bg-white/5 p-3 text-center"
+            >
+              {player.name} {player.flag}
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
     </main>
   )
 }
