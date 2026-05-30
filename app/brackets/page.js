@@ -451,75 +451,77 @@ const matchDetails = [
 ]
 
 export default function LotusRift() {
-
   const [selectedMatch, setSelectedMatch] = useState(null)
   const [votes, setVotes] = useState({})
   const [votedMatches, setVotedMatches] = useState({})
+
   useEffect(() => {
-  const savedVotes = localStorage.getItem("lotusVotes")
-  const savedVotedMatches = localStorage.getItem("lotusVotedMatches")
+    const savedVotes = localStorage.getItem("lotusVotes")
+    const savedVotedMatches = localStorage.getItem("lotusVotedMatches")
 
-  if (savedVotes) {
-    setVotes(JSON.parse(savedVotes))
-  }
+    if (savedVotes) {
+      setVotes(JSON.parse(savedVotes))
+    }
 
-  if (savedVotedMatches) {
-    setVotedMatches(JSON.parse(savedVotedMatches))
-  }
-}, [])
+    if (savedVotedMatches) {
+      setVotedMatches(JSON.parse(savedVotedMatches))
+    }
+  }, [])
+
   const handleVote = (matchId, team) => {
-  if (votedMatches[matchId]) return
+    if (votedMatches[matchId]) return
 
-  const newVotes = {
-    ...votes,
-    [team]: (votes[team] || 0) + 1,
+    const newVotes = {
+      ...votes,
+      [team]: (votes[team] || 0) + 1,
+    }
+
+    const newVotedMatches = {
+      ...votedMatches,
+      [matchId]: true,
+    }
+
+    setVotes(newVotes)
+    setVotedMatches(newVotedMatches)
+
+    localStorage.setItem(
+      "lotusVotes",
+      JSON.stringify(newVotes)
+    )
+
+    localStorage.setItem(
+      "lotusVotedMatches",
+      JSON.stringify(newVotedMatches)
+    )
   }
 
-  const newVotedMatches = {
-    ...votedMatches,
-    [matchId]: true,
-  }
+  const getVotePercentage = (team1, team2) => {
+    const votes1 = votes[team1] || 0
+    const votes2 = votes[team2] || 0
 
-  setVotes(newVotes)
-  setVotedMatches(newVotedMatches)
+    const total = votes1 + votes2
 
-  localStorage.setItem(
-    "lotusVotes",
-    JSON.stringify(newVotes)
-  )
+    if (total === 0) {
+      return {
+        team1Percent: 50,
+        team2Percent: 50,
+        total: 0,
+      }
+    }
 
-  localStorage.setItem(
-    "lotusVotedMatches",
-    JSON.stringify(newVotedMatches)
-  )
-}
-const getVotePercentage = (team1, team2) => {
-
-  const votes1 = votes[team1] || 0
-  const votes2 = votes[team2] || 0
-
-  const total = votes1 + votes2
-
-  if (total === 0) {
     return {
-      team1Percent: 50,
-      team2Percent: 50,
+      team1Percent: Math.round((votes1 / total) * 100),
+      team2Percent: Math.round((votes2 / total) * 100),
       total,
     }
   }
-  const voteData = selectedMatch
-  ? getVotePercentage(
-      selectedMatch.team1,
-      selectedMatch.team2
-    )
-  : null
 
-  return {
-    team1Percent: Math.round((votes1 / total) * 100),
-    team2Percent: Math.round((votes2 / total) * 100),
-    total,
-  }
-}
+  const voteData = selectedMatch
+    ? getVotePercentage(
+        selectedMatch.team1,
+        selectedMatch.team2
+      )
+    : null
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
