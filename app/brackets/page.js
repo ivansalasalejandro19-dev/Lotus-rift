@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import {
   Play,
@@ -194,6 +194,7 @@ const finalMatch = {
 
 const matchDetails = [
   {
+    id: 1,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -225,6 +226,7 @@ const matchDetails = [
   },
 
   {
+    id: 2,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -256,6 +258,7 @@ const matchDetails = [
   },
 
   {
+    id: 3,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -287,6 +290,7 @@ const matchDetails = [
   },
 
   {
+    id: 4,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -318,6 +322,7 @@ const matchDetails = [
   },
 
   {
+    id: 5,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -349,6 +354,7 @@ const matchDetails = [
   },
 
   {
+    id: 6,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -380,6 +386,7 @@ const matchDetails = [
   },
 
   {
+    id: 7,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -411,6 +418,7 @@ const matchDetails = [
   },
 
   {
+    id: 8,
     stage: "OCTAVOS DE FINAL",
     format: "BO1",
 
@@ -446,11 +454,71 @@ export default function LotusRift() {
 
   const [selectedMatch, setSelectedMatch] = useState(null)
   const [votes, setVotes] = useState({})
-  const handleVote = (team) => {
-  setVotes((prev) => ({
-    ...prev,
-    [team]: (prev[team] || 0) + 1,
-  }))
+  const [votedMatches, setVotedMatches] = useState({})
+  useEffect(() => {
+  const savedVotes = localStorage.getItem("lotusVotes")
+  const savedVotedMatches = localStorage.getItem("lotusVotedMatches")
+
+  if (savedVotes) {
+    setVotes(JSON.parse(savedVotes))
+  }
+
+  if (savedVotedMatches) {
+    setVotedMatches(JSON.parse(savedVotedMatches))
+  }
+}, [])
+  const handleVote = (matchId, team) => {
+  if (votedMatches[matchId]) return
+
+  const newVotes = {
+    ...votes,
+    [team]: (votes[team] || 0) + 1,
+  }
+
+  const newVotedMatches = {
+    ...votedMatches,
+    [matchId]: true,
+  }
+
+  setVotes(newVotes)
+  setVotedMatches(newVotedMatches)
+
+  localStorage.setItem(
+    "lotusVotes",
+    JSON.stringify(newVotes)
+  )
+
+  localStorage.setItem(
+    "lotusVotedMatches",
+    JSON.stringify(newVotedMatches)
+  )
+}
+const getVotePercentage = (team1, team2) => {
+
+  const votes1 = votes[team1] || 0
+  const votes2 = votes[team2] || 0
+
+  const total = votes1 + votes2
+
+  if (total === 0) {
+    return {
+      team1Percent: 50,
+      team2Percent: 50,
+      total,
+    }
+  }
+  const voteData = selectedMatch
+  ? getVotePercentage(
+      selectedMatch.team1,
+      selectedMatch.team2
+    )
+  : null
+
+  return {
+    team1Percent: Math.round((votes1 / total) * 100),
+    team2Percent: Math.round((votes2 / total) * 100),
+    total,
+  }
 }
 
   return (
@@ -1142,7 +1210,7 @@ export default function LotusRift() {
     </span>
 
     <span className="text-zinc-400 text-sm">
-      {selectedMatch.totalVotes} votos
+      {voteData?.total} votos
     </span>
 
   </div>
@@ -1151,12 +1219,12 @@ export default function LotusRift() {
 
     <div
       className="bg-gradient-to-r from-pink-500 to-fuchsia-500 transition-all"
-      style={{ width: `${selectedMatch.votes1}%` }}
+      style={{ width: `${voteData?.team1Percent || 50}%` }}
     />
 
     <div
       className="bg-zinc-700 transition-all"
-      style={{ width: `${selectedMatch.votes2}%` }}
+      style={{ width: `${voteData?.team2Percent || 50}%` }}
     />
 
   </div>
@@ -1164,31 +1232,62 @@ export default function LotusRift() {
   <div className="flex justify-between mt-3 text-sm">
 
     <span className="font-bold text-pink-300">
-      {selectedMatch.team1} ({selectedMatch.votes1}%)
+      {selectedMatch.team1} ({voteData?.team1Percent || 50}%)
     </span>
 
     <span className="font-bold text-zinc-300">
-      {selectedMatch.team2} ({selectedMatch.votes2}%)
+      {selectedMatch.team2} ({voteData?.team2Percent || 50}%)
     </span>
 
   </div>
   <div className="grid grid-cols-2 gap-4 mt-6">
 
   <button
-  onClick={() => handleVote(selectedMatch.team1)}
-  className="py-3 rounded-xl bg-pink-500/20 border border-pink-500/30 hover:bg-pink-500/30 transition-all font-bold"
+  onClick={() =>
+    handleVote(
+      selectedMatch.id,
+      selectedMatch.team1
+    )
+  }
+  disabled={votedMatches[selectedMatch.id]}
+  className={`py-3 rounded-xl border font-bold transition-all
+${
+  votedMatches[selectedMatch.id]
+    ? "opacity-50 cursor-not-allowed bg-pink-500/10 border-pink-500/20"
+    : "bg-pink-500/20 border-pink-500/30 hover:bg-pink-500/30"
+}`}
 >
   Votar por {selectedMatch.team1}
 </button>
 
   <button
-  onClick={() => handleVote(selectedMatch.team2)}
-  className="py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all font-bold"
+  onClick={() =>
+    handleVote(
+      selectedMatch.id,
+      selectedMatch.team2
+    )
+  }
+  disabled={votedMatches[selectedMatch.id]}
+  className={`py-3 rounded-xl border font-bold transition-all
+${
+  votedMatches[selectedMatch.id]
+    ? "opacity-50 cursor-not-allowed bg-white/5 border-white/10"
+    : "bg-white/5 border-white/10 hover:bg-white/10"
+}`}
 >
   Votar por {selectedMatch.team2}
 </button>
 
 </div>
+
+{votedMatches[selectedMatch.id] && (
+  <div className="mt-4 text-center">
+    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 font-semibold">
+      ✓ Ya votaste en este partido
+    </span>
+  </div>
+)}
+
 <div className="mt-4 text-center text-zinc-400 text-sm">
 
   {selectedMatch.team1}: {votes[selectedMatch.team1] || 0}
