@@ -1,5 +1,6 @@
 'use client'
 
+import LoginButton from "./components/LoginButton"
 import { useState } from "react"
 export default function LotusRiftTournamentPage() {
 
@@ -820,13 +821,7 @@ const roster = {
           </a>
 
 
-          <a
-            href="/brackets"
-            target="_blank"
-            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-violet-500 font-bold hover:scale-105 transition shadow-xl shadow-pink-500/20"
-          >
-            Resurrección
-          </a>
+          <LoginButton />
         </div>
       </header>
 
