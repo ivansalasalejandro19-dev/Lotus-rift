@@ -478,7 +478,7 @@ export default function LotusRift() {
   
   useEffect(() => {
   const unsubscribe = onSnapshot(
-    doc(db, "matches", "match1"),
+    doc(db, "votes", "match_1"),
     (snap) => {
       if (snap.exists()) {
         setFireVotes(snap.data())
@@ -990,11 +990,10 @@ export default function LotusRift() {
       </section>
 
 <div className="p-5">
-  Team1: {fireVotes.team1Votes || 0}
+  Team1: {fireVotes.team1 || 0}
   <br />
-  Team2: {fireVotes.team2Votes || 0}
+  Team2: {fireVotes.team2 || 0}
 </div>
-
       {/* PARTIDOS */}
       <section className="max-w-7xl mx-auto px-5 pb-32">
 
