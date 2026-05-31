@@ -21,7 +21,7 @@ export async function GET(req) {
         client_secret: process.env.DISCORD_CLIENT_SECRET,
         grant_type: "authorization_code",
         code,
-        redirect_uri: "https://lotus-rift.vercel.app/api/auth/discord/callback",
+        redirect_uri: process.env.DISCORD_REDIRECT_URI,
       }),
     }
   )
