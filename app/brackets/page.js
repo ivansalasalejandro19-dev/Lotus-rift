@@ -477,8 +477,10 @@ export default function LotusRift() {
   }, [])
   
   useEffect(() => {
+  if (!selectedMatch) return
+
   const unsubscribe = onSnapshot(
-    doc(db, "votes", "match_1"),
+    doc(db, "votes", `match_${selectedMatch.id}`),
     (snap) => {
       if (snap.exists()) {
         setFireVotes(snap.data())
@@ -487,34 +489,38 @@ export default function LotusRift() {
   )
 
   return unsubscribe
-}, [])
+}, [selectedMatch])
 
-  const handleVote = (matchId, team) => {
-    if (votedMatches[matchId]) return
+  const handleVote = async (matchId, team) => {
+  if (votedMatches[matchId]) return
 
-    const newVotes = {
-      ...votes,
-      [team]: (votes[team] || 0) + 1,
+  const voteRef = doc(
+    db,
+    "votes",
+    `match_${matchId}`
+  )
+
+  await updateDoc(
+    voteRef,
+    {
+      [team === selectedMatch.team1
+        ? "team1"
+        : "team2"]: increment(1),
     }
+  )
 
-    const newVotedMatches = {
-      ...votedMatches,
-      [matchId]: true,
-    }
-
-    setVotes(newVotes)
-    setVotedMatches(newVotedMatches)
-
-    localStorage.setItem(
-      "lotusVotes",
-      JSON.stringify(newVotes)
-    )
-
-    localStorage.setItem(
-      "lotusVotedMatches",
-      JSON.stringify(newVotedMatches)
-    )
+  const newVotedMatches = {
+    ...votedMatches,
+    [matchId]: true,
   }
+
+  setVotedMatches(newVotedMatches)
+
+  localStorage.setItem(
+    "lotusVotedMatches",
+    JSON.stringify(newVotedMatches)
+  )
+}
 
   const getVotePercentage = (team1, team2) => {
     const votes1 = votes[team1] || 0
@@ -543,6 +549,19 @@ export default function LotusRift() {
         selectedMatch.team2
       )
     : null
+
+const firebaseVotes1 = fireVotes.team1 || 0
+const firebaseVotes2 = fireVotes.team2 || 0
+
+const totalVotes = firebaseVotes1 + firebaseVotes2
+
+const percent1 = totalVotes
+  ? Math.round((firebaseVotes1 / totalVotes) * 100)
+  : 50
+
+const percent2 = totalVotes
+  ? Math.round((firebaseVotes2 / totalVotes) * 100)
+  : 50
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -1237,35 +1256,29 @@ export default function LotusRift() {
       Predicción de la comunidad
     </span>
 
-    <span className="text-zinc-400 text-sm">
-      {voteData?.total} votos
-    </span>
+    {totalVotes} votos
 
   </div>
 
   <div className="w-full h-5 rounded-full bg-white/5 overflow-hidden flex">
 
     <div
-      className="bg-gradient-to-r from-pink-500 to-fuchsia-500 transition-all"
-      style={{ width: `${voteData?.team1Percent || 50}%` }}
-    />
+  className="bg-gradient-to-r from-pink-500 to-fuchsia-500 transition-all"
+  style={{ width: `${percent1}%` }}
+/>
 
-    <div
-      className="bg-zinc-700 transition-all"
-      style={{ width: `${voteData?.team2Percent || 50}%` }}
-    />
+<div
+  className="bg-zinc-700 transition-all"
+  style={{ width: `${percent2}%` }}
+/>
 
   </div>
 
   <div className="flex justify-between mt-3 text-sm">
 
-    <span className="font-bold text-pink-300">
-      {selectedMatch.team1} ({voteData?.team1Percent || 50}%)
-    </span>
+   {selectedMatch.team1} ({percent1}%)
 
-    <span className="font-bold text-zinc-300">
-      {selectedMatch.team2} ({voteData?.team2Percent || 50}%)
-    </span>
+   {selectedMatch.team2} ({percent2}%)
 
   </div>
   <div className="grid grid-cols-2 gap-4 mt-6">
@@ -1318,11 +1331,9 @@ ${
 
 <div className="mt-4 text-center text-zinc-400 text-sm">
 
-  {selectedMatch.team1}: {votes[selectedMatch.team1] || 0}
-
-  {" • "}
-
-  {selectedMatch.team2}: {votes[selectedMatch.team2] || 0}
+<div className="mt-4 text-center text-zinc-400 text-sm">
+  {totalVotes} votos registrados
+</div>
 
 </div>
 
