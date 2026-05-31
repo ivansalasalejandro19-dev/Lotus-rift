@@ -7,7 +7,7 @@ import {
   updateDoc,
   increment
 } from "firebase/firestore"
-import { db } from "../lib/firebase"
+import { db } from "./lib/firebase"
 import { motion } from "framer-motion"
 import {
   Play,
