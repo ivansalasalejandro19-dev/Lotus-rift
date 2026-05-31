@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react"
 import { auth } from "../lib/auth"
 import { onAuthStateChanged } from "firebase/auth"
 
-const AuthContext = createContext()
+const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
@@ -20,12 +20,22 @@ export function AuthProvider({ children }) {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ user }}>
-      {!loading && children}
+    <AuthContext.Provider value={{ user, loading }}>
+      {loading ? (
+        <div className="text-white">Cargando...</div>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   )
 }
 
 export function useAuth() {
-  return useContext(AuthContext)
+  const context = useContext(AuthContext)
+
+  if (!context) {
+    throw new Error("useAuth debe usarse dentro de AuthProvider")
+  }
+
+  return context
 }

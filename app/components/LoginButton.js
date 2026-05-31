@@ -3,8 +3,9 @@
 import { Disc3 } from "lucide-react"
 import { useAuth } from "../context/AuthContext"
 import { loginGoogle, logout } from "../lib/auth"
+import { loginDiscord } from "../lib/auth"
 
-export default function LoginButton() {
+export default function LoginButton({ discordUser }) {
   const { user } = useAuth()
 
   // 🔥 USER LOGEADO
