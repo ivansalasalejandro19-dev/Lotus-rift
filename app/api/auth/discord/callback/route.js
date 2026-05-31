@@ -29,7 +29,9 @@ export async function GET(req) {
     }
   )
 
-  const tokenData = await tokenRes.json()
+ const tokenData = await tokenRes.json()
+
+return Response.json(tokenData)
 
   const userRes = await fetch(
     "https://discord.com/api/users/@me",
