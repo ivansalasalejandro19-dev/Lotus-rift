@@ -44,6 +44,8 @@ return Response.json(tokenData)
 
   const user = await userRes.json()
 
+return Response.json(user)
+
   const response = NextResponse.redirect(
     "https://lotus-rift.vercel.app"
   )
