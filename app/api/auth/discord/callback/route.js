@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server"
 
 export async function GET(req) {
-  const url = new URL(req.url)
-  const code = url.searchParams.get("code")
+  const { searchParams } = new URL(req.url)
+  const code = searchParams.get("code")
 
+  if (!code) {
+    return NextResponse.redirect(process.env.NEXT_PUBLIC_URL)
+  }
+
+  // TOKEN
   const tokenRes = await fetch(
     "https://discord.com/api/oauth2/token",
     {
@@ -23,29 +28,22 @@ export async function GET(req) {
 
   const tokenData = await tokenRes.json()
 
-  const userRes = await fetch(
-    "https://discord.com/api/users/@me",
-    {
-      headers: {
-        Authorization: `Bearer ${tokenData.access_token}`,
-      },
-    }
+  // USER
+  const userRes = await fetch("https://discord.com/api/users/@me", {
+    headers: {
+      Authorization: `Bearer ${tokenData.access_token}`,
+    },
+  })
+
+  const user = await userRes.json()
+
+  const response = NextResponse.redirect(
+    process.env.NEXT_PUBLIC_URL
   )
 
-  const discordUser = await userRes.json()
-
-  const user = {
-    name: discordUser.username,
-    photo: `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png`,
-    provider: "discord",
-    id: discordUser.id,
-  }
-
-  const response = NextResponse.redirect("/")
   response.cookies.set("lotus_user", JSON.stringify(user), {
+    httpOnly: false,
     path: "/",
-    maxAge: 60 * 60 * 24 * 7,
-    sameSite: "lax",
   })
 
   return response
