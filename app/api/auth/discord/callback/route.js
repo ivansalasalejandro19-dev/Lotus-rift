@@ -33,6 +33,25 @@ export async function GET(req) {
 
   const tokenData = await tokenRes.json()
 
+  const response = NextResponse.redirect(
+  "https://lotus-rift.vercel.app"
+)
+
+response.cookies.set(
+  "lotus_user",
+  JSON.stringify({
+    id: user.id,
+    username: user.username,
+    avatar: user.avatar,
+  }),
+  {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 7,
+  }
+)
+
+return response
+
   const userRes = await fetch(
     "https://discord.com/api/users/@me",
     {
