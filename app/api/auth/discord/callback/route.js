@@ -14,7 +14,7 @@ export async function GET(req) {
       client_secret: process.env.DISCORD_CLIENT_SECRET,
       grant_type: "authorization_code",
       code,
-      redirect_uri: "http://localhost:3000/api/auth/discord/callback",
+      redirect_uri: "https://lotus-rift.vercel.app/api/auth/discord/callback",
     }),
   }).then((r) => r.json())
 
@@ -24,7 +24,7 @@ export async function GET(req) {
     },
   }).then((r) => r.json())
 
-  const response = NextResponse.redirect("http://localhost:3000")
+  const response = NextResponse.redirect("https://lotus-rift.vercel.app")
 
   response.cookies.set("lotus_user", JSON.stringify(user), {
     path: "/",
