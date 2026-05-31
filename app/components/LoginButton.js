@@ -1,7 +1,7 @@
 "use client"
 
-import { useAuth } from "../context/AuthContext"
-import { loginGoogle } from "./lib/auth/firebaseAuth.js"
+import { useAuth } from "./context/AuthContext"
+import { loginGoogle } from "./lib/auth/firebaseAuth"
 
 export default function LoginButton() {
   const { user, logout } = useAuth()
