@@ -1,102 +1,54 @@
 "use client"
 
-import { Disc3 } from "lucide-react"
 import { useAuth } from "../context/AuthContext"
-import { loginGoogle, logout } from "../lib/auth"
-import { loginDiscord } from "../lib/auth"
+import { loginGoogle } from "./lib/auth/firebaseAuth.js"
 
-export default function LoginButton({ discordUser }) {
-  const { user } = useAuth()
+export default function LoginButton() {
+  const { user, logout } = useAuth()
 
-  // 🔥 USER LOGEADO
   if (user) {
     return (
-      <div className="flex gap-3 items-center">
+      <div className="flex items-center gap-4 bg-white/10 px-4 py-2 rounded-2xl border border-white/10 backdrop-blur-xl">
 
         <img
-          src={user.photoURL}
-          alt="avatar"
-          className="w-10 h-10 rounded-full border border-pink-500/30"
+          src={user.photo}
+          className="w-10 h-10 rounded-full border border-pink-500"
         />
 
-        <span className="font-medium text-white">
-          {user.displayName}
-        </span>
+        <div className="flex flex-col">
+          <span className="text-white font-bold">
+            {user.name}
+          </span>
+          <span className="text-xs text-white/50">
+            {user.provider}
+          </span>
+        </div>
 
         <button
           onClick={logout}
-          className="
-            px-4 py-2
-            rounded-xl
-            bg-red-500/20
-            border border-red-500/30
-            text-red-300
-            hover:bg-red-500/30
-            transition-all
-          "
+          className="ml-4 px-3 py-1 rounded-xl bg-red-500/20 text-red-300 hover:bg-red-500/30"
         >
-          Salir
+          Logout
         </button>
-
       </div>
     )
   }
 
-  // 🔥 USER NO LOGEADO
   return (
-    <div className="flex flex-col gap-3">
-
-      {/* DISCORD LOGIN */}
-      <a
-        href="/api/auth/discord"
-        className="
-          group
-          relative
-          overflow-hidden
-          px-8 py-4
-          rounded-2xl
-          font-black
-          tracking-wide
-          text-white
-          bg-gradient-to-r
-          from-pink-500
-          via-fuchsia-500
-          to-pink-400
-          shadow-[0_0_35px_rgba(255,0,170,0.35)]
-          hover:scale-105
-          transition-all
-          duration-300
-          flex
-          items-center
-          justify-center
-          gap-3
-        "
-      >
-        <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-all" />
-
-        <Disc3 size={22} />
-
-        <span className="relative">
-          Iniciar sesión con Discord
-        </span>
-      </a>
-
-      {/* GOOGLE LOGIN */}
+    <div className="flex gap-3">
       <button
         onClick={loginGoogle}
-        className="
-          px-6 py-3
-          rounded-2xl
-          border border-pink-500/20
-          bg-white/5
-          hover:bg-white/10
-          text-white
-          transition-all
-        "
+        className="px-6 py-3 rounded-2xl bg-white text-black font-bold"
       >
-        Iniciar sesión con Google
+        Google
       </button>
 
+      <a
+        href="/api/auth/discord/login"
+        className="px-6 py-3 rounded-2xl bg-indigo-500 text-white font-bold"
+      >
+        Discord
+      </a>
     </div>
   )
 }
