@@ -5,12 +5,12 @@ import { Disc3 } from "lucide-react"
 import { useEffect, useState } from "react"
 import {
   signInWithPopup
-} from "lib/auth/firebaseAuth"
+} from "./lib/auth"
 
 import {
   auth,
   discordProvider
-} from "./lib/auth/discordauth"
+} from "./lib/auth"
 export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
