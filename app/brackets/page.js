@@ -488,35 +488,22 @@ export default function LotusRift() {
   return unsubscribe
 }, [selectedMatch])
 
-  const handleVote = async (matchId, team) => {
+  const handleVote = async (matchId, teamKey) => {
   if (votedMatches[matchId]) return
 
-  const voteRef = doc(
-    db,
-    "votes",
-    `match_${matchId}`
-  )
+  const voteRef = doc(db, "votes", `match_${matchId}`)
 
-  await updateDoc(
-    voteRef,
-    {
-      [team === selectedMatch.team1
-        ? "team1"
-        : "team2"]: increment(1),
-    }
-  )
+  await updateDoc(voteRef, {
+    [teamKey]: increment(1),
+  })
 
-  const newVotedMatches = {
+  const updated = {
     ...votedMatches,
     [matchId]: true,
   }
 
-  setVotedMatches(newVotedMatches)
-
-  localStorage.setItem(
-  VOTE_STORAGE_KEY,
-    JSON.stringify(newVotedMatches)
-  )
+  setVotedMatches(updated)
+  localStorage.setItem(VOTE_STORAGE_KEY, JSON.stringify(updated))
 }
 
   const getVotePercentage = (team1, team2) => {
@@ -547,8 +534,8 @@ export default function LotusRift() {
       )
     : null
 
-const firebaseVotes1 = fireVotes.team1 || 0
-const firebaseVotes2 = fireVotes.team2 || 0
+const firebaseVotes1 = fireVotes?.team1 ?? 0
+const firebaseVotes2 = fireVotes?.team2 ?? 0
 
 const totalVotes = firebaseVotes1 + firebaseVotes2
 
@@ -1273,20 +1260,14 @@ const percent2 = totalVotes
 
   <div className="flex justify-between mt-3 text-sm">
 
-   {selectedMatch.team1} ({percent1}%)
-
-   {selectedMatch.team2} ({percent2}%)
+   {selectedMatch.team1.name} ({percent1}%)
+{selectedMatch.team2.name} ({percent2}%)
 
   </div>
   <div className="grid grid-cols-2 gap-4 mt-6">
 
   <button
-  onClick={() =>
-    handleVote(
-      selectedMatch.id,
-      selectedMatch.team1
-    )
-  }
+  onClick={() => handleVote(selectedMatch.id, "team1")}
   disabled={votedMatches[selectedMatch.id]}
   className={`py-3 rounded-xl border font-bold transition-all
 ${
@@ -1299,12 +1280,7 @@ ${
 </button>
 
   <button
-  onClick={() =>
-    handleVote(
-      selectedMatch.id,
-      selectedMatch.team2
-    )
-  }
+  onClick={() => handleVote(selectedMatch.id, "team2")}
   disabled={votedMatches[selectedMatch.id]}
   className={`py-3 rounded-xl border font-bold transition-all
 ${
