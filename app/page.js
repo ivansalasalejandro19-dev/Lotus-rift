@@ -1,6 +1,7 @@
 'use client'
 
 import LoginButton from "./components/LoginButton"
+import { Disc3 } from "lucide-react"
 import { useState } from "react"
 export default function LotusRiftTournamentPage() {
 
@@ -805,6 +806,8 @@ const roster = {
 
 
         <div className="flex items-center gap-4">
+
+
 
           <LoginButton />
         </div>

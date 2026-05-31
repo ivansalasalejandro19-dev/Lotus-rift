@@ -1,6 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { doc, onSnapshot } from "firebase/firestore"
+import { db } from "../lib/firebase"
 import { motion } from "framer-motion"
 import {
   Play,
@@ -467,6 +469,19 @@ export default function LotusRift() {
       setVotedMatches(JSON.parse(savedVotedMatches))
     }
   }, [])
+  
+  useEffect(() => {
+  const unsubscribe = onSnapshot(
+    doc(db, "matches", "match1"),
+    (snap) => {
+      if (snap.exists()) {
+        setFireVotes(snap.data())
+      }
+    }
+  )
+
+  return unsubscribe
+}, [])
 
   const handleVote = (matchId, team) => {
     if (votedMatches[matchId]) return
@@ -522,6 +537,8 @@ export default function LotusRift() {
         selectedMatch.team2
       )
     : null
+
+const [fireVotes, setFireVotes] = useState({})
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -967,6 +984,12 @@ export default function LotusRift() {
           </div>
         </div>
       </section>
+
+<div className="p-5">
+  Team1: {fireVotes.team1Votes || 0}
+  <br />
+  Team2: {fireVotes.team2Votes || 0}
+</div>
 
       {/* PARTIDOS */}
       <section className="max-w-7xl mx-auto px-5 pb-32">
