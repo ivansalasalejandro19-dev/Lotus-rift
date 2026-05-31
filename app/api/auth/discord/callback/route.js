@@ -31,18 +31,16 @@ export async function GET(req) {
 
  const tokenData = await tokenRes.json()
 
-return Response.json(tokenData)
+const userRes = await fetch(
+  "https://discord.com/api/users/@me",
+  {
+    headers: {
+      Authorization: `Bearer ${tokenData.access_token}`,
+    },
+  }
+)
 
-  const userRes = await fetch(
-    "https://discord.com/api/users/@me",
-    {
-      headers: {
-        Authorization: `Bearer ${tokenData.access_token}`,
-      },
-    }
-  )
-
-  const user = await userRes.json()
+const user = await userRes.json()
 
 return Response.json(user)
 
