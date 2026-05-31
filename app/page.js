@@ -10,7 +10,7 @@ import {
 import {
   auth,
   discordProvider
-} from "../lib/firebase"
+} from "./lib/firebase"
 export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
