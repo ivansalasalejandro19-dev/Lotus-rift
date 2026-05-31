@@ -1,7 +1,6 @@
 'use client'
 
 import LoginButton from "./components/LoginButton"
-import { Disc3 } from "lucide-react"
 import { useState } from "react"
 export default function LotusRiftTournamentPage() {
 
