@@ -8,7 +8,7 @@ import {
 
 import { app } from "./firebase"
 
-const auth = getAuth(app)
+export const auth = getAuth(app)
 
 export const loginGoogle = () =>
   signInWithPopup(auth, new GoogleAuthProvider())
