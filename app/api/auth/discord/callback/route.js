@@ -27,8 +27,10 @@ export async function GET(req) {
   const response = NextResponse.redirect("https://lotus-rift.vercel.app")
 
   response.cookies.set("lotus_user", JSON.stringify(user), {
-    path: "/",
-  })
+  path: "/",
+  sameSite: "lax",
+  maxAge: 60 * 60 * 24 * 7,
+})
 
   return response
 }
