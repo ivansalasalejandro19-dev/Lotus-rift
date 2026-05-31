@@ -1,7 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { doc, onSnapshot } from "firebase/firestore"
+import {
+  doc,
+  onSnapshot,
+  updateDoc,
+  increment
+} from "firebase/firestore"
 import { db } from "../lib/firebase"
 import { motion } from "framer-motion"
 import {
@@ -456,6 +461,7 @@ export default function LotusRift() {
   const [selectedMatch, setSelectedMatch] = useState(null)
   const [votes, setVotes] = useState({})
   const [votedMatches, setVotedMatches] = useState({})
+  const [fireVotes, setFireVotes] = useState({})
 
   useEffect(() => {
     const savedVotes = localStorage.getItem("lotusVotes")
@@ -537,8 +543,6 @@ export default function LotusRift() {
         selectedMatch.team2
       )
     : null
-
-const [fireVotes, setFireVotes] = useState({})
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
