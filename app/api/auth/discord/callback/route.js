@@ -21,36 +21,15 @@ export async function GET(req) {
       },
       body: new URLSearchParams({
         client_id: process.env.DISCORD_CLIENT_ID,
-        client_secret:
-          process.env.DISCORD_CLIENT_SECRET,
+        client_secret: process.env.DISCORD_CLIENT_SECRET,
         grant_type: "authorization_code",
         code,
-        redirect_uri:
-          process.env.DISCORD_REDIRECT_URI,
+        redirect_uri: process.env.DISCORD_REDIRECT_URI,
       }),
     }
   )
 
   const tokenData = await tokenRes.json()
-
-  const response = NextResponse.redirect(
-  "https://lotus-rift.vercel.app"
-)
-
-response.cookies.set(
-  "lotus_user",
-  JSON.stringify({
-    id: user.id,
-    username: user.username,
-    avatar: user.avatar,
-  }),
-  {
-    path: "/",
-    maxAge: 60 * 60 * 24 * 7,
-  }
-)
-
-return response
 
   const userRes = await fetch(
     "https://discord.com/api/users/@me",
@@ -63,9 +42,22 @@ return response
 
   const user = await userRes.json()
 
-  console.log(user)
-
-  return NextResponse.redirect(
+  const response = NextResponse.redirect(
     "https://lotus-rift.vercel.app"
   )
+
+  response.cookies.set(
+    "lotus_user",
+    JSON.stringify({
+      id: user.id,
+      username: user.username,
+      avatar: user.avatar,
+    }),
+    {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+    }
+  )
+
+  return response
 }
