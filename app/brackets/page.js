@@ -466,17 +466,12 @@ export default function LotusRift() {
   const [fireVotes, setFireVotes] = useState({})
 
   useEffect(() => {
-    localStorage.getItem(VOTE_STORAGE_KEY)
-    const savedVotedMatches = localStorage.getItem("lotusVotedMatches_v2")
+  const savedVotedMatches = localStorage.getItem(VOTE_STORAGE_KEY)
 
-    if (savedVotes) {
-      setVotes(JSON.parse(savedVotes))
-    }
-
-    if (savedVotedMatches) {
-      setVotedMatches(JSON.parse(savedVotedMatches))
-    }
-  }, [])
+  if (savedVotedMatches) {
+    setVotedMatches(JSON.parse(savedVotedMatches))
+  }
+}, [])
   
   useEffect(() => {
   if (!selectedMatch) return
@@ -519,7 +514,7 @@ export default function LotusRift() {
   setVotedMatches(newVotedMatches)
 
   localStorage.setItem(
-  VOTE_STORAGE_KEY,,
+  VOTE_STORAGE_KEY,
     JSON.stringify(newVotedMatches)
   )
 }
