@@ -15,9 +15,7 @@ export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
   const [discordUser, setDiscordUser] = useState(null)
-  const [pickWinner, setPickWinner] = useState('')
-const [elderPrediction, setElderPrediction] = useState(12)
-const [mvpPrediction, setMvpPrediction] = useState('')
+  
 
   useEffect(() => {
     const cookie = document.cookie
@@ -877,6 +875,13 @@ const roster = {
               Entrar al bracket oficial
             </a>
 
+            <a
+  href="/pickem"
+  className="px-8 py-4 rounded-3xl border border-pink-500/20 bg-pink-500/10 backdrop-blur-xl hover:bg-pink-500/20 transition"
+>
+  Pick'Em
+</a>
+
 
             <a
               href="https://discord.gg/nVyrHkeCn5"
@@ -1176,225 +1181,6 @@ const roster = {
   </div>
 
 </section>
-
-{/* PICK EM */}
-<section className="relative z-10 px-8 lg:px-20 pb-24">
-
-  <div className="mb-12">
-    <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
-      Lotus Predictions
-    </p>
-
-    <h3 className="text-5xl font-black mt-3">
-      Pick'Em
-    </h3>
-  </div>
-
-  <div className="grid lg:grid-cols-2 gap-6">
-
-    {/* GANADOR */}
-    <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
-
-      <h4 className="text-2xl font-black mb-6">
-        🏆 ¿Quién ganará Lotus Rift?
-      </h4>
-
-      <div className="flex flex-wrap gap-3">
-
-        {teams.map((team) => (
-
-          <button
-            key={team}
-            onClick={() => setPickWinner(team)}
-            className={`px-4 py-3 rounded-full transition
-            ${
-              pickWinner === team
-                ? "bg-gradient-to-r from-pink-500 to-cyan-500"
-                : "bg-white/10 hover:bg-white/20"
-            }`}
-          >
-            {team}
-          </button>
-
-        ))}
-
-      </div>
-
-    </div>
-
-    {/* ELDER */}
-    <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
-
-      <h4 className="text-2xl font-black mb-6">
-        🐉 ¿Cuántos Elder Dragons habrá?
-      </h4>
-
-      <div className="flex items-center gap-6">
-
-        <button
-          onClick={() =>
-            setElderPrediction(Math.max(0, elderPrediction - 1))
-          }
-          className="w-14 h-14 rounded-full bg-white/10"
-        >
-          -
-        </button>
-
-        <div className="text-6xl font-black text-pink-300">
-          {elderPrediction}
-        </div>
-
-        <button
-          onClick={() =>
-            setElderPrediction(elderPrediction + 1)
-          }
-          className="w-14 h-14 rounded-full bg-white/10"
-        >
-          +
-        </button>
-
-      </div>
-
-      <div className="mt-6 text-white/60">
-        Comunidad: 14.2 promedio
-      </div>
-
-    </div>
-
-    {/* MVP */}
-    <div className="lg:col-span-2 rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
-
-      <h4 className="text-2xl font-black mb-6">
-        ⭐ MVP del torneo
-      </h4>
-
-      <input
-        value={mvpPrediction}
-        onChange={(e) =>
-          setMvpPrediction(e.target.value)
-        }
-        placeholder="Escribe el nombre..."
-        className="w-full bg-white/10 border border-white/10 rounded-2xl px-5 py-4 outline-none"
-      />
-
-    </div>
-
-  </div>
-
-</section>
-
-<section className="relative z-10 px-8 lg:px-20 pb-24">
-
-  <div className="mb-12">
-
-    <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
-      Live Stats
-    </p>
-
-    <h3 className="text-5xl font-black mt-3">
-      Lotus Tracker
-    </h3>
-
-  </div>
-
-  <div className="grid md:grid-cols-4 gap-6">
-
-    <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 text-center">
-      <div className="text-5xl mb-3">🐉</div>
-      <div className="text-4xl font-black text-pink-300">
-        7
-      </div>
-      <div className="text-white/60 mt-2">
-        Elder Dragons
-      </div>
-    </div>
-
-    <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 text-center">
-      <div className="text-5xl mb-3">👑</div>
-      <div className="text-4xl font-black text-violet-300">
-        2
-      </div>
-      <div className="text-white/60 mt-2">
-        Pentakills
-      </div>
-    </div>
-
-    <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 text-center">
-      <div className="text-5xl mb-3">🧿</div>
-      <div className="text-4xl font-black text-cyan-300">
-        34
-      </div>
-      <div className="text-white/60 mt-2">
-        Barons
-      </div>
-    </div>
-
-    <div className="rounded-[2rem] bg-white/5 border border-white/10 p-8 text-center">
-      <div className="text-5xl mb-3">🔥</div>
-      <div className="text-4xl font-black text-pink-300">
-        51
-      </div>
-      <div className="text-white/60 mt-2">
-        Dragons
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-{/* LEADERBOARD */}
-<section className="relative z-10 px-8 lg:px-20 pb-24">
-
-  <div className="mb-12">
-    <p className="uppercase tracking-[0.3em] text-yellow-300 text-sm">
-      Ranking Global
-    </p>
-
-    <h3 className="text-5xl font-black mt-3">
-      Lotus Leaderboard
-    </h3>
-  </div>
-
-  <div className="space-y-4">
-
-    {leaderboard.map((player, index) => (
-
-      <div
-        key={index}
-        className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-6 flex justify-between items-center"
-      >
-
-        <div className="flex items-center gap-4">
-
-          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-cyan-500 flex items-center justify-center font-black">
-            #{index + 1}
-          </div>
-
-          <div>
-            <h4 className="font-bold text-xl">
-              {player.name}
-            </h4>
-
-            <p className="text-white/50 text-sm">
-              Lotus Rift Predictor
-            </p>
-          </div>
-
-        </div>
-
-        <div className="text-3xl font-black text-yellow-300">
-          {player.points}
-        </div>
-
-      </div>
-
-    ))}
-
-  </div>
-
-</section>
-
 
     </div>
   )
