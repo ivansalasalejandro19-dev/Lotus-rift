@@ -4,15 +4,15 @@ export default function Leaderboard() {
 
   const players = [
     {
-      name: 'Nicol',
+      name: 'liz',
       points: 420
     },
     {
-      name: 'ShadowFox',
+      name: 'ryn',
       points: 390
     },
     {
-      name: 'LotusKing',
+      name: 'pedrito',
       points: 370
     }
   ]
