@@ -65,12 +65,12 @@ export default function CrystalBall() {
         {crystalQuestions.map((question) => (
 
           <div
-            key={question}
+            key={question.id}
             className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8 hover:bg-white/10 transition"
           >
             <h3 className="font-bold text-xl">
-              {question}
-            </h3>
+  {question.title}
+</h3>
 
             <button
   onClick={() =>
