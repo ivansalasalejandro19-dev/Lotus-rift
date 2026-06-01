@@ -62,7 +62,7 @@ export default function CrystalBall() {
 
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-        {questions.map((question) => (
+        {crystalQuestions.map((question) => (
 
           <div
             key={question}
