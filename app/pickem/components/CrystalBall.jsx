@@ -166,8 +166,22 @@ const sections = [
 ]
 
 export default function CrystalBall() {
-const [openDropdown, setOpenDropdown] = useState(null)
+
+  setOpenDropdown(null)
+  
   const [answers, setAnswers] = useState({})
+
+  const getOptions = (type) => {
+  if (type === 'team') {
+    return teamNames
+  }
+
+  if (type === 'player') {
+    return playerNames
+  }
+
+  return []
+}
 
   return (
 
@@ -209,19 +223,22 @@ const [openDropdown, setOpenDropdown] = useState(null)
 
             {section.questions.map((question) => (
 
+              
               <div
-                key={question.id}
-                className="
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/5
-                  backdrop-blur-xl
-                  p-5
-                  hover:bg-white/10
-                  transition
-                "
-              >
+  key={question.id}
+  className="
+    relative
+    overflow-visible
+    rounded-2xl
+    border
+    border-white/10
+    bg-white/5
+    backdrop-blur-xl
+    p-5
+    hover:bg-white/10
+    transition
+  "
+>
 
                 <h4 className="font-bold text-base min-h-[48px]">
                   {question.title}
@@ -240,13 +257,14 @@ const [openDropdown, setOpenDropdown] = useState(null)
                       })
                     }
                     className="
- relative
- overflow-visible
- rounded-2xl
- border
- border-white/10
- bg-white/5
- p-5
+  mt-4
+  w-full
+  rounded-xl
+  bg-white/10
+  p-3
+  outline-none
+  border
+  border-white/10
 "
                   />
 
