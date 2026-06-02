@@ -167,21 +167,21 @@ const sections = [
 
 export default function CrystalBall() {
 
-  setOpenDropdown(null)
-  
+  const [openDropdown, setOpenDropdown] = useState(null)
+
   const [answers, setAnswers] = useState({})
 
   const getOptions = (type) => {
-  if (type === 'team') {
-    return teamNames
-  }
+    if (type === 'team') {
+      return teamNames
+    }
 
-  if (type === 'player') {
-    return playerNames
-  }
+    if (type === 'player') {
+      return playerNames
+    }
 
-  return []
-}
+    return []
+  }
 
   return (
 
