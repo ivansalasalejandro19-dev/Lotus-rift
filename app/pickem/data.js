@@ -616,4 +616,9 @@ export const players = Object.entries(roster)
 
 export const playerNames = players.map(player => player.id)
 
-export const teamNames = teams.map(team => team.name)
+export const teamLogos = Object.fromEntries(
+  teams.map(team => [
+    team.name,
+    team.logo
+  ])
+)

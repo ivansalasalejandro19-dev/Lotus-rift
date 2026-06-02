@@ -1,15 +1,18 @@
 'use client'
 
 import { useState } from 'react'
+import { teamLogos } from '../data'
 
 export default function SearchDropdown({
+  id,
+  openDropdown,
+  setOpenDropdown,
   options,
   value,
-  onChange,
-  placeholder
+  placeholder,
+  onChange
 }) {
 
-  const [open, setOpen] = useState(false)
   const [search, setSearch] = useState('')
 
   const filtered = options.filter((option) => {
@@ -28,68 +31,95 @@ export default function SearchDropdown({
   return (
     <div className="relative mt-4">
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="
-          w-full
-          rounded-xl
-          border
-          border-white/10
-          bg-white/10
-          p-3
-          text-left
-          hover:bg-white/15
-          transition
-          flex
-          justify-between
-          items-center
-        "
-      >
-        <span className="truncate">
-          {value || placeholder}
-        </span>
+   <button
+  onClick={() =>
+    setOpenDropdown(
+      openDropdown === id
+        ? null
+        : id
+    )
+  }
+  className="
+    w-full
+    rounded-2xl
+    border
+    border-white/10
+    bg-white/5
+    hover:bg-white/10
+    transition-all
+    p-4
+    flex
+    items-center
+    justify-between
+  "
+>
 
-        <span className="text-white/50">
-          ▼
-        </span>
-      </button>
+  <span className="truncate">
+    {value || placeholder}
+  </span>
 
-      {open && (
+  <span
+    className={`
+      transition
+      ${openDropdown === id ? 'rotate-180' : ''}
+    `}
+  >
+    ▼
+  </span>
 
-        <div
-          className="
-            absolute
-            top-full
-            left-0
-            mt-2
-            w-full
-            z-50
-            rounded-2xl
-            border
-            border-white/10
-            bg-[#14081f]
-            backdrop-blur-xl
-            shadow-2xl
-            overflow-hidden
-          "
-        >
+</button>
+
+      {openDropdown === id && (
+  <div
+  className="
+    absolute
+    left-0
+    right-0
+    top-full
+    mt-3
+    z-[9999]
+
+    overflow-hidden
+
+    rounded-2xl
+
+    border
+    border-white/10
+
+    bg-[#0B1020]
+
+    backdrop-blur-2xl
+
+    shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+  "
+>
 
           <div className="p-3 border-b border-white/10">
 
             <input
-              placeholder="🔍 Buscar..."
-              value={search}
-              onChange={(e) =>
-                setSearch(e.target.value)
-              }
-              className="
-                w-full
-                rounded-xl
-                bg-white/10
-                p-3
-                outline-none
-              "
-            />
+  placeholder="Buscar..."
+  value={search}
+  onChange={(e) =>
+    setSearch(e.target.value)
+  }
+  className="
+    w-full
+    rounded-xl
+
+    bg-white/5
+
+    border
+    border-white/10
+
+    p-3
+
+    outline-none
+
+    focus:border-cyan-400
+
+    transition
+  "
+/>
 
           </div>
 
@@ -125,12 +155,19 @@ export default function SearchDropdown({
 
                 }}
                 className="
-                  w-full
-                  text-left
-                  p-3
-                  hover:bg-white/10
-                  transition
-                "
+  w-full
+  text-left
+
+  px-4
+  py-4
+
+  hover:bg-cyan-500/10
+
+  border-b
+  border-white/5
+
+  transition
+"
               >
                 {typeof option === 'string' ? (
 
@@ -138,17 +175,49 @@ export default function SearchDropdown({
 
 ) : (
 
+ <div className="flex items-center gap-3">
+
+  {option.team && (
+
+    <img
+      src={teamLogos[option.team]}
+      alt=""
+      className="
+        w-8
+        h-8
+        object-contain
+      "
+    />
+
+  )}
+
   <div>
 
     <div className="font-semibold">
-      {option.name}
+
+      {option.id || option.name}
+
+      {option.captain && (
+        <span className="ml-2">
+          👑
+        </span>
+      )}
+
     </div>
 
-    <div className="text-xs text-white/50">
-      {option.team}
-    </div>
+    {option.team && (
+
+      <div className="text-xs text-white/50">
+
+        {option.team} • {option.role}
+
+      </div>
+
+    )}
 
   </div>
+
+</div>
 
 )}
               </button>

@@ -166,7 +166,7 @@ const sections = [
 ]
 
 export default function CrystalBall() {
-
+const [openDropdown, setOpenDropdown] = useState(null)
   const [answers, setAnswers] = useState({})
 
   return (
@@ -240,25 +240,23 @@ export default function CrystalBall() {
                       })
                     }
                     className="
-                      mt-4
-                      w-full
-                      rounded-xl
-                      bg-white/10
-                      p-3
-                      outline-none
-                      border
-                      border-white/10
-                    "
+ relative
+ overflow-visible
+ rounded-2xl
+ border
+ border-white/10
+ bg-white/5
+ p-5
+"
                   />
 
                 ) : (
 
                  <SearchDropdown
-  options={
-   question.type === 'team'
-  ? teamNames
-  : playerNames
-  }
+  id={question.id}
+  openDropdown={openDropdown}
+  setOpenDropdown={setOpenDropdown}
+  options={getOptions(question.type)}
   value={answers[question.id]}
   placeholder="Seleccionar"
   onChange={(value) =>
