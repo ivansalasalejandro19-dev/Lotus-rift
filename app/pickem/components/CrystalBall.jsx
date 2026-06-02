@@ -219,7 +219,7 @@ export default function CrystalBall() {
 
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 overflow-visible">
 
             {section.questions.map((question) => (
 
