@@ -3,7 +3,6 @@
 import Hero from './components/Hero'
 import CrystalBall from './components/CrystalBall'
 import CrystalBallNumbers from './components/CrystalBallNumbers'
-import BracketPredictions from './components/BracketPredictions'
 import CommunityStats from './components/CommunityStats'
 import LotusTracker from './components/LotusTracker'
 import Achievements from './components/Achievements'
@@ -18,8 +17,6 @@ export default function PickEmPage() {
       <CrystalBall />
 
       <CrystalBallNumbers />
-
-      <BracketPredictions />
 
       <CommunityStats />
 
