@@ -15,7 +15,7 @@ export default function SearchDropdown({
 
   const [search, setSearch] = useState('')
 
-  const filtered = options.filter((option) => {
+ const filtered = (options || []).filter((option) => {
 
   const text =
     typeof option === 'string'
