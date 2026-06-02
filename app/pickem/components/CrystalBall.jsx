@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { teams } from '../data'
 import { teams, players } from '../data'
 
 const crystalQuestions = [
