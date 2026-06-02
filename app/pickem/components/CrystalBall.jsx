@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { teams } from '../data'
+import { teams, players } from '../data'
 
 const crystalQuestions = [
   {
@@ -72,29 +74,29 @@ export default function CrystalBall() {
   {question.title}
 </h3>
 
-            <button
-  onClick={() =>
+           <select
+  className="mt-6 w-full bg-white/10 rounded-xl p-4"
+  value={answers[question.id] || ''}
+  onChange={(e) =>
     setAnswers({
       ...answers,
-      [question.id]: true
+      [question.id]: e.target.value
     })
   }
-  className={`
-    mt-6
-    w-full
-    rounded-xl
-    py-4
-    font-bold
-    transition
-    ${
-      answers[question.id]
-        ? 'bg-gradient-to-r from-pink-500 to-cyan-500'
-        : 'bg-white/10 hover:bg-white/20'
-    }
-  `}
 >
-  Seleccionar
-</button>
+  <option value="">
+    Seleccionar
+  </option>
+
+  {(question.type === 'team' ? teams : players).map((option) => (
+    <option
+      key={option}
+      value={option}
+    >
+      {option}
+    </option>
+  ))}
+</select>
           </div>
 
         ))}
