@@ -226,7 +226,7 @@ export default function CrystalBall() {
               
               <div
   key={question.id}
-  className="
+  className={`
     relative
     overflow-visible
     rounded-2xl
@@ -237,7 +237,13 @@ export default function CrystalBall() {
     p-5
     hover:bg-white/10
     transition
-  "
+
+    ${
+      openDropdown === question.id
+        ? 'z-[9999]'
+        : 'z-0'
+    }
+  `}
 >
 
                 <h4 className="font-bold text-base min-h-[48px]">

@@ -149,8 +149,7 @@ export default function SearchDropdown({
     : option.name
 )
 
-                  setOpen(false)
-
+                  setOpenDropdown(null)
                   setSearch('')
 
                 }}
