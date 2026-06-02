@@ -1,20 +1,69 @@
 export const teams = [
-  'Sᴍᴀᴄᴋᴅᴏᴡɴ',
-  'T502',
-  'Rokurominos',
-  'overextended',
-  'Huesitos Proyect',
-  'HaTsu',
-  'Golden Dragons',
-  'Nahuales',
-  'Ice Gold',
-  'ÆSIIR Go Legends',
-  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
-  'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ',
-  'Fʟᴀᴡʟᴇss',
-  'Secret Society',
-  'Cosa nostra',
-  'Joyita Gaming'
+  {
+    name: 'T502',
+    logo: '/logos/T502.png'
+  },
+  {
+    name: 'HaTsu',
+    logo: '/logos/hatsu.png'
+  },
+  {
+    name: 'Golden Dragons',
+    logo: '/logos/golden_dragons.png'
+  },
+    {
+    name: 'Rokurominos',
+    logo: '/logos/rku.png'
+  },  
+    {
+    name: 'overextended',
+    logo: '/logos/overextended.png'
+  },
+    {
+    name: 'Huesitos Proyect',
+    logo: '/logos/huesitos.png'
+  },
+    {
+    name: 'Nahuales',
+    logo: '/logos/nahuales.png'
+  },
+    {
+    name: 'Ice Gold',
+    logo: '/logos/ice_gold.png'
+    },
+    {
+    name: 'ÆSIIR Go Legends',
+    logo: '/logos/ae_siir_go_legends.png'
+  },
+    {
+    name: 'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
+    logo: '/logos/shadow_reapers.png'
+  },
+    {
+    name: 'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ',
+    logo: '/logos/new_alliance.png'
+    },
+    {
+    name: 'Fʟᴀᴡʟᴇss',
+    logo: '/logos/flawless.png'
+  },
+    {
+    name: 'Secret Society',
+    logo: '/logos/secret_society.png'
+    },
+    {
+    name: 'Cosa nostra',
+    logo: '/logos/cosa_nostra.png'
+    },
+    {
+    name: 'Joyita Gaming',
+    logo: '/logos/joyita.png'
+   },
+   {
+    name: 'Sᴍᴀᴄᴋᴅᴏᴡɴ',
+    logo: '/logos/smackdown.png'
+   }
+
 ]
 
 export const roster = {
@@ -553,7 +602,18 @@ export const roster = {
   ]
 }
 
-export const players = Object.values(roster)
-  .flat()
-  .filter(player => player?.id)
-  .map(player => player.id)
+export const players = Object.entries(roster)
+  .flatMap(([teamName, teamPlayers]) =>
+    teamPlayers
+      .filter(player => player?.id)
+      .map(player => ({
+        id: player.id,
+        role: player.role,
+        team: teamName,
+        captain: player.captain || false
+      }))
+  )
+
+export const playerNames = players.map(player => player.id)
+
+export const teamNames = teams.map(team => team.name)
