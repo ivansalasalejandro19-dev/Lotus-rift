@@ -77,7 +77,7 @@ export default function SearchDropdown({
     right-0
     top-full
     mt-3
-    z-[9999]
+    z-[99999]
 
     overflow-hidden
 

@@ -185,7 +185,7 @@ export default function CrystalBall() {
 
   return (
 
-    <section className="px-8 lg:px-20 pb-24">
+    <section className="px-8 lg:px-20 pb-24 overflow-visible">
 
       <div className="mb-16">
 
