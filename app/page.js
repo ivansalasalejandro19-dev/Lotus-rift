@@ -39,7 +39,7 @@ export default function LotusRiftTournamentPage() {
     name: '🪷 LOTUS RIFT 🪷',
     subtitle: 'Torneo LAN',
     description: '',
-    season: 'S',
+    season: 'Sem',
     pricepool: '180 USDT',
     players: '16 Equipos',
     status: 'INSCRIPCIONES CERRADAS',
