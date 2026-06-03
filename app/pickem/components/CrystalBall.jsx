@@ -7,245 +7,235 @@ import SearchDropdown from './SearchDropdown'
 const sections = [
 
   {
-    title: '🏆 Torneo',
+    title: '🏆 Tᴏʀɴᴇᴏ',
     color: 'text-pink-300',
 
     questions: [
       {
         id: 'champion',
-        title: '🏆 Campeón del torneo',
+        title: '🏆 Cᴀᴍᴘᴇᴏ́ɴ ᴅᴇʟ ᴛᴏʀɴᴇᴏ',
         type: 'team'
       },
       {
         id: 'runnerup',
-        title: '🥈 Finalista',
+        title: '🥈 Fɪɴᴀʟɪsᴛᴀ',
         type: 'team'
       },
       {
         id: 'tournamentMvp',
-        title: '⭐ MVP del torneo',
+        title: '⭐ Mᴠᴘ ᴅᴇʟ Tᴏʀɴᴇᴏ',
         type: 'player'
       },
       {
         id: 'finalMvp',
-        title: '👑 MVP de la final',
+        title: '👑 Mᴠᴘ ᴅᴇ ʟᴀ ғɪɴᴀʟ',
         type: 'player'
       }
     ]
   },
 
   {
-    title: '⚔️ Equipos',
+    title: '⚔️ Eϙᴜɪᴘᴏs',
     color: 'text-cyan-300',
 
     questions: [
       {
         id: 'teamMostKills',
-        title: '🔥 Más kills',
+        title: '🔥 Mᴀ́s ᴋɪʟʟs ᴇɴ ᴄᴏɴᴊᴜɴᴛᴏ',
         type: 'team'
       },
       {
         id: 'teamLeastDeaths',
-        title: '🛡️ Menos muertes',
+        title: '🛡️ Mᴇɴᴏs ᴍᴜᴇʀᴛᴇs',
         type: 'team'
       },
       {
         id: 'teamMostDragons',
-        title: '🐉 Más dragones',
+        title: '🐉 Mᴀ́s ᴅʀᴀɢᴏɴᴇs',
         type: 'team'
       },
       {
         id: 'teamMostBarons',
-        title: '🧿 Más barones',
+        title: '🧿 Mᴀ́s Bᴀʀᴏɴᴇs',
         type: 'team'
       },
       {
         id: 'teamMostHeralds',
-        title: '👁️ Más heraldos',
+        title: '👁️ Mᴀ́s ʜᴇʀᴀʟᴅᴏs',
         type: 'team'
       },
       {
         id: 'teamMostTowers',
-        title: '🏰 Más torres destruidas',
+        title: '🏰 Mᴀ́s ᴛᴏʀʀᴇs ᴅᴇsᴛʀᴜɪᴅᴀs',
         type: 'team'
       },
       {
         id: 'teamMostFirstBloods',
-        title: '🩸 Más First Blood',
+        title: '🩸 Mᴀ́s ᴘʀɪᴍᴇʀᴀ sᴀɴɢʀᴇ ᴇɴ ᴄᴏɴᴊᴜɴᴛᴏ',
         type: 'team'
       },
       {
         id: 'fastestWin',
-        title: '⚡ Partida más rápida ganada',
+        title: '⚡ Pᴀʀᴛɪᴅᴀ ᴍᴀ́s ʀᴀᴘɪᴅᴀ ɢᴀɴᴀᴅᴀ',
         type: 'team'
       },
       {
         id: 'longestWin',
-        title: '⏱️ Partida más larga ganada',
+        title: '⏱️ Pᴀʀᴛɪᴅᴀ ᴍᴀ́s ʟᴀʀɢᴀ ɢᴀɴᴀᴅᴀ',
         type: 'team'
       }
     ]
   },
 
   {
-    title: '👤 Jugadores',
+    title: '👤 Jᴜɢᴀᴅᴏʀᴇs',
     color: 'text-violet-300',
 
     questions: [
       {
         id: 'playerMostKills',
-        title: '🔥 Más kills',
+        title: '🔥 Mᴀ́s ᴋɪʟʟs',
         type: 'player'
       },
       {
         id: 'playerMostAssists',
-        title: '🧿 Más asistencias',
+        title: '🧿 Mᴀ́s ᴀsɪsᴛᴇɴᴄɪᴀ',
         type: 'player'
       },
       {
         id: 'playerMostDeaths',
-        title: '💀 Más muertes',
+        title: '💀 Mᴀ́s ᴍᴜᴇʀᴛᴇs',
         type: 'player'
       },
       {
         id: 'bestKDA',
-        title: '⚔️ Mejor KDA',
-        type: 'player'
-      },
-      {
-        id: 'mostMvps',
-        title: '👑 Más MVPs',
-        type: 'player'
-      },
-      {
-        id: 'firstPenta',
-        title: '🌸 Primer Pentakill',
+        title: '⚔️ Mᴇᴊᴏʀ ᴋᴅᴀ',
         type: 'player'
       },
       {
         id: 'mostPentas',
-        title: '🌸 Más Pentakills',
+        title: '🌸 Mᴀ́s ᴘᴇɴᴛᴀᴋɪʟʟ',
         type: 'player'
       },
       {
         id: 'mostDamage',
-        title: '🏹 Más daño total',
+        title: '🏹 Mᴀ́s ᴅᴀɴ̃ᴏ ᴛᴏᴛᴀʟ',
         type: 'player'
       },
       {
         id: 'mostCs',
-        title: '🌾 Más súbditos (CS)',
+        title: '🌾 Mᴀ́s sᴜʙᴅɪᴛᴏs (cs)',
         type: 'player'
       },
       {
         id: 'mostGoldPerMinute',
-        title: '💰 Más oro por minuto',
+        title: '💰 Mᴀs ᴏʀᴏ ᴘᴏʀ ᴍɪɴᴜᴛᴏ',
         type: 'player'
       },
       {
         id: 'mostFirstBloods',
-        title: '🩸 Más First Blood',
+        title: '🩸 Mᴀ́s ғɪʀsᴛ ʙʟᴏᴏᴅ',
         type: 'player'
       },
       {
         id: 'mostBaronSteals',
-        title: '🧿 Más robos de Barón',
+        title: '🧿 Mᴀ́s ʀᴏʙᴏs ᴅᴇ ʙᴀʀᴏɴ',
         type: 'player'
       },
       {
         id: 'mostDragonSteals',
-        title: '🐉 Más robos de Dragón',
+        title: '🐉 Mᴀ́s ʀᴏʙᴏs ᴅᴇ ᴅʀᴀɢᴏ́ɴ',
         type: 'player'
       }
     ]
   },
 
   {
-    title: '🎮 Campeones',
+    title: '🎮 Cᴀᴍᴘᴇᴏɴᴇs',
     color: 'text-yellow-300',
 
     questions: [
       {
         id: 'mostBanned',
-        title: '🚫 Más baneado',
+        title: '🚫 Mᴀ́s ʙᴀɴᴇᴀᴅᴏ',
         type: 'champion'
       },
       {
         id: 'mostPlayed',
-        title: '🎮 Más jugado',
+        title: '🎮 Mᴀ́s ᴊᴜɢᴀᴅᴏs',
         type: 'champion'
       },
       {
         id: 'bestWinrate',
-        title: '🏆 Mejor Win Rate',
+        title: '🏆 Mᴇᴊᴏʀ ᴡɪɴ ʀᴀᴛᴇ',
         type: 'champion'
       },
       {
         id: 'worstWinrate',
-        title: '💀 Peor Win Rate',
+        title: '💀 Pᴇᴏʀ Wɪɴ ʀᴀᴛᴇ',
         type: 'champion'
       },
       {
         id: 'champMostKills',
-        title: '🔥 Más kills',
+        title: '🔥 Mᴀ́s ᴋɪʟʟs',
         type: 'champion'
       },
       {
         id: 'champMostDeaths',
-        title: '☠️ Más muertes',
+        title: '☠️ Mᴀ́s ᴍᴜᴇʀᴛᴇs',
         type: 'champion'
       },
       {
         id: 'champMostAssists',
-        title: '🤝 Más asistencias',
+        title: '🤝 Mᴀ́s ᴀsɪsᴛᴇɴᴄɪᴀs',
         type: 'champion'
       },
       {
         id: 'firstPentaChampion',
-        title: '🌸 Primer campeón con Pentakill',
+        title: '🌸 Pʀɪᴍᴇʀ ᴄᴀᴍᴘᴇᴏ́ɴ ᴄᴏɴ ᴘᴇɴᴛᴀᴋɪʟʟ',
         type: 'champion'
       },
       {
         id: 'mostFlexChampion',
-        title: '🎭 Campeón más flex',
+        title: '🎭 Cᴀᴍᴘᴇᴏ́ɴ ᴍᴀ́s ғʟᴇx',
         type: 'champion'
       }
     ]
   },
 
   {
-    title: '📊 Estadísticas',
+    title: '📊 Esᴛᴀᴅɪsᴛɪᴄᴀs',
     color: 'text-emerald-300',
 
     questions: [
       {
         id: 'totalBarons',
-        title: '🧿 Barones totales',
+        title: '🧿 Bᴀʀᴏɴᴇs ᴛᴏᴛᴀʟᴇs',
         type: 'baronsRange'
       },
       {
         id: 'totalElders',
-        title: '🐉 Elders totales',
+        title: '🐉 Eʟᴅᴇʀs ᴛᴏᴛᴀʟᴇs',
         type: 'eldersRange'
       },
       {
         id: 'totalTowers',
-        title: '🏰 Torres destruidas',
+        title: '🏰 Tᴏʀʀᴇs ᴅᴇsᴛʀᴜɪᴅᴀs',
         type: 'towersRange'
       },
       {
         id: 'totalPentas',
-        title: '🌸 Pentakills totales',
+        title: '🌸 Pᴇɴᴛᴀᴋɪʟʟs ᴛᴏᴛᴀʟᴇs',
         type: 'pentasRange'
       },
       {
         id: 'longestGame',
-        title: '⏱️ Partida más larga',
+        title: '⏱️ Pᴀʀᴛɪᴅᴀ ᴍᴀ́s ʟᴀʀɢᴀ',
         type: 'longestGameRange'
       },
       {
         id: 'totalKills',
-        title: '🔥 Kills totales',
+        title: '🔥 Kɪʟʟs ᴛᴏᴛᴀʟᴇs',
         type: 'killsRange'
       }
     ]
@@ -356,16 +346,15 @@ export default function CrystalBall() {
       {/* HEADER */}
       <div className="mb-16">
         <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
-          Crystal Ball
+          Cʀʏsᴛᴀʟ Bᴀʟʟ
         </p>
 
         <h2 className="text-5xl font-black mt-3">
-          Predicciones Lotus Rift
+          Pʀᴇᴅɪᴄᴄᴄɪᴏɴᴇs Lᴏᴛᴜs Rɪғᴛ
         </h2>
 
         <p className="text-white/60 mt-4 max-w-2xl">
-          Predice el futuro del torneo y demuestra que conoces
-          el Rift mejor que nadie.
+          Pʀᴇᴅɪᴄᴇ ᴇʟ ғᴜᴛᴜʀᴏ ᴅᴇʟ ᴛᴏʀɴᴇᴏ ʏ ᴅᴇᴍᴜᴇsᴛʀᴀ ϙᴜᴇ ᴄᴏɴᴏᴄᴇs ʟᴀ ɢʀɪᴇᴛᴀ ᴍᴇᴊᴏʀ ϙᴜᴇ ɴᴀᴅɪᴇ
         </p>
       </div>
 

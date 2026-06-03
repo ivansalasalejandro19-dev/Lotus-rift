@@ -57,7 +57,7 @@ export const teams = [
     },
     {
     name: 'Joyita Gaming',
-    logo: '/logos/joyita.png'
+    logo: '/logos/joyita_gaming.png'
    },
    {
     name: 'Sᴍᴀᴄᴋᴅᴏᴡɴ',
