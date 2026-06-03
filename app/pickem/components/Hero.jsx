@@ -16,14 +16,14 @@ export default function Hero() {
         </div>
 
         <h1 className="text-6xl md:text-8xl font-black">
-          LOTUS
+          𝐿𝑂𝑇𝑈𝑆
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-violet-300 to-cyan-300">
-            PICK'EM
+            𝑃𝐼𝐶𝐾' 𝐸𝑀
           </span>
         </h1>
 
         <p className="mt-8 text-white/60 text-xl max-w-3xl mx-auto">
-          Predice el futuro del torneo y compite contra toda la comunidad.
+          ᴘʀᴇᴅɪᴄᴇ ᴇʟ ғᴜᴛᴜʀᴏ ᴅᴇʟ ᴛᴏʀɴᴇᴏ ʏ ᴄᴏᴍᴘɪᴛᴇ ᴄᴏɴᴛʀᴀ ᴛᴏᴅᴀ ʟᴀ ᴄᴏᴍᴜɴɪᴅᴀᴅ
         </p>
 
       </div>
