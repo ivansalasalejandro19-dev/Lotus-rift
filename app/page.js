@@ -945,7 +945,7 @@ export default function LotusRiftTournamentPage() {
 
 
           <h3 className="text-xl sm:text-3xl font-black mt-3 text-violet-200">
-            5v5
+            5vs5
           </h3>
         </div>
 
