@@ -882,11 +882,7 @@ export default function LotusRiftTournamentPage() {
             <a
               href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
               target="_blank"
-              className="
-px-5 sm:px-8
-py-3 sm:py-4
-text-sm sm:text-base
-rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
+              className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
             >
               <MessageCircle size={20} />
               Comunidad de Whatsapp
@@ -895,17 +891,7 @@ rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semi
             <a
               href={discordLink}
               target="_blank"
-              className="
-px-5 sm:px-8
-py-3 sm:py-4
-text-sm sm:text-base
-rounded-3xl
-border border-white/10
-bg-white/5
-backdrop-blur-xl
-hover:bg-white/10
-transition
-"
+              className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition"
             >
               Discord
             </a>
@@ -915,40 +901,10 @@ transition
 
         <div className="relative flex justify-center items-center">
           <div
-            className="
-absolute
-w-[250px]
-h-[250px]
-sm:w-[350px]
-sm:h-[350px]
-lg:w-[450px]
-lg:h-[450px]
-rounded-full
-border
-border-pink-300/10
-animate-pulse
-"
-          />
+            className="absolute w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] rounded-full border border-pink-300/10 animate-pulse"
+/>
 
-
-          <div className="
-relative
-w-[220px]
-h-[220px]
-sm:w-[300px]
-sm:h-[300px]
-lg:w-[370px]
-lg:h-[370px]
-rounded-full
-border border-white/10
-bg-gradient-to-br
-from-pink-400/10
-to-violet-500/20
-backdrop-blur-3xl
-flex items-center
-justify-center
-shadow-[0_0_100px_rgba(236,72,153,0.3)]
-">
+          <div className="relative w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] lg:w-[370px] lg:h-[370px] rounded-full border border-white/10 bg-gradient-to-br from-pink-400/10 to-violet-500/20 backdrop-blur-3xl flex items-center justify-center shadow-[0_0_100px_rgba(236,72,153,0.3)]">
             <div className="text-center px-6">
               <div className="text-8xl animate-pulse">🪷</div>
 
