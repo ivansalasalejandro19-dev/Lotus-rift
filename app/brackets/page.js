@@ -1008,7 +1008,7 @@ const percent2 = totalVotes
           </h3>
         </div>
 
-        <div className="mb-8 flex items-center justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
+        <div className="mt-16 mb-8 flex flex-col md:flex-row items-center gap-4 md:justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
 
           <div>
             <p className="text-pink-300 font-black text-2xl">
@@ -1033,14 +1033,14 @@ const percent2 = totalVotes
               className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex flex-col md:flex-row items-center gap-5 md:justify-between"
             >
 
-              <div className="flex items-center gap-4 w-full md:w-[320px]">
+              <div className="flex items-center gap-4 w-full md:w-[320px] justify-center md:justify-start">
 
                 <img
                   src={match.team1?.logo}
                   className="w-10 h-10 rounded-xl"
                 />
 
-                <span className="font-semibold">
+                <span className="font-semibold break-words text-center md:text-left">
                   {match.team1?.name || "TBD"}
                 </span>
               </div>
@@ -1051,7 +1051,7 @@ const percent2 = totalVotes
 
               <div className="flex items-center justify-end gap-4 w-full md:w-[320px]">
 
-                <span className="font-semibold text-right">
+                <span className="font-semibold text-center md:text-right break-words">
                   {match.team2?.name || "TBD"}
                 </span>
 
@@ -1073,7 +1073,7 @@ const percent2 = totalVotes
 
         </div>
 
-        <div className="mt-16 mb-8 flex items-center justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
+        <div className="mt-16 mb-8 flex flex-col md:flex-row items-center gap-4 md:justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
 
   <div>
     <p className="text-pink-300 font-black text-2xl">
@@ -1097,10 +1097,10 @@ const percent2 = totalVotes
 
     <div
       key={index + 4}
-      className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
+      className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex flex-col md:flex-row items-center gap-5 md:justify-between"
     >
 
-      <div className="flex items-center gap-4 w-[320px]">
+      <div className="flex items-center gap-4 w-full md:w-[320px] justify-center md:justify-start">
         <img
           src={match.team1?.logo}
           className="w-10 h-10 rounded-xl"
@@ -1190,10 +1190,10 @@ const percent2 = totalVotes
 
           <img
             src={selectedMatch.logo2}
-            className="w-24 h-24 mx-auto rounded-2xl object-cover mb-4"
+            className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-2xl object-cover mb-4"
           />
 
-          <h3 className="text-2xl font-black">
+          <h3 className="text-lg md:text-2xl font-black break-words">
             {selectedMatch.team2}
           </h3>
 
