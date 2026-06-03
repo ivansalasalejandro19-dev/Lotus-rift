@@ -1,17 +1,10 @@
 'use client'
 
 import LoginButton from "./components/LoginButton"
-import { Disc3 } from "lucide-react"
 import { MessageCircle } from "lucide-react"
 import { useEffect, useState } from "react"
-import {
-  signInWithPopup
-} from "./lib/auth"
+import Image from "next/image"
 
-import {
-  auth,
-  discordProvider
-} from "./lib/auth"
 export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
@@ -821,9 +814,30 @@ const roster = {
 
 
       {/* NAVBAR */}
-      <header className="relative z-10 flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-xl bg-black/20">
+      <header className="
+relative z-10
+flex flex-col md:flex-row
+items-center
+justify-between
+px-4 sm:px-6
+py-4
+gap-4
+border-b border-white/10
+backdrop-blur-xl
+bg-black/20
+">
         <div>
-          <h1 className="text-3xl md:text-4xl font-black tracking-[0.4em] text-pink-300">
+          <h1 className="
+text-xl
+sm:text-2xl
+md:text-4xl
+font-black
+tracking-[0.15em]
+md:tracking-[0.4em]
+text-pink-300
+text-center
+md:text-left
+">
             {tournamentInfo.name}
           </h1>
 
@@ -842,7 +856,18 @@ const roster = {
 
 
       {/* HERO */}
-      <section className="relative z-10 px-8 lg:px-20 py-24 grid lg:grid-cols-2 gap-16 items-center">
+      <section
+className="
+relative z-10
+px-4 sm:px-6 lg:px-20
+grid
+lg:grid-cols-2
+gap-16
+items-center
+py-16 sm:py-24
+pb-16
+"
+>
         <div>
           <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-pink-500/20 bg-pink-500/10 mb-8 backdrop-blur-xl">
             <div className="w-3 h-3 rounded-full bg-pink-400 animate-pulse" />
@@ -854,7 +879,14 @@ const roster = {
           </div>
 
 
-          <h2 className="text-7xl md:text-8xl font-black leading-none">
+          <h2 className="
+text-5xl
+sm:text-6xl
+md:text-7xl
+lg:text-8xl
+font-black
+leading-none
+">
             Lotus
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-violet-300 to-cyan-300">
               Rift
@@ -873,16 +905,30 @@ const roster = {
       <a
                 href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
                 target="_blank"
-                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
+                className="
+px-5 sm:px-8
+py-3 sm:py-4
+text-sm sm:text-base
+rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
               >
                 <MessageCircle size={20} />
                 Comunidad de Whatsapp
               </a>
 
             <a
-              href="https://discord.gg/nVyrHkeCn5"
+              href={discordLink}
               target="_blank"
-              className="px-8 py-4 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition"
+              className="
+px-5 sm:px-8
+py-3 sm:py-4
+text-sm sm:text-base
+rounded-3xl
+border border-white/10
+bg-white/5
+backdrop-blur-xl
+hover:bg-white/10
+transition
+"
             >
               Discord
             </a>
@@ -891,13 +937,45 @@ const roster = {
 
 
         <div className="relative flex justify-center items-center">
-          <div className="absolute w-[450px] h-[450px] rounded-full border border-pink-300/10 animate-pulse" />
+          <div
+className="
+absolute
+w-[250px]
+h-[250px]
+sm:w-[350px]
+sm:h-[350px]
+lg:w-[450px]
+lg:h-[450px]
+rounded-full
+border
+border-pink-300/10
+animate-pulse
+"
+/>
 
 
-          <div className="relative w-[370px] h-[370px] rounded-full border border-white/10 bg-gradient-to-br from-pink-400/10 to-violet-500/20 backdrop-blur-3xl flex items-center justify-center shadow-[0_0_100px_rgba(236,72,153,0.3)]">
+          <div className="
+relative
+w-[220px]
+h-[220px]
+sm:w-[300px]
+sm:h-[300px]
+lg:w-[370px]
+lg:h-[370px]
+rounded-full
+border border-white/10
+bg-gradient-to-br
+from-pink-400/10
+to-violet-500/20
+backdrop-blur-3xl
+flex items-center
+justify-center
+shadow-[0_0_100px_rgba(236,72,153,0.3)]
+">
             <div className="text-center px-6">
               <div className="text-8xl animate-pulse">🪷</div>
 
+<div className="absolute inset-0 rounded-full border border-pink-400/20 animate-ping" />
 
               <h3 className="text-4xl font-black mt-5 text-pink-200">
                 Lotus arena
@@ -914,14 +992,30 @@ const roster = {
 
 
       {/* STATS */}
-      <section className="relative z-10 px-8 lg:px-20 grid md:grid-cols-4 gap-6 pb-24">
-        <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
+      <section className="
+relative z-10
+px-4 sm:px-6 lg:px-20
+grid
+grid-cols-2
+md:grid-cols-4
+gap-4
+pb-20
+">
+        <div className="
+rounded-[2rem]
+border border-white/10
+bg-white/5
+backdrop-blur-2xl
+p-5 sm:p-8
+hover:bg-white/10
+transition
+">
           <p className="uppercase tracking-[0.25em] text-white/40 text-sm">
             Equipos
           </p>
 
 
-          <h3 className="text-5xl font-black mt-3 text-pink-200">
+         <h3 className="text-3xl sm:text-5xl font-black mt-3 text-pink-200">
             16
           </h3>
         </div>
@@ -933,7 +1027,7 @@ const roster = {
           </p>
 
 
-          <h3 className="text-3xl font-black mt-3 text-violet-200">
+          <h3 className="text-xl sm:text-3xl font-black mt-3 text-violet-200">
             5v5
           </h3>
         </div>
@@ -945,7 +1039,7 @@ const roster = {
           </p>
 
 
-          <h3 className="text-3xl font-black mt-3 text-cyan-200">
+          <h3 className="text-xl sm:text-3xl font-black mt-3 text-cyan-200">
             19:00
           </h3>
         </div>
@@ -965,14 +1059,21 @@ const roster = {
 
 
       {/* SCHEDULE */}
-      <section id="cronograma" className="relative z-10 px-8 lg:px-20 pb-24">
+      <section
+id="cronograma"
+className="
+relative z-10
+px-4 sm:px-6 lg:px-20
+pb-16
+"
+>
         <div className="mb-12">
           <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
             Calendario Oficial
           </p>
 
 
-          <h3 className="text-5xl font-black mt-3">
+          <h3 className="text-3xl sm:text-5xl font-black mt-3">
             Cronograma
           </h3>
         </div>
@@ -982,10 +1083,10 @@ const roster = {
           {schedule.map((item, index) => (
             <div
               key={index}
-              className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8 hover:bg-white/10 transition"
+              className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-5 sm:p-8 hover:bg-white/10 transition"
             >
               <div className="flex items-center justify-between mb-5">
-                <h4 className="text-3xl font-black text-pink-200">
+                <h4 className="text-xl sm:text-3xl font-black text-pink-200">
                   {item.date}
                 </h4>
 
@@ -996,7 +1097,7 @@ const roster = {
               </div>
 
 
-              <p className="text-xl text-white/80 leading-relaxed">
+              <p className="text-base sm:text-xl text-white/80 leading-relaxed">
                 {item.matches}
               </p>
             </div>
@@ -1006,19 +1107,31 @@ const roster = {
 
 
       {/* EQUIPOS */}
-<section id="equipos" className="relative z-10 px-8 lg:px-20 pb-24">
+<section
+id="equipos"
+className="
+relative z-10
+px-4 sm:px-6 lg:px-20
+pb-16
+">
 
   <div className="mb-12">
     <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
       Participantes
     </p>
 
-    <h3 className="text-5xl font-black mt-3">
+    <h3 className="text-3xl sm:text-5xl font-black mt-3">
       Equipos
     </h3>
   </div>
 
-  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="
+grid
+grid-cols-1
+sm:grid-cols-2
+lg:grid-cols-4
+gap-4
+">
 
     {teams.map((team, index) => (
       <div
@@ -1060,16 +1173,30 @@ const roster = {
     "
   >
     <div className="bg-[#14081f] rounded-2xl p-2">
-      <img
-        src={teamLogos[team]}
-        alt={team}
-        className="w-28 h-28 object-contain rounded-xl"
-      />
+      <Image
+  src={teamLogos[team]}
+  alt={team}
+  width={120}
+  height={120}
+  className="
+w-20 h-20
+sm:w-24 sm:h-24
+lg:w-28 lg:h-28
+object-contain
+rounded-xl
+"
+/>
     </div>
   </div>
 </div>
         {/* NOMBRE */}
-        <h3 className="text-2xl font-black text-white">
+        <h3 className="
+text-lg
+sm:text-2xl
+font-black
+text-white
+break-words
+">
           {team}
         </h3>
 
@@ -1091,7 +1218,16 @@ const roster = {
 
           <div
             key={idx}
-            className="flex items-center justify-between bg-white/10 p-2 rounded-xl"
+            className="
+flex
+flex-col sm:flex-row
+items-start sm:items-center
+justify-between
+bg-white/10
+p-2
+rounded-xl
+gap-2
+"
           >
 
             {/* PLAYER */}
@@ -1103,7 +1239,9 @@ const roster = {
                 </span>
               )}
 
-              <span>{p.id}</span>
+              <span className="break-all text-sm">
+  {p.id}
+</span>
 
             </div>
 
@@ -1140,7 +1278,18 @@ const roster = {
 
       <div
         key={idx}
-        className="flex items-center justify-between bg-white/5 border border-white/10 p-2 rounded-xl mt-3"
+        className="
+flex
+flex-col sm:flex-row
+items-start sm:items-center
+justify-between
+bg-white/5
+border border-white/10
+p-2
+rounded-xl
+mt-3
+gap-2
+"
       >
 
         {/* PLAYER */}
@@ -1152,7 +1301,9 @@ const roster = {
             </span>
           )}
 
-          <span>{p.id}</span>
+          <span className="break-all text-sm">
+  {p.id}
+</span>
 
         </div>
 
@@ -1177,6 +1328,13 @@ const roster = {
   </div>
 
 </section>
+
+<style jsx global>{`
+  html,
+  body {
+    overflow-x: hidden;
+  }
+`}</style>
 
     </div>
   )
