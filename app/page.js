@@ -863,14 +863,7 @@ export default function LotusRiftTournamentPage() {
           </div>
 
 
-          <h2 className="
-text-5xl
-sm:text-6xl
-md:text-7xl
-lg:text-8xl
-font-black
-leading-none
-">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none">
             Lotus
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-violet-300 to-cyan-300">
               Rift
