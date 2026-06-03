@@ -867,21 +867,16 @@ const roster = {
 
 
           <div className="flex flex-wrap gap-5 mt-12">
-            <a
-              href="/brackets"
-              target="_blank"
-              className="px-8 py-4 rounded-3xl bg-gradient-to-r from-pink-500 via-violet-500 to-cyan-500 font-black text-lg hover:scale-105 transition shadow-2xl shadow-pink-500/30"
-            >
-              Entrar al bracket oficial
-            </a>
+            
 
-            <a
-  href="/pickem"
-  className="px-8 py-4 rounded-3xl border border-pink-500/20 bg-pink-500/10 backdrop-blur-xl hover:bg-pink-500/20 transition"
->
-  Pick'Em
-</a>
-
+      <a
+                href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
+                target="_blank"
+                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
+              >
+                <MessageCircle size={20} />
+                Comunidad de Whatsapp
+              </a>
 
             <a
               href="https://discord.gg/nVyrHkeCn5"
