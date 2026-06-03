@@ -9,7 +9,7 @@ export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
   const [discordUser, setDiscordUser] = useState(null)
-  
+
 
   useEffect(() => {
     const cookie = document.cookie
@@ -50,682 +50,682 @@ export default function LotusRiftTournamentPage() {
   const discordLink = 'https://discord.gg/nVyrHkeCn5'
 
 
- // ======================================================
-// LOGOS OFICIALES
-// ======================================================
-//
-// GUARDAR TODOS LOS LOGOS EN:
-//
-// /public/logos/
-//
-// EJEMPLOS:
-//
-// /public/logos/equipo1.png
-// /public/logos/equipo2.png
-//
-// ======================================================
+  // ======================================================
+  // LOGOS OFICIALES
+  // ======================================================
+  //
+  // GUARDAR TODOS LOS LOGOS EN:
+  //
+  // /public/logos/
+  //
+  // EJEMPLOS:
+  //
+  // /public/logos/equipo1.png
+  // /public/logos/equipo2.png
+  //
+  // ======================================================
 
-const teamLogos = {
+  const teamLogos = {
 
-  // Sᴍᴀᴄᴋᴅᴏᴡɴ
-  'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
+    // Sᴍᴀᴄᴋᴅᴏᴡɴ
+    'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
 
-  // T502
-  'T502': '/logos/T502.png',
+    // T502
+    'T502': '/logos/T502.png',
 
-  // Rokurominos
-  'Rokurominos': '/logos/rku.png',
+    // Rokurominos
+    'Rokurominos': '/logos/rku.png',
 
-  // overextended
-  'overextended': '/logos/overextended.png',
+    // overextended
+    'overextended': '/logos/overextended.png',
 
-  // Huesitos Proyect
-  'Huesitos Proyect': '/logos/huesitos.png',
+    // Huesitos Proyect
+    'Huesitos Proyect': '/logos/huesitos.png',
 
-  // HaTsu
-  'HaTsu': '/logos/hatsu.png',
+    // HaTsu
+    'HaTsu': '/logos/hatsu.png',
 
-  // Golden Dragons
-  'Golden Dragons': '/logos/golden_dragons.png',
+    // Golden Dragons
+    'Golden Dragons': '/logos/golden_dragons.png',
 
-  // Nahuales
-  'Nahuales': '/logos/nahuales.png',
+    // Nahuales
+    'Nahuales': '/logos/nahuales.png',
 
-  // Ice Gold
-  'Ice Gold': '/logos/ice_gold.png',
+    // Ice Gold
+    'Ice Gold': '/logos/ice_gold.png',
 
-  // ÆSIIR Go Legends
-  'ÆSIIR Go Legends': '/logos/ae_siir_go_legends.png',
+    // ÆSIIR Go Legends
+    'ÆSIIR Go Legends': '/logos/ae_siir_go_legends.png',
 
-  // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
-  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
+    // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
+    'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
 
-  // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
-  'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': '/logos/new_alliance.png',
+    // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
+    'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': '/logos/new_alliance.png',
 
-  // Fʟᴀᴡʟᴇss
-  'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
+    // Fʟᴀᴡʟᴇss
+    'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
 
-  // Secret Society
-  'Secret Society': '/logos/secret_society.png',
+    // Secret Society
+    'Secret Society': '/logos/secret_society.png',
 
-  // Cosa nostra
-  'Cosa nostra': '/logos/cosa_nostra.png',
+    // Cosa nostra
+    'Cosa nostra': '/logos/cosa_nostra.png',
 
-  // Joyita Gaming
-  'Joyita Gaming': '/logos/joyita_gaming.png'
+    // Joyita Gaming
+    'Joyita Gaming': '/logos/joyita_gaming.png'
 
-}
-
-
-// ======================================================
-// NOMBRES OFICIALES DE LOS EQUIPOS
-// ======================================================
-//
-// IMPORTANTE:
-// EL NOMBRE DEBE SER EXACTAMENTE IGUAL
-// AL DEL ROSTER Y TEAMLOGOS
-//
-// ======================================================
-
-const teams = [
-
-  'Sᴍᴀᴄᴋᴅᴏᴡɴ',
-  'T502',
-  'Rokurominos',
-  'overextended',
-  'Huesitos Proyect',
-  'HaTsu',
-  'Golden Dragons',
-  'Nahuales',
-  'Ice Gold',
-  'ÆSIIR Go Legends',
-  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
-  'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ',
-  'Fʟᴀᴡʟᴇss',
-  'Secret Society',
-  'Cosa nostra',
-  'Joyita Gaming'
-
-]
-
-
-// ======================================================
-// ROSTERS OFICIALES
-// ======================================================
-//
-// captain: true = coronita 👑
-//
-// ROLES:
-//
-// TOP
-// JUNGLA
-// MID
-// ADC
-// SUP
-// SUPLENTE
-//
-// TODOS LOS EQUIPOS:
-// 5 TITULARES
-// 1 SUPLENTE
-//
-// ======================================================
-
-const roster = {
+  }
 
 
   // ======================================================
-  // Sᴍᴀᴄᴋᴅᴏᴡɴ
+  // NOMBRES OFICIALES DE LOS EQUIPOS
+  // ======================================================
+  //
+  // IMPORTANTE:
+  // EL NOMBRE DEBE SER EXACTAMENTE IGUAL
+  // AL DEL ROSTER Y TEAMLOGOS
+  //
   // ======================================================
 
-  'Sᴍᴀᴄᴋᴅᴏᴡɴ': [
+  const teams = [
+
+    'Sᴍᴀᴄᴋᴅᴏᴡɴ',
+    'T502',
+    'Rokurominos',
+    'overextended',
+    'Huesitos Proyect',
+    'HaTsu',
+    'Golden Dragons',
+    'Nahuales',
+    'Ice Gold',
+    'ÆSIIR Go Legends',
+    'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
+    'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ',
+    'Fʟᴀᴡʟᴇss',
+    'Secret Society',
+    'Cosa nostra',
+    'Joyita Gaming'
 
-    // TOP
-    {
-      id: 'QQl#KKXX',
-      role: 'TOP'
-    },
-
-    // JUNGLA
-    {
-      id: 'Zen#Odev',
-      role: 'JUNGLA',
-      captain: true
-    },
-
-    // MID
-    {
-      id: 'SD Zoldk#mid',
-      role: 'MID',
-    },
-
-    // ADC
-    {
-      id: 'Hakuuuuuiiiii#True',
-      role: 'ADC'
-    },
-
-    // SUPPORT
-    {
-      id: 'Sunny CSS#Hope',
-      role: 'SUP'
-    },
-
-    // SUPLENTE
-    {
-      id: 'banshoot3rve#2802',
-      role: 'SUPLENTE'
-    }, 
-    
-    {
-      id: 'Addy#Moon',
-      role: 'SUPLENTE 2'
-    }
-
-  ],
-
-
-  // ======================================================
-  // T502
-  // ======================================================
-
-  'T502': [
-
-    {
-      id: 'playerslinky#5799',
-      role: 'TOP'
-    },
-
-    {
-      id: '愛 Liu Kam 愛#馬圖爾',
-      role: 'JUNGLA',
-    
-    },
-
-    {
-      id: 'LW TheAngel#8589',
-      role: 'MID'
-    },
-
-    {
-      id: 'G0DZILLAKN1GHT#8650',
-      role: 'ADC'
-    },
-
-    {
-      id: 'lilO#8593',
-      role: 'SUP'
-    },
-
-    {
-      id: 'Nahomi#Naø',
-      role: 'SUPLENTE',
-      captain: true
-    }, 
-    
-    {
-      id: 'Azzel#7331',
-      role: 'SUPLENTE 2'
-    }
-
-  ],
-
-
-  // ======================================================
-  // Rokurominos
-  // ======================================================
-
-  'Rokurominos': [
-    {
-    id: 'Better#lvysf',
-     role: 'TOP'
-    },
-     
-    {
-      id: 'SojaCarbo#1830',
-      role: 'JUNGLA'
-    }, 
-    
-    {
-      id: 'Dropex13#LAN',
-      role: 'MID',
-    }, 
-    
-    {
-      id: 'Mata perros#Aletz',
-      role: 'ADC',
-    }, 
-    
-    {
-      id: '루발  GawrNikho メ#lulu',
-      role: 'SUP',
-      captain: true
-    }, 
-    
-    {}, {}
-  ],
-
-
-  // ======================================================
-  // overextended
-  // ======================================================
-
-  'overextended': [
-    {
-      id: 'M3XC1T4#D1FF',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'Aplastador99#9247',
-      role: 'JUNGLA',
-      captain: true
-    }, 
-    
-    {
-      id: 'Passionfruit#GGmid',
-      role: 'MID',
-    },
-    
-    {
-      id: 'Da Vinci#4034',
-      role: 'ADC',
-    }, 
-    
-    {
-      id: 'sebdra#4417',
-      role: 'SUP',
-    }, 
-    
-    {
-      id: 'Nexo Simon#7403',
-      role: 'SUPLENTE',
-    }, {}
-  ],
-
-
-  // ======================================================
-  // Huesitos Proyect
-  // ======================================================
-
-  'Huesitos Proyect': [
-    {
-      id: 'junedvs#NBA',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'JACOP#JGL',
-      role: 'JUNGLA',
-    }, 
-    
-    {
-      id: 'TikTokPrimordial#1103',
-      role: 'MID',
-    }, 
-    
-    {
-      id: 'ID: I Blóód I#Moon',
-      role: 'ADC',
-    }, 
-    
-    {
-      id: 'SpearDiff Marc#SMITE',
-      role: 'SUP',
-      captain: true
-    }, {}, {}
-  ],
-
-
-  // ======================================================
-  // HaTsu
-  // ======================================================
-
-  'HaTsu': [
-    {
-      id: 'HTS Unfair#9090',
-      role: 'TOP',
-      captain: true
-    }, 
-    
-    {
-      id: 'HTS JAYCE BALVIN#9828',
-      role: 'JUNGLA',
-    }, 
-    
-    {
-      id: 'HTS Jochelo#1308',
-      role: 'MID',
-    }, 
-    
-    {
-      id: ' HTS Jhintonic#Four',
-      role: 'ADC',
-    }, 
-    
-    {
-      id: ' HTS Nacatamalita#nica',
-      role: 'SUP',
-    }, 
-    
-    {
-      id: 'HTS PAN#hts',
-      role: 'SUPLENTE',
-
-    }, {}
-
-  ],
-
-
-  //======================================================
-  // Golden Dragons
-  // ======================================================
-
-  'Golden Dragons': [
-    {
-      id: 'G7龙 Alejoo#Ñupra',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'Just Supra#Ling',
-      role: 'JUNGLA'
-    },
-    
-    {
-      id: 'G7龙 Cheemz#ñupra',
-      role: 'MID'
-    }, 
-    
-    {
-      id: 'Wirtz#Key',
-      role: 'ADC'
-    }, 
-    
-    {
-      id: 'G7 Nestior#001',
-      role: 'SUP'
-    }, 
-    
-    {
-      id: 'G7龙 ŽhêrØ#Ñupra',
-      role: 'SUPLENTE',
-      captain: true
-    }, {}
-  ],
-
-
-  // ======================================================
-  // Nahuales
-  // ======================================================
-
-  'Nahuales': [
-    {}, {}, {}, {}, {}, {}, {}
-  ],
-
-
-
-  // ======================================================
-  // Ice Gold
-  // ======================================================
-
-  'Ice Gold': [
-    {
-      id: 'G7 Lugia ツ#2502',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'G7 Vanderrr#Zzz',
-      role: 'JUNGLA',
-      captain: true
-    }, 
-    
-    {
-      id: '大綠色格林奇先生#Всегд',
-      role: 'MID'
-    }, 
-    
-    {
-      id: 'Burbuja#Ice88',
-      role: 'ADC'
-    }, 
-    
-    {
-      id: 'BKI Muss#CEO',
-      role: 'SUP',
-    },
-    
-    {
-      id: 'G7 Aren Woka#Nea',
-      role: 'SUPLENTE'
-    }, 
-    
-    {
-      id: 'G7 Tyki Pon#Mikk',
-      role: 'SUPLENTE 2'
-    }
-
-
-
-  ],
-
-
-  // ======================================================
-  // ÆSIIR Go Legends
-  // ======================================================
-
-  'ÆSIIR Go Legends': [
-    {
-      id: 'Koer#fr15',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'Hxdès Pérez#3312',
-      role: 'JUNGLA'
-    }, 
-    
-    {
-      id: 'Robi#Yuyu',
-      role: 'MID'
-    }, 
-    
-    {
-      id: 'Kino 縁#0609',
-      role: 'ADC'
-    }, 
-    
-    {
-      id: 'The Unforgiven#NoFun',
-      role: 'SUP'
-    }, 
-    
-    {
-      id: 'Tiffany69#LAN',
-      role: 'SUPLENTE'
-    }, 
-    
-    {
-      id: 'Who is Jxss愛#Kensy',
-      role: 'SUPLENTE 2'
-    }
-  ],
-
-
-  // ======================================================
-  // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
-  // ======================================================
-
-  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': [
-    {
-      id: 'Ackerman 死 ツ#Azpi',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'SerCh#2000',
-      role: 'JUNGLA'
-    }, 
-    
-    {
-      id: 'Arcament#maker',
-      role: 'MID'
-    }, 
-    
-    {
-      id: 'KΞX償 D i a b l o#TOP',
-      role: 'ADC'
-    }, 
-    
-    {
-      id: 'MarcecGD#LAS',
-      role: 'SUP'
-    }, 
-    
-    {
-      id: 'Dreigun#龍EGO',
-      role: 'SUPLENTE'
-    }, {}
-  ],
-
-
-  // ======================================================
-  // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
-  // ======================================================
-
-  'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': [
-    {}, {}, {}, {}, {}, {}, {}
-  ],
-
-
-  // ======================================================
-  // Fʟᴀᴡʟᴇss
-  // ======================================================
-
-  'Fʟᴀᴡʟᴇss': [
-    {
-      id: 'LR BausSon#2121',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'RitroxZ#RAZN',
-      role: 'JUNGLA',
-      captain: true
-    }, 
-    
-    {
-      id: 'Hide on LATAM#2517',
-      role: 'MID'
-    }, 
-    
-    {
-      id: 'Anazthazia#CR420',
-      role: 'ADC'
-    }, 
-    
-    {
-      id: 'Meffy#2195',
-      role: 'SUP'
-    }, 
-    
-    {
-      id: 'Hide on WęęĐ#CRC',
-      role: 'SUPLENTE'
-    }, {}
-  ],
-
-
-  // ======================================================
-  // Secret Society
-  // ======================================================
-
-  'Secret Society': [
-    {
-      id: 'EzLane DieGod ツ#Mich',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'Twitch EzGiaan#Poro',
-      role: 'JUNGLA'
-    }, 
-    
-    {
-      id: 'SS Brocoli#Zoe',
-      role: 'MID',
-      captain: true
-    }, 
-    
-    {
-      id: 'Soujinn#ADC',
-      role: 'ADC'
-    }, 
-    
-    {
-      id: 'SS Show#Kbras',
-      role: 'SUP'
-    }, 
-    
-    {
-      id: 'KatEvolved#HWL',
-      role: 'SUPLENTE'
-    }, 
-    
-    {
-      id: 'Andy#V2007',
-      role: 'SUPLENTE 2'
-    }
-  ],
-
-
-  // ======================================================
-  // Cosa nostra
-  // ======================================================
-
-  'Cosa nostra': [
-    {}, {}, {}, {}, {}, {}, {}
-  ],
-
-
-  // ======================================================
-  // Joyita Gaming
-  // ======================================================
-
-  'Joyita Gaming': [
-    {
-      id: 'xHiroyukix#gamer',
-      role: 'TOP'
-    }, 
-    
-    {
-      id: 'Jhon Wuju Alfa#Jhon',
-      role: 'JUNGLA'
-    }, 
-    
-    {
-      id: 'Zerohz#NICA',
-      role: 'MID'
-    }, 
-    
-    {
-      id: 'Luminous 고수#Kanto',
-      role: 'ADC'
-    }, 
-    
-    {
-      id: 'Elophobia#0301',
-      role: 'SUP'
-    }, 
-    
-    {
-      id: '莉莉丝丨EVE#XOXO ',
-      role: 'SUPLENTE'
-    }
   ]
 
-}
+
+  // ======================================================
+  // ROSTERS OFICIALES
+  // ======================================================
+  //
+  // captain: true = coronita 👑
+  //
+  // ROLES:
+  //
+  // TOP
+  // JUNGLA
+  // MID
+  // ADC
+  // SUP
+  // SUPLENTE
+  //
+  // TODOS LOS EQUIPOS:
+  // 5 TITULARES
+  // 1 SUPLENTE
+  //
+  // ======================================================
+
+  const roster = {
+
+
+    // ======================================================
+    // Sᴍᴀᴄᴋᴅᴏᴡɴ
+    // ======================================================
+
+    'Sᴍᴀᴄᴋᴅᴏᴡɴ': [
+
+      // TOP
+      {
+        id: 'QQl#KKXX',
+        role: 'TOP'
+      },
+
+      // JUNGLA
+      {
+        id: 'Zen#Odev',
+        role: 'JUNGLA',
+        captain: true
+      },
+
+      // MID
+      {
+        id: 'SD Zoldk#mid',
+        role: 'MID',
+      },
+
+      // ADC
+      {
+        id: 'Hakuuuuuiiiii#True',
+        role: 'ADC'
+      },
+
+      // SUPPORT
+      {
+        id: 'Sunny CSS#Hope',
+        role: 'SUP'
+      },
+
+      // SUPLENTE
+      {
+        id: 'banshoot3rve#2802',
+        role: 'SUPLENTE'
+      },
+
+      {
+        id: 'Addy#Moon',
+        role: 'SUPLENTE 2'
+      }
+
+    ],
+
+
+    // ======================================================
+    // T502
+    // ======================================================
+
+    'T502': [
+
+      {
+        id: 'playerslinky#5799',
+        role: 'TOP'
+      },
+
+      {
+        id: '愛 Liu Kam 愛#馬圖爾',
+        role: 'JUNGLA',
+
+      },
+
+      {
+        id: 'LW TheAngel#8589',
+        role: 'MID'
+      },
+
+      {
+        id: 'G0DZILLAKN1GHT#8650',
+        role: 'ADC'
+      },
+
+      {
+        id: 'lilO#8593',
+        role: 'SUP'
+      },
+
+      {
+        id: 'Nahomi#Naø',
+        role: 'SUPLENTE',
+        captain: true
+      },
+
+      {
+        id: 'Azzel#7331',
+        role: 'SUPLENTE 2'
+      }
+
+    ],
+
+
+    // ======================================================
+    // Rokurominos
+    // ======================================================
+
+    'Rokurominos': [
+      {
+        id: 'Better#lvysf',
+        role: 'TOP'
+      },
+
+      {
+        id: 'SojaCarbo#1830',
+        role: 'JUNGLA'
+      },
+
+      {
+        id: 'Dropex13#LAN',
+        role: 'MID',
+      },
+
+      {
+        id: 'Mata perros#Aletz',
+        role: 'ADC',
+      },
+
+      {
+        id: '루발  GawrNikho メ#lulu',
+        role: 'SUP',
+        captain: true
+      },
+
+      {}, {}
+    ],
+
+
+    // ======================================================
+    // overextended
+    // ======================================================
+
+    'overextended': [
+      {
+        id: 'M3XC1T4#D1FF',
+        role: 'TOP'
+      },
+
+      {
+        id: 'Aplastador99#9247',
+        role: 'JUNGLA',
+        captain: true
+      },
+
+      {
+        id: 'Passionfruit#GGmid',
+        role: 'MID',
+      },
+
+      {
+        id: 'Da Vinci#4034',
+        role: 'ADC',
+      },
+
+      {
+        id: 'sebdra#4417',
+        role: 'SUP',
+      },
+
+      {
+        id: 'Nexo Simon#7403',
+        role: 'SUPLENTE',
+      }, {}
+    ],
+
+
+    // ======================================================
+    // Huesitos Proyect
+    // ======================================================
+
+    'Huesitos Proyect': [
+      {
+        id: 'junedvs#NBA',
+        role: 'TOP'
+      },
+
+      {
+        id: 'JACOP#JGL',
+        role: 'JUNGLA',
+      },
+
+      {
+        id: 'TikTokPrimordial#1103',
+        role: 'MID',
+      },
+
+      {
+        id: 'ID: I Blóód I#Moon',
+        role: 'ADC',
+      },
+
+      {
+        id: 'SpearDiff Marc#SMITE',
+        role: 'SUP',
+        captain: true
+      }, {}, {}
+    ],
+
+
+    // ======================================================
+    // HaTsu
+    // ======================================================
+
+    'HaTsu': [
+      {
+        id: 'HTS Unfair#9090',
+        role: 'TOP',
+        captain: true
+      },
+
+      {
+        id: 'HTS JAYCE BALVIN#9828',
+        role: 'JUNGLA',
+      },
+
+      {
+        id: 'HTS Jochelo#1308',
+        role: 'MID',
+      },
+
+      {
+        id: ' HTS Jhintonic#Four',
+        role: 'ADC',
+      },
+
+      {
+        id: ' HTS Nacatamalita#nica',
+        role: 'SUP',
+      },
+
+      {
+        id: 'HTS PAN#hts',
+        role: 'SUPLENTE',
+
+      }, {}
+
+    ],
+
+
+    //======================================================
+    // Golden Dragons
+    // ======================================================
+
+    'Golden Dragons': [
+      {
+        id: 'G7龙 Alejoo#Ñupra',
+        role: 'TOP'
+      },
+
+      {
+        id: 'Just Supra#Ling',
+        role: 'JUNGLA'
+      },
+
+      {
+        id: 'G7龙 Cheemz#ñupra',
+        role: 'MID'
+      },
+
+      {
+        id: 'Wirtz#Key',
+        role: 'ADC'
+      },
+
+      {
+        id: 'G7 Nestior#001',
+        role: 'SUP'
+      },
+
+      {
+        id: 'G7龙 ŽhêrØ#Ñupra',
+        role: 'SUPLENTE',
+        captain: true
+      }, {}
+    ],
+
+
+    // ======================================================
+    // Nahuales
+    // ======================================================
+
+    'Nahuales': [
+      {}, {}, {}, {}, {}, {}, {}
+    ],
+
+
+
+    // ======================================================
+    // Ice Gold
+    // ======================================================
+
+    'Ice Gold': [
+      {
+        id: 'G7 Lugia ツ#2502',
+        role: 'TOP'
+      },
+
+      {
+        id: 'G7 Vanderrr#Zzz',
+        role: 'JUNGLA',
+        captain: true
+      },
+
+      {
+        id: '大綠色格林奇先生#Всегд',
+        role: 'MID'
+      },
+
+      {
+        id: 'Burbuja#Ice88',
+        role: 'ADC'
+      },
+
+      {
+        id: 'BKI Muss#CEO',
+        role: 'SUP',
+      },
+
+      {
+        id: 'G7 Aren Woka#Nea',
+        role: 'SUPLENTE'
+      },
+
+      {
+        id: 'G7 Tyki Pon#Mikk',
+        role: 'SUPLENTE 2'
+      }
+
+
+
+    ],
+
+
+    // ======================================================
+    // ÆSIIR Go Legends
+    // ======================================================
+
+    'ÆSIIR Go Legends': [
+      {
+        id: 'Koer#fr15',
+        role: 'TOP'
+      },
+
+      {
+        id: 'Hxdès Pérez#3312',
+        role: 'JUNGLA'
+      },
+
+      {
+        id: 'Robi#Yuyu',
+        role: 'MID'
+      },
+
+      {
+        id: 'Kino 縁#0609',
+        role: 'ADC'
+      },
+
+      {
+        id: 'The Unforgiven#NoFun',
+        role: 'SUP'
+      },
+
+      {
+        id: 'Tiffany69#LAN',
+        role: 'SUPLENTE'
+      },
+
+      {
+        id: 'Who is Jxss愛#Kensy',
+        role: 'SUPLENTE 2'
+      }
+    ],
+
+
+    // ======================================================
+    // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
+    // ======================================================
+
+    'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': [
+      {
+        id: 'Ackerman 死 ツ#Azpi',
+        role: 'TOP'
+      },
+
+      {
+        id: 'SerCh#2000',
+        role: 'JUNGLA'
+      },
+
+      {
+        id: 'Arcament#maker',
+        role: 'MID'
+      },
+
+      {
+        id: 'KΞX償 D i a b l o#TOP',
+        role: 'ADC'
+      },
+
+      {
+        id: 'MarcecGD#LAS',
+        role: 'SUP'
+      },
+
+      {
+        id: 'Dreigun#龍EGO',
+        role: 'SUPLENTE'
+      }, {}
+    ],
+
+
+    // ======================================================
+    // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
+    // ======================================================
+
+    'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': [
+      {}, {}, {}, {}, {}, {}, {}
+    ],
+
+
+    // ======================================================
+    // Fʟᴀᴡʟᴇss
+    // ======================================================
+
+    'Fʟᴀᴡʟᴇss': [
+      {
+        id: 'LR BausSon#2121',
+        role: 'TOP'
+      },
+
+      {
+        id: 'RitroxZ#RAZN',
+        role: 'JUNGLA',
+        captain: true
+      },
+
+      {
+        id: 'Hide on LATAM#2517',
+        role: 'MID'
+      },
+
+      {
+        id: 'Anazthazia#CR420',
+        role: 'ADC'
+      },
+
+      {
+        id: 'Meffy#2195',
+        role: 'SUP'
+      },
+
+      {
+        id: 'Hide on WęęĐ#CRC',
+        role: 'SUPLENTE'
+      }, {}
+    ],
+
+
+    // ======================================================
+    // Secret Society
+    // ======================================================
+
+    'Secret Society': [
+      {
+        id: 'EzLane DieGod ツ#Mich',
+        role: 'TOP'
+      },
+
+      {
+        id: 'Twitch EzGiaan#Poro',
+        role: 'JUNGLA'
+      },
+
+      {
+        id: 'SS Brocoli#Zoe',
+        role: 'MID',
+        captain: true
+      },
+
+      {
+        id: 'Soujinn#ADC',
+        role: 'ADC'
+      },
+
+      {
+        id: 'SS Show#Kbras',
+        role: 'SUP'
+      },
+
+      {
+        id: 'KatEvolved#HWL',
+        role: 'SUPLENTE'
+      },
+
+      {
+        id: 'Andy#V2007',
+        role: 'SUPLENTE 2'
+      }
+    ],
+
+
+    // ======================================================
+    // Cosa nostra
+    // ======================================================
+
+    'Cosa nostra': [
+      {}, {}, {}, {}, {}, {}, {}
+    ],
+
+
+    // ======================================================
+    // Joyita Gaming
+    // ======================================================
+
+    'Joyita Gaming': [
+      {
+        id: 'xHiroyukix#gamer',
+        role: 'TOP'
+      },
+
+      {
+        id: 'Jhon Wuju Alfa#Jhon',
+        role: 'JUNGLA'
+      },
+
+      {
+        id: 'Zerohz#NICA',
+        role: 'MID'
+      },
+
+      {
+        id: 'Luminous 고수#Kanto',
+        role: 'ADC'
+      },
+
+      {
+        id: 'Elophobia#0301',
+        role: 'SUP'
+      },
+
+      {
+        id: '莉莉丝丨EVE#XOXO ',
+        role: 'SUPLENTE'
+      }
+    ]
+
+  }
 
 
   const schedule = [
@@ -815,7 +815,7 @@ const roster = {
 
       {/* NAVBAR */}
       <header
-  className={`
+        className={`
     relative z-10
     flex flex-col md:flex-row
     items-center
@@ -827,10 +827,10 @@ const roster = {
     backdrop-blur-xl
     bg-black/20
   `}
->
+      >
         <div>
           <h1
-  className={`
+            className={`
     text-xl
     sm:text-2xl
     md:text-4xl
@@ -841,7 +841,7 @@ const roster = {
     text-center
     md:text-left
   `}
->
+          >
             {tournamentInfo.name}
           </h1>
 
@@ -853,15 +853,15 @@ const roster = {
 
 
         <div className="flex items-center gap-4">
-  <LoginButton discordUser={discordUser} />
-</div>  
+          <LoginButton discordUser={discordUser} />
+        </div>
 
       </header>
 
 
       {/* HERO */}
       <section
-className="
+        className="
 relative z-10
 px-4 sm:px-6 lg:px-20
 grid
@@ -870,8 +870,7 @@ gap-16
 items-center
 py-16 sm:py-24
 pb-16
-"
->
+">
         <div>
           <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-pink-500/20 bg-pink-500/10 mb-8 backdrop-blur-xl">
             <div className="w-3 h-3 rounded-full bg-pink-400 animate-pulse" />
@@ -904,20 +903,20 @@ leading-none
 
 
           <div className="flex flex-wrap gap-5 mt-12">
-            
 
-      <a
-                href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
-                target="_blank"
-                className="
+
+            <a
+              href="https://chat.whatsapp.com/Hi8Ymp9PrvrIRCgm7fVxc4"
+              target="_blank"
+              className="
 px-5 sm:px-8
 py-3 sm:py-4
 text-sm sm:text-base
 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
-              >
-                <MessageCircle size={20} />
-                Comunidad de Whatsapp
-              </a>
+            >
+              <MessageCircle size={20} />
+              Comunidad de Whatsapp
+            </a>
 
             <a
               href={discordLink}
@@ -942,7 +941,7 @@ transition
 
         <div className="relative flex justify-center items-center">
           <div
-className="
+            className="
 absolute
 w-[250px]
 h-[250px]
@@ -955,7 +954,7 @@ border
 border-pink-300/10
 animate-pulse
 "
-/>
+          />
 
 
           <div className="
@@ -979,7 +978,7 @@ shadow-[0_0_100px_rgba(236,72,153,0.3)]
             <div className="text-center px-6">
               <div className="text-8xl animate-pulse">🪷</div>
 
-<div className="absolute inset-0 rounded-full border border-pink-400/20 animate-ping" />
+              <div className="absolute inset-0 rounded-full border border-pink-400/20 animate-ping" />
 
               <h3 className="text-4xl font-black mt-5 text-pink-200">
                 Lotus arena
@@ -1019,7 +1018,7 @@ transition
           </p>
 
 
-         <h3 className="text-3xl sm:text-5xl font-black mt-3 text-pink-200">
+          <h3 className="text-3xl sm:text-5xl font-black mt-3 text-pink-200">
             16
           </h3>
         </div>
@@ -1064,13 +1063,12 @@ transition
 
       {/* SCHEDULE */}
       <section
-id="cronograma"
-className="
+        id="cronograma"
+        className="
 relative z-10
 px-4 sm:px-6 lg:px-20
 pb-16
-"
->
+">
         <div className="mb-12">
           <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
             Calendario Oficial
@@ -1087,8 +1085,7 @@ pb-16
           {schedule.map((item, index) => (
             <div
               key={index}
-              className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-5 sm:p-8 hover:bg-white/10 transition"
-            >
+              className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-5 sm:p-8 hover:bg-white/10 transition">
               <div className="flex items-center justify-between mb-5">
                 <h4 className="text-xl sm:text-3xl font-black text-pink-200">
                   {item.date}
@@ -1111,25 +1108,25 @@ pb-16
 
 
       {/* EQUIPOS */}
-<section
-id="equipos"
-className="
+      <section
+        id="equipos"
+        className="
 relative z-10
 px-4 sm:px-6 lg:px-20
 pb-16
 ">
 
-  <div className="mb-12">
-    <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
-      Participantes
-    </p>
+        <div className="mb-12">
+          <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
+            Participantes
+          </p>
 
-    <h3 className="text-3xl sm:text-5xl font-black mt-3">
-      Equipos
-    </h3>
-  </div>
+          <h3 className="text-3xl sm:text-5xl font-black mt-3">
+            Equipos
+          </h3>
+        </div>
 
-  <div className="
+        <div className="
 grid
 grid-cols-1
 sm:grid-cols-2
@@ -1137,33 +1134,31 @@ lg:grid-cols-4
 gap-4
 ">
 
-    {teams.map((team, index) => (
-      <div
-        key={index}
-        onClick={() => setOpenTeam(openTeam === team ? null : team)}
-        className="relative cursor-pointer rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center"
-      >
+          {teams.map((team, index) => (
+            <div
+              key={index}
+              onClick={() => setOpenTeam(openTeam === team ? null : team)}
+              className="relative cursor-pointer rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center">
 
-      {/* LOTO */}
-<div className="absolute top-3 left-3 text-3xl opacity-70">
-  🪷
-</div>
+              {/* LOTO */}
+              <div className="absolute top-3 left-3 text-3xl opacity-70">
+                🪷
+              </div>
 
-        {/* BOTÓN */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation()
-            setOpenTeam(openTeam === team ? null : team)
-          }}
-          className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg"
-        >
-          {openTeam === team ? 'Volver' : 'Abrir'}
-        </button>
+              {/* BOTÓN */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setOpenTeam(openTeam === team ? null : team)
+                }}
+                className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg">
+                {openTeam === team ? 'Volver' : 'Abrir'}
+              </button>
 
-   {/* LOGO */}
-<div className="mb-4 flex justify-center">
-  <div
-    className="
+              {/* LOGO */}
+              <div className="mb-4 flex justify-center">
+                <div
+                  className="
       p-[3px]
       rounded-2xl
       bg-gradient-to-br
@@ -1174,55 +1169,48 @@ gap-4
       transition-all duration-300
       hover:scale-105
       hover:shadow-cyan-400/40
-    "
-  >
-    <div className="bg-[#14081f] rounded-2xl p-2">
-      <Image
-  src={teamLogos[team]}
-  alt={team}
-  width={120}
-  height={120}
-  className="
-w-20 h-20
-sm:w-24 sm:h-24
-lg:w-28 lg:h-28
-object-contain
-rounded-xl
-"
-/>
-    </div>
-  </div>
-</div>
-        {/* NOMBRE */}
-        <h3 className="
+    ">
+                  <div className="bg-[#14081f] rounded-2xl p-2">
+                    <Image
+                      src={teamLogos[team]}
+                      alt={team}
+                      width={120}
+                      height={120}
+                      className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain rounded-xl"
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* NOMBRE */}
+              <h3 className="
 text-lg
 sm:text-2xl
 font-black
 text-white
 break-words
 ">
-          {team}
-        </h3>
+                {team}
+              </h3>
 
-      {/* ROSTER */}
-{openTeam === team && roster[team] && (
+              {/* ROSTER */}
+              {openTeam === team && roster[team] && (
 
-  <div className="mt-4">
+                <div className="mt-4">
 
-    {/* TITULARES */}
-    <div className="space-y-2">
+                  {/* TITULARES */}
+                  <div className="space-y-2">
 
-      {roster[team]
-        .filter(
-  (p) =>
-    p.role &&
-    !p.role.includes('SUPLENTE')
-)
-        .map((p, idx) => (
+                    {roster[team]
+                      .filter(
+                        (p) =>
+                          p.role &&
+                          !p.role.includes('SUPLENTE')
+                      )
+                      .map((p, idx) => (
 
-          <div
-            key={idx}
-            className="
+                        <div
+                          key={idx}
+                          className="
 flex
 flex-col sm:flex-row
 items-start sm:items-center
@@ -1232,57 +1220,57 @@ p-2
 rounded-xl
 gap-2
 "
-          >
+                        >
 
-            {/* PLAYER */}
-            <div className="flex flex-col items-start">
+                          {/* PLAYER */}
+                          <div className="flex flex-col items-start">
 
-              {p.captain && (
-                <span className="text-yellow-300 text-xs font-bold">
-                  👑 CAPITÁN
-                </span>
-              )}
+                            {p.captain && (
+                              <span className="text-yellow-300 text-xs font-bold">
+                                👑 CAPITÁN
+                              </span>
+                            )}
 
-              <span className="break-all text-sm">
-  {p.id}
-</span>
+                            <span className="break-all text-sm">
+                              {p.id}
+                            </span>
 
-            </div>
+                          </div>
 
-            {/* ROLE */}
-            <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
-              {p.role}
-            </span>
+                          {/* ROLE */}
+                          <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
+                            {p.role}
+                          </span>
 
-          </div>
+                        </div>
 
-      ))}
+                      ))}
 
-    </div>
-
-
-    {/* SEPARACIÓN */}
-    <div className="my-4 border-t border-white/10" />
+                  </div>
 
 
-    {/* SUPLENTES */}
-<div className="space-y-2">
+                  {/* SEPARACIÓN */}
+                  <div className="my-4 border-t border-white/10" />
 
-  <div className="text-xs uppercase tracking-[0.3em] text-white/40 mb-2">
-    Suplentes
-  </div>
 
-  {roster[team]
-    .filter(
-      (p) =>
-        p.role &&
-        p.role.includes('SUPLENTE')
-    )
-    .map((p, idx) => (
+                  {/* SUPLENTES */}
+                  <div className="space-y-2">
 
-      <div
-        key={idx}
-        className="
+                    <div className="text-xs uppercase tracking-[0.3em] text-white/40 mb-2">
+                      Suplentes
+                    </div>
+
+                    {roster[team]
+                      .filter(
+                        (p) =>
+                          p.role &&
+                          p.role.includes('SUPLENTE')
+                      )
+                      .map((p, idx) => (
+
+                        <div
+                          key={idx}
+                          className="
 flex
 flex-col sm:flex-row
 items-start sm:items-center
@@ -1294,46 +1282,46 @@ rounded-xl
 mt-3
 gap-2
 "
-      >
+                        >
 
-        {/* PLAYER */}
-        <div className="flex flex-col items-start">
+                          {/* PLAYER */}
+                          <div className="flex flex-col items-start">
 
-          {p.captain && (
-            <span className="text-yellow-300 text-xs font-bold">
-              👑 CAPITÁN
-            </span>
-          )}
+                            {p.captain && (
+                              <span className="text-yellow-300 text-xs font-bold">
+                                👑 CAPITÁN
+                              </span>
+                            )}
 
-          <span className="break-all text-sm">
-  {p.id}
-</span>
+                            <span className="break-all text-sm">
+                              {p.id}
+                            </span>
+
+                          </div>
+
+                          {/* ROLE */}
+                          <span className="text-xs bg-white/10 px-2 py-1 rounded-full">
+                            {p.role}
+                          </span>
+
+                        </div>
+
+                      ))}
+
+                  </div>
+
+                </div>
+
+              )}
+
+            </div>
+          ))}
 
         </div>
 
-        {/* ROLE */}
-        <span className="text-xs bg-white/10 px-2 py-1 rounded-full">
-          {p.role}
-        </span>
+      </section>
 
-      </div>
-
-  ))}
-
-</div>
-
-  </div>
-
-)}
-
-      </div>
-    ))}
-
-  </div>
-
-</section>
-
-<style jsx global>{`
+      <style jsx global>{`
   html,
   body {
     overflow-x: hidden;
