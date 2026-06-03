@@ -2,10 +2,8 @@
 
 import LoginButton from "./components/LoginButton"
 import {
-  Play,
   Disc3,
-  MessageCircle,
-  MessagesSquare,
+  MessageCircle
 } from "lucide-react"
 import { useEffect, useState } from "react"
 import {
