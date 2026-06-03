@@ -22,19 +22,14 @@ const sections = [
         type: 'team'
       },
       {
-        id: 'mvp',
+        id: 'tournamentMvp',
         title: '⭐ MVP del torneo',
         type: 'player'
       },
       {
-        id: 'surprise',
-        title: '⚔️ Equipo sorpresa',
-        type: 'team'
-      },
-      {
-        id: 'disappointment',
-        title: '💀 Equipo decepción',
-        type: 'team'
+        id: 'finalMvp',
+        title: '👑 MVP de la final',
+        type: 'player'
       }
     ]
   },
@@ -45,33 +40,48 @@ const sections = [
 
     questions: [
       {
-        id: 'dragonTeam',
-        title: '🐉 Más dragones',
-        type: 'team'
-      },
-      {
-        id: 'baronTeam',
-        title: '🧿 Más barones',
-        type: 'team'
-      },
-      {
-        id: 'towerTeam',
-        title: '🏰 Más torres',
-        type: 'team'
-      },
-      {
-        id: 'killsTeam',
+        id: 'teamMostKills',
         title: '🔥 Más kills',
         type: 'team'
       },
       {
-        id: 'leastDeaths',
+        id: 'teamLeastDeaths',
         title: '🛡️ Menos muertes',
         type: 'team'
       },
       {
-        id: 'bestRecord',
-        title: '🎯 Más victorias',
+        id: 'teamMostDragons',
+        title: '🐉 Más dragones',
+        type: 'team'
+      },
+      {
+        id: 'teamMostBarons',
+        title: '🧿 Más barones',
+        type: 'team'
+      },
+      {
+        id: 'teamMostHeralds',
+        title: '👁️ Más heraldos',
+        type: 'team'
+      },
+      {
+        id: 'teamMostTowers',
+        title: '🏰 Más torres destruidas',
+        type: 'team'
+      },
+      {
+        id: 'teamMostFirstBloods',
+        title: '🩸 Más First Blood',
+        type: 'team'
+      },
+      {
+        id: 'fastestWin',
+        title: '⚡ Partida más rápida ganada',
+        type: 'team'
+      },
+      {
+        id: 'longestWin',
+        title: '⏱️ Partida más larga ganada',
         type: 'team'
       }
     ]
@@ -83,13 +93,18 @@ const sections = [
 
     questions: [
       {
-        id: 'mostKills',
+        id: 'playerMostKills',
         title: '🔥 Más kills',
         type: 'player'
       },
       {
-        id: 'mostAssists',
+        id: 'playerMostAssists',
         title: '🧿 Más asistencias',
+        type: 'player'
+      },
+      {
+        id: 'playerMostDeaths',
+        title: '💀 Más muertes',
         type: 'player'
       },
       {
@@ -98,12 +113,7 @@ const sections = [
         type: 'player'
       },
       {
-        id: 'mostDeaths',
-        title: '💀 Más muertes',
-        type: 'player'
-      },
-      {
-        id: 'mostMVPs',
+        id: 'mostMvps',
         title: '👑 Más MVPs',
         type: 'player'
       },
@@ -113,13 +123,38 @@ const sections = [
         type: 'player'
       },
       {
-        id: 'mostDamage',
-        title: '🏹 Más daño',
+        id: 'mostPentas',
+        title: '🌸 Más Pentakills',
         type: 'player'
       },
       {
-        id: 'mostVision',
-        title: '👁️ Más visión',
+        id: 'mostDamage',
+        title: '🏹 Más daño total',
+        type: 'player'
+      },
+      {
+        id: 'mostCs',
+        title: '🌾 Más súbditos (CS)',
+        type: 'player'
+      },
+      {
+        id: 'mostGoldPerMinute',
+        title: '💰 Más oro por minuto',
+        type: 'player'
+      },
+      {
+        id: 'mostFirstBloods',
+        title: '🩸 Más First Blood',
+        type: 'player'
+      },
+      {
+        id: 'mostBaronSteals',
+        title: '🧿 Más robos de Barón',
+        type: 'player'
+      },
+      {
+        id: 'mostDragonSteals',
+        title: '🐉 Más robos de Dragón',
         type: 'player'
       }
     ]
@@ -146,19 +181,72 @@ const sections = [
         type: 'champion'
       },
       {
-        id: 'champKills',
+        id: 'worstWinrate',
+        title: '💀 Peor Win Rate',
+        type: 'champion'
+      },
+      {
+        id: 'champMostKills',
         title: '🔥 Más kills',
         type: 'champion'
       },
       {
-        id: 'champDeaths',
-        title: '💀 Más muertes',
+        id: 'champMostDeaths',
+        title: '☠️ Más muertes',
         type: 'champion'
       },
       {
-        id: 'surpriseChampion',
-        title: '🌸 Campeón sorpresa',
+        id: 'champMostAssists',
+        title: '🤝 Más asistencias',
         type: 'champion'
+      },
+      {
+        id: 'firstPentaChampion',
+        title: '🌸 Primer campeón con Pentakill',
+        type: 'champion'
+      },
+      {
+        id: 'mostFlexChampion',
+        title: '🎭 Campeón más flex',
+        type: 'champion'
+      }
+    ]
+  },
+
+  {
+    title: '📊 Estadísticas',
+    color: 'text-emerald-300',
+
+    questions: [
+      {
+        id: 'totalBarons',
+        title: '🧿 Barones totales',
+        type: 'baronsRange'
+      },
+      {
+        id: 'totalElders',
+        title: '🐉 Elders totales',
+        type: 'eldersRange'
+      },
+      {
+        id: 'totalTowers',
+        title: '🏰 Torres destruidas',
+        type: 'towersRange'
+      },
+      {
+        id: 'totalPentas',
+        title: '🌸 Pentakills totales',
+        type: 'pentasRange'
+      },
+      {
+        id: 'longestGame',
+        title: '⏱️ Partida más larga',
+        type: 'longestGameRange'
+      },
+      {
+        id: 'totalKills',
+        title: '🔥 Kills totales',
+        type: 'killsRange'
       }
     ]
   }
