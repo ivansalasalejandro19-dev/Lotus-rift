@@ -260,6 +260,7 @@ export default function CrystalBall() {
   const [answers, setAnswers] = useState({})
 
   const getOptions = (type) => {
+
   if (type === 'team') {
     return teams
   }
@@ -270,6 +271,60 @@ export default function CrystalBall() {
 
   if (type === 'champion') {
     return champions
+  }
+
+  if (type === 'baronsRange') {
+    return [
+      '15 - 24',
+      '25 - 34',
+      '35 - 44',
+      '45+'
+    ]
+  }
+
+  if (type === 'eldersRange') {
+    return [
+      '0 - 4',
+      '5 - 9',
+      '10 - 14',
+      '15+'
+    ]
+  }
+
+  if (type === 'towersRange') {
+    return [
+      '180 - 219',
+      '220 - 259',
+      '260 - 299',
+      '300+'
+    ]
+  }
+
+  if (type === 'pentasRange') {
+    return [
+      '0',
+      '1',
+      '2',
+      '3+'
+    ]
+  }
+
+  if (type === 'longestGameRange') {
+    return [
+      'Menos de 20:00',
+      '20:00 - 22:59',
+      '23:00 - 25:59',
+      '26:00+'
+    ]
+  }
+
+  if (type === 'killsRange') {
+    return [
+      '700 - 899',
+      '900 - 1099',
+      '1100 - 1299',
+      '1300+'
+    ]
   }
 
   return []
