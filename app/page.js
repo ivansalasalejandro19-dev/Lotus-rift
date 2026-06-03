@@ -814,30 +814,34 @@ const roster = {
 
 
       {/* NAVBAR */}
-      <header className="
-relative z-10
-flex flex-col md:flex-row
-items-center
-justify-between
-px-4 sm:px-6
-py-4
-gap-4
-border-b border-white/10
-backdrop-blur-xl
-bg-black/20
-">
+      <header
+  className={`
+    relative z-10
+    flex flex-col md:flex-row
+    items-center
+    justify-between
+    px-4 sm:px-6
+    py-4
+    gap-4
+    border-b border-white/10
+    backdrop-blur-xl
+    bg-black/20
+  `}
+>
         <div>
-          <h1 className="
-text-xl
-sm:text-2xl
-md:text-4xl
-font-black
-tracking-[0.15em]
-md:tracking-[0.4em]
-text-pink-300
-text-center
-md:text-left
-">
+          <h1
+  className={`
+    text-xl
+    sm:text-2xl
+    md:text-4xl
+    font-black
+    tracking-[0.15em]
+    md:tracking-[0.4em]
+    text-pink-300
+    text-center
+    md:text-left
+  `}
+>
             {tournamentInfo.name}
           </h1>
 
