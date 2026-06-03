@@ -819,17 +819,7 @@ export default function LotusRiftTournamentPage() {
       >
         <div>
           <h1
-            className={`
-    text-xl
-    sm:text-2xl
-    md:text-4xl
-    font-black
-    tracking-[0.15em]
-    md:tracking-[0.4em]
-    text-pink-300
-    text-center
-    md:text-left
-  `}
+            className={`text-xl sm:text-2xl md:text-4xl font-black tracking-[0.15em] md:tracking-[0.4em] text-pink-300 text-center md:text-left`}
           >
             {tournamentInfo.name}
           </h1>
@@ -1060,18 +1050,7 @@ export default function LotusRiftTournamentPage() {
               {/* LOGO */}
               <div className="mb-4 flex justify-center">
                 <div
-                  className="
-      p-[3px]
-      rounded-2xl
-      bg-gradient-to-br
-      from-pink-500
-      via-purple-500
-      to-cyan-400
-      shadow-lg shadow-pink-500/30
-      transition-all duration-300
-      hover:scale-105
-      hover:shadow-cyan-400/40
-    ">
+                  className="p-[3px] rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400 shadow-lg shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-cyan-400/40">
                   <div className="bg-[#14081f] rounded-2xl p-2">
                     <Image
                       src={teamLogos[team]}
@@ -1084,13 +1063,7 @@ export default function LotusRiftTournamentPage() {
                 </div>
               </div>
               {/* NOMBRE */}
-              <h3 className="
-text-lg
-sm:text-2xl
-font-black
-text-white
-break-words
-">
+              <h3 className="text-lg sm:text-2xl font-black text-white break-words">
                 {team}
               </h3>
 
@@ -1112,16 +1085,7 @@ break-words
 
                         <div
                           key={idx}
-                          className="
-flex
-flex-col sm:flex-row
-items-start sm:items-center
-justify-between
-bg-white/10
-p-2
-rounded-xl
-gap-2
-"
+                          className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white/10 p-2 rounded-xl gap-2"
                         >
 
                           {/* PLAYER */}
@@ -1172,19 +1136,7 @@ gap-2
 
                         <div
                           key={idx}
-                          className="
-flex
-flex-col sm:flex-row
-items-start sm:items-center
-justify-between
-bg-white/5
-border border-white/10
-p-2
-rounded-xl
-mt-3
-gap-2
-"
-                        >
+                          className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white/5 border border-white/10 p-2 rounded-xl mt-3 gap-2">
 
                           {/* PLAYER */}
                           <div className="flex flex-col items-start">
