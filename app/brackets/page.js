@@ -11,8 +11,7 @@ import { db } from "../lib/firebase"
 import { motion } from "framer-motion"
 import {
   Play,
-  MessageCircle,
-  MessagesSquare,
+  MessagesSquare
 } from "lucide-react"
 
 /* =========================================================
