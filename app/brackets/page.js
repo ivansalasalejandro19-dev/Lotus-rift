@@ -1030,10 +1030,10 @@ const percent2 = totalVotes
           {octavos.slice(0, 4).map((match, index) => (
             <div
               key={index}
-              className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex items-center justify-between"
+              className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex flex-col md:flex-row items-center gap-5 md:justify-between"
             >
 
-              <div className="flex items-center gap-4 w-[320px]">
+              <div className="flex items-center gap-4 w-full md:w-[320px]">
 
                 <img
                   src={match.team1?.logo}
@@ -1049,7 +1049,7 @@ const percent2 = totalVotes
                 VS
               </div>
 
-              <div className="flex items-center justify-end gap-4 w-[320px]">
+              <div className="flex items-center justify-end gap-4 w-full md:w-[320px]">
 
                 <span className="font-semibold text-right">
                   {match.team2?.name || "TBD"}
@@ -1115,7 +1115,7 @@ const percent2 = totalVotes
         VS
       </div>
 
-      <div className="flex items-center justify-end gap-4 w-[320px]">
+      <div className="flex items-center justify-center md:justify-end gap-4 w-full md:w-[320px]">
         <span className="font-semibold text-right">
           {match.team2?.name || "TBD"}
         </span>
@@ -1126,12 +1126,12 @@ const percent2 = totalVotes
         />
       </div>
 
-      <button
-        onClick={() => setSelectedMatch(matchDetails[index + 4])}
-        className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
-      >
-        VER DETALLES
-      </button>
+     <button
+  onClick={() => setSelectedMatch(matchDetails[index])}
+  className="w-full md:w-auto px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
+  >
+    VER DETALLES
+  </button>
 
     </div>
 
@@ -1142,7 +1142,7 @@ const percent2 = totalVotes
 {selectedMatch && (
   <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-md p-5">
 
-    <div className="w-full max-w-5xl rounded-[2rem] border border-pink-500/20 bg-zinc-950 p-8 relative">
+      <div className="w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[2rem] border border-pink-500/20 bg-zinc-950 p-5 md:p-8 relative">
 
       <button
         onClick={() => setSelectedMatch(null)}
@@ -1159,16 +1159,16 @@ const percent2 = totalVotes
 
       </div>
 
-      <div className="grid grid-cols-[1fr_auto_1fr] gap-8 items-center mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 items-center mb-10">
 
         <div className="text-center">
 
           <img
             src={selectedMatch.logo1}
-            className="w-24 h-24 mx-auto rounded-2xl object-cover mb-4"
+            className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-2xl object-cover mb-4"
           />
 
-          <h3 className="text-2xl font-black">
+          <h3 className="text-lg md:text-2xl font-black break-words">
             {selectedMatch.team1}
           </h3>
 
@@ -1234,7 +1234,7 @@ const percent2 = totalVotes
 
 <div className="mt-10">
 
-  <div className="flex items-center justify-between mb-3">
+  <div className="flex flex-col md:flex-row items-center gap-4 md:justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
 
     <span className="font-bold text-pink-300">
       Predicción de la comunidad
@@ -1258,13 +1258,13 @@ const percent2 = totalVotes
 
   </div>
 
-  <div className="flex justify-between mt-3 text-sm">
+  <div className="flex flex-col md:flex-row gap-2 md:gap-0 justify-between mt-3 text-sm text-center md:text-left">
 
    {selectedMatch.team1.name} ({percent1}%)
 {selectedMatch.team2.name} ({percent2}%)
 
   </div>
-  <div className="grid grid-cols-2 gap-4 mt-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
 
   <button
   onClick={() => handleVote(selectedMatch.id, "team1")}
