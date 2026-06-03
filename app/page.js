@@ -815,18 +815,7 @@ export default function LotusRiftTournamentPage() {
 
       {/* NAVBAR */}
       <header
-        className={`
-    relative z-10
-    flex flex-col md:flex-row
-    items-center
-    justify-between
-    px-4 sm:px-6
-    py-4
-    gap-4
-    border-b border-white/10
-    backdrop-blur-xl
-    bg-black/20
-  `}
+    className="relative z-10 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 py-4 gap-4 border-b border-white/10 backdrop-blur-xl bg-black/20"
       >
         <div>
           <h1
@@ -861,16 +850,8 @@ export default function LotusRiftTournamentPage() {
 
       {/* HERO */}
       <section
-        className="
-relative z-10
-px-4 sm:px-6 lg:px-20
-grid
-lg:grid-cols-2
-gap-16
-items-center
-py-16 sm:py-24
-pb-16
-">
+        className="relative z-10 px-4 sm:px-6 lg:px-20 grid lg:grid-cols-2 gap-16 items-center py-16 sm:py-24 pb-16"
+      >
         <div>
           <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-pink-500/20 bg-pink-500/10 mb-8 backdrop-blur-xl">
             <div className="w-3 h-3 rounded-full bg-pink-400 animate-pulse" />
@@ -995,24 +976,8 @@ shadow-[0_0_100px_rgba(236,72,153,0.3)]
 
 
       {/* STATS */}
-      <section className="
-relative z-10
-px-4 sm:px-6 lg:px-20
-grid
-grid-cols-2
-md:grid-cols-4
-gap-4
-pb-20
-">
-        <div className="
-rounded-[2rem]
-border border-white/10
-bg-white/5
-backdrop-blur-2xl
-p-5 sm:p-8
-hover:bg-white/10
-transition
-">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 pb-20">
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-5 sm:p-8 hover:bg-white/10 transition">
           <p className="uppercase tracking-[0.25em] text-white/40 text-sm">
             Equipos
           </p>
@@ -1064,11 +1029,8 @@ transition
       {/* SCHEDULE */}
       <section
         id="cronograma"
-        className="
-relative z-10
-px-4 sm:px-6 lg:px-20
-pb-16
-">
+        className="relative z-10 px-4 sm:px-6 lg:px-20 pb-16"
+      >
         <div className="mb-12">
           <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
             Calendario Oficial
@@ -1110,11 +1072,8 @@ pb-16
       {/* EQUIPOS */}
       <section
         id="equipos"
-        className="
-relative z-10
-px-4 sm:px-6 lg:px-20
-pb-16
-">
+        className="relative z-10 px-4 sm:px-6 lg:px-20 pb-16"
+      >
 
         <div className="mb-12">
           <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
