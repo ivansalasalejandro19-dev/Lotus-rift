@@ -2,10 +2,7 @@
 
 import Hero from './components/Hero'
 import CrystalBall from './components/CrystalBall'
-import CrystalBallNumbers from './components/CrystalBallNumbers'
-import CommunityStats from './components/CommunityStats'
 import LotusTracker from './components/LotusTracker'
-import Achievements from './components/Achievements'
 import Leaderboard from './components/Leaderboard'
 
 export default function PickEmPage() {
@@ -16,13 +13,7 @@ export default function PickEmPage() {
 
       <CrystalBall />
 
-      <CrystalBallNumbers />
-
-      <CommunityStats />
-
       <LotusTracker />
-
-      <Achievements />
 
       <Leaderboard />
 
