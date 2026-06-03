@@ -20,7 +20,7 @@ export default function SearchDropdown({
   const text =
     typeof option === 'string'
       ? option
-      : option.name
+      : option.name || option.id || ''
 
   return text
     .toLowerCase()
@@ -139,14 +139,14 @@ export default function SearchDropdown({
                 key={
   typeof option === 'string'
     ? option
-    : option.name
+    : option.name || option.id
 }
                 onClick={() => {
 
-                  onChange(
+                 onChange(
   typeof option === 'string'
     ? option
-    : option.name
+    : option.name || option.id
 )
 
                   setOpenDropdown(null)
