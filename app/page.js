@@ -1,7 +1,12 @@
 'use client'
 
 import LoginButton from "./components/LoginButton"
-import { Disc3 } from "lucide-react"
+import {
+  Play,
+  Disc3,
+  MessageCircle,
+  MessagesSquare,
+} from "lucide-react"
 import { useEffect, useState } from "react"
 import {
   signInWithPopup
