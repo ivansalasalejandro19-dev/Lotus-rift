@@ -170,7 +170,23 @@ export default function SearchDropdown({
               >
                 {typeof option === 'string' ? (
 
- option
+  option
+
+) : option.logo ? (
+
+  <div className="flex items-center gap-3">
+
+    <img
+      src={option.logo}
+      alt=""
+      className="w-8 h-8 object-contain"
+    />
+
+    <span className="font-semibold">
+      {option.name}
+    </span>
+
+  </div>
 
 ) : (
 

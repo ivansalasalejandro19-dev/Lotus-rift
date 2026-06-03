@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { teamNames, playerNames } from '../data'
+import { teams, players, champions } from '../data'
 import SearchDropdown from './SearchDropdown'
 
 const sections = [
@@ -133,32 +133,32 @@ const sections = [
       {
         id: 'mostBanned',
         title: '🚫 Más baneado',
-        type: 'text'
+        type: 'champion'
       },
       {
         id: 'mostPlayed',
         title: '🎮 Más jugado',
-        type: 'text'
+        type: 'champion'
       },
       {
         id: 'bestWinrate',
         title: '🏆 Mejor Win Rate',
-        type: 'text'
+        type: 'champion'
       },
       {
         id: 'champKills',
         title: '🔥 Más kills',
-        type: 'text'
+        type: 'champion'
       },
       {
         id: 'champDeaths',
         title: '💀 Más muertes',
-        type: 'text'
+        type: 'champion'
       },
       {
         id: 'surpriseChampion',
         title: '🌸 Campeón sorpresa',
-        type: 'text'
+        type: 'champion'
       }
     ]
   }
@@ -172,16 +172,20 @@ export default function CrystalBall() {
   const [answers, setAnswers] = useState({})
 
   const getOptions = (type) => {
-    if (type === 'team') {
-      return teamNames
-    }
-
-    if (type === 'player') {
-      return playerNames
-    }
-
-    return []
+  if (type === 'team') {
+    return teams
   }
+
+  if (type === 'player') {
+    return players
+  }
+
+  if (type === 'champion') {
+    return champions
+  }
+
+  return []
+}
 
   return (
 
