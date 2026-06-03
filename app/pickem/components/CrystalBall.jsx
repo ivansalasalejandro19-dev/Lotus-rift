@@ -330,12 +330,31 @@ export default function CrystalBall() {
   return []
 }
 
-  return (
+ return (
+  <section className="relative px-8 lg:px-20 pb-24 overflow-visible">
 
-    <section className="px-8 lg:px-20 pb-24 overflow-visible">
+    {/* 🌌 FONDO ORÁCULO (AQUÍ VA LO BONITO) */}
+    <div className="absolute inset-0 pointer-events-none">
 
+      {/* glow principal */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-purple-500/10 blur-[160px] animate-pulse" />
+
+      {/* glow secundario */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-400/10 blur-[140px]" />
+
+      {/* partículas mágicas */}
+      <div className="absolute top-10 left-10 w-1 h-1 bg-white/40 rounded-full animate-ping" />
+      <div className="absolute top-1/2 left-1/3 w-1.5 h-1.5 bg-purple-300/40 rounded-full animate-bounce" />
+      <div className="absolute bottom-20 right-1/4 w-1 h-1 bg-cyan-200/40 rounded-full animate-ping" />
+      <div className="absolute top-1/4 right-20 w-1 h-1 bg-pink-300/30 rounded-full animate-bounce" />
+
+    </div>
+
+    {/* 🧠 CONTENIDO ENCIMA */}
+    <div className="relative z-10">
+
+      {/* HEADER */}
       <div className="mb-16">
-
         <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
           Crystal Ball
         </p>
@@ -348,57 +367,42 @@ export default function CrystalBall() {
           Predice el futuro del torneo y demuestra que conoces
           el Rift mejor que nadie.
         </p>
-
       </div>
 
+      {/* GRID */}
       {sections.map((section) => (
-
-        <div
-          key={section.title}
-          className="mb-20"
-        >
+        <div key={section.title} className="mb-20">
 
           <div className="mb-8">
-
             <h3 className={`text-3xl font-black ${section.color}`}>
               {section.title}
             </h3>
-
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 overflow-visible">
 
             {section.questions.map((question) => (
-
-              
               <div
-  key={question.id}
-  className={`
-    relative
-    overflow-visible
-    rounded-2xl
-    border
-    border-white/10
-    bg-white/5
-    backdrop-blur-xl
-    p-5
-    hover:bg-white/10
-    transition
-
-    ${
-      openDropdown === question.id
-        ? 'z-[9999]'
-        : 'z-0'
-    }
-  `}
->
+                key={question.id}
+                className={`
+                  relative
+                  overflow-visible
+                  rounded-2xl
+                  border border-white/10
+                  bg-white/5
+                  backdrop-blur-xl
+                  p-5
+                  hover:bg-white/10
+                  transition
+                  ${openDropdown === question.id ? 'z-[9999]' : 'z-0'}
+                `}
+              >
 
                 <h4 className="font-bold text-base min-h-[48px]">
                   {question.title}
                 </h4>
 
                 {question.type === 'text' ? (
-
                   <input
                     type="text"
                     placeholder="Escribir..."
@@ -409,47 +413,34 @@ export default function CrystalBall() {
                         [question.id]: e.target.value
                       })
                     }
-                    className="
-  mt-4
-  w-full
-  rounded-xl
-  bg-white/10
-  p-3
-  outline-none
-  border
-  border-white/10
-"
+                    className="mt-4 w-full rounded-xl bg-white/10 p-3 outline-none border border-white/10"
                   />
-
                 ) : (
-
-                 <SearchDropdown
-  id={question.id}
-  openDropdown={openDropdown}
-  setOpenDropdown={setOpenDropdown}
-  options={getOptions(question.type)}
-  value={answers[question.id]}
-  placeholder="Seleccionar"
-  onChange={(value) =>
-    setAnswers({
-      ...answers,
-      [question.id]: value
-    })
-  }
-/>
+                  <SearchDropdown
+                    id={question.id}
+                    openDropdown={openDropdown}
+                    setOpenDropdown={setOpenDropdown}
+                    options={getOptions(question.type)}
+                    value={answers[question.id]}
+                    placeholder="Seleccionar"
+                    onChange={(value) =>
+                      setAnswers({
+                        ...answers,
+                        [question.id]: value
+                      })
+                    }
+                  />
                 )}
 
               </div>
-
             ))}
 
           </div>
 
         </div>
-
       ))}
 
-    </section>
-
-  )
+    </div>
+  </section>
+)
 }
