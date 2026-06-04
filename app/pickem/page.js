@@ -38,6 +38,7 @@ if (!user) {
     </div>
   )
 }
+  return (
     <div className="min-h-screen relative overflow-hidden text-white bg-gradient-to-b from-[#09030f] via-[#14081f] to-[#050108]">
 
       {/* 🌌 Glow background (AQUÍ VA EL EFECTO NUEVO) */}
