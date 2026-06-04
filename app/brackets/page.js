@@ -571,14 +571,9 @@ const percent2 = totalVotes
               🌸 INSCRIPCIONES CERRADAS
             </div>
 
-            <h2 className="mt-8 text-7xl md:text-8xl font-black leading-none">
-              <span className="text-white">LOTUS</span>
-              <br />
-
-              <span className="bg-gradient-to-r from-pink-400 via-fuchsia-300 to-pink-200 bg-clip-text text-transparent">
-                RIFT
-              </span>
-            </h2>
+            <h2 className="mt-8 text-7xl md:text-8xl font-black leading-none bg-gradient-to-r from-pink-500 via-fuchsia-300 to-purple-300 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]">
+  𝐵𝑅𝐴𝐶𝐾𝐸𝑇
+</h2>
 
             <p className="mt-7 text-zinc-400 text-lg max-w-xl">
               Unite a la comunidad de Discord y WhatsApp para estar al tanto de las últimas noticias, actualizaciones y sorpresas exclusivas del torneo.

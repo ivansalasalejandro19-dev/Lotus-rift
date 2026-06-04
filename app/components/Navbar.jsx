@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* LOGO */}
 
           <Link
-            href="/"
+            href="/logos/lotuz.png"
             className="flex items-center gap-3"
           >
 
@@ -64,7 +64,6 @@ export default function Navbar() {
                 shadow-lg
               "
             >
-              🌸
             </div>
 
             <div>

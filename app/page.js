@@ -311,7 +311,7 @@ export default function LotusRiftTournamentPage() {
 
     'overextended': [
       {
-        id: 'M3XC1T4#D1FF',
+        id: '愛 ChofisModo#Beast',
         role: 'TOP'
       },
 
@@ -459,7 +459,35 @@ export default function LotusRiftTournamentPage() {
     // ======================================================
 
     'Nahuales': [
-      {}, {}, {}, {}, {}, {}, {}
+      {
+        id: 'Zero#bbxx',
+        role: 'TOP'
+      }, 
+      
+      {
+        id: 'Biggwall#Lzng',
+        role: 'JUNGLA'
+      }, 
+      
+      {
+        id: 'MyBelleGi#2501',
+        role: 'MID'
+      }, 
+      
+      {
+        id: '射手 Krum#猫头鹰',
+        role: 'ADC'
+      }, 
+      
+      {
+        id: 'TikTokReaper#Boost',
+        role: 'SUP',
+      }, 
+      
+      {
+        id: 'JXCKi120#yyds6',
+        role: 'SUPLENTE',
+      }, {}
     ],
 
 
@@ -766,42 +794,6 @@ export default function LotusRiftTournamentPage() {
   ]
 
 
-  const matches = [
-    {
-      teamA: 'TBD',
-      teamB: 'TBD',
-      score: '0 - 0',
-      status: 'Pendiente'
-    },
-    {
-      teamA: 'TBD',
-      teamB: 'TBD',
-      score: '0 - 0',
-      status: 'Pendiente'
-    },
-    {
-      teamA: 'TBD',
-      teamB: 'TBD',
-      score: '0 - 0',
-      status: 'Pendiente'
-    },
-    {
-      teamA: 'TBD',
-      teamB: 'TBD',
-      score: '0 - 0',
-      status: 'Pendiente'
-    }
-  ]
-
-
-  const leaderboard = [
-    { name: 'Equipo 1', points: 0 },
-    { name: 'T502', points: 0 },
-    { name: 'Rokurominos', points: 0 },
-    { name: 'overextended', points: 0 }
-  ]
-
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#09030f] via-[#14081f] to-[#050108] text-white overflow-hidden relative">
       {/* BACKGROUND */}
@@ -828,16 +820,14 @@ export default function LotusRiftTournamentPage() {
           </div>
 
 
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none">
-            Lotus
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-violet-300 to-cyan-300">
-              Rift
-            </span>
-          </h2>
+          <h2 className="mt-8 text-7xl md:text-8xl font-black leading-none bg-gradient-to-r from-pink-500 via-fuchsia-300 to-purple-300 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]">
+𝐶𝐴𝐿𝐸𝑁𝐷𝐴𝑅𝐼𝑂
+</h2>
+
 
 
           <p className="mt-8 text-lg text-white/70 max-w-xl leading-relaxed">
-            Unete a la comunidad de discord y disfruta del bracket en vivo.
+            Unete a la comunidad de discord
           </p>
 
 
