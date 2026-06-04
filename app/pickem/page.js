@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import CrystalBall from './components/CrystalBall'
 import LotusTracker from './components/LotusTracker'
 import Leaderboard from './components/Leaderboard'
+import PlayerLeaderboards from './components/PlayerLeaderboards'
 
 export default function PickEmPage() {
   return (
@@ -21,6 +22,7 @@ export default function PickEmPage() {
         <CrystalBall />
         <LotusTracker />
         <Leaderboard />
+        <PlayerLeaderboards />
       </div>
 
     </div>

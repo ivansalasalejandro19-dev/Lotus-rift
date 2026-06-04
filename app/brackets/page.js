@@ -212,19 +212,19 @@ const matchDetails = [
     logo2: "/logos/flawless.png",
 
     players1: [
-      { name: "Ragnarok", flag: "🇨🇴" },
-      { name: "Zen", flag: "🇻🇪" },
-      { name: "Moset", flag: "🇻🇪" },
-      { name: "Ryn", flag: "🇦🇷" },
-      { name: "Dai", flag: "🇲🇽" },
+      { name: "Zero" },
+      { name: "Biggwall" },
+      { name: "MyBelleGi" },
+      { name: "射手 Krum" },
+      { name: "TikTokReaper" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇦🇷" },
-      { name: "Jugador 2", flag: "🇨🇱" },
-      { name: "Jugador 3", flag: "🇨🇴" },
-      { name: "Jugador 4", flag: "🇻🇪" },
-      { name: "Jugador 5", flag: "🇲🇽" },
+      { name: "LR BausSon" },
+      { name: "RitroxZ" },
+      { name: "Hide on LATAM" },
+      { name: "Arvey" },
+      { name: "Meffy" },
     ],
 
     votes1: 65,
@@ -244,19 +244,19 @@ const matchDetails = [
     logo2: "/logos/joyita_gaming.png",
 
     players1: [
-      { name: "Jugador 1", flag: "🇦🇷" },
-      { name: "Jugador 2", flag: "🇨🇱" },
-      { name: "Jugador 3", flag: "🇲🇽" },
-      { name: "Jugador 4", flag: "🇨🇴" },
-      { name: "Jugador 5", flag: "🇵🇪" },
+      { name: "Koer" },
+      { name: "Hxdes Perez" },
+      { name: "Robi" },
+      { name: "Kino 縁" },
+      { name: "The Unforgiven" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇻🇪" },
-      { name: "Jugador 2", flag: "🇦🇷" },
-      { name: "Jugador 3", flag: "🇨🇱" },
-      { name: "Jugador 4", flag: "🇨🇴" },
-      { name: "Jugador 5", flag: "🇲🇽" },
+      { name: "xHiroyukix" },
+      { name: "Jhon Wuju Alfa" },
+      { name: "Zerohz" },
+      { name: "Luminous 고수" },
+      { name: "Elophobia" },
     ],
 
     votes1: 50,
@@ -276,19 +276,19 @@ const matchDetails = [
     logo2: "/logos/golden_dragons.png",
 
     players1: [
-      { name: "Jugador 1", flag: "🇵🇪" },
-      { name: "Jugador 2", flag: "🇨🇴" },
-      { name: "Jugador 3", flag: "🇻🇪" },
-      { name: "Jugador 4", flag: "🇦🇷" },
-      { name: "Jugador 5", flag: "🇲🇽" },
+      { name: "M3XC1T4" },
+      { name: "Aplastador99" },
+      { name: "Passionfruit" },
+      { name: "Da Vinci" },
+      { name: "sebdra" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇨🇱" },
-      { name: "Jugador 2", flag: "🇵🇪" },
-      { name: "Jugador 3", flag: "🇨🇴" },
-      { name: "Jugador 4", flag: "🇻🇪" },
-      { name: "Jugador 5", flag: "🇦🇷" },
+      { name: "G7龙Alejoo" },
+      { name: "Wirtz" },
+      { name: "G7龙 Cheemz" },
+      { name: "Just Supra" },
+      { name: "G7 Nestior" },
     ],
 
     votes1: 50,
@@ -308,19 +308,19 @@ const matchDetails = [
     logo2: "/logos/smackdown.png",
 
     players1: [
-      { name: "Jugador 1", flag: "🇲🇽" },
-      { name: "Jugador 2", flag: "🇦🇷" },
-      { name: "Jugador 3", flag: "🇵🇪" },
-      { name: "Jugador 4", flag: "🇨🇱" },
-      { name: "Jugador 5", flag: "🇨🇴" },
+      { name: "playerslinky" },
+      { name: "愛 Liu Kam 愛" },
+      { name: "LW TheAngel" },
+      { name: "G0DZILLAKN1GHT" },
+      { name: "LilO" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇻🇪" },
-      { name: "Jugador 2", flag: "🇲🇽" },
-      { name: "Jugador 3", flag: "🇦🇷" },
-      { name: "Jugador 4", flag: "🇵🇪" },
-      { name: "Jugador 5", flag: "🇨🇱" },
+      { name: "QQl" },
+      { name: "Zen" },
+      { name: "SD Zoldk" },
+      { name: "Hakuuuuuiiiii" },
+      { name: "Sunny CSS" },
     ],
 
     votes1: 50,
@@ -340,19 +340,19 @@ const matchDetails = [
     logo2: "/logos/huesitos.png",
 
     players1: [
-      { name: "Jugador 1", flag: "🇦🇷" },
-      { name: "Jugador 2", flag: "🇨🇱" },
-      { name: "Jugador 3", flag: "🇲🇽" },
-      { name: "Jugador 4", flag: "🇨🇴" },
-      { name: "Jugador 5", flag: "🇵🇪" },
+      { name: "Jugador 1" },
+      { name: "Jugador 2" },
+      { name: "Jugador 3" },
+      { name: "Jugador 4" },
+      { name: "Jugador 5" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇻🇪" },
-      { name: "Jugador 2", flag: "🇦🇷" },
-      { name: "Jugador 3", flag: "🇨🇱" },
-      { name: "Jugador 4", flag: "🇨🇴" },
-      { name: "Jugador 5", flag: "🇲🇽" },
+      { name: "junedvs" },
+      { name: "JACOP" },
+      { name: "TikTokPrimordial" },
+      { name: "I Blóód I" },
+      { name: "DoomScry" },
     ],
 
     votes1: 50,
@@ -372,19 +372,19 @@ const matchDetails = [
     logo2: "/logos/shadow_reapers.png",
 
     players1: [
-      { name: "Jugador 1", flag: "🇵🇪" },
-      { name: "Jugador 2", flag: "🇨🇴" },
-      { name: "Jugador 3", flag: "🇻🇪" },
-      { name: "Jugador 4", flag: "🇦🇷" },
-      { name: "Jugador 5", flag: "🇲🇽" },
+      { name: "G7 Lugia ツ" },
+      { name: "G7 Vanderrr" },
+      { name: "大綠色格林奇先生" },
+      { name: "Burbuja" },
+      { name: "BKI Muss" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇨🇱" },
-      { name: "Jugador 2", flag: "🇵🇪" },
-      { name: "Jugador 3", flag: "🇨🇴" },
-      { name: "Jugador 4", flag: "🇻🇪" },
-      { name: "Jugador 5", flag: "🇦🇷" },
+      { name: "Ackerman 死 ツ" },
+      { name: "SerCh" },
+      { name: "Arcament" },
+      { name: "KΞX償 D i a b l o" },
+      { name: "MarcecGD" },
     ],
 
     votes1: 50,
@@ -404,19 +404,19 @@ const matchDetails = [
     logo2: "/logos/rku.png",
 
     players1: [
-      { name: "Jugador 1", flag: "🇲🇽" },
-      { name: "Jugador 2", flag: "🇦🇷" },
-      { name: "Jugador 3", flag: "🇵🇪" },
-      { name: "Jugador 4", flag: "🇨🇱" },
-      { name: "Jugador 5", flag: "🇨🇴" },
+      { name: "Jugador 1" },
+      { name: "Jugador 2" },
+      { name: "Jugador 3" },
+      { name: "Jugador 4" },
+      { name: "Jugador 5" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇻🇪" },
-      { name: "Jugador 2", flag: "🇲🇽" },
-      { name: "Jugador 3", flag: "🇦🇷" },
-      { name: "Jugador 4", flag: "🇵🇪" },
-      { name: "Jugador 5", flag: "🇨🇱" },
+      { name: "Gz TheTØPArtist" },
+      { name: "Jei ttv" },
+      { name: "Daniton" },
+      { name: "Romina" },
+      { name: "루발 GawrNikho メ" },
     ],
 
     votes1: 50,
@@ -436,19 +436,19 @@ const matchDetails = [
     logo2: "/logos/new_alliance.png",
 
     players1: [
-      { name: "Jugador 1", flag: "🇨🇴" },
-      { name: "Jugador 2", flag: "🇻🇪" },
-      { name: "Jugador 3", flag: "🇦🇷" },
-      { name: "Jugador 4", flag: "🇲🇽" },
-      { name: "Jugador 5", flag: "🇵🇪" },
+      { name: "HTS Unfair" },
+      { name: "HTS JAYCE BALVIN" },
+      { name: "HTS Jochelo" },
+      { name: "HTS Jhintonic#" },
+      { name: "HTS Nacatamalita" },
     ],
 
     players2: [
-      { name: "Jugador 1", flag: "🇨🇱" },
-      { name: "Jugador 2", flag: "🇨🇴" },
-      { name: "Jugador 3", flag: "🇻🇪" },
-      { name: "Jugador 4", flag: "🇦🇷" },
-      { name: "Jugador 5", flag: "🇲🇽" },
+      { name: "Jugador 1" },
+      { name: "Jugador 2" },
+      { name: "Jugador 3" },
+      { name: "Jugador 4" },
+      { name: "Jugador 5" },
     ],
 
     votes1: 50,
