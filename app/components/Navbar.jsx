@@ -1,0 +1,223 @@
+'use client'
+
+import Link from 'next/link'
+import LoginButton from './LoginButton'
+import { useAuth } from '../context/AuthContext'
+import { Trophy, Swords, Sparkles, Menu, X } from 'lucide-react'
+import { useState } from 'react'
+
+export default function Navbar() {
+
+  const { user } = useAuth()
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[700px] h-[180px] bg-fuchsia-600/20 blur-[140px]" />
+
+          <div className="absolute right-0 top-0 w-[400px] h-[150px] bg-cyan-500/10 blur-[120px]" />
+
+        </div>
+
+        <div
+          className="
+            relative
+            max-w-7xl
+            mx-auto
+            h-20
+            rounded-[2rem]
+            border
+            border-white/10
+            bg-black/40
+            backdrop-blur-2xl
+            shadow-[0_0_60px_rgba(236,72,153,0.12)]
+            flex
+            items-center
+            justify-between
+            px-6
+          "
+        >
+
+          {/* LOGO */}
+
+          <Link
+            href="/"
+            className="flex items-center gap-3"
+          >
+
+            <div
+              className="
+                w-12
+                h-12
+                rounded-2xl
+                bg-gradient-to-br
+                from-pink-500
+                via-fuchsia-500
+                to-purple-600
+                flex
+                items-center
+                justify-center
+                shadow-lg
+              "
+            >
+              🌸
+            </div>
+
+            <div>
+
+              <p className="text-xs uppercase tracking-[0.35em] text-pink-300">
+                Tournament
+              </p>
+
+              <h1 className="font-black text-xl">
+                Lotus Rift
+              </h1>
+
+            </div>
+
+          </Link>
+
+          {/* DESKTOP LINKS */}
+
+          <div className="hidden lg:flex items-center gap-2">
+
+            <Link
+              href="/"
+              className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all"
+            >
+              Inicio
+            </Link>
+
+            <Link
+              href="/brackets"
+              className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
+            >
+              <Swords size={16} />
+              Bracket
+            </Link>
+
+            {user ? (
+              <Link
+                href="/pickem"
+                className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
+              >
+                <Sparkles size={16} />
+                Pick'Em
+              </Link>
+            ) : (
+              <div
+                className="
+                  px-5
+                  py-3
+                  rounded-xl
+                  text-zinc-500
+                  border
+                  border-white/5
+                  bg-white/5
+                  flex
+                  items-center
+                  gap-2
+                "
+              >
+                🔒 Pick'Em
+              </div>
+            )}
+
+            <Link
+              href="/#leaderboard"
+              className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
+            >
+              <Trophy size={16} />
+              Rankings
+            </Link>
+
+          </div>
+
+          {/* LOGIN */}
+
+          <div className="hidden lg:block">
+            <LoginButton />
+          </div>
+
+          {/* MOBILE BTN */}
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden p-3 rounded-xl bg-white/5 border border-white/10"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
+        </div>
+
+      </nav>
+
+      {/* MOBILE MENU */}
+
+      {open && (
+
+        <div
+          className="
+            fixed
+            top-28
+            left-4
+            right-4
+            z-50
+            lg:hidden
+            rounded-[2rem]
+            border
+            border-white/10
+            bg-black/80
+            backdrop-blur-2xl
+            p-6
+          "
+        >
+
+          <div className="flex flex-col gap-3">
+
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="px-4 py-4 rounded-xl bg-white/5"
+            >
+              Inicio
+            </Link>
+
+            <Link
+              href="/brackets"
+              onClick={() => setOpen(false)}
+              className="px-4 py-4 rounded-xl bg-white/5"
+            >
+              Bracket
+            </Link>
+
+            {user ? (
+              <Link
+                href="/pickem"
+                onClick={() => setOpen(false)}
+                className="px-4 py-4 rounded-xl bg-white/5"
+              >
+                Pick'Em
+              </Link>
+            ) : (
+              <div className="px-4 py-4 rounded-xl bg-white/5 text-zinc-500">
+                🔒 Pick'Em
+              </div>
+            )}
+
+            <div className="pt-3 border-t border-white/10">
+              <LoginButton />
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+    </>
+  )
+}
