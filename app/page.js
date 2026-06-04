@@ -1,6 +1,5 @@
 'use client'
 
-import LoginButton from "./components/LoginButton"
 import { MessageCircle } from "lucide-react"
 import { useEffect, useState } from "react"
 import Image from "next/image"
