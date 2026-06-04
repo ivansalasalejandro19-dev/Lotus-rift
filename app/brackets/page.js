@@ -972,11 +972,6 @@ const percent2 = totalVotes
         </div>
       </section>
 
-<div className="p-5">
-  Team1: {fireVotes.team1 || 0}
-  <br />
-  Team2: {fireVotes.team2 || 0}
-</div>
       {/* PARTIDOS */}
       <section className="max-w-7xl mx-auto px-5 pb-32">
 
@@ -1107,7 +1102,7 @@ const percent2 = totalVotes
       </div>
 
      <button
-  onClick={() => setSelectedMatch(matchDetails[index])}
+  onClick={() => setSelectedMatch(matchDetails[index + 4])}
   className="w-full md:w-auto px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
   >
     VER DETALLES
@@ -1238,12 +1233,15 @@ const percent2 = totalVotes
 
   </div>
 
-  <div className="flex flex-col md:flex-row gap-2 md:gap-0 justify-between mt-3 text-sm text-center md:text-left">
+  <div className="flex justify-between mt-3 text-sm">
+  <span>
+    {selectedMatch.team1} ({percent1}%)
+  </span>
 
-   {selectedMatch.team1.name} ({percent1}%)
-{selectedMatch.team2.name} ({percent2}%)
-
-  </div>
+  <span>
+    {selectedMatch.team2} ({percent2}%)
+  </span>
+</div>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
 
   <button
