@@ -812,25 +812,6 @@ export default function LotusRiftTournamentPage() {
       </div>
 
 
-      {/* NAVBAR */}
-      <header
-    className="relative z-10 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 py-4 gap-4 border-b border-white/10 backdrop-blur-xl bg-black/20"
-      >
-        <div>
-          <h1
-            className={`text-xl sm:text-2xl md:text-4xl font-black tracking-[0.15em] md:tracking-[0.4em] text-pink-300 text-center md:text-left`}
-          >
-            {tournamentInfo.name}
-          </h1>
-
-
-          <p className="text-pink-100/60 mt-2 text-sm tracking-[0.25em] uppercase">
-            {tournamentInfo.subtitle}
-          </p>
-        </div>
-
-      </header>
-
 
       {/* HERO */}
       <section

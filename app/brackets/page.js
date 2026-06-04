@@ -557,21 +557,6 @@ const percent2 = totalVotes
         <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-fuchsia-600/20 blur-[180px] rounded-full" />
       </div>
 
-      {/* HEADER */}
-      <header className="border-b border-pink-500/10 backdrop-blur-xl sticky top-0 z-50 bg-black/50">
-        <div className="max-w-7xl mx-auto px-5 py-5 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-black tracking-[0.35em] uppercase bg-gradient-to-r from-pink-400 via-fuchsia-300 to-pink-200 bg-clip-text text-transparent">
-              LOTUS RIFT
-            </h1>
-
-            <p className="text-xs tracking-[0.3em] text-zinc-500 uppercase mt-1">
-              TORNEO LAN
-            </p>
-          </div>
-        </div>
-      </header>
-
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-5 pt-16 pb-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

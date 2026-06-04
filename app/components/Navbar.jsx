@@ -70,11 +70,11 @@ export default function Navbar() {
             <div>
 
               <p className="text-xs uppercase tracking-[0.35em] text-pink-300">
-                Tournament
+                🪷𝑇𝑂𝑅𝑁𝐸𝑂 𝐿𝐴𝑁
               </p>
 
               <h1 className="font-black text-xl">
-                Lotus Rift
+                🪷𝐿𝑂𝑇𝑈𝑆 𝑅𝐼𝐹𝑇
               </h1>
 
             </div>
