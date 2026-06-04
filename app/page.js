@@ -820,10 +820,15 @@ export default function LotusRiftTournamentPage() {
           </div>
 
 
-          <h2 className="mt-8 text-7xl md:text-8xl font-black leading-none bg-gradient-to-r from-pink-500 via-fuchsia-300 to-purple-300 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]">
-𝐶𝐴𝐿𝐸𝑁𝐷𝐴𝑅𝐼𝑂
-</h2>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none">
+  <span className="bg-gradient-to-r from-pink-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(236,72,153,0.35)]">
+    𝐿𝑂𝑇𝑈𝑆 
+  </span>
 
+  <span className="block bg-gradient-to-r from-pink-400 via-violet-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.35)]">
+    𝑅𝐼𝐹𝑇
+  </span>
+</h2>
 
 
           <p className="mt-8 text-lg text-white/70 max-w-xl leading-relaxed">

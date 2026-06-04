@@ -5,6 +5,7 @@ import LoginButton from './LoginButton'
 import { useAuth } from '../context/AuthContext'
 import { Trophy, Swords, Sparkles, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import Image from "next/image"
 
 export default function Navbar() {
 
@@ -49,22 +50,29 @@ export default function Navbar() {
             className="flex items-center gap-3"
           >
 
-            <div
-              className="
-                w-12
-                h-12
-                rounded-2xl
-                bg-gradient-to-br
-                from-pink-500
-                via-fuchsia-500
-                to-purple-600
-                flex
-                items-center
-                justify-center
-                shadow-lg
-              "
-            >
-            </div>
+            <Link
+  href="/"
+  className="flex items-center gap-3"
+>
+
+  <div
+    className="
+  relative
+  w-14
+  h-14
+  flex
+  items-center
+  justify-center
+">
+    <Image
+      src="/logos/lotuz.png"
+      alt="Lotus Rift"
+      fill
+      className="object-contain p-1"
+    />
+  </div>
+
+</Link>
 
             <div>
 
