@@ -10,7 +10,7 @@ import { useAuth } from "../context/AuthContext"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { doc, getDoc } from "firebase/firestore"
-import { db } from "./lib/firebase"
+import { db } from "../lib/firebase"
 
 export default function PickEmPage() {
   const { user } = useAuth()
