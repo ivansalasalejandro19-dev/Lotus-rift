@@ -103,6 +103,11 @@ export default function PickemBracket({
 
 const savePickem = async () => {
 
+    console.log("USER:", user)
+console.log("UID:", user?.uid)
+console.log("DISPLAY:", user?.displayName)
+console.log("EMAIL:", user?.email)
+
   if (locked) return
 
   if (
@@ -119,6 +124,8 @@ const savePickem = async () => {
   alert("Completa todas las predicciones del Crystal Ball.")
   return
 }
+
+console.log("GUARDANDO...")
 
   await setDoc(
     doc(db, "pickems", user.uid),
