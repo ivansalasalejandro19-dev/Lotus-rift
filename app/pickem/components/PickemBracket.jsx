@@ -31,6 +31,7 @@ export default function PickemBracket({
   const [semis, setSemis] = useState({})
   const [finalWinner, setFinalWinner] = useState(null)
   const [locked, setLocked] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const quarterTeams = useMemo(() => {
     return [
@@ -152,7 +153,7 @@ const savePickem = async () => {
   setPickemLocked(true)
 }
 
-  alert("Pick'Em guardado.")
+  setShowSuccess(true)
 }
 
 const loadPickem = async () => {
@@ -184,6 +185,67 @@ const loadPickem = async () => {
 
 }
 
+}
+
+if (showSuccess) {
+  return (
+    <section className="py-24 px-6">
+
+      <div className="max-w-2xl mx-auto">
+
+        <div
+          className="
+            rounded-3xl
+            border
+            border-emerald-500/30
+            bg-emerald-500/10
+            backdrop-blur-xl
+            p-10
+            text-center
+          "
+        >
+
+          <div className="text-6xl mb-6">
+            ✅
+          </div>
+
+          <h2 className="text-4xl font-black mb-4">
+            Predicciones Guardadas
+          </h2>
+
+          <p className="text-white/70 mb-8">
+            Tus predicciones fueron registradas correctamente.
+            El Pick'Em ha quedado bloqueado.
+          </p>
+
+          <button
+            onClick={() => {
+              window.location.href = "/"
+            }}
+            className="
+              px-8
+              py-4
+              rounded-2xl
+              font-black
+
+              bg-gradient-to-r
+              from-pink-500
+              to-violet-500
+
+              hover:scale-105
+
+              transition-all
+            "
+          >
+            🏠 Volver al Inicio
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+  )
 }
 
   return (
