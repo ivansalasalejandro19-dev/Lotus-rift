@@ -10,7 +10,8 @@ export default function SearchDropdown({
   options,
   value,
   placeholder,
-  onChange
+  onChange,
+  disabled = false
 }) {
 
   const [search, setSearch] = useState('')
@@ -32,6 +33,7 @@ export default function SearchDropdown({
     <div className="relative mt-4">
 
    <button
+  disabled={disabled}
   onClick={() =>
     setOpenDropdown(
       openDropdown === id
@@ -47,6 +49,8 @@ export default function SearchDropdown({
     bg-white/5
     hover:bg-white/10
     transition-all
+    disabled:opacity-50
+disabled:cursor-not-allowed
     p-4
     flex
     items-center
@@ -69,7 +73,7 @@ export default function SearchDropdown({
 
 </button>
 
-      {openDropdown === id && (
+      {!disabled && openDropdown === id && (
   <div
   className="
     absolute

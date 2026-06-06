@@ -243,11 +243,13 @@ const sections = [
 
 ]
 
-export default function CrystalBall() {
+export default function CrystalBall({
+  answers,
+  setAnswers,
+  locked
+}) {
 
   const [openDropdown, setOpenDropdown] = useState(null)
-
-  const [answers, setAnswers] = useState({})
 
   const getOptions = (type) => {
 
@@ -393,7 +395,8 @@ export default function CrystalBall() {
 
                 {question.type === 'text' ? (
                   <input
-                    type="text"
+  disabled={locked}
+  type="text"
                     placeholder="Escribir..."
                     value={answers[question.id] || ''}
                     onChange={(e) =>
@@ -406,18 +409,23 @@ export default function CrystalBall() {
                   />
                 ) : (
                   <SearchDropdown
+                  disabled={locked}
                     id={question.id}
                     openDropdown={openDropdown}
                     setOpenDropdown={setOpenDropdown}
                     options={getOptions(question.type)}
                     value={answers[question.id]}
                     placeholder="Seleccionar"
-                    onChange={(value) =>
-                      setAnswers({
-                        ...answers,
-                        [question.id]: value
-                      })
-                    }
+                    onChange={(value) => {
+
+  if (locked) return
+
+  setAnswers({
+    ...answers,
+    [question.id]: value
+  })
+
+}}
                   />
                 )}
 

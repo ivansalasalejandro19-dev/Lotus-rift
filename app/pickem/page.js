@@ -5,13 +5,49 @@ import CrystalBall from './components/CrystalBall'
 import LotusTracker from './components/LotusTracker'
 import Leaderboard from './components/Leaderboard'
 import PlayerLeaderboards from './components/PlayerLeaderboards'
+import PickemBracket from "./components/PickemBracket"
 import { useAuth } from "../context/AuthContext"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../lib/firebase"
 
 export default function PickEmPage() {
   const { user } = useAuth()
+
+  const [crystalBallAnswers, setCrystalBallAnswers] = useState({})
+
+  const [pickemLocked, setPickemLocked] = useState(false)
+
 const router = useRouter()
+
+useEffect(() => {
+
+  if (!user) return
+
+  loadPickem()
+
+}, [user])
+
+const loadPickem = async () => {
+
+  const snap = await getDoc(
+    doc(db, "pickems", user.uid)
+  )
+
+  if (!snap.exists()) return
+
+  const data = snap.data()
+
+  if (data.crystalBall) {
+    setCrystalBallAnswers(data.crystalBall)
+  }
+
+  if (data.locked) {
+    setPickemLocked(true)
+  }
+
+}
 
 useEffect(() => {
   if (user === null) return
@@ -50,7 +86,18 @@ if (!user) {
       {/* 🧠 Contenido encima del fondo */}
       <div className="relative z-10">
         <Hero />
-        <CrystalBall />
+        <CrystalBall
+  answers={crystalBallAnswers}
+  setAnswers={setCrystalBallAnswers}
+  locked={pickemLocked}
+/>
+
+        <PickemBracket
+  user={user}
+  crystalBallAnswers={crystalBallAnswers}
+  setPickemLocked={setPickemLocked}
+/>
+
         <LotusTracker />
         <Leaderboard />
         <PlayerLeaderboards />
