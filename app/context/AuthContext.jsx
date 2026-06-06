@@ -33,7 +33,25 @@ export function AuthProvider({ children }) {
     return () => unsub()
   }, [])
 
-  const user = firebaseUser || discordUser
+  const user = firebaseUser
+  ? {
+      uid: firebaseUser.uid,
+      displayName: firebaseUser.displayName,
+      email: firebaseUser.email,
+      photoURL: firebaseUser.photoURL,
+      provider: "google"
+    }
+  : discordUser
+  ? {
+      uid: discordUser.id,
+      displayName: discordUser.username,
+      email: null,
+      photoURL: discordUser.avatar
+        ? `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png`
+        : null,
+      provider: "discord"
+    }
+  : null
 
   return (
     <AuthContext.Provider value={{ user, setDiscordUser }}>
