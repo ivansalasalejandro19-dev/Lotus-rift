@@ -9,6 +9,7 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
+import { calculateScore } from "@/app/lib/calculateScore";
 
 export default function UserPage() {
   const { id } = useParams();
@@ -39,9 +40,7 @@ export default function UserPage() {
     setLoading(false);
   }
 
-  function correct(a, b) {
-    
-    async function saveScore() {
+  async function saveScore() {
   await updateDoc(
     doc(db, "pickems", id),
     {
@@ -53,6 +52,8 @@ export default function UserPage() {
 
 alert("Score actualizado correctamente");
 }
+
+  function correct(a, b) {
     
     return (
       String(a || "").trim().toLowerCase() ===
@@ -209,48 +210,78 @@ async function deletePickem() {
 
         <div className="space-y-3">
 
-          <div className={correct(user.bracket.champion, official?.bracket?.champion) ? "text-green-400" : "text-red-400"}>
-            🏆 Campeón: {user.bracket.champion}
-          </div>
+          <div
+  className={
+    correct(
+      user?.bracket?.champion,
+      official?.bracket?.champion
+    )
+      ? "text-green-400"
+      : "text-red-400"
+  }
+>
+  🏆 Campeón: {user?.bracket?.champion}
+</div>
 
           <h3 className="text-xl font-bold mt-6">
             Semifinales
           </h3>
 
-          {Object.entries(user.bracket.semis || {}).map(([key, value]) => (
-            <div
-              key={key}
-              className={correct(value, official?.bracket?.semis?.[key]) ? "text-green-400" : "text-red-400"}
-            >
-              {key}: {value}
-            </div>
-          ))}
+          {Object.entries(user?.bracket?.semis || {}).map(([key, value]) => (
+  <div
+    key={key}
+    className={
+      correct(
+        value,
+        official?.bracket?.semis?.[key]
+      )
+        ? "text-green-400"
+        : "text-red-400"
+    }
+  >
+    {key}: {value}
+  </div>
+))}
 
           <h3 className="text-xl font-bold mt-6">
             Cuartos
           </h3>
 
-          {Object.entries(user.bracket.quarters || {}).map(([key, value]) => (
-            <div
-              key={key}
-              className={correct(value, official?.bracket?.quarters?.[key]) ? "text-green-400" : "text-red-400"}
-            >
-              {key}: {value}
-            </div>
-          ))}
+          {Object.entries(user?.bracket?.quarters || {}).map(([key, value]) => (
+  <div
+    key={key}
+    className={
+      correct(
+        value,
+        official?.bracket?.quarters?.[key]
+      )
+        ? "text-green-400"
+        : "text-red-400"
+    }
+  >
+    {key}: {value}
+  </div>
+))}
 
           <h3 className="text-xl font-bold mt-6">
             Octavos
           </h3>
 
-          {Object.entries(user.bracket.round16 || {}).map(([key, value]) => (
-            <div
-              key={key}
-              className={correct(value, official?.bracket?.round16?.[key]) ? "text-green-400" : "text-red-400"}
-            >
-              {key}: {value}
-            </div>
-          ))}
+          {Object.entries(user?.bracket?.round16 || {}).map(([key, value]) => (
+  <div
+    key={key}
+    className={
+      correct(
+        value,
+        official?.bracket?.round16?.[key]
+      )
+        ? "text-green-400"
+        : "text-red-400"
+    }
+  >
+    {key}: {value}
+  </div>
+))}
 
         </div>
 

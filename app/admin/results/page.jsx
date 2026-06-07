@@ -63,7 +63,7 @@ export default function ResultsPage() {
             <label>Campeón</label>
 
             <input
-              value={results.bracket.champion}
+              value={results.champion || ""}
               onChange={(e) =>
                 setResults({
                   ...results,
@@ -102,12 +102,9 @@ export default function ResultsPage() {
                 value={results.crystalBall[key]}
                 onChange={(e) =>
                   setResults({
-                    ...results,
-                    crystalBall: {
-                      ...results.crystalBall,
-                      [key]: e.target.value,
-                    },
-                  })
+  ...results,
+  champion: e.target.value,
+})
                 }
                 className="w-full mt-2 p-3 rounded-xl bg-black/20 border border-white/10"
               />
