@@ -3,7 +3,6 @@
 import Hero from './components/Hero'
 import CrystalBall from './components/CrystalBall'
 import LotusTracker from './components/LotusTracker'
-import Leaderboard from './components/Leaderboard'
 import PlayerLeaderboards from './components/PlayerLeaderboards'
 import PickemBracket from "./components/PickemBracket"
 import { useAuth } from "../context/AuthContext"
@@ -99,7 +98,6 @@ if (!user) {
 />
 
         <LotusTracker />
-        <Leaderboard />
         <PlayerLeaderboards />
       </div>
 
