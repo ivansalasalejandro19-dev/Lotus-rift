@@ -19,15 +19,22 @@ export default function SettingsPage() {
   }, []);
 
   async function loadSettings() {
+  try {
     const ref = doc(db, "settings", "tournament");
     const snap = await getDoc(ref);
 
+    console.log("Settings exists:", snap.exists());
+
     if (snap.exists()) {
+      console.log(snap.data());
       setSettings(snap.data());
     }
-
-    setLoading(false);
+  } catch (e) {
+    console.error("SETTINGS ERROR:", e);
   }
+
+  setLoading(false);
+}
 
   async function saveSettings() {
     const ref = doc(db, "settings", "tournament");

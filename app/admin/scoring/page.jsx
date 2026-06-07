@@ -13,16 +13,22 @@ export default function ScoringPage() {
   }, []);
 
   async function loadScoring() {
-    const snap = await getDoc(
-      doc(db, "scoring", "official")
-    );
+  try {
+    const ref = doc(db, "scoring", "official");
+    const snap = await getDoc(ref);
+
+    console.log("Scoring exists:", snap.exists());
 
     if (snap.exists()) {
+      console.log(snap.data());
       setScoring(snap.data());
     }
-
-    setLoading(false);
+  } catch (e) {
+    console.error("SCORING ERROR:", e);
   }
+
+  setLoading(false);
+}
 
   async function saveScoring() {
     await updateDoc(
