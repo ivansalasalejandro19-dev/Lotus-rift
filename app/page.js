@@ -84,8 +84,8 @@ export default function LotusRiftTournamentPage() {
     // HaTsu
     'HaTsu': '/logos/hatsu.png',
 
-    // Golden Dragons
-    'Golden Dragons': '/logos/golden_dragons.png',
+    // Golden Fenix-Z
+    'Golden Fenix-Z': '/logos/golden_fenix_z.png',
 
     // Nahuales
     'Nahuales': '/logos/nahuales.png',
@@ -99,8 +99,8 @@ export default function LotusRiftTournamentPage() {
     // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
     'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
 
-    // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
-    'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': '/logos/new_alliance.png',
+    // Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ
+    'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': '/logos/valhalla_legacy.png',
 
     // Fʟᴀᴡʟᴇss
     'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
@@ -135,12 +135,12 @@ export default function LotusRiftTournamentPage() {
     'overextended',
     'Huesitos Proyect',
     'HaTsu',
-    'Golden Dragons',
+    'Golden Fenix-Z',
     'Nahuales',
     'Ice Gold',
     'ÆSIIR Go Legends',
     'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
-    'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ',
+    'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ',
     'Fʟᴀᴡʟᴇss',
     'Secret Society',
     'Cosa nostra',
@@ -276,22 +276,22 @@ export default function LotusRiftTournamentPage() {
 
     'Rokurominos': [
       {
-        id: 'Better#lvysf',
+        id: 'Gz TheTØPArtist#PHX',
         role: 'TOP'
       },
 
       {
-        id: 'SojaCarbo#1830',
+        id: 'Jei ttv#6711',
         role: 'JUNGLA'
       },
 
       {
-        id: 'Dropex13#LAN',
+        id: 'Daniton#too',
         role: 'MID',
       },
 
       {
-        id: 'Mata perros#Aletz',
+        id: 'Romina#Gyal',
         role: 'ADC',
       },
 
@@ -327,7 +327,7 @@ export default function LotusRiftTournamentPage() {
       },
 
       {
-        id: 'Da Vinci#4034',
+        id: 'Azul#BlueL',
         role: 'ADC',
       },
 
@@ -339,7 +339,12 @@ export default function LotusRiftTournamentPage() {
       {
         id: 'Nexo Simon#7403',
         role: 'SUPLENTE',
-      }, {}
+      }, 
+      
+      {
+        id: 'Da Vinci#4034',
+        role: 'SUPLENTE 2',
+      }, 
     ],
 
 
@@ -349,7 +354,7 @@ export default function LotusRiftTournamentPage() {
 
     'Huesitos Proyect': [
       {
-        id: 'junedvs#NBA',
+        id: 'Lillia Futa#Eep',
         role: 'TOP'
       },
 
@@ -372,7 +377,12 @@ export default function LotusRiftTournamentPage() {
         id: 'SpearDiff Marc#SMITE',
         role: 'SUP',
         captain: true
-      }, {}, {}
+      }, 
+      
+      {
+        id: 'DoomScry#Edu',
+        role: 'SUPLENTE',
+      },
     ],
 
 
@@ -417,17 +427,17 @@ export default function LotusRiftTournamentPage() {
 
 
     //======================================================
-    // Golden Dragons
+    // Golden Fenix-Z
     // ======================================================
 
-    'Golden Dragons': [
+    'Golden Fenix-Z': [
       {
         id: 'G7龙 Alejoo#Ñupra',
         role: 'TOP'
       },
 
       {
-        id: 'Just Supra#Ling',
+        id: 'Wirtz#Key',
         role: 'JUNGLA'
       },
 
@@ -437,7 +447,7 @@ export default function LotusRiftTournamentPage() {
       },
 
       {
-        id: 'Wirtz#Key',
+        id: 'Just Supra#Ling',
         role: 'ADC'
       },
 
@@ -618,11 +628,44 @@ export default function LotusRiftTournamentPage() {
 
 
     // ======================================================
-    // Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ
+    // Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ
     // ======================================================
 
-    'Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ': [
-      {}, {}, {}, {}, {}, {}, {}
+    'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': [
+      {
+        id: 'Better#lvys',
+        role: 'TOP'
+      }, 
+      
+      {
+        id: 'T1 Azazel#GTM',
+        role: 'JUNGLA'
+      }, 
+      
+      {
+        id: '清隆 Ayanokoji#ZDIAC',
+        role: 'MID'
+      }, 
+      
+      {
+        id: 'Smash#Sick',
+        role: 'ADC'
+      }, 
+      
+      {
+        id: 'LF NovemberAjax#SUPP',
+        role: 'SUP'
+      }, 
+      
+      {
+          id: 'Chicx DaSleep 火#Burra',
+          role: 'SUPLENTE',
+      }, 
+      
+      {
+          id: 'mapache elegante#ADC',
+          role: 'SUPLENTE 2',
+      }
     ],
 
 
@@ -648,7 +691,7 @@ export default function LotusRiftTournamentPage() {
       },
 
       {
-        id: 'Anazthazia#CR420',
+        id: 'Arvey#0615',
         role: 'ADC'
       },
 
@@ -712,7 +755,40 @@ export default function LotusRiftTournamentPage() {
     // ======================================================
 
     'Cosa nostra': [
-      {}, {}, {}, {}, {}, {}, {}
+      {
+        id: 'Khaivツ#DIFF',
+        role: 'TOP'
+      }, 
+      
+      {
+        id: 'Valcaster#ALFA',
+        role: 'JUNGLA'
+      }, 
+      
+      {
+        id: 'dark#green',
+        role: 'MID'
+      }, 
+      
+      {
+        id: 'Seine liebe#Soul',
+        role: 'ADC'
+      }, 
+      
+      {
+        id: 'Adapthing#Two',
+        role: 'SUP'
+      }, 
+      
+      {
+        id: 'Tiktokdelpatio16#JG1',
+        role: 'SUPLENTE',
+      }, 
+      
+      {
+        id: 'Я Σ N Z O 亞瑟#1997',
+        role: 'SUPLENTE 2'
+      }
     ],
 
 
