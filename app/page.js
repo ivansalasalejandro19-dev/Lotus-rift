@@ -4,14 +4,7 @@ import { MessageCircle } from "lucide-react"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { db } from "./lib/firebase"
-import {
-  doc,
-  getDoc,
-  onSnapshot,
-  updateDoc,
-  increment,
-  collection
-} from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore"
 
 export default function LotusRiftTournamentPage() {
 
@@ -20,6 +13,7 @@ export default function LotusRiftTournamentPage() {
   const [teams, setTeams] = useState([])
 const [roster, setRoster] = useState({})
 const [loading, setLoading] = useState(true)
+const [teamLogos, setTeamLogos] = useState({})
 
 
   useEffect(() => {
@@ -61,6 +55,13 @@ const [loading, setLoading] = useState(true)
   }
 
   loadTeams()
+  if (snap.exists()) {
+  const data = snap.data()
+
+  setTeams(data.teams || [])
+  setRoster(data.roster || {})
+  setTeamLogos(data.teamLogos || {})
+}
 }, [])
 
   const tournamentInfo = {
@@ -84,21 +85,7 @@ const [loading, setLoading] = useState(true)
   const discordLink = 'https://discord.gg/nVyrHkeCn5'
 
 
-  // ======================================================
-  // LOGOS OFICIALES
-  // ======================================================
-  //
-  // GUARDAR TODOS LOS LOGOS EN:
-  //
-  // /public/logos/
-  //
-  // EJEMPLOS:
-  //
-  // /public/logos/equipo1.png
-  // /public/logos/equipo2.png
-  //
-  // ======================================================
-
+  
   const schedule = [
     {
       date: '4 Julio',
