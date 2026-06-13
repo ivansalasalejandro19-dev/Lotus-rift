@@ -32,56 +32,23 @@ const teams = [
   ];
 
 const teamLogos = {
-
-    // Sᴍᴀᴄᴋᴅᴏᴡɴ
-    'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
-
-    // T502
-    'T502': '/logos/T502.png',
-
-    // Rokurominos
-    'Rokurominos': '/logos/rku.png',
-
-    // overextended
-    'overextended': '/logos/overextended.png',
-
-    // Huesitos Proyect
-    'Huesitos Proyect': '/logos/huesitos.png',
-
-    // HaTsu
-    'HaTsu': '/logos/hatsu.png',
-
-    // Golden Fenix-Z
-    'Golden Fenix-Z': '/logos/golden_fenix_z.png',
-
-    // Nahuales
-    'Nahuales': '/logos/nahuales.png',
-
-    // Ice Gold
-    'Ice Gold': '/logos/ice_gold.png',
-
-    // ÆSIIR Go Legends
-    'ÆSIIR Go Legends': '/logos/ae_siir_go_legends.png',
-
-    // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
-    'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
-
-    // Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ
-    'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': '/logos/valhalla_legacy.png',
-
-    // Fʟᴀᴡʟᴇss
-    'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
-
-    // Secret Society
-    'Secret Society': '/logos/secret_society.png',
-
-    // Cosa nostra
-    'Cosa nostra': '/logos/cosa_nostra.png',
-
-    // Astral Gaming
-    'Astral Gaming': '/logos/Astral_gaming.png'
-
-  }
+  'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
+  'T502': '/logos/T502.png',
+  'Rokurominos': '/logos/rku.png',
+  'overextended': '/logos/overextended.png',
+  'Huesitos Proyect': '/logos/huesitos.png',
+  'HᴀTsᴜ': '/logos/hatsu.png',
+  'Gᴏʟᴅᴇɴ Fᴇɴɪx- Z': '/logos/golden_fenix_z.png',
+  'Nᴀʜᴜᴀʟᴇs': '/logos/nahuales.png',
+  'Ice Gold': '/logos/ice_gold.png',
+  'ÆSIIR Gᴏ Lᴇɢᴇɴᴅs': '/logos/ae_siir_go_legends.png',
+  'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
+  'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': '/logos/valhalla_legacy.png',
+  'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
+  'Secret Society': '/logos/secret_society.png',
+  'Cosa nostra': '/logos/cosa_nostra.png',
+  'Astral Gaming': '/logos/Astral_gaming.png'
+};
 
 const roster = {
 
@@ -857,25 +824,41 @@ const roster = {
 ];
 
 const teamIds = {
-  "Nᴀʜᴜᴀʟᴇs": "nahuales",
-  "Fʟᴀᴡʟᴇss": "flawless",
-  "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs": "aesiir",
-  "Astral Gaming": "astral",
-  "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ": "overextended",
-  "Gᴏʟᴅᴇɴ Fᴇɴɪx- Z": "golden_fenix",
-  "T502": "t502",
   "Sᴍᴀᴄᴋᴅᴏᴡɴ": "smackdown",
-  "Cᴏsᴀ Nᴏsᴛʀᴀ": "cosa_nostra",
-  "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ": "huesitos",
-  "Iᴄᴇ ɢᴏʟᴅ": "ice_gold",
-  "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs": "shadow_reapers",
-  "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ": "secret_society",
+  "T502": "t502",
   "Rokurominos": "rokurominos",
+  "overextended": "overextended",
+  "Huesitos Proyect": "huesitos",
   "HᴀTsᴜ": "hatsu",
-  "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ": "valhalla_legacy"
+  "Gᴏʟᴅᴇɴ Fᴇɴɪx- Z": "golden_fenix",
+  "Nᴀʜᴜᴀʟᴇs": "nahuales",
+  "Ice Gold": "ice_gold",
+  "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs": "aesiir",
+  "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs": "shadow_reapers",
+  "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ": "valhalla_legacy",
+  "Fʟᴀᴡʟᴇss": "flawless",
+  "Secret Society": "secret_society",
+  "Cosa nostra": "cosa_nostra",
+  "Astral Gaming": "astral"
 };
 
 async function upload() {
+
+    for (const team of teams) {
+  console.log(team, "->", teamIds[team]);
+
+  if (!teamLogos[team]) {
+    console.log("FALTA LOGO:", team);
+    continue;
+  }
+
+  await setDoc(doc(db, "teams", teamIds[team]), {
+    name: team,
+    logo: teamLogos[team],
+    players: roster[team] || [],
+    updatedAt: Date.now(),
+  });
+}
 
   // Config
   await setDoc(doc(db, "config", "teams"), {
@@ -887,26 +870,22 @@ async function upload() {
 
   // Equipos
   for (const team of teams) {
-    await setDoc(
-      doc(db, "teams", teamIds[team]),
-      {
-        name: team,
-        logo: teamLogos[team],
-        players: roster[team] || [],
-        updatedAt: Date.now(),
-      }
-    );
+    console.log(team, "->", teamIds[team]);
+
+    await setDoc(doc(db, "teams", teamIds[team]), {
+      name: team,
+      logo: teamLogos[team],
+      players: roster[team] || [],
+      updatedAt: Date.now(),
+    });
   }
 
   // Partidos
   for (const match of matches) {
-    await setDoc(
-      doc(db, "matches", match.id),
-      match
-    );
+    await setDoc(doc(db, "matches", match.id), match);
   }
 
-  console.log("Todo subido correctamente");
+  console.log("✅ Todo subido correctamente");
 }
 
-upload();
+upload().catch(console.error);
