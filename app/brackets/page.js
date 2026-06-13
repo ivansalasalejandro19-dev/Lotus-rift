@@ -465,14 +465,24 @@ const percent2 = totalVotes
 
                                 <div className="flex items-center gap-3 flex-1">
 
-                                  {team ? (
-  <img
-    src={team.logo}
-    className="w-9 h-9 rounded-lg object-cover"
-  />
-) : (
-  <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10" />
-)}
+                                  <div className="flex items-center gap-3 flex-1">
+
+  {team ? (
+    <img
+      src={team.logo}
+      className="w-9 h-9 rounded-lg object-cover"
+    />
+  ) : (
+    <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10" />
+  )}
+
+  <div className="flex-1 text-center">
+    <span className="font-bold text-white">
+      {team?.name || "TBD"}
+    </span>
+  </div>
+
+</div>
 
                                   <div className="flex-1 text-center">
                                     <span className="font-bold text-white">
@@ -830,7 +840,22 @@ const percent2 = totalVotes
       <div className="w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[2rem] border border-pink-500/20 bg-zinc-950 p-5 md:p-8 relative">
 
       <button
-        onClick={() => setSelectedMatch(null)}
+        onClick={() =>
+  setSelectedMatch({
+    ...match,
+    stage: "OCTAVOS DE FINAL",
+    format: "BO1",
+
+    logo1: match.team1?.logo,
+    logo2: match.team2?.logo,
+
+    team1: match.team1?.name,
+    team2: match.team2?.name,
+
+    players1: match.team1?.players || [],
+    players2: match.team2?.players || [],
+  })
+}
         className="absolute top-5 right-5 text-zinc-400 hover:text-white"
       >
         ✕

@@ -18,8 +18,8 @@ const teams = [
     'overextended',
     'Huesitos Proyect',
     'HᴀTsᴜ',
-    'Gᴏʟᴅᴇɴ Fᴇɴɪx- Z',
-    'Nᴀʜᴜᴀʟᴇs',
+    'Gᴏʟᴅᴇɴ Fᴇɴɪx-Z',
+    'KT E Sports',
     'Ice Gold',
     'ÆSIIR Gᴏ Lᴇɢᴇɴᴅs',
     'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
@@ -38,8 +38,8 @@ const teamLogos = {
   'overextended': '/logos/overextended.png',
   'Huesitos Proyect': '/logos/huesitos.png',
   'HᴀTsᴜ': '/logos/hatsu.png',
-  'Gᴏʟᴅᴇɴ Fᴇɴɪx- Z': '/logos/golden_fenix_z.png',
-  'Nᴀʜᴜᴀʟᴇs': '/logos/nahuales.png',
+  'Gᴏʟᴅᴇɴ Fᴇɴɪx-Z': '/logos/golden_fenix_z.png',
+  'KT E Sports': '/logos/KTESports.png',
   'Ice Gold': '/logos/ice_gold.png',
   'ÆSIIR Gᴏ Lᴇɢᴇɴᴅs': '/logos/ae_siir_go_legends.png',
   'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
@@ -267,10 +267,10 @@ const roster = {
 
 
     // ======================================================
-    // HaTsu
+    // HᴀTsᴜ
     // ======================================================
 
-    'HaTsu': [
+    'HᴀTsᴜ': [
       {
         id: 'HTS Unfair#9090',
         role: 'TOP',
@@ -307,10 +307,10 @@ const roster = {
 
 
     //======================================================
-    // Golden Fenix-Z
+    // Gᴏʟᴅᴇɴ Fᴇɴɪx-Z
     // ======================================================
 
-    'Golden Fenix-Z': [
+    'Gᴏʟᴅᴇɴ Fᴇɴɪx-Z': [
       {
         id: 'G7龙 Alejoo#Ñupra',
         role: 'TOP'
@@ -345,10 +345,10 @@ const roster = {
 
 
     // ======================================================
-    // Nahuales
+    // KT E Sports
     // ======================================================
 
-    'Nahuales': [
+    'KT E Sports': [
       {
         id: 'Alejo#0910',
         role: 'TOP'
@@ -429,10 +429,10 @@ const roster = {
 
 
     // ======================================================
-    // ÆSIIR Go Legends
+    // ÆSIIR Gᴏ Lᴇɢᴇɴᴅs
     // ======================================================
 
-    'ÆSIIR Go Legends': [
+    'ÆSIIR Gᴏ Lᴇɢᴇɴᴅs': [
       {
         id: 'Koer#fr15',
         role: 'TOP'
@@ -721,7 +721,7 @@ const roster = {
     id: "octavos1",
     stage: "octavos",
     order: 1,
-    team1: "nahuales",
+    team1: "kt_esports",
     team2: "flawless",
     score1: 0,
     score2: 0,
@@ -830,8 +830,8 @@ const teamIds = {
   "overextended": "overextended",
   "Huesitos Proyect": "huesitos",
   "HᴀTsᴜ": "hatsu",
-  "Gᴏʟᴅᴇɴ Fᴇɴɪx- Z": "golden_fenix",
-  "Nᴀʜᴜᴀʟᴇs": "nahuales",
+  "Gᴏʟᴅᴇɴ Fᴇɴɪx-Z": "golden_fenix",
+  "KT E Sports": "kt_esports",
   "Ice Gold": "ice_gold",
   "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs": "aesiir",
   "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs": "shadow_reapers",
