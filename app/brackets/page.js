@@ -64,401 +64,6 @@ function TeamSlot({ team, loser = false, large = false }) {
   )
 }
 
-/* =========================================================
-   OCTAVOS
-========================================================= */
-
-const octavos = [
-  {
-    team1: { name: "Nᴀʜᴜᴀʟᴇs", logo: "/logos/nahuales.png", score: 0 },
-    team2: { name: "Fʟᴀᴡʟᴇss", logo: "/logos/flawless.png", score: 0 },
-  },
-  {
-    team1: { name: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs", logo: "/logos/ae_siir_go_legends.png", score: 0 },
-    team2: { name: "Astral Gaming", logo: "/logos/Astral_gaming.png", score: 0 },
-  },
-  {
-    team1: { name: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ", logo: "/logos/overextended.png", score: 0 },
-    team2: { name: "Gᴏʟᴅᴇɴ Fᴇɴɪx- Z", logo: "/logos/golden_fenix_z.png", score: 0 },
-  },
-  {
-    team1: { name: "T502", logo: "/logos/T502.png", score: 0 },
-    team2: { name: "Sᴍᴀᴄᴋᴅᴏᴡɴ", logo: "/logos/smackdown.png", score: 0 },
-  },
-  {
-    team1: { name: "Cᴏsᴀ Nᴏsᴛʀᴀ", logo: "/logos/cosa_nostra.png", score: 0 },
-    team2: { name: "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ", logo: "/logos/huesitos.png", score: 0 },
-  },
-  {
-    team1: { name: "Iᴄᴇ ɢᴏʟᴅ", logo: "/logos/ice_gold.png", score: 0 },
-    team2: { name: "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs", logo: "/logos/shadow_reapers.png", score: 0 },
-  },
-  {
-    team1: { name: "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ", logo: "/logos/secret_society.png", score: 0 },
-    team2: { name: "Rᴏᴋᴜʀᴏᴍɪɴᴏs", logo: "/logos/rku.png", score: 0 },
-  },
-  {
-    team1: { name: "HᴀTsᴜ", logo: "/logos/hatsu.png", score: 0 },
-    team2: { name: "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ", logo: "/logos/valhalla_legacy.png", score: 0 },
-  },
-]
-
-/* =========================================================
-   CUARTOS (BO3)
-========================================================= */
-
-const quarterFinals = [
-  {
-    team1: getWinner(octavos[0], 1),
-    team2: getWinner(octavos[1], 1),
-    score1: 0,
-    score2: 0,
-  },
-  {
-    team1: getWinner(octavos[2], 1),
-    team2: getWinner(octavos[3], 1),
-    score1: 0,
-    score2: 0,
-  },
-  {
-    team1: getWinner(octavos[4], 1),
-    team2: getWinner(octavos[5], 1),
-    score1: 0,
-    score2: 0,
-  },
-  {
-    team1: getWinner(octavos[6], 1),
-    team2: getWinner(octavos[7], 1),
-    score1: 0,
-    score2: 0,
-  },
-]
-
-/* =========================================================
-   SEMIS (BO5)
-========================================================= */
-
-const semiFinals = [
-  {
-    team1:
-      quarterFinals[0].score1 >= 2
-        ? quarterFinals[0].team1
-        : quarterFinals[0].score2 >= 2
-        ? quarterFinals[0].team2
-        : null,
-
-    team2:
-      quarterFinals[1].score1 >= 2
-        ? quarterFinals[1].team1
-        : quarterFinals[1].score2 >= 2
-        ? quarterFinals[1].team2
-        : null,
-
-    score1: 0,
-    score2: 0,
-  },
-
-  {
-    team1:
-      quarterFinals[2].score1 >= 2
-        ? quarterFinals[2].team1
-        : quarterFinals[2].score2 >= 2
-        ? quarterFinals[2].team2
-        : null,
-
-    team2:
-      quarterFinals[3].score1 >= 2
-        ? quarterFinals[3].team1
-        : quarterFinals[3].score2 >= 2
-        ? quarterFinals[3].team2
-        : null,
-
-    score1: 0,
-    score2: 0,
-  },
-]
-
-/* =========================================================
-   FINAL
-========================================================= */
-
-const finalMatch = {
-  team1:
-    semiFinals[0].score1 >= 3
-      ? semiFinals[0].team1
-      : semiFinals[0].score2 >= 3
-      ? semiFinals[0].team2
-      : null,
-
-  team2:
-    semiFinals[1].score1 >= 3
-      ? semiFinals[1].team1
-      : semiFinals[1].score2 >= 3
-      ? semiFinals[1].team2
-      : null,
-
-  score1: 0,
-  score2: 0,
-}
-
-const matchDetails = [
-  {
-    id: 1,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "Nᴀʜᴜᴀʟᴇs",
-    logo1: "/logos/nahuales.png",
-
-    team2: "Fʟᴀᴡʟᴇss",
-    logo2: "/logos/flawless.png",
-
-    players1: [
-      { name: "Zero" },
-      { name: "Biggwall" },
-      { name: "MyBelleGi" },
-      { name: "射手 Krum" },
-      { name: "TikTokReaper" },
-    ],
-
-    players2: [
-      { name: "LR BausSon" },
-      { name: "RitroxZ" },
-      { name: "Hide on LATAM" },
-      { name: "Arvey" },
-      { name: "Meffy" },
-    ],
-
-    votes1: 65,
-    votes2: 35,
-    totalVotes: 100,
-  },
-
-  {
-    id: 2,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs",
-    logo1: "/logos/ae_siir_go_legends.png",
-
-    team2: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ",
-    logo2: "/logos/joyita_gaming.png",
-
-    players1: [
-      { name: "Koer" },
-      { name: "Hxdes Perez" },
-      { name: "Robi" },
-      { name: "Kino 縁" },
-      { name: "The Unforgiven" },
-    ],
-
-    players2: [
-      { name: "xHiroyukix" },
-      { name: "Jhon Wuju Alfa" },
-      { name: "Zerohz" },
-      { name: "Luminous 고수" },
-      { name: "Elophobia" },
-    ],
-
-    votes1: 50,
-    votes2: 50,
-    totalVotes: 0,
-  },
-
-  {
-    id: 3,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ",
-    logo1: "/logos/overextended.png",
-
-    team2: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs",
-    logo2: "/logos/golden_dragons.png",
-
-    players1: [
-      { name: "M3XC1T4" },
-      { name: "Aplastador99" },
-      { name: "Passionfruit" },
-      { name: "Da Vinci" },
-      { name: "sebdra" },
-    ],
-
-    players2: [
-      { name: "G7龙Alejoo" },
-      { name: "Wirtz" },
-      { name: "G7龙 Cheemz" },
-      { name: "Just Supra" },
-      { name: "G7 Nestior" },
-    ],
-
-    votes1: 50,
-    votes2: 50,
-    totalVotes: 0,
-  },
-
-  {
-    id: 4,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "T502",
-    logo1: "/logos/T502.png",
-
-    team2: "Sᴍᴀᴄᴋᴅᴏᴡɴ",
-    logo2: "/logos/smackdown.png",
-
-    players1: [
-      { name: "playerslinky" },
-      { name: "愛 Liu Kam 愛" },
-      { name: "LW TheAngel" },
-      { name: "G0DZILLAKN1GHT" },
-      { name: "LilO" },
-    ],
-
-    players2: [
-      { name: "QQl" },
-      { name: "Zen" },
-      { name: "SD Zoldk" },
-      { name: "Hakuuuuuiiiii" },
-      { name: "Sunny CSS" },
-    ],
-
-    votes1: 50,
-    votes2: 50,
-    totalVotes: 0,
-  },
-
-  {
-    id: 5,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "Cᴏsᴀ Nᴏsᴛʀᴀ",
-    logo1: "/logos/cosa_nostra.png",
-
-    team2: "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ",
-    logo2: "/logos/huesitos.png",
-
-    players1: [
-      { name: "Jugador 1" },
-      { name: "Jugador 2" },
-      { name: "Jugador 3" },
-      { name: "Jugador 4" },
-      { name: "Jugador 5" },
-    ],
-
-    players2: [
-      { name: "junedvs" },
-      { name: "JACOP" },
-      { name: "TikTokPrimordial" },
-      { name: "I Blóód I" },
-      { name: "DoomScry" },
-    ],
-
-    votes1: 50,
-    votes2: 50,
-    totalVotes: 0,
-  },
-
-  {
-    id: 6,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "Iᴄᴇ ɢᴏʟᴅ",
-    logo1: "/logos/ice_gold.png",
-
-    team2: "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs",
-    logo2: "/logos/shadow_reapers.png",
-
-    players1: [
-      { name: "G7 Lugia ツ" },
-      { name: "G7 Vanderrr" },
-      { name: "大綠色格林奇先生" },
-      { name: "Burbuja" },
-      { name: "BKI Muss" },
-    ],
-
-    players2: [
-      { name: "Ackerman 死 ツ" },
-      { name: "SerCh" },
-      { name: "Arcament" },
-      { name: "KΞX償 D i a b l o" },
-      { name: "MarcecGD" },
-    ],
-
-    votes1: 50,
-    votes2: 50,
-    totalVotes: 0,
-  },
-
-  {
-    id: 7,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ",
-    logo1: "/logos/secret_society.png",
-
-    team2: "Rᴏᴋᴜʀᴏᴍɪɴᴏs",
-    logo2: "/logos/rku.png",
-
-    players1: [
-      { name: "Jugador 1" },
-      { name: "Jugador 2" },
-      { name: "Jugador 3" },
-      { name: "Jugador 4" },
-      { name: "Jugador 5" },
-    ],
-
-    players2: [
-      { name: "Gz TheTØPArtist" },
-      { name: "Jei ttv" },
-      { name: "Daniton" },
-      { name: "Romina" },
-      { name: "루발 GawrNikho メ" },
-    ],
-
-    votes1: 50,
-    votes2: 50,
-    totalVotes: 0,
-  },
-
-  {
-    id: 8,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    team1: "HᴀTsᴜ",
-    logo1: "/logos/hatsu.png",
-
-    team2: "Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ",
-    logo2: "/logos/new_alliance.png",
-
-    players1: [
-      { name: "HTS Unfair" },
-      { name: "HTS JAYCE BALVIN" },
-      { name: "HTS Jochelo" },
-      { name: "HTS Jhintonic#" },
-      { name: "HTS Nacatamalita" },
-    ],
-
-    players2: [
-      { name: "Jugador 1" },
-      { name: "Jugador 2" },
-      { name: "Jugador 3" },
-      { name: "Jugador 4" },
-      { name: "Jugador 5" },
-    ],
-
-    votes1: 50,
-    votes2: 50,
-    totalVotes: 0,
-  },
-]
-
 const VOTE_STORAGE_KEY = "lotusVotedMatches_v2"
 
 export default function LotusRift() {
@@ -476,6 +81,27 @@ const octavosFirebase = matches
     team1: teams[match.team1],
     team2: teams[match.team2],
   }))
+
+  const quarterFinalsFirebase = matches
+  .filter(match => match.stage === "cuartos")
+  .sort((a, b) => a.order - b.order)
+  .map(match => ({
+    ...match,
+    team1: teams[match.team1],
+    team2: teams[match.team2],
+  }))
+
+  const semiFinalsFirebase = matches
+  .filter(match => match.stage === "semis")
+  .sort((a, b) => a.order - b.order)
+  .map(match => ({
+    ...match,
+    team1: teams[match.team1],
+    team2: teams[match.team2],
+  }))
+
+  const finalFirebase =
+matches.find(match => match.stage === "final")
 
 
   useEffect(() => {
@@ -818,7 +444,7 @@ const percent2 = totalVotes
 
                 <div className="space-y-20">
 
-                  {quarterFinals.map((match, item) => (
+                  {quarterFinalsFirebase.map((match, item) => (
                     <div key={item} className="relative">
 
                       <div className="absolute -left-12 top-1/2 flex items-center">
@@ -883,7 +509,7 @@ const percent2 = totalVotes
 
                 <div className="space-y-44">
 
-                  {semiFinals.map((match, item) => (
+                  {semiFinalsFirebase.map((match, item) => (
                     <div key={item} className="relative">
 
                       <div className="absolute -left-14 top-1/2 flex items-center">
@@ -975,8 +601,8 @@ const percent2 = totalVotes
                     <div className="space-y-5">
 
                       {[
-  { team: finalMatch.team1, score: finalMatch.score1 },
-  { team: finalMatch.team2, score: finalMatch.score2 },
+  { team: teams[finalFirebase?.team1], score: finalFirebase?.score1 },
+  { team: teams[finalFirebase?.team2], score: finalFirebase?.score2 },
 ].map(({ team, score }, i) => (
                         <div key={i}>
 
@@ -1095,7 +721,20 @@ const percent2 = totalVotes
               </div>
 
               <button
-  onClick={() => setSelectedMatch(matchDetails[index])}
+  onClick={() =>
+  setSelectedMatch({
+    id: match.id,
+    stage: match.stage,
+    format: match.format,
+    team1: match.team1?.name,
+    logo1: match.team1?.logo,
+    players1: match.team1?.players || [],
+
+    team2: match.team2?.name,
+    logo2: match.team2?.logo,
+    players2: match.team2?.players || [],
+  })
+}
   className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
 >
   VER DETALLES
@@ -1160,7 +799,20 @@ const percent2 = totalVotes
       </div>
 
      <button
-  onClick={() => setSelectedMatch(matchDetails[index + 4])}
+  onClick={() =>
+  setSelectedMatch({
+    id: match.id,
+    stage: match.stage,
+    format: match.format,
+    team1: match.team1?.name,
+    logo1: match.team1?.logo,
+    players1: match.team1?.players || [],
+
+    team2: match.team2?.name,
+    logo2: match.team2?.logo,
+    players2: match.team2?.players || [],
+  })
+}
   className="w-full md:w-auto px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
   >
     VER DETALLES
