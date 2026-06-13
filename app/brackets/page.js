@@ -5,7 +5,8 @@ import {
   doc,
   onSnapshot,
   updateDoc,
-  increment
+  increment,
+  collection
 } from "firebase/firestore"
 import { db } from "../lib/firebase"
 import { motion } from "framer-motion"
@@ -14,6 +15,7 @@ import {
   MessageCircle,
   MessagesSquare
 } from "lucide-react"
+
 
 /* =========================================================
    HELPERS
@@ -464,6 +466,17 @@ export default function LotusRift() {
   const [votes, setVotes] = useState({})
   const [votedMatches, setVotedMatches] = useState({})
   const [fireVotes, setFireVotes] = useState({})
+  const [teams, setTeams] = useState({})
+const [matches, setMatches] = useState([])
+const octavosFirebase = matches
+  .filter(match => match.stage === "octavos")
+  .sort((a, b) => a.order - b.order)
+  .map(match => ({
+    ...match,
+    team1: teams[match.team1],
+    team2: teams[match.team2],
+  }))
+
 
   useEffect(() => {
   const savedVotedMatches = localStorage.getItem(VOTE_STORAGE_KEY)
@@ -546,6 +559,51 @@ const percent1 = totalVotes
 const percent2 = totalVotes
   ? Math.round((firebaseVotes2 / totalVotes) * 100)
   : 50
+
+  useEffect(() => {
+
+  const unsubscribeTeams = onSnapshot(
+    collection(db, "teams"),
+    (snapshot) => {
+
+      const data = {}
+
+      snapshot.forEach(doc => {
+
+        data[doc.id] = doc.data()
+
+      })
+
+      setTeams(data)
+
+    }
+  )
+
+  const unsubscribeMatches = onSnapshot(
+    collection(db, "matches"),
+    (snapshot) => {
+
+      const data = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }))
+
+      data.sort((a, b) => a.order - b.order)
+
+      setMatches(data)
+
+    }
+  )
+
+  return () => {
+
+    unsubscribeTeams()
+
+    unsubscribeMatches()
+
+  }
+
+}, [])
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -696,7 +754,7 @@ const percent2 = totalVotes
 
                 <div className="space-y-6">
 
-                  {octavos.map((match, index) => (
+                  {octavosFirebase.map((match, index) => (
                     <div
                       key={index}
                       className="w-[260px] rounded-2xl bg-zinc-900/80 border border-white/10 p-5"
@@ -1002,7 +1060,7 @@ const percent2 = totalVotes
 
         <div className="space-y-5">
 
-          {octavos.slice(0, 4).map((match, index) => (
+          {octavosFirebase.slice(0, 4).map((match, index) => (
             <div
               key={index}
               className="rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl p-6 flex flex-col md:flex-row items-center gap-5 md:justify-between"
@@ -1068,7 +1126,7 @@ const percent2 = totalVotes
 
 <div className="space-y-5">
 
-  {octavos.slice(4, 8).map((match, index) => (
+  {octavosFirebase.slice(4, 8).map((match, index) => (
 
     <div
       key={index + 4}

@@ -2,9 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "...",
-  authDomain: "...",
-  projectId: "...",
+  apiKey: "AIzaSyCpZYAfrdcgyD2rc1Jk__bnyYyhFuhZxXY",
+  authDomain: "lotus-rift.firebaseapp.com",
+  projectId: "lotus-rift",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -17,11 +17,11 @@ const teams = [
     'Rokurominos',
     'overextended',
     'Huesitos Proyect',
-    'HaTsu',
-    'Golden Fenix-Z',
-    'Nahuales',
+    'HᴀTsᴜ',
+    'Gᴏʟᴅᴇɴ Fᴇɴɪx- Z',
+    'Nᴀʜᴜᴀʟᴇs',
     'Ice Gold',
-    'ÆSIIR Go Legends',
+    'ÆSIIR Gᴏ Lᴇɢᴇɴᴅs',
     'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
     'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ',
     'Fʟᴀᴡʟᴇss',
@@ -30,6 +30,58 @@ const teams = [
     'Astral Gaming'
 
   ];
+
+const teamLogos = {
+
+    // Sᴍᴀᴄᴋᴅᴏᴡɴ
+    'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
+
+    // T502
+    'T502': '/logos/T502.png',
+
+    // Rokurominos
+    'Rokurominos': '/logos/rku.png',
+
+    // overextended
+    'overextended': '/logos/overextended.png',
+
+    // Huesitos Proyect
+    'Huesitos Proyect': '/logos/huesitos.png',
+
+    // HaTsu
+    'HaTsu': '/logos/hatsu.png',
+
+    // Golden Fenix-Z
+    'Golden Fenix-Z': '/logos/golden_fenix_z.png',
+
+    // Nahuales
+    'Nahuales': '/logos/nahuales.png',
+
+    // Ice Gold
+    'Ice Gold': '/logos/ice_gold.png',
+
+    // ÆSIIR Go Legends
+    'ÆSIIR Go Legends': '/logos/ae_siir_go_legends.png',
+
+    // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
+    'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
+
+    // Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ
+    'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': '/logos/valhalla_legacy.png',
+
+    // Fʟᴀᴡʟᴇss
+    'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
+
+    // Secret Society
+    'Secret Society': '/logos/secret_society.png',
+
+    // Cosa nostra
+    'Cosa nostra': '/logos/cosa_nostra.png',
+
+    // Astral Gaming
+    'Astral Gaming': '/logos/Astral_gaming.png'
+
+  }
 
 const roster = {
 
@@ -696,17 +748,168 @@ const roster = {
 
   };
 
+  const matches = [
+
+  {
+    id: "octavos1",
+    stage: "octavos",
+    order: 1,
+    team1: "nahuales",
+    team2: "flawless",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-04",
+    hour: "19:00"
+  },
+
+  {
+    id: "octavos2",
+    stage: "octavos",
+    order: 2,
+    team1: "aesiir",
+    team2: "astral",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-04",
+    hour: "19:00"
+  },
+
+  {
+    id: "octavos3",
+    stage: "octavos",
+    order: 3,
+    team1: "overextended",
+    team2: "golden_fenix",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-04",
+    hour: "19:00"
+  },
+
+  {
+    id: "octavos4",
+    stage: "octavos",
+    order: 4,
+    team1: "t502",
+    team2: "smackdown",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-04",
+    hour: "19:00"
+  },
+
+  {
+    id: "octavos5",
+    stage: "octavos",
+    order: 5,
+    team1: "cosa_nostra",
+    team2: "huesitos",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-05",
+    hour: "19:00"
+  },
+
+  {
+    id: "octavos6",
+    stage: "octavos",
+    order: 6,
+    team1: "ice_gold",
+    team2: "shadow_reapers",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-05",
+    hour: "19:00"
+  },
+
+  {
+    id: "octavos7",
+    stage: "octavos",
+    order: 7,
+    team1: "secret_society",
+    team2: "rokurominos",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-05",
+    hour: "19:00"
+  },
+
+  {
+    id: "octavos8",
+    stage: "octavos",
+    order: 8,
+    team1: "hatsu",
+    team2: "valhalla_legacy",
+    score1: 0,
+    score2: 0,
+    format: "BO1",
+    date: "2026-07-05",
+    hour: "19:00"
+  }
+
+];
+
+const teamIds = {
+  "Nᴀʜᴜᴀʟᴇs": "nahuales",
+  "Fʟᴀᴡʟᴇss": "flawless",
+  "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs": "aesiir",
+  "Astral Gaming": "astral",
+  "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ": "overextended",
+  "Gᴏʟᴅᴇɴ Fᴇɴɪx- Z": "golden_fenix",
+  "T502": "t502",
+  "Sᴍᴀᴄᴋᴅᴏᴡɴ": "smackdown",
+  "Cᴏsᴀ Nᴏsᴛʀᴀ": "cosa_nostra",
+  "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ": "huesitos",
+  "Iᴄᴇ ɢᴏʟᴅ": "ice_gold",
+  "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs": "shadow_reapers",
+  "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ": "secret_society",
+  "Rokurominos": "rokurominos",
+  "HᴀTsᴜ": "hatsu",
+  "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ": "valhalla_legacy"
+};
+
 async function upload() {
   await setDoc(
-    doc(db, "config", "teams"),
-    {
-      teams,
-      roster,
-      updatedAt: Date.now(),
-    }
-  );
+  doc(db, "config", "teams"),
+  {
+    teams,
+    teamLogos,
+    roster,
+    updatedAt: Date.now(),
+  }
+);
 
   console.log("Subido correctamente");
+}
+
+for (const team of teams) {
+
+  await setDoc(
+    doc(db, "teams", teamIds[team]),
+    {
+      name: team,
+      logo: teamLogos[team],
+      players: roster[team] || [],
+      updatedAt: Date.now()
+    }
+  )
+
+}
+
+for(const match of matches){
+
+    await setDoc(
+        doc(db,"matches",match.id),
+        match
+    )
+
 }
 
 upload();
