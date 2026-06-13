@@ -916,26 +916,28 @@ const percent2 = totalVotes
         <div className="space-y-3">
 
           {selectedMatch.players1.map((player, i) => (
-            <div
-              key={i}
-              className="rounded-xl bg-white/5 p-3 text-center"
-            >
-              {player.name} {player.flag}
-            </div>
-          ))}
+  <div
+    key={i}
+    className="rounded-xl bg-white/5 p-3 flex justify-between items-center"
+  >
+    <span>{player.id}</span>
+    <span className="text-pink-300 font-bold">{player.role}</span>
+  </div>
+))}
 
         </div>
 
         <div className="space-y-3">
 
           {selectedMatch.players2.map((player, i) => (
-            <div
-              key={i}
-              className="rounded-xl bg-white/5 p-3 text-center"
-            >
-              {player.name} {player.flag}
-            </div>
-          ))}
+  <div
+    key={i}
+    className="rounded-xl bg-white/5 p-3 flex justify-between items-center"
+  >
+    <span>{player.id}</span>
+    <span className="text-pink-300 font-bold">{player.role}</span>
+  </div>
+))}
 
         </div>
 
