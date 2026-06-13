@@ -111,8 +111,8 @@ export default function LotusRiftTournamentPage() {
     // Cosa nostra
     'Cosa nostra': '/logos/cosa_nostra.png',
 
-    // Joyita Gaming
-    'Joyita Gaming': '/logos/joyita_gaming.png'
+    // Astral Gaming
+    'Astral Gaming': '/logos/Astral_gaming.png'
 
   }
 
@@ -144,7 +144,7 @@ export default function LotusRiftTournamentPage() {
     'Fʟᴀᴡʟᴇss',
     'Secret Society',
     'Cosa nostra',
-    'Joyita Gaming'
+    'Astral Gaming'
 
   ]
 
@@ -286,7 +286,7 @@ export default function LotusRiftTournamentPage() {
       },
 
       {
-        id: 'Daniton#too',
+        id: ' ElKratoz#MID',
         role: 'MID',
       },
 
@@ -470,7 +470,7 @@ export default function LotusRiftTournamentPage() {
 
     'Nahuales': [
       {
-        id: 'Zero#bbxx',
+        id: 'Alejo#0910',
         role: 'TOP'
       }, 
       
@@ -485,7 +485,7 @@ export default function LotusRiftTournamentPage() {
       }, 
       
       {
-        id: '射手 Krum#猫头鹰',
+        id: 'Krum#Fαith',
         role: 'ADC'
       }, 
       
@@ -495,7 +495,7 @@ export default function LotusRiftTournamentPage() {
       }, 
       
       {
-        id: 'JXCKi120#yyds6',
+        id: 'Twitch Sleepwrl#XXI',
         role: 'SUPLENTE',
       }, {}
     ],
@@ -793,38 +793,43 @@ export default function LotusRiftTournamentPage() {
 
 
     // ======================================================
-    // Joyita Gaming
+    // Astral Gaming
     // ======================================================
 
-    'Joyita Gaming': [
+    'Astral Gaming': [
       {
-        id: 'xHiroyukix#gamer',
+        id: 'Zero#bbx',
         role: 'TOP'
       },
 
       {
-        id: 'Jhon Wuju Alfa#Jhon',
+        id: 'Artemis 縁#Abi',
         role: 'JUNGLA'
       },
 
       {
-        id: 'Zerohz#NICA',
+        id: 'Cloxer#AMIN',
         role: 'MID'
       },
 
       {
-        id: 'Luminous 고수#Kanto',
+        id: 'LaloSalamanca#INF',
         role: 'ADC'
       },
 
       {
-        id: 'Elophobia#0301',
+        id: 'lifes a mess#没有爱',
         role: 'SUP'
       },
 
       {
-        id: '莉莉丝丨EVE#XOXO ',
+        id: 'Ticamate#3674',
         role: 'SUPLENTE'
+      },
+
+      {
+        id: 'G7z Vox#EzAdc',
+        role: 'SUPLENTE 2'
       }
     ]
 

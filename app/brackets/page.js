@@ -73,11 +73,11 @@ const octavos = [
   },
   {
     team1: { name: "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs", logo: "/logos/ae_siir_go_legends.png", score: 0 },
-    team2: { name: "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ", logo: "/logos/joyita_gaming.png", score: 0 },
+    team2: { name: "Astral Gaming", logo: "/logos/Astral_gaming.png", score: 0 },
   },
   {
     team1: { name: "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ", logo: "/logos/overextended.png", score: 0 },
-    team2: { name: "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs", logo: "/logos/golden_dragons.png", score: 0 },
+    team2: { name: "Gᴏʟᴅᴇɴ Fᴇɴɪx- Z", logo: "/logos/golden_fenix_z.png", score: 0 },
   },
   {
     team1: { name: "T502", logo: "/logos/T502.png", score: 0 },
@@ -97,7 +97,7 @@ const octavos = [
   },
   {
     team1: { name: "HᴀTsᴜ", logo: "/logos/hatsu.png", score: 0 },
-    team2: { name: "Nᴇᴡ ᴀʟʟɪᴀɴᴄᴇ", logo: "/logos/new_alliance.png", score: 0 },
+    team2: { name: "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ", logo: "/logos/valhalla_legacy.png", score: 0 },
   },
 ]
 
