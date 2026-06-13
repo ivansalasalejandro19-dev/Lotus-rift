@@ -876,40 +876,37 @@ const teamIds = {
 };
 
 async function upload() {
-  await setDoc(
-  doc(db, "config", "teams"),
-  {
+
+  // Config
+  await setDoc(doc(db, "config", "teams"), {
     teams,
     teamLogos,
     roster,
     updatedAt: Date.now(),
-  }
-);
+  });
 
-  console.log("Subido correctamente");
-}
-
-for (const team of teams) {
-
-  await setDoc(
-    doc(db, "teams", teamIds[team]),
-    {
-      name: team,
-      logo: teamLogos[team],
-      players: roster[team] || [],
-      updatedAt: Date.now()
-    }
-  )
-
-}
-
-for(const match of matches){
-
+  // Equipos
+  for (const team of teams) {
     await setDoc(
-        doc(db,"matches",match.id),
-        match
-    )
+      doc(db, "teams", teamIds[team]),
+      {
+        name: team,
+        logo: teamLogos[team],
+        players: roster[team] || [],
+        updatedAt: Date.now(),
+      }
+    );
+  }
 
+  // Partidos
+  for (const match of matches) {
+    await setDoc(
+      doc(db, "matches", match.id),
+      match
+    );
+  }
+
+  console.log("Todo subido correctamente");
 }
 
 upload();
