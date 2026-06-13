@@ -4,7 +4,14 @@ import { MessageCircle } from "lucide-react"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { db } from "./lib/firebase"
-import { doc, getDoc } from "firebase/firestore"
+import {
+  doc,
+  getDoc,
+  onSnapshot,
+  updateDoc,
+  increment,
+  collection
+} from "firebase/firestore"
 
 export default function LotusRiftTournamentPage() {
 
@@ -91,58 +98,6 @@ const [loading, setLoading] = useState(true)
   // /public/logos/equipo2.png
   //
   // ======================================================
-
-  const teamLogos = {
-
-    // Sᴍᴀᴄᴋᴅᴏᴡɴ
-    'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
-
-    // T502
-    'T502': '/logos/T502.png',
-
-    // Rokurominos
-    'Rokurominos': '/logos/rku.png',
-
-    // overextended
-    'overextended': '/logos/overextended.png',
-
-    // Huesitos Proyect
-    'Huesitos Proyect': '/logos/huesitos.png',
-
-    // HaTsu
-    'HaTsu': '/logos/hatsu.png',
-
-    // Golden Fenix-Z
-    'Golden Fenix-Z': '/logos/golden_fenix_z.png',
-
-    // Nahuales
-    'Nahuales': '/logos/nahuales.png',
-
-    // Ice Gold
-    'Ice Gold': '/logos/ice_gold.png',
-
-    // ÆSIIR Go Legends
-    'ÆSIIR Go Legends': '/logos/ae_siir_go_legends.png',
-
-    // Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs
-    'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
-
-    // Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ
-    'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': '/logos/valhalla_legacy.png',
-
-    // Fʟᴀᴡʟᴇss
-    'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
-
-    // Secret Society
-    'Secret Society': '/logos/secret_society.png',
-
-    // Cosa nostra
-    'Cosa nostra': '/logos/cosa_nostra.png',
-
-    // Astral Gaming
-    'Astral Gaming': '/logos/Astral_gaming.png'
-
-  }
 
   const schedule = [
     {
