@@ -42,11 +42,12 @@ const [teamLogos, setTeamLogos] = useState({})
       )
 
       if (snap.exists()) {
-        const data = snap.data()
+  const data = snap.data()
 
-        setTeams(data.teams || [])
-        setRoster(data.roster || {})
-      }
+  setTeams(data.teams || [])
+  setRoster(data.roster || {})
+  setTeamLogos(data.teamLogos || {})
+}
     } catch (err) {
       console.error(err)
     }
@@ -55,13 +56,6 @@ const [teamLogos, setTeamLogos] = useState({})
   }
 
   loadTeams()
-  if (snap.exists()) {
-  const data = snap.data()
-
-  setTeams(data.teams || [])
-  setRoster(data.roster || {})
-  setTeamLogos(data.teamLogos || {})
-}
 }, [])
 
   const tournamentInfo = {
