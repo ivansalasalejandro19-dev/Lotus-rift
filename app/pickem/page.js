@@ -24,6 +24,7 @@ export default function PickEmPage() {
   const [pickemLocked, setPickemLocked] = useState(false)
   const [teams, setTeams] = useState({})
 const [players, setPlayers] = useState([])
+const [riotId, setRiotId] = useState("")
 
 const router = useRouter()
 
@@ -48,6 +49,10 @@ const loadPickem = async () => {
   if (data.crystalBall) {
     setCrystalBallAnswers(data.crystalBall)
   }
+
+  if (data.riotId) {
+  setRiotId(data.riotId)
+}
 
   if (data.locked) {
     setPickemLocked(true)
@@ -134,6 +139,40 @@ if (!user) {
   teams={Object.values(teams)}
   players={players}
 />
+
+
+<div className="max-w-3xl mx-auto px-4 mb-12">
+  <div className="rounded-3xl border border-pink-500/20 bg-zinc-900/60 backdrop-blur-xl p-8">
+    
+    <h2 className="text-3xl font-black mb-3 bg-gradient-to-r from-pink-400 to-cyan-300 bg-clip-text text-transparent">
+      𝑅𝑖𝑜𝑡 𝐼𝐷
+    </h2>
+
+    <p className="text-zinc-400 mb-6">
+      𝐼𝑛𝑔𝑟𝑒𝑠𝑎 𝑡𝑢 𝑅𝑖𝑜𝑡 𝐼𝐷 𝑝𝑎𝑟𝑎 𝑝𝑜𝑑𝑒𝑟 𝑖𝑑𝑒𝑛𝑡𝑖𝑓𝑖𝑐𝑎𝑟𝑡𝑒 𝑠𝑖 𝑟𝑒𝑠𝑢𝑙𝑡𝑎𝑠 𝑔𝑎𝑛𝑎𝑑𝑜𝑟.
+    </p>
+
+    <input
+      type="text"
+      value={riotId}
+      disabled={pickemLocked}
+      onChange={(e) => setRiotId(e.target.value)}
+      placeholder="Ej: Faker#KR1"
+      className="
+        w-full
+        px-5
+        py-4
+        rounded-2xl
+        bg-black/40
+        border
+        border-white/10
+        focus:border-pink-500
+        outline-none
+      "
+    />
+  </div>
+</div>
+
         <PickemBracket
   user={user}
   crystalBallAnswers={crystalBallAnswers}

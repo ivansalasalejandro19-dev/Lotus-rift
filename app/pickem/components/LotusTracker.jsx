@@ -6,27 +6,27 @@ export default function LotusTracker() {
     {
       emoji: '🗼',
       value: 0,
-      label: 'Torres Destruidas'
+      label: '𝑇𝑜𝑟𝑟𝑒𝑠 𝐷𝑒𝑠𝑡𝑟𝑢𝑖𝑑𝑎𝑠'
     },
     {
       emoji: '🔥',
       value: 0,
-      label: 'Pentakills'
+      label: '𝑃𝑒𝑛𝑡𝑎𝑘𝑖𝑙𝑙𝑠'
     },
     {
       emoji: '🐉',
       value: 0,
-      label: 'Elder Dragons'
+      label: '𝐸𝑙𝑑𝑒𝑟 𝐷𝑟𝑎𝑔𝑜𝑛𝑠'
     },
     {
       emoji: '🧿',
       value: 0,
-      label: 'Barones Nashor'
+      label: '𝐵𝑎𝑟𝑜𝑛𝑒𝑠 𝑁𝑎𝑠𝘩𝑜𝑟'
     },
     {
       emoji: '⏱️',
       value: '00:00',
-      label: 'Partida Más Larga'
+      label: '𝑃𝑎𝑟𝑡𝑖𝑑𝑎 𝑀𝑎́𝑠 𝐿𝑎𝑟𝑔𝑎'
     }
   ]
 
@@ -42,11 +42,11 @@ export default function LotusTracker() {
         <div>
 
           <p className="uppercase tracking-[0.35em] text-pink-300 text-xs font-bold">
-            ESTADÍSTICAS
+            𝐸𝑆𝑇𝐴𝐷Í𝑆𝑇𝐼𝐶𝐴𝑆
           </p>
 
           <h2 className="text-4xl md:text-5xl font-black">
-            Lotus Tracker
+            𝐿𝑜𝑡𝑢𝑠 𝑇𝑟𝑎𝑐𝑘𝑒𝑟
           </h2>
 
         </div>

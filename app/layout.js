@@ -32,28 +32,31 @@ export const metadata = {
     "Predicciones LoL",
     "Comunidad Gamer",
     "League Tournament",
-    "LAN Tournament"
-  ]
+    "LAN Tournament",
+  ],
+  other: {
+    google: "notranslate",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="es"
+      translate="no"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#050108] text-white">
-
+      <body
+        translate="no"
+        className="min-h-full flex flex-col bg-[#050108] text-white"
+      >
         <AuthProvider>
-
           <Navbar />
 
           <main className="pt-24 flex-1">
             {children}
           </main>
-
         </AuthProvider>
-
       </body>
     </html>
   );

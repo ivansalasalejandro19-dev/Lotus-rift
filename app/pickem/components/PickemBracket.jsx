@@ -217,12 +217,12 @@ if (showSuccess) {
           </div>
 
           <h2 className="text-4xl font-black mb-4">
-            Predicciones Guardadas
+            𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛𝑒𝑠 𝐺𝑢𝑎𝑟𝑑𝑎𝑑𝑎𝑠
           </h2>
 
           <p className="text-white/70 mb-8">
-            Tus predicciones fueron registradas correctamente.
-            El Pick'Em ha quedado bloqueado.
+            𝑇𝑢𝑠 𝑝𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛𝑒𝑠 𝑓𝑢𝑒𝑟𝑜𝑛 𝑟𝑒𝑔𝑖𝑠𝑡𝑟𝑎𝑑𝑎𝑠 𝑐𝑜𝑟𝑟𝑒𝑐𝑡𝑎𝑚𝑒𝑛𝑡𝑒.
+            𝐸𝑙 𝑃𝑖𝑐𝑘'𝐸𝑚 𝘩𝑎 𝑞𝑢𝑒𝑑𝑎𝑑𝑜 𝑏𝑙𝑜𝑞𝑢𝑒𝑎𝑑𝑜.
           </p>
 
           <button
@@ -266,11 +266,11 @@ if (showSuccess) {
           </p>
 
           <h2 className="text-5xl font-black mt-4">
-            🏆 Prediccion de Bracket
+            🏆 𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛 𝑑𝑒 𝐵𝑟𝑎𝑐𝑘𝑒𝑡
           </h2>
 
           <p className="text-zinc-400 mt-4">
-            Predice todo el camino hacia el campeonato.
+            𝑃𝑟𝑒𝑑𝑖𝑐𝑒 𝑡𝑜𝑑𝑜 𝑒𝑙 𝑐𝑎𝑚𝑖𝑛𝑜 𝘩𝑎𝑐𝑖𝑎 𝑒𝑙 𝑐𝑎𝑚𝑝𝑒𝑜𝑛𝑎𝑡𝑜.
           </p>
         </div>
 
@@ -279,7 +279,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-pink-300 mb-8">
-            Octavos
+            𝑂𝑐𝑡𝑎𝑣𝑜𝑠
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -331,7 +331,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-cyan-300 mb-8">
-            Cuartos
+            𝐶𝑢𝑎𝑟𝑡𝑜𝑠
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -390,7 +390,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-violet-300 mb-8">
-            Semifinales
+            𝑆𝑒𝑚𝑖𝑓𝑖𝑛𝑎𝑙𝑒𝑠
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -449,7 +449,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-yellow-300 mb-8">
-            Final
+            𝐹𝑖𝑛𝑎𝑙
           </h3>
 
           <div className="max-w-xl mx-auto rounded-3xl border border-yellow-500/20 bg-white/5 p-8">
@@ -493,12 +493,12 @@ if (showSuccess) {
             </div>
 
             <p className="text-zinc-400 uppercase tracking-[0.3em] text-sm">
-              Campeón Predicho
+              𝐶𝑎𝑚𝑝𝑒𝑜́𝑛 𝑃𝑟𝑒𝑑𝑖𝑐𝘩𝑜
             </p>
 
             <h3 className="text-4xl font-black mt-4">
 
-              {champion || "Selecciona un campeón"}
+              {champion || "𝑆𝑒𝑙𝑒𝑐𝑐𝑖𝑜𝑛𝑎 𝑢𝑛 𝑐𝑎𝑚𝑝𝑒𝑜́𝑛"}
 
             </h3>
 
@@ -525,8 +525,8 @@ if (showSuccess) {
   >
 
     {locked
-      ? "✓ Predicciones Bloqueadas"
-      : "💾 Guardar Pick'Em"}
+      ? "✓ 𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛𝑒𝑠 𝑏𝑙𝑜𝑞𝑢𝑒𝑎𝑑𝑎𝑠"
+      : "💾 𝐺𝑢𝑎𝑟𝑑𝑎𝑟 𝑃𝑖𝑐𝑘'𝐸𝑚"}
 
   </button>
 
