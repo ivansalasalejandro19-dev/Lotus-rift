@@ -128,31 +128,27 @@ console.log("EMAIL:", user?.email)
 console.log("GUARDANDO...")
 
   await setDoc(
-    doc(db, "pickems", user.uid),
-    {
-  uid: user.uid,
+  doc(db, "pickems", user.uid),
+  {
+    uid: user.uid,
+    riotId,
+    username: user.displayName || user.email,
 
-  username:
-    user.displayName ||
-    user.email,
+    crystalBall: crystalBallAnswers,
 
-  crystalBall: crystalBallAnswers,
-
-  bracket: {
-        round16,
-        quarters,
-        semis,
-        champion: finalWinner
-      },
-
-      locked: true,
-
-      score: 0,
-
-      createdAt: Date.now()
+    bracket: {
+      round16,
+      quarters,
+      semis,
+      champion: finalWinner
     },
-    { merge: true }
-  )
+
+    locked: true,
+    score: 0,
+    createdAt: Date.now()
+  },
+  { merge: true }
+)
 
   setLocked(true)
 
