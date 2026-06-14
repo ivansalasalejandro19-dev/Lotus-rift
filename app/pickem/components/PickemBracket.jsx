@@ -24,7 +24,8 @@ const round16Matches = [
 export default function PickemBracket({
   user,
   crystalBallAnswers,
-  setPickemLocked
+  setPickemLocked,
+  riotId
 }) {
   const [round16, setRound16] = useState({})
   const [quarters, setQuarters] = useState({})
@@ -32,6 +33,7 @@ export default function PickemBracket({
   const [finalWinner, setFinalWinner] = useState(null)
   const [locked, setLocked] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  
 
   const quarterTeams = useMemo(() => {
     return [
@@ -122,6 +124,11 @@ console.log("EMAIL:", user?.email)
 
   if (Object.keys(crystalBallAnswers).length < 39) {
   alert("Completa todas las predicciones del Crystal Ball.")
+  return
+}
+
+if (!riotId.trim()) {
+  alert("Ingresa tu Riot ID.")
   return
 }
 

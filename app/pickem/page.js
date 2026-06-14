@@ -177,6 +177,7 @@ if (!user) {
   user={user}
   crystalBallAnswers={crystalBallAnswers}
   setPickemLocked={setPickemLocked}
+  riotId={riotId}
 />
 
         <LotusTracker />
