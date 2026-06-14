@@ -37,35 +37,24 @@ export default function ReglamentoPage() {
       {/* Header */}
       <section className="relative py-24 text-center">
         <motion.h1
-  initial={{ opacity: 0, y: -40 }}
-  animate={{
-    opacity: 1,
-    y: 0,
-    backgroundPosition: ["0%", "100%", "0%"],
-  }}
-  transition={{
-    duration: 8,
-    repeat: Infinity,
-  }}
-  style={{
-    backgroundSize: "200% 200%",
-  }}
-  className="
-    text-6xl
-    md:text-8xl
-    font-black
-    tracking-[0.25em]
-    bg-gradient-to-r
-    from-pink-400
-    via-fuchsia-300
-    to-cyan-300
-    bg-clip-text
-    text-transparent
-    drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]
-  "
->
-  𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
-</motion.h1>
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="
+text-6xl
+md:text-8xl
+font-black
+tracking-widest
+bg-gradient-to-r
+from-pink-400
+via-fuchsia-300
+to-cyan-300
+bg-clip-text
+text-transparent
+drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]
+"
+        >
+          𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
+        </motion.h1>
 
         <p className="
 mt-4
@@ -113,22 +102,7 @@ font-semibold
 group-hover:shadow-[0_0_90px_rgba(236,72,153,0.4)]
 transition-all
 duration-500">
-
-    <div className="absolute top-6 right-6 z-10">
-  <div className="
-    px-4
-    py-2
-    rounded-full
-    bg-black/70
-    backdrop-blur-xl
-    border
-    border-pink-500/20
-    text-pink-300
-    font-bold
-  ">
-    {index + 1} / {paginas.length}
-  </div>
-</div>
+    
                 <img
                   src={pagina}
                   alt={`Reglamento página ${index + 1}`}
