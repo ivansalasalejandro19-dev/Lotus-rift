@@ -32,7 +32,7 @@ export default function LoginButton() {
           onClick={logout}
           className="px-3 py-1 bg-red-500/20 rounded-lg text-red-300 hover:bg-red-500/30 transition"
         >
-          Logout
+          𝐿𝑂𝐺𝑂𝑈𝑇
         </button>
       </div>
     )
@@ -44,7 +44,7 @@ export default function LoginButton() {
         onClick={loginGoogle}
         className="px-4 py-2 rounded-xl bg-white/10 border border-white/10 hover:bg-white/20 transition"
       >
-        Google
+        𝐺𝑂𝑂𝐺𝐿𝐸
       </button>
 
       <a
@@ -52,7 +52,7 @@ export default function LoginButton() {
         className="px-4 py-2 rounded-xl bg-pink-500 text-white flex items-center gap-2 hover:scale-105 transition"
       >
         <Disc3 size={18} />
-        Discord
+        𝐷𝐼𝑆𝐶𝑂𝑅𝐷
       </a>
     </div>
   )

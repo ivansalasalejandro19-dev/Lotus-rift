@@ -96,7 +96,7 @@ export default function Navbar() {
               href="/"
               className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all"
             >
-              Inicio
+              𝐼𝑁𝐼𝐶𝐼𝑂
             </Link>
 
             <Link
@@ -104,7 +104,7 @@ export default function Navbar() {
               className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
             >
               <Swords size={16} />
-              Bracket
+              𝐵𝑅𝐴𝐶𝐾𝐸𝑇
             </Link>
 
             {user ? (
@@ -191,7 +191,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="px-4 py-4 rounded-xl bg-white/5"
             >
-              Inicio
+              𝐼𝑁𝐼𝐶𝐼𝑂
             </Link>
 
             <Link
@@ -199,7 +199,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="px-4 py-4 rounded-xl bg-white/5"
             >
-              Bracket
+              𝐵𝑅𝐴𝐶𝐾𝐸𝑇
             </Link>
 
             {user ? (

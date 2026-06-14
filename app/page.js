@@ -82,38 +82,38 @@ const [teamLogos, setTeamLogos] = useState({})
   
   const schedule = [
     {
-      date: '4 Julio',
-      matches: 'Octavos 1, 2, 3 y 4',
+      date: '4 ᴅᴇ Jᴜʟɪᴏ',
+      matches: 'Oᴄᴛᴀᴠᴏs 1, 2, 3 ʏ 4',
       format: 'Bo1'
     },
     {
-      date: '5 Julio',
-      matches: 'Octavos 5, 6, 7 y 8',
+      date: '5 ᴅᴇ Jᴜʟɪᴏ',
+      matches: 'Oᴄᴛᴀᴠᴏs 5, 6, 7 ʏ 8',
       format: 'Bo1'
     },
     {
-      date: '11 Julio',
-      matches: 'Cuartos 1 y 2',
+      date: '11 ᴅᴇ Jᴜʟɪᴏ',
+      matches: 'Cᴜᴀʀᴛᴏs 1 ʏ 2',
       format: 'Bo3'
     },
     {
-      date: '12 Julio',
-      matches: 'Cuartos 3 y 4',
+      date: '12 ᴅᴇ Jᴜʟɪᴏ',
+      matches: 'Cᴜᴀʀᴛᴏs 3 ʏ 4',
       format: 'Bo3'
     },
     {
-      date: '18 Julio',
-      matches: 'Semifinal 1',
+      date: '18 ᴅᴇ Jᴜʟɪᴏ',
+      matches: 'Sᴇᴍɪғɪɴᴀʟ 1',
       format: 'Bo5'
     },
     {
-      date: '19 Julio',
-      matches: 'Semifinal 2',
+      date: '19 ᴅᴇ Jᴜʟɪᴏ',
+      matches: 'Sᴇᴍɪғɪɴᴀʟ 2',
       format: 'Bo5'
     },
     {
-      date: '25 Julio',
-      matches: 'Final',
+      date: '25 ᴅᴇ Jᴜʟɪᴏ',
+      matches: 'Fɪɴᴀʟ',
       format: 'Bo5'
     }
   ]
@@ -164,7 +164,7 @@ const [teamLogos, setTeamLogos] = useState({})
 
 
           <p className="mt-8 text-lg text-white/70 max-w-xl leading-relaxed">
-            Unete a la comunidad de discord
+            Uɴᴇᴛᴇ ᴀ ʟᴀ ᴄᴏᴍᴜɴɪᴅᴀᴅ ᴅᴇ ᴅɪsᴄᴏʀᴅ
           </p>
 
 
@@ -177,7 +177,7 @@ const [teamLogos, setTeamLogos] = useState({})
               className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
             >
               <MessageCircle size={20} />
-              Comunidad de Whatsapp
+              Cᴏᴍᴜɴɪᴅᴀᴅ ᴅᴇ WʜᴀᴛsAᴘᴘ
             </a>
 
             <a
@@ -185,7 +185,7 @@ const [teamLogos, setTeamLogos] = useState({})
               target="_blank"
               className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition"
             >
-              Discord
+              Dɪsᴄᴏʀᴅ
             </a>
           </div>
         </div>
@@ -203,12 +203,12 @@ const [teamLogos, setTeamLogos] = useState({})
               <div className="absolute inset-0 rounded-full border border-pink-400/20 animate-ping" />
 
               <h3 className="text-4xl font-black mt-5 text-pink-200">
-                Lotus arena
+                𝐿𝑜𝑡𝑢𝑠 𝐴𝑟𝑒𝑛𝑎
               </h3>
 
 
               <p className="mt-4 text-white/60 leading-relaxed">
-                Donde el loto florece en combate.
+                𝐷𝑜𝑛𝑑𝑒 𝑒𝑙 𝑙𝑜𝑡𝑜 𝑓𝑙𝑜𝑟𝑒𝑐𝑒 𝑒𝑛 𝑐𝑜𝑚𝑏𝑎𝑡𝑒.
               </p>
             </div>
           </div>
@@ -220,7 +220,7 @@ const [teamLogos, setTeamLogos] = useState({})
       <section className="relative z-10 px-4 sm:px-6 lg:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 pb-20">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-5 sm:p-8 hover:bg-white/10 transition">
           <p className="uppercase tracking-[0.25em] text-white/40 text-sm">
-            Equipos
+            𝐸𝑄𝑈𝐼𝑃𝑂𝑆
           </p>
 
 
@@ -261,7 +261,7 @@ const [teamLogos, setTeamLogos] = useState({})
 
 
           <h3 className="text-2xl font-black mt-3 text-pink-200">
-            Fearless
+            𝐹𝐸𝐴𝑅𝐿𝐸𝑆𝑆
           </h3>
         </div>
       </section>
@@ -279,7 +279,7 @@ const [teamLogos, setTeamLogos] = useState({})
 
 
           <h3 className="text-3xl sm:text-5xl font-black mt-3">
-            Cronograma
+            𝐶𝑅𝑂𝑁𝑂𝐺𝑅𝐴𝑀𝐴
           </h3>
         </div>
 
@@ -322,7 +322,7 @@ const [teamLogos, setTeamLogos] = useState({})
           </p>
 
           <h3 className="text-3xl sm:text-5xl font-black mt-3">
-            Equipos
+            𝐸𝑄𝑈𝐼𝑃𝑂𝑆
           </h3>
         </div>
 

@@ -273,7 +273,7 @@ const percent2 = totalVotes
 </h2>
 
             <p className="mt-7 text-zinc-400 text-lg max-w-xl">
-              Unite a la comunidad de Discord y WhatsApp para estar al tanto de las últimas noticias, actualizaciones y sorpresas exclusivas del torneo.
+              Uɴɪᴛᴇ ᴀ ʟᴀ ᴄᴏᴍᴜɴɪᴅᴀᴅ ᴅᴇ Dɪsᴄᴏʀᴅ ʏ WʜᴀᴛsAᴘᴘ ᴘᴀʀᴀ ᴇsᴛᴀʀ ᴀʟ ᴛᴀɴᴛᴏ ᴅᴇ ʟᴀs ᴜ́ʟᴛɪᴍᴀs ɴᴏᴛɪᴄɪᴀs, ᴀᴄᴛᴜᴀʟɪᴢᴀᴄɪᴏɴᴇs ʏ sᴏʀᴘʀᴇsᴀs ᴇxᴄʟᴜsɪᴠᴀs ᴅᴇʟ ᴛᴏʀɴᴇᴏ.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -326,7 +326,7 @@ const percent2 = totalVotes
     </div>
 
     <a
-      href="https://www.twitch.tv/riotgames"
+      href="https://www.twitch.tv/skereeeexx"
       target="_blank"
       rel="noopener noreferrer"
       className="block relative group"
@@ -680,7 +680,7 @@ const percent2 = totalVotes
           <Play className="text-pink-400" />
 
           <h3 className="text-5xl font-black uppercase">
-            PRÓXIMOS PARTIDOS
+            𝑃𝑅𝑂𝑋𝐼𝑀𝑂𝑆 𝑃𝐴𝑅𝑇𝐼𝐷𝑂𝑆
           </h3>
         </div>
 
@@ -692,12 +692,12 @@ const percent2 = totalVotes
             </p>
 
             <p className="text-zinc-500 tracking-[0.2em] text-sm mt-1">
-              4 DE JULIO
+              4 ᴅᴇ Jᴜʟɪᴏ
             </p>
           </div>
 
           <div className="text-zinc-500 text-sm tracking-[0.25em] uppercase">
-            Octavos - Jornada 1
+            Oᴄᴛᴀᴠᴏs - Jornada 1
           </div>
         </div>
 
@@ -770,12 +770,12 @@ const percent2 = totalVotes
     </p>
 
     <p className="text-zinc-500 tracking-[0.2em] text-sm mt-1">
-      5 DE JULIO
+      5 ᴅᴇ Jᴜʟɪᴏ
     </p>
   </div>
 
   <div className="text-zinc-500 text-sm tracking-[0.25em] uppercase">
-    Octavos - Jornada 2
+    Oᴄᴛᴀᴠᴏs - Jornada 2
   </div>
 
 </div>

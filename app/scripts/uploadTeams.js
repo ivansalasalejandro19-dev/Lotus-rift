@@ -14,40 +14,40 @@ const teams = [
 
     'Sᴍᴀᴄᴋᴅᴏᴡɴ',
     'T502',
-    'Rokurominos',
-    'overextended',
-    'Huesitos Proyect',
+    'Rᴏᴋᴜʀᴏᴍɪɴᴏs',
+    'Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ',
+    'Hᴜᴇsɪᴛᴏs Pʀᴏʏᴇᴄᴛ',
     'HᴀTsᴜ',
     'Gᴏʟᴅᴇɴ Fᴇɴɪx-Z',
-    'KT E Sports',
-    'Ice Gold',
+    'KT E Sᴘᴏʀᴛs',
+    'Iᴄᴇ Gᴏʟᴅ',
     'ÆSIIR Gᴏ Lᴇɢᴇɴᴅs',
     'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs',
     'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ',
     'Fʟᴀᴡʟᴇss',
-    'Secret Society',
-    'Cosa nostra',
-    'Astral Gaming'
+    'Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ',
+    'Cᴏsᴀ Nᴏsᴛʀᴀ',
+    'Asᴛʀᴀʟ Gᴀᴍɪɴɢ'
 
   ];
 
 const teamLogos = {
   'Sᴍᴀᴄᴋᴅᴏᴡɴ': '/logos/smackdown.png',
   'T502': '/logos/T502.png',
-  'Rokurominos': '/logos/rku.png',
-  'overextended': '/logos/overextended.png',
-  'Huesitos Proyect': '/logos/huesitos.png',
+  'Rᴏᴋᴜʀᴏᴍɪɴᴏs': '/logos/rku.png',
+  'Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ': '/logos/overextended.png',
+  'Hᴜᴇsɪᴛᴏs Pʀᴏʏᴇᴄᴛ': '/logos/huesitos.png',
   'HᴀTsᴜ': '/logos/hatsu.png',
   'Gᴏʟᴅᴇɴ Fᴇɴɪx-Z': '/logos/golden_fenix_z.png',
-  'KT E Sports': '/logos/KTESports.png',
-  'Ice Gold': '/logos/ice_gold.png',
+  'KT E Sᴘᴏʀᴛs': '/logos/KTESports.png',
+  'Iᴄᴇ Gᴏʟᴅ': '/logos/ice_gold.png',
   'ÆSIIR Gᴏ Lᴇɢᴇɴᴅs': '/logos/ae_siir_go_legends.png',
   'Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs': '/logos/shadow_reapers.png',
   'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': '/logos/valhalla_legacy.png',
   'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
-  'Secret Society': '/logos/secret_society.png',
+  'Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ': '/logos/secret_society.png',
   'Cosa nostra': '/logos/cosa_nostra.png',
-  'Astral Gaming': '/logos/Astral_gaming.png'
+  'Asᴛʀᴀʟ Gᴀᴍɪɴɢ': '/logos/Astral_gaming.png'
 };
 
 const roster = {
@@ -151,10 +151,10 @@ const roster = {
 
 
     // ======================================================
-    // Rokurominos
+    // Rᴏᴋᴜʀᴏᴍɪɴᴏs
     // ======================================================
 
-    'Rokurominos': [
+    'Rᴏᴋᴜʀᴏᴍɪɴᴏs': [
       {
         id: 'Gz TheTØPArtist#PHX',
         role: 'TOP'
@@ -186,10 +186,10 @@ const roster = {
 
 
     // ======================================================
-    // overextended
+    // Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ
     // ======================================================
 
-    'overextended': [
+    'Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ': [
       {
         id: '愛 ChofisModo#Beast',
         role: 'TOP'
@@ -229,10 +229,10 @@ const roster = {
 
 
     // ======================================================
-    // Huesitos Proyect
+    // Hᴜᴇsɪᴛᴏs Pʀᴏʏᴇᴄᴛ
     // ======================================================
 
-    'Huesitos Proyect': [
+    'Hᴜᴇsɪᴛᴏs Pʀᴏʏᴇᴄᴛ': [
       {
         id: 'Lillia Futa#Eep',
         role: 'TOP'
@@ -383,10 +383,10 @@ const roster = {
 
 
     // ======================================================
-    // Ice Gold
+    // Iᴄᴇ Gᴏʟᴅ
     // ======================================================
 
-    'Ice Gold': [
+    'Iᴄᴇ Gᴏʟᴅ': [
       {
         id: 'G7 Lugia ツ#2502',
         role: 'TOP'
@@ -588,10 +588,10 @@ const roster = {
 
 
     // ======================================================
-    // Secret Society
+    // Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ
     // ======================================================
 
-    'Secret Society': [
+    'Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ': [
       {
         id: 'EzLane DieGod ツ#Mich',
         role: 'TOP'
@@ -631,10 +631,10 @@ const roster = {
 
 
     // ======================================================
-    // Cosa nostra
+    // Cᴏsᴀ Nᴏsᴛʀᴀ
     // ======================================================
 
-    'Cosa nostra': [
+    'Cᴏsᴀ Nᴏsᴛʀᴀ': [
       {
         id: 'Khaivツ#DIFF',
         role: 'TOP'
@@ -673,10 +673,10 @@ const roster = {
 
 
     // ======================================================
-    // Astral Gaming
+    // Asᴛʀᴀʟ Gᴀᴍɪɴɢ
     // ======================================================
 
-    'Astral Gaming': [
+    'Asᴛʀᴀʟ Gᴀᴍɪɴɢ': [
       {
         id: 'Zero#bbx',
         role: 'TOP'
@@ -826,20 +826,20 @@ const roster = {
 const teamIds = {
   "Sᴍᴀᴄᴋᴅᴏᴡɴ": "smackdown",
   "T502": "t502",
-  "Rokurominos": "rokurominos",
-  "overextended": "overextended",
-  "Huesitos Proyect": "huesitos",
+  "Rᴏᴋᴜʀᴏᴍɪɴᴏs": "rokurominos",
+  "Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ": "overextended",
+  "Hᴜᴇsɪᴛᴏs Pʀᴏʏᴇᴄᴛ": "huesitos",
   "HᴀTsᴜ": "hatsu",
   "Gᴏʟᴅᴇɴ Fᴇɴɪx-Z": "golden_fenix",
-  "KT E Sports": "kt_esports",
-  "Ice Gold": "ice_gold",
+  "KT E Sᴘᴏʀᴛs": "kt_esports",
+  "Iᴄᴇ Gᴏʟᴅ": "ice_gold",
   "ÆSIIR Gᴏ Lᴇɢᴇɴᴅs": "aesiir",
   "Sʜᴀᴅᴏᴡ ʀᴇᴀᴘᴇʀs": "shadow_reapers",
   "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ": "valhalla_legacy",
   "Fʟᴀᴡʟᴇss": "flawless",
-  "Secret Society": "secret_society",
-  "Cosa nostra": "cosa_nostra",
-  "Astral Gaming": "astral"
+  "Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ": "secret_society",
+  "Cᴏsᴀ Nᴏsᴛʀᴀ": "cosa_nostra",
+  "Asᴛʀᴀʟ Gᴀᴍɪɴɢ": "astral"
 };
 
 async function upload() {
