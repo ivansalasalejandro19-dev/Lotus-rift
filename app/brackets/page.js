@@ -64,7 +64,7 @@ function TeamSlot({ team, loser = false, large = false }) {
   )
 }
 
-const VOTE_STORAGE_KEY = "lotusVotedMatches_v2"
+const VOTE_STORAGE_KEY = "lotusVotedMatches_v3"
 
 export default function LotusRift() {
   const [selectedMatch, setSelectedMatch] = useState(null)
