@@ -30,7 +30,7 @@ export default function ReglamentoPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-6xl md:text-8xl font-black tracking-widest"
         >
-          REGLAMENTO
+          𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
         </motion.h1>
 
         <p className="mt-4 text-zinc-400 text-lg tracking-[0.3em]">
