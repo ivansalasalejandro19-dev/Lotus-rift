@@ -82,26 +82,39 @@ const octavosFirebase = matches
     team2: teams[match.team2],
   }))
 
-  const quarterFinalsFirebase = matches
-  .filter(match => match.stage === "cuartos")
-  .sort((a, b) => a.order - b.order)
-  .map(match => ({
-    ...match,
-    team1: teams[match.team1],
-    team2: teams[match.team2],
-  }))
+ const quarterFinalsFirebase =
+  matches.filter(match => match.stage === "cuartos")
+    .sort((a, b) => a.order - b.order)
 
-  const semiFinalsFirebase = matches
-  .filter(match => match.stage === "semis")
-  .sort((a, b) => a.order - b.order)
-  .map(match => ({
-    ...match,
-    team1: teams[match.team1],
-    team2: teams[match.team2],
-  }))
+while (quarterFinalsFirebase.length < 4) {
+  quarterFinalsFirebase.push({
+    team1: null,
+    team2: null,
+    score1: 0,
+    score2: 0
+  })
+}
+
+  const semiFinalsFirebase =
+  matches.filter(match => match.stage === "semis")
+    .sort((a, b) => a.order - b.order)
+
+while (semiFinalsFirebase.length < 2) {
+  semiFinalsFirebase.push({
+    team1: null,
+    team2: null,
+    score1: 0,
+    score2: 0
+  })
+}
 
   const finalFirebase =
-matches.find(match => match.stage === "final")
+  matches.find(match => match.stage === "final") || {
+    team1: null,
+    team2: null,
+    score1: 0,
+    score2: 0
+  }
 
 
   useEffect(() => {
@@ -483,12 +496,6 @@ const percent2 = totalVotes
   </div>
 
 </div>
-
-                                  <div className="flex-1 text-center">
-                                    <span className="font-bold text-white">
-                                      {team?.name || "TBD"}
-                                    </span>
-                                  </div>
                                 </div>
 
                                 <div className="ml-3 min-w-[32px] h-8 rounded-lg bg-violet-500/20 border border-violet-400/20 flex items-center justify-center font-black text-violet-300">
@@ -840,26 +847,11 @@ const percent2 = totalVotes
       <div className="w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[2rem] border border-pink-500/20 bg-zinc-950 p-5 md:p-8 relative">
 
       <button
-        onClick={() =>
-  setSelectedMatch({
-    ...match,
-    stage: "OCTAVOS DE FINAL",
-    format: "BO1",
-
-    logo1: match.team1?.logo,
-    logo2: match.team2?.logo,
-
-    team1: match.team1?.name,
-    team2: match.team2?.name,
-
-    players1: match.team1?.players || [],
-    players2: match.team2?.players || [],
-  })
-}
-        className="absolute top-5 right-5 text-zinc-400 hover:text-white"
-      >
-        ✕
-      </button>
+  onClick={() => setSelectedMatch(null)}
+  className="absolute top-5 right-5 text-zinc-400 hover:text-white"
+>
+  ✕
+</button>
 
       <div className="text-center mb-8">
 
