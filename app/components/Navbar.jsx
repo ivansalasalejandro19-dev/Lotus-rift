@@ -107,13 +107,20 @@ export default function Navbar() {
               𝐵𝑅𝐴𝐶𝐾𝐸𝑇
             </Link>
 
+            <Link
+  href="/reglamento"
+  className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all"
+>
+  📜 𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
+</Link>
+
             {user ? (
               <Link
                 href="/pickem"
                 className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
               >
                 <Sparkles size={16} />
-                Pick'Em
+                𝑃𝐼𝐶𝐾' 𝐸𝑀
               </Link>
             ) : (
               <div
@@ -130,7 +137,7 @@ export default function Navbar() {
                   gap-2
                 "
               >
-                🔒 Pick'Em
+                🔒 𝑃𝐼𝐶𝐾' 𝐸𝑀
               </div>
             )}
 
@@ -202,17 +209,25 @@ export default function Navbar() {
               𝐵𝑅𝐴𝐶𝐾𝐸𝑇
             </Link>
 
+            <Link
+  href="/reglamento"
+  onClick={() => setOpen(false)}
+  className="px-4 py-4 rounded-xl bg-white/5"
+>
+  📜 𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
+</Link>
+
             {user ? (
               <Link
                 href="/pickem"
                 onClick={() => setOpen(false)}
                 className="px-4 py-4 rounded-xl bg-white/5"
               >
-                Pick'Em
+                𝑃𝐼𝐶𝐾' 𝐸𝑀
               </Link>
             ) : (
               <div className="px-4 py-4 rounded-xl bg-white/5 text-zinc-500">
-                🔒 Pick'Em
+                🔒 𝑃𝐼𝐶𝐾' 𝐸𝑀
               </div>
             )}
 
