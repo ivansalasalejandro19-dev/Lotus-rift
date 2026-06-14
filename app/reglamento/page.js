@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 
 const paginas = [
-  "/reglamento/1.jpg",
   "/reglamento/2.jpg",
   "/reglamento/3.jpg",
   "/reglamento/4.jpg",
