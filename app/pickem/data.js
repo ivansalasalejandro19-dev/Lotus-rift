@@ -1,5 +1,4 @@
- 
-export const champions = [
+ export const champions = [
   'Aatrox',
   'Ahri',
   'Akali',
@@ -140,33 +139,3 @@ export const champions = [
   'Zoe',
   'Zyra'
 ]
-
-export const players = Object.entries(roster)
-  .flatMap(([teamName, teamPlayers]) =>
-    teamPlayers
-      .filter(player => player?.id)
-      .map(player => ({
-        id: player.id,
-        role: player.role,
-        team: teamName,
-        captain: player.captain || false
-      }))
-  )
-
-export const playerNames = players.map(player => ({
-  name: player.id,
-  team: player.team,
-  role: player.role,
-  captain: player.captain
-}))
-
-export const teamLogos = Object.fromEntries(
-  teams.map(team => [
-    team.name,
-    team.logo
-  ])
-)
-export const teamNames = teams.map(team => ({
-  name: team.name,
-  logo: team.logo
-}))
