@@ -493,12 +493,12 @@ if (showSuccess) {
             </div>
 
             <p className="text-zinc-400 uppercase tracking-[0.3em] text-sm">
-              𝐶𝑎𝑚𝑝𝑒𝑜́𝑛 𝑃𝑟𝑒𝑑𝑖𝑐𝘩𝑜
+              𝐶𝑎𝑚𝑝𝑒𝑜𝑛 𝑃𝑟𝑒𝑑𝑖𝑐𝘩𝑜
             </p>
 
             <h3 className="text-4xl font-black mt-4">
 
-              {champion || "𝑆𝑒𝑙𝑒𝑐𝑐𝑖𝑜𝑛𝑎 𝑢𝑛 𝑐𝑎𝑚𝑝𝑒𝑜́𝑛"}
+              {champion || "𝑆𝑒𝑙𝑒𝑐𝑐𝑖𝑜𝑛𝑎 𝑢𝑛 𝑐𝑎𝑚𝑝𝑒𝑜𝑛"}
 
             </h3>
 

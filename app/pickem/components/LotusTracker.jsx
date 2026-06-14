@@ -26,7 +26,7 @@ export default function LotusTracker() {
     {
       emoji: '⏱️',
       value: '00:00',
-      label: '𝑃𝑎𝑟𝑡𝑖𝑑𝑎 𝑀𝑎́𝑠 𝐿𝑎𝑟𝑔𝑎'
+      label: '𝑃𝑎𝑟𝑡𝑖𝑑𝑎 𝑀𝑎𝑠 𝐿𝑎𝑟𝑔𝑎'
     }
   ]
 

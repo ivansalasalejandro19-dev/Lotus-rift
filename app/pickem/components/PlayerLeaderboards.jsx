@@ -4,7 +4,7 @@ export default function PlayerLeaderboards() {
 
   const leaderboards = [
     {
-      title: '𝑀𝑎́𝑠 𝐷𝑎𝑛̃𝑜',
+      title: '𝑀𝑎𝑠 𝐷𝑎𝑛̃𝑜',
       icon: '💥',
       players: [
         { name: '𝑇𝐵𝐷', value: '0' },
@@ -22,7 +22,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: '𝑀𝑎́𝑠 𝐾𝑖𝑙𝑙𝑠',
+      title: '𝑀𝑎𝑠 𝐾𝑖𝑙𝑙𝑠',
       icon: '💀',
       players: [
         { name: '𝑇𝐵𝐷', value: '0' },
@@ -31,7 +31,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: '𝑀𝑎́𝑠 𝐴𝑠𝑖𝑠𝑡𝑒𝑛𝑐𝑖𝑎𝑠',
+      title: '𝑀𝑎𝑠 𝐴𝑠𝑖𝑠𝑡𝑒𝑛𝑐𝑖𝑎𝑠',
       icon: '🎯',
       players: [
         { name: '𝑇𝐵𝐷', value: '0' },
