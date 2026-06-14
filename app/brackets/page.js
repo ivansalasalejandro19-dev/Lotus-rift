@@ -284,7 +284,7 @@ const percent2 = totalVotes
                 className="px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-300 font-semibold shadow-[0_0_40px_rgba(255,0,150,0.35)] hover:scale-105 transition-all flex items-center gap-2"
               >
                 <MessageCircle size={20} />
-                Comunidad de Whatsapp
+                Cᴏᴍᴜɴɪᴅᴀᴅ ᴅᴇ WʜᴀᴛsAᴘᴘ
               </a>
 
               <a
@@ -293,7 +293,7 @@ const percent2 = totalVotes
                 className="px-8 py-4 rounded-2xl border border-pink-500/20 bg-white/5 hover:bg-white/10 transition-all flex items-center gap-2"
               >
                 <MessagesSquare size={20} />
-                Discord
+                Dɪsᴄᴏʀᴅ
               </a>
             </div>
 
@@ -370,11 +370,11 @@ const percent2 = totalVotes
           <div className="mb-16 text-center">
 
             <p className="text-violet-400 tracking-[0.3em] text-sm mb-3">
-              LOTUS ARENA
+              𝐿𝑜𝑡𝑢𝑠 𝐴𝑟𝑒𝑛𝑎
             </p>
 
             <h2 className="text-6xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
-              BRACKET
+              𝐵𝑅𝐴𝐶𝐾𝐸𝑇
             </h2>
 
             <div className="mt-5 w-40 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent mx-auto" />
@@ -388,7 +388,7 @@ const percent2 = totalVotes
               <div className="flex flex-col justify-center">
 
                 <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-                  OCTAVOS
+                  Oᴄᴛᴀᴠᴏs
                 </h3>
 
                 <div className="space-y-6">
@@ -452,7 +452,7 @@ const percent2 = totalVotes
               <div className="flex flex-col justify-center">
 
                 <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-                  CUARTOS
+                  Cᴜᴀʀᴛᴏs
                 </h3>
 
                 <div className="space-y-20">
@@ -521,7 +521,7 @@ const percent2 = totalVotes
               <div className="flex flex-col justify-center">
 
                 <h3 className="mb-8 text-center font-bold text-zinc-400 tracking-[0.2em]">
-                  SEMIFINALES
+                  Sᴇᴍɪғɪɴᴀʟ
                 </h3>
 
                 <div className="space-y-44">
@@ -586,7 +586,7 @@ const percent2 = totalVotes
               <div className="flex flex-col justify-center">
 
                 <h3 className="mb-8 text-center font-bold text-pink-300 tracking-[0.2em]">
-                  FINAL
+                  Fɪɴᴀʟ
                 </h3>
 
                 <div className="relative">
@@ -607,11 +607,11 @@ const percent2 = totalVotes
                       </div>
 
                       <p className="text-pink-300 tracking-[0.3em] text-sm mb-3">
-                        LOTUS RIFT 2026
+                        𝐿𝑂𝑇𝑈𝑆 𝑅𝐼𝐹𝑇 2026
                       </p>
 
                       <h4 className="text-5xl font-black bg-gradient-to-r from-pink-300 to-violet-400 bg-clip-text text-transparent">
-                        FINAL
+                       Fɪɴᴀʟ
                       </h4>
                     </div>
 
@@ -697,7 +697,7 @@ const percent2 = totalVotes
           </div>
 
           <div className="text-zinc-500 text-sm tracking-[0.25em] uppercase">
-            Oᴄᴛᴀᴠᴏs - Jornada 1
+            Oᴄᴛᴀᴠᴏs - 𝐽𝑜𝑟𝑛𝑎𝑑𝑎 1
           </div>
         </div>
 
@@ -722,7 +722,7 @@ const percent2 = totalVotes
               </div>
 
               <div className="text-pink-400 font-black text-2xl">
-                VS
+                𝑉𝑆
               </div>
 
               <div className="flex items-center justify-end gap-4 w-full md:w-[320px]">
@@ -754,7 +754,7 @@ const percent2 = totalVotes
 }
   className="px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
 >
-  VER DETALLES
+  𝑉𝐸𝑅 𝐷𝐸𝑇𝐴𝐿𝐿𝐸𝑆
 </button>
 
             </div>
@@ -775,7 +775,7 @@ const percent2 = totalVotes
   </div>
 
   <div className="text-zinc-500 text-sm tracking-[0.25em] uppercase">
-    Oᴄᴛᴀᴠᴏs - Jornada 2
+    Oᴄᴛᴀᴠᴏs - 𝐽𝑜𝑟𝑛𝑎𝑑𝑎 2
   </div>
 
 </div>
@@ -801,7 +801,7 @@ const percent2 = totalVotes
       </div>
 
       <div className="text-pink-400 font-black text-2xl">
-        VS
+        𝑉𝑆
       </div>
 
       <div className="flex items-center justify-center md:justify-end gap-4 w-full md:w-[320px]">
@@ -832,7 +832,7 @@ const percent2 = totalVotes
 }
   className="w-full md:w-auto px-5 py-3 rounded-2xl border border-pink-500/20 hover:bg-pink-500/10 transition-all"
   >
-    VER DETALLES
+    𝑉𝐸𝑅 𝐷𝐸𝑇𝐴𝐿𝐿𝐸𝑆
   </button>
 
     </div>
@@ -879,7 +879,7 @@ const percent2 = totalVotes
         <div className="text-center">
 
           <div className="text-3xl font-black text-pink-400 mb-3">
-            VS
+            𝑉𝑆
           </div>
 
           <div className="px-5 py-2 rounded-xl border border-pink-500/20 bg-pink-500/10 font-black">
@@ -941,10 +941,10 @@ const percent2 = totalVotes
   <div className="flex flex-col md:flex-row items-center gap-4 md:justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
 
     <span className="font-bold text-pink-300">
-      Predicción de la comunidad
+      𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛 𝑑𝑒 𝑙𝑎 𝑐𝑜𝑚𝑢𝑛𝑖𝑑𝑎𝑑
     </span>
 
-    {totalVotes} votos
+    {totalVotes} 𝑉𝑜𝑡𝑜𝑠
 
   </div>
 
@@ -983,7 +983,7 @@ ${
     : "bg-pink-500/20 border-pink-500/30 hover:bg-pink-500/30"
 }`}
 >
-  Votar por {selectedMatch.team1}
+  𝑉𝑜𝑡𝑎𝑟 𝑝𝑜𝑟 {selectedMatch.team1}
 </button>
 
   <button
@@ -996,7 +996,7 @@ ${
     : "bg-white/5 border-white/10 hover:bg-white/10"
 }`}
 >
-  Votar por {selectedMatch.team2}
+  𝑉𝑜𝑡𝑎𝑟 𝑝𝑜𝑟 {selectedMatch.team2}
 </button>
 
 </div>
@@ -1004,7 +1004,7 @@ ${
 {votedMatches[selectedMatch.id] && (
   <div className="mt-4 text-center">
     <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 font-semibold">
-      ✓ Ya votaste en este partido
+      ✓ 𝑌𝑎 𝑣𝑜𝑡𝑎𝑠𝑡𝑒 𝑒𝑛 𝑒𝑠𝑡𝑒 𝑝𝑎𝑟𝑡𝑖𝑑𝑜
     </span>
   </div>
 )}
@@ -1012,7 +1012,7 @@ ${
 <div className="mt-4 text-center text-zinc-400 text-sm">
 
 <div className="mt-4 text-center text-zinc-400 text-sm">
-  {totalVotes} votos registrados
+  {totalVotes} 𝑉𝑜𝑡𝑜𝑠 𝑟𝑒𝑔𝑖𝑠𝑡𝑟𝑎𝑑𝑜𝑠
 </div>
 
 </div>
