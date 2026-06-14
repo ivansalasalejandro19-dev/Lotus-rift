@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { teams, players, champions } from '../data'
+import { players, teams } from '../../scripts/uploadTeams'
+import { champions } from '../data'
 import SearchDropdown from './SearchDropdown'
 
 const sections = [
