@@ -214,7 +214,7 @@ export default function Navbar() {
   onClick={() => setOpen(false)}
   className="px-4 py-4 rounded-xl bg-white/5"
 >
-  📜 𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
+  𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
 </Link>
 
             {user ? (

@@ -46,7 +46,7 @@ const teamLogos = {
   'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': '/logos/valhalla_legacy.png',
   'Fʟᴀᴡʟᴇss': '/logos/flawless.png',
   'Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ': '/logos/secret_society.png',
-  'Cosa nostra': '/logos/cosa_nostra.png',
+  'Cᴏsᴀ Nᴏsᴛʀᴀ': '/logos/cosa_nostra.png',
   'Asᴛʀᴀʟ Gᴀᴍɪɴɢ': '/logos/Astral_gaming.png'
 };
 
@@ -345,10 +345,10 @@ const roster = {
 
 
     // ======================================================
-    // KT E Sports
+    // KT E Sᴘᴏʀᴛs
     // ======================================================
 
-    'KT E Sports': [
+    'KT E Sᴘᴏʀᴛs': [
       {
         id: 'Alejo#0910',
         role: 'TOP'
