@@ -266,7 +266,7 @@ if (showSuccess) {
           </p>
 
           <h2 className="text-5xl font-black mt-4">
-            🏆 Bracket Prediction
+            🏆 Prediccion de Bracket
           </h2>
 
           <p className="text-zinc-400 mt-4">
