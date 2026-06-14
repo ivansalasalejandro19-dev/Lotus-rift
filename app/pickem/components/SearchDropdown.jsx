@@ -175,7 +175,7 @@ disabled:cursor-not-allowed
 
   option
 
-) : option.logo ? (
+) : option.name ? (
 
   <div className="flex items-center gap-3">
 
@@ -195,19 +195,19 @@ disabled:cursor-not-allowed
 
  <div className="flex items-center gap-3">
 
-  {option.team && (
+  {option.logo && (
 
-    <img
-      src={teamLogos[option.team]}
-      alt=""
-      className="
-        w-8
-        h-8
-        object-contain
-      "
-    />
+  <img
+    src={option.logo}
+    alt=""
+    className="
+      w-8
+      h-8
+      object-contain
+    "
+  />
 
-  )}
+)}
 
   <div>
 
