@@ -4,7 +4,7 @@ export default function PlayerLeaderboards() {
 
   const leaderboards = [
     {
-      title: '𝑀𝑎𝑠 𝐷𝑎𝑛̃𝑜',
+      title: '𝑀𝑎𝑠 𝐷𝑎ñ𝑜',
       icon: '💥',
       players: [
         { name: '𝑇𝐵𝐷', value: '0' },
@@ -60,7 +60,7 @@ export default function PlayerLeaderboards() {
         </p>
 
         <h2 className="text-4xl md:text-5xl font-black">
-          𝐸𝑠𝑡𝑎𝑑𝜄́𝑠𝑡𝑖𝑐𝑎𝑠 𝑑𝑒 𝐽𝑢𝑔𝑎𝑑𝑜𝑟𝑒𝑠
+          𝐸𝑠𝑡𝑎𝑑𝜄𝑠𝑡𝑖𝑐𝑎𝑠 𝑑𝑒 𝐽𝑢𝑔𝑎𝑑𝑜𝑟𝑒𝑠
         </h2>
 
       </div>
