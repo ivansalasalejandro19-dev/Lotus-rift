@@ -249,7 +249,9 @@ export default function CrystalBall({
   locked,
   teams,
   players
-}){
+}) {
+
+  console.log("PLAYERS PROP:", players)
 
   const [openDropdown, setOpenDropdown] = useState(null)
 

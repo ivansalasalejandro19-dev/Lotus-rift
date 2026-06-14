@@ -71,16 +71,19 @@ useEffect(() => {
 
       setTeams(teamsData)
 
-      const allPlayers = Object.values(teamsData)
-        .flatMap(team =>
-          (team.players || []).map(player => ({
-            ...player,
-            team: team.name,
-            logo: team.logo
-          }))
-        )
+      const allPlayers = Object.values(teamsData).flatMap(team =>
+        (team.players || []).map(player => ({
+          id: player.id,
+          role: player.role,
+          team: team.name,
+          logo: team.logo,
+          captain: player.captain || false
+        }))
+      )
 
       setPlayers(allPlayers)
+
+      console.log("PLAYERS:", allPlayers)
     }
   )
 
