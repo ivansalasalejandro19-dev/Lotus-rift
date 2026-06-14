@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { teamLogos } from '../../scripts/uploadTeams'
 
 export default function SearchDropdown({
   id,

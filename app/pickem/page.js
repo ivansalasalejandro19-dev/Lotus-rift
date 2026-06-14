@@ -8,7 +8,12 @@ import PickemBracket from "./components/PickemBracket"
 import { useAuth } from "../context/AuthContext"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { doc, getDoc } from "firebase/firestore"
+import {
+  collection,
+  onSnapshot,
+  doc,
+  getDoc
+} from "firebase/firestore"
 import { db } from "../lib/firebase"
 
 export default function PickEmPage() {
@@ -17,6 +22,8 @@ export default function PickEmPage() {
   const [crystalBallAnswers, setCrystalBallAnswers] = useState({})
 
   const [pickemLocked, setPickemLocked] = useState(false)
+  const [teams, setTeams] = useState({})
+const [players, setPlayers] = useState([])
 
 const router = useRouter()
 
@@ -47,6 +54,38 @@ const loadPickem = async () => {
   }
 
 }
+
+useEffect(() => {
+  const unsub = onSnapshot(
+    collection(db, "teams"),
+    (snapshot) => {
+
+      const teamsData = {}
+
+      snapshot.forEach((docSnap) => {
+        teamsData[docSnap.id] = {
+          id: docSnap.id,
+          ...docSnap.data()
+        }
+      })
+
+      setTeams(teamsData)
+
+      const allPlayers = Object.values(teamsData)
+        .flatMap(team =>
+          (team.players || []).map(player => ({
+            ...player,
+            team: team.name,
+            logo: team.logo
+          }))
+        )
+
+      setPlayers(allPlayers)
+    }
+  )
+
+  return () => unsub()
+}, [])
 
 useEffect(() => {
   if (user === null) return
@@ -89,8 +128,9 @@ if (!user) {
   answers={crystalBallAnswers}
   setAnswers={setCrystalBallAnswers}
   locked={pickemLocked}
+  teams={Object.values(teams)}
+  players={players}
 />
-
         <PickemBracket
   user={user}
   crystalBallAnswers={crystalBallAnswers}

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { players, teams } from '../../scripts/uploadTeams'
 import { champions } from '../data'
 import SearchDropdown from './SearchDropdown'
 
@@ -247,8 +246,10 @@ const sections = [
 export default function CrystalBall({
   answers,
   setAnswers,
-  locked
-}) {
+  locked,
+  teams,
+  players
+}){
 
   const [openDropdown, setOpenDropdown] = useState(null)
 
