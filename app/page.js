@@ -102,12 +102,12 @@ const [teamLogos, setTeamLogos] = useState({})
       format: 'Bo3'
     },
     {
-      date: '18 ᴅᴇ Jᴜʟɪᴏ',
+      date: '17 ᴅᴇ Jᴜʟɪᴏ',
       matches: 'Sᴇᴍɪғɪɴᴀʟ 1',
       format: 'Bo5'
     },
     {
-      date: '19 ᴅᴇ Jᴜʟɪᴏ',
+      date: '18 ᴅᴇ Jᴜʟɪᴏ',
       matches: 'Sᴇᴍɪғɪɴᴀʟ 2',
       format: 'Bo5'
     },
