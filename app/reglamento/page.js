@@ -85,45 +85,121 @@ font-semibold
 </div>
       </section>
 
-      {/* Páginas */}
-      <section className="relative max-w-7xl mx-auto px-4 pb-32">
-        <div className="space-y-12">
+     {/* Páginas */}
+<section className="relative w-full pb-40">
 
-          {paginas.map((pagina, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="group"
-            >
-              <div className="overflow-hidden rounded-3xl border border-pink-500/20 bg-zinc-900 shadow-[0_0_50px_rgba(236,72,153,0.18)]
-group-hover:shadow-[0_0_90px_rgba(236,72,153,0.4)]
-transition-all
-duration-500">
-    
-                <img
-                  src={pagina}
-                  alt={`Reglamento página ${index + 1}`}
-                  className="w-full h-auto transition duration-500 group-hover:scale-[1.01]"
-                />
-              </div>
-            </motion.div>
-          ))}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-pink-500/5 blur-[250px]" />
+  </div>
 
-          <div className="fixed inset-0 overflow-hidden pointer-events-none">
+  <div className="space-y-24">
 
-  <div className="absolute top-20 left-20 w-2 h-2 bg-pink-400 rounded-full blur-sm animate-pulse" />
+    {paginas.map((pagina, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="group relative"
+      >
 
-  <div className="absolute top-96 right-32 w-3 h-3 bg-cyan-400 rounded-full blur-sm animate-pulse" />
+        {/* Decoración superior */}
+        <div className="flex justify-center mb-6">
+          <div
+            className="
+              h-px
+              w-96
+              bg-gradient-to-r
+              from-transparent
+              via-pink-500/50
+              to-transparent
+            "
+          />
+        </div>
 
-  <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-fuchsia-400 rounded-full blur-sm animate-pulse" />
+        <div
+          className="
+            relative
+            mx-auto
+            w-[95vw]
+            max-w-[1400px]
+            rounded-[32px]
+            overflow-hidden
 
-</div>
+            border
+            border-pink-500/20
+
+            bg-zinc-900
+
+            shadow-[0_0_80px_rgba(236,72,153,0.15)]
+
+            group-hover:shadow-[0_0_120px_rgba(236,72,153,0.35)]
+
+            transition-all
+            duration-700
+          "
+        >
+
+          {/* Marco interno */}
+          <div className="absolute inset-4 rounded-[24px] border border-white/10 pointer-events-none z-10" />
+
+          {/* Esquinas decorativas */}
+          <div className="absolute top-4 left-4 w-10 h-10 border-l border-t border-pink-400/40 z-10" />
+          <div className="absolute top-4 right-4 w-10 h-10 border-r border-t border-pink-400/40 z-10" />
+          <div className="absolute bottom-4 left-4 w-10 h-10 border-l border-b border-pink-400/40 z-10" />
+          <div className="absolute bottom-4 right-4 w-10 h-10 border-r border-b border-pink-400/40 z-10" />
+
+          <img
+            src={pagina}
+            alt={`Reglamento página ${index + 1}`}
+            loading="lazy"
+            draggable={false}
+            className="
+              w-full
+              h-auto
+              block
+
+              transition-all
+              duration-700
+
+              group-hover:scale-[1.01]
+            "
+          />
 
         </div>
-      </section>
+
+        {/* Número de página */}
+        <div className="flex justify-center mt-8">
+
+          <div
+            className="
+              px-6
+              py-2
+              rounded-full
+
+              border
+              border-pink-500/20
+
+              bg-black/30
+              backdrop-blur-xl
+
+              text-sm
+              tracking-[0.3em]
+              text-pink-300
+            "
+          >
+            PÁGINA {index + 1}
+          </div>
+
+        </div>
+
+      </motion.div>
+    ))}
+
+  </div>
+
+</section>
       
       <footer className="relative py-20 text-center">
 
