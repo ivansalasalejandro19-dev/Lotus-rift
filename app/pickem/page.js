@@ -157,7 +157,7 @@ if (!user) {
       value={riotId}
       disabled={pickemLocked}
       onChange={(e) => setRiotId(e.target.value)}
-      placeholder="Ej: Ragnarok#Trol"
+      placeholder="Ej: Ragnarok#Troll"
       className="
         w-full
         px-5
