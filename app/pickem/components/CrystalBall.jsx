@@ -41,7 +41,7 @@ const sections = [
     questions: [
       {
         id: 'teamMostKills',
-        title: '🔥 𝙈𝙖𝙨 𝙠𝙞𝙡𝙡𝙨 𝙚𝙣 𝙘𝙤𝙣𝙟𝙪𝙣𝙩𝙤 ',
+        title: '🔥 𝙈á𝙨 𝙠𝙞𝙡𝙡𝙨 𝙚𝙣 𝙘𝙤𝙣𝙟𝙪𝙣𝙩𝙤 ',
         type: 'team'
       },
       {
@@ -51,37 +51,37 @@ const sections = [
       },
       {
         id: 'teamMostDragons',
-        title: '🐉 𝙈𝙖𝙨 𝙙𝙧𝙖𝙜𝙤𝙣𝙚𝙨',
+        title: '🐉 𝙈á𝙨 𝙙𝙧𝙖𝙜𝙤𝙣𝙚𝙨',
         type: 'team'
       },
       {
         id: 'teamMostBarons',
-        title: '🧿 𝙈𝙖𝙨 𝘽𝙖𝙧𝙤𝙣𝙚𝙨 ',
+        title: '🧿 𝙈á𝙨 𝘽𝙖𝙧𝙤𝙣𝙚𝙨 ',
         type: 'team'
       },
       {
         id: 'teamMostHeralds',
-        title: '👁️ 𝙈𝙖𝙨 𝙃𝙚𝙧𝙖𝙡𝙙𝙤𝙨 ',
+        title: '👁️ 𝙈á𝙨 𝙃𝙚𝙧𝙖𝙡𝙙𝙤𝙨 ',
         type: 'team'
       },
       {
         id: 'teamMostTowers',
-        title: '🏰 𝙈𝙖𝙨 𝙩𝙤𝙧𝙧𝙚𝙨 𝙙𝙚𝙨𝙩𝙧𝙪𝙞𝙙𝙖𝙨',
+        title: '🏰 𝙈á𝙨 𝙩𝙤𝙧𝙧𝙚𝙨 𝙙𝙚𝙨𝙩𝙧𝙪𝙞𝙙𝙖𝙨',
         type: 'team'
       },
       {
         id: 'teamMostFirstBloods',
-        title: '🩸 𝙈𝙖𝙨 𝙥𝙧𝙞𝙢𝙚𝙧𝙖𝙨 𝙨𝙖𝙣𝙜𝙧𝙚𝙨 𝙚𝙣 𝙘𝙤𝙣𝙟𝙪𝙣𝙩𝙤',
+        title: '🩸 𝙈á𝙨 𝙥𝙧𝙞𝙢𝙚𝙧𝙖𝙨 𝙨𝙖𝙣𝙜𝙧𝙚𝙨 𝙚𝙣 𝙘𝙤𝙣𝙟𝙪𝙣𝙩𝙤',
         type: 'team'
       },
       {
         id: 'fastestWin',
-        title: '⚡ 𝙋𝙖𝙧𝙩𝙞𝙙𝙖 𝙢𝙖𝙨 𝙧𝙖𝙥𝙞𝙙𝙖 𝙜𝙖𝙣𝙖𝙙𝙖',
+        title: '⚡ 𝙋𝙖𝙧𝙩𝙞𝙙𝙖 𝙢á𝙨 𝙧𝙖𝙥𝙞𝙙𝙖 𝙜𝙖𝙣𝙖𝙙𝙖',
         type: 'team'
       },
       {
         id: 'longestWin',
-        title: '⏱️ 𝙋𝙖𝙧𝙩𝙞𝙙𝙖 𝙢𝙖𝙨 𝙡𝙖𝙧𝙜𝙖 𝙜𝙖𝙣𝙖𝙙𝙖',
+        title: '⏱️ 𝙋𝙖𝙧𝙩𝙞𝙙𝙖 𝙢á𝙨 𝙡𝙖𝙧𝙜𝙖 𝙜𝙖𝙣𝙖𝙙𝙖',
         type: 'team'
       }
     ]
@@ -94,17 +94,17 @@ const sections = [
     questions: [
       {
         id: 'playerMostKills',
-        title: '🔥 𝙈𝙖𝙨 𝙠𝙞𝙡𝙡𝙨',
+        title: '🔥 𝙈á𝙨 𝙠𝙞𝙡𝙡𝙨',
         type: 'player'
       },
       {
         id: 'playerMostAssists',
-        title: '🧿 𝙈𝙖𝙨 𝙖𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖𝙨 ',
+        title: '🧿 𝙈á𝙨 𝙖𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖𝙨 ',
         type: 'player'
       },
       {
         id: 'playerMostDeaths',
-        title: '💀 𝙈𝙖𝙨 𝙢𝙪𝙚𝙧𝙩𝙚𝙨 ',
+        title: '💀 𝙈á𝙨 𝙢𝙪𝙚𝙧𝙩𝙚𝙨 ',
         type: 'player'
       },
       {
@@ -114,37 +114,37 @@ const sections = [
       },
       {
         id: 'mostPentas',
-        title: '🌸 𝙈𝙖𝙨 𝙥𝙚𝙣𝙩𝙖𝙠𝙞𝙡𝙡𝙨 ',
+        title: '🌸 𝙈á𝙨 𝙥𝙚𝙣𝙩𝙖𝙠𝙞𝙡𝙡𝙨 ',
         type: 'player'
       },
       {
         id: 'mostDamage',
-        title: '🏹 𝙈𝙖𝙨 𝙙𝙖𝙣𝙤 𝙩𝙤𝙩𝙖𝙡 ',
+        title: '🏹 𝙈á𝙨 𝙙𝙖ñ𝙤 𝙩𝙤𝙩𝙖𝙡 ',
         type: 'player'
       },
       {
         id: 'mostCs',
-        title: '🌾 𝙈𝙖𝙨 𝙨𝙪𝙗𝙙𝙞𝙩𝙤𝙨 (𝘾𝙎) ',
+        title: '🌾 𝙈á𝙨 𝙨𝙪𝙗𝙙𝙞𝙩𝙤𝙨 (𝘾𝙎) ',
         type: 'player'
       },
       {
         id: 'mostGoldPerMinute',
-        title: '💰 𝙈𝙖𝙨 𝙤𝙧𝙤 𝙥𝙤𝙧 𝙢𝙞𝙣𝙪𝙩𝙤',
+        title: '💰 𝙈á𝙨 𝙤𝙧𝙤 𝙥𝙤𝙧 𝙢𝙞𝙣𝙪𝙩𝙤',
         type: 'player'
       },
       {
         id: 'mostFirstBloods',
-        title: '🩸 𝙈𝙖𝙨 𝙛𝙞𝙧𝙨𝙩 𝙗𝙡𝙤𝙤𝙙',
+        title: '🩸 𝙈á𝙨 𝙛𝙞𝙧𝙨𝙩 𝙗𝙡𝙤𝙤𝙙',
         type: 'player'
       },
       {
         id: 'mostBaronSteals',
-        title: '🧿 𝙈𝙖𝙨 𝙧𝙤𝙗𝙤𝙨 𝙙𝙚 𝘽𝙖𝙧𝙤𝙣',
+        title: '🧿 𝙈á𝙨 𝙧𝙤𝙗𝙤𝙨 𝙙𝙚 𝘽𝙖𝙧𝙤𝙣',
         type: 'player'
       },
       {
         id: 'mostDragonSteals',
-        title: '🐉 𝙈𝙖𝙨 𝙧𝙤𝙗𝙤𝙨 𝙙𝙚 𝙙𝙧𝙖𝙜𝙤𝙣',
+        title: '🐉 𝙈á𝙨 𝙧𝙤𝙗𝙤𝙨 𝙙𝙚 𝙙𝙧𝙖𝙜𝙤𝙣',
         type: 'player'
       }
     ]
@@ -157,12 +157,12 @@ const sections = [
     questions: [
       {
         id: 'mostBanned',
-        title: '🚫 𝙈𝙖𝙨 𝙗𝙖𝙣𝙚𝙖𝙙𝙤',
+        title: '🚫 𝙈á𝙨 𝙗𝙖𝙣𝙚𝙖𝙙𝙤',
         type: 'champion'
       },
       {
         id: 'mostPlayed',
-        title: '🎮 𝙈𝙖𝙨 𝙟𝙪𝙜𝙖𝙙𝙤',
+        title: '🎮 𝙈á𝙨 𝙟𝙪𝙜𝙖𝙙𝙤',
         type: 'champion'
       },
       {
@@ -177,17 +177,17 @@ const sections = [
       },
       {
         id: 'champMostKills',
-        title: '🔥 𝙈𝙖𝙨 𝙠𝙞𝙡𝙡𝙨',
+        title: '🔥 𝙈á𝙨 𝙠𝙞𝙡𝙡𝙨',
         type: 'champion'
       },
       {
         id: 'champMostDeaths',
-        title: '☠️ 𝙈𝙖𝙨 𝙢𝙪𝙚𝙧𝙩𝙚𝙨 ',
+        title: '☠️ 𝙈á𝙨 𝙢𝙪𝙚𝙧𝙩𝙚𝙨 ',
         type: 'champion'
       },
       {
         id: 'champMostAssists',
-        title: '🤝 𝙈𝙖𝙨 𝙖𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖𝙨',
+        title: '🤝 𝙈á𝙨 𝙖𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖𝙨',
         type: 'champion'
       },
       {

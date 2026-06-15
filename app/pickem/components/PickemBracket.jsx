@@ -452,7 +452,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-yellow-300 mb-8">
-            𝐹𝑖𝑛𝑎𝑙
+            𝙁𝙞𝙣𝙖𝙡
           </h3>
 
           <div className="max-w-xl mx-auto rounded-3xl border border-yellow-500/20 bg-white/5 p-8">
