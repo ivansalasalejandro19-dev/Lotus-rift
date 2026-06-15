@@ -118,21 +118,21 @@ console.log("EMAIL:", user?.email)
     Object.keys(semis).length !== 2 ||
     !finalWinner
   ) {
-    alert("Completa todo el bracket.")
+    alert("𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙖 𝙩𝙤𝙙𝙤 𝙚𝙡 𝙗𝙧𝙖𝙘𝙠𝙚𝙩.")
     return
   }
 
   if (Object.keys(crystalBallAnswers).length < 39) {
-  alert("Completa todas las predicciones del Crystal Ball.")
+  alert("𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙖 𝙩𝙤𝙙𝙖𝙨 𝙡𝙖𝙨 𝙥𝙧𝙚𝙙𝙞𝙘𝙘𝙞𝙤𝙣𝙚𝙨 𝙙𝙚𝙡 𝘾𝙧𝙮𝙨𝙩𝙖𝙡 𝘽𝙖𝙡𝙡.")
   return
 }
 
 if (!riotId.trim()) {
-  alert("Ingresa tu Riot ID.")
+  alert("𝙄𝙣𝙜𝙧𝙚𝙨𝙖 𝙩𝙪 𝙍𝙞𝙤𝙩 𝙄𝘿.")
   return
 }
 
-console.log("GUARDANDO...")
+console.log("𝙂𝙐𝘼𝙍𝘿𝘼𝙉𝘿𝙊...")
 
   await setDoc(
   doc(db, "pickems", user.uid),
@@ -220,12 +220,12 @@ if (showSuccess) {
           </div>
 
           <h2 className="text-4xl font-black mb-4">
-            𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛𝑒𝑠 𝐺𝑢𝑎𝑟𝑑𝑎𝑑𝑎𝑠
+            𝙋𝙧𝙚𝙙𝙞𝙘𝙘𝙞𝙤𝙣𝙚𝙨 𝙂𝙪𝙖𝙧𝙙𝙖𝙙𝙖𝙨
           </h2>
 
           <p className="text-white/70 mb-8">
-            𝑇𝑢𝑠 𝑝𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛𝑒𝑠 𝑓𝑢𝑒𝑟𝑜𝑛 𝑟𝑒𝑔𝑖𝑠𝑡𝑟𝑎𝑑𝑎𝑠 𝑐𝑜𝑟𝑟𝑒𝑐𝑡𝑎𝑚𝑒𝑛𝑡𝑒.
-            𝐸𝑙 𝑃𝑖𝑐𝑘'𝐸𝑚 𝘩𝑎 𝑞𝑢𝑒𝑑𝑎𝑑𝑜 𝑏𝑙𝑜𝑞𝑢𝑒𝑎𝑑𝑜.
+            𝙏𝙪𝙨 𝙥𝙧𝙚𝙙𝙞𝙘𝙘𝙞𝙤𝙣𝙚𝙨 𝙛𝙪𝙚𝙧𝙤𝙣 𝙧𝙚𝙜𝙞𝙨𝙩𝙧𝙖𝙙𝙖𝙨 𝙘𝙤𝙧𝙧𝙚𝙘𝙩𝙖𝙢𝙚𝙣𝙩𝙚.
+            𝙀𝙡 𝙋𝙞𝙘𝙠❜𝙀𝙢 𝙝𝙖 𝙦𝙪𝙚𝙙𝙖𝙙𝙤 𝙗𝙡𝙤𝙦𝙪𝙚𝙖𝙙𝙤.
           </p>
 
           <button
@@ -247,7 +247,7 @@ if (showSuccess) {
               transition-all
             "
           >
-            🏠 Volver al Inicio
+            🏠 𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙄𝙣𝙞𝙘𝙞𝙤
           </button>
 
         </div>
@@ -265,15 +265,15 @@ if (showSuccess) {
 
         <div className="text-center mb-16">
           <p className="text-pink-300 tracking-[0.3em] uppercase text-sm">
-            Pick'Em
+            𝙋𝙞𝙘𝙠'𝙀𝙢
           </p>
 
           <h2 className="text-5xl font-black mt-4">
-            🏆 𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛 𝑑𝑒 𝐵𝑟𝑎𝑐𝑘𝑒𝑡
+            🏆 𝙋𝙧𝙚𝙙𝙞𝙘𝙘𝙞𝙤𝙣 𝙙𝙚 𝘽𝙧𝙖𝙘𝙠𝙚𝙩  
           </h2>
 
           <p className="text-zinc-400 mt-4">
-            𝑃𝑟𝑒𝑑𝑖𝑐𝑒 𝑡𝑜𝑑𝑜 𝑒𝑙 𝑐𝑎𝑚𝑖𝑛𝑜 𝘩𝑎𝑐𝑖𝑎 𝑒𝑙 𝑐𝑎𝑚𝑝𝑒𝑜𝑛𝑎𝑡𝑜.
+        𝙋𝙧𝙚𝙙𝙞𝙘𝙚 𝙩𝙤𝙙𝙤 𝙚𝙡 𝙘𝙖𝙢𝙞𝙣𝙤 𝙝𝙖𝙘𝙞𝙖 𝙚𝙡 𝙘𝙖𝙢𝙥𝙚𝙤𝙣𝙖𝙩𝙤.
           </p>
         </div>
 
@@ -282,7 +282,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-pink-300 mb-8">
-            𝑂𝑐𝑡𝑎𝑣𝑜𝑠
+            𝙊𝙘𝙩𝙖𝙫𝙤𝙨
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -334,7 +334,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-cyan-300 mb-8">
-            𝐶𝑢𝑎𝑟𝑡𝑜𝑠
+            𝘾𝙪𝙖𝙧𝙩𝙤𝙨
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -393,7 +393,7 @@ if (showSuccess) {
         <div className="mb-20">
 
           <h3 className="text-3xl font-black text-violet-300 mb-8">
-            𝑆𝑒𝑚𝑖𝑓𝑖𝑛𝑎𝑙𝑒𝑠
+            𝙎𝙚𝙢𝙞𝙛𝙞𝙣𝙖𝙡𝙚𝙨
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -496,12 +496,12 @@ if (showSuccess) {
             </div>
 
             <p className="text-zinc-400 uppercase tracking-[0.3em] text-sm">
-              𝐶𝑎𝑚𝑝𝑒𝑜𝑛 𝑃𝑟𝑒𝑑𝑖𝑐𝘩𝑜
+              𝘾𝙖𝙢𝙥𝙚𝙤𝙣 𝙋𝙧𝙚𝙙𝙞𝙘𝙝𝙤
             </p>
 
             <h3 className="text-4xl font-black mt-4">
 
-              {champion || "𝑆𝑒𝑙𝑒𝑐𝑐𝑖𝑜𝑛𝑎 𝑢𝑛 𝑐𝑎𝑚𝑝𝑒𝑜𝑛"}
+              {champion || "𝙎𝙚𝙡𝙚𝙘𝙘𝙞𝙤𝙣𝙖 𝙪𝙣 𝙘𝙖𝙢𝙥𝙚𝙤𝙣"}
 
             </h3>
 
@@ -528,8 +528,8 @@ if (showSuccess) {
   >
 
     {locked
-      ? "✓ 𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛𝑒𝑠 𝑏𝑙𝑜𝑞𝑢𝑒𝑎𝑑𝑎𝑠"
-      : "💾 𝐺𝑢𝑎𝑟𝑑𝑎𝑟 𝑃𝑖𝑐𝑘'𝐸𝑚"}
+      ? "✓ 𝙥𝙧𝙚𝙙𝙞𝙘𝙘𝙞𝙤𝙣𝙚𝙨 𝙗𝙡𝙤𝙦𝙪𝙚𝙖𝙙𝙖𝙨"
+      : "💾 𝙂𝙪𝙖𝙧𝙙𝙖𝙧 𝙋𝙞𝙘𝙠'𝙀𝙢"}
 
   </button>
 
