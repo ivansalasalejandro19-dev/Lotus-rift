@@ -22,7 +22,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: '𝙈𝙖𝙨 𝙆𝙞𝙡𝙡𝙨',
+      title: '𝙈á𝙨 𝙆𝙞𝙡𝙡𝙨',
       icon: '💀',
       players: [
         { name: '𝙏𝘽𝘿', value: '0' },
@@ -31,7 +31,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: '𝙈𝙖𝙨 𝘼𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖𝙨',
+      title: '𝙈á𝙨 𝘼𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖𝙨',
       icon: '🎯',
       players: [
         { name: '𝙏𝘽𝘿', value: '0' },

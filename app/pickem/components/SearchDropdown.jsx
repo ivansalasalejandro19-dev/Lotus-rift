@@ -58,8 +58,8 @@ disabled:cursor-not-allowed
 >
 
   <span className="truncate">
-    {value || placeholder}
-  </span>
+  {value || "𝙎𝙚𝙡𝙚𝙘𝙘𝙞𝙤𝙣𝙖𝙧"}
+</span>
 
   <span
     className={`
