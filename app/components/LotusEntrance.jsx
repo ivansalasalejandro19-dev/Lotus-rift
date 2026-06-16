@@ -79,74 +79,88 @@ export default function LotusEntrance({ onEnter }) {
 
         </div>
 
-        {/* Partículas */}
+        {/* PORTAL MÁGICO */}
 
-        {opening && (
+{opening && (
+  <>
+    {/* Flash central */}
+    <motion.div
+      initial={{
+        scale: 0,
+        opacity: 1
+      }}
+      animate={{
+        scale: 12,
+        opacity: 0
+      }}
+      transition={{
+        duration: 0.8
+      }}
+      className="
+        absolute
+        w-24
+        h-24
+        rounded-full
+        bg-white
+        blur-3xl
+      "
+    />
 
-          <>
-            {[...Array(25)].map((_, i) => (
+    {/* Portal exterior */}
+    <motion.div
+      initial={{
+        scale: 0,
+        opacity: 1
+      }}
+      animate={{
+        scale: 25,
+        opacity: 0
+      }}
+      transition={{
+        duration: 1.8,
+        ease: "easeOut"
+      }}
+      className="
+        absolute
+        w-40
+        h-40
+        rounded-full
 
-              <motion.div
-                key={i}
+        border-[6px]
+        border-pink-300
 
-                initial={{
-                  opacity: 1,
-                  x: 0,
-                  y: 0,
-                  scale: 0.5
-                }}
+        shadow-[0_0_120px_rgba(236,72,153,0.8)]
+      "
+    />
 
-                animate={{
-                  opacity: 0,
-                  x: (Math.random() - 0.5) * 1000,
-                  y: (Math.random() - 0.5) * 1000,
-                  rotate: Math.random() * 720,
-                  scale: 1.5
-                }}
+    {/* Portal interior */}
+    <motion.div
+      initial={{
+        scale: 0,
+        opacity: 1
+      }}
+      animate={{
+        scale: 18,
+        opacity: 0
+      }}
+      transition={{
+        duration: 1.5,
+        ease: "easeOut"
+      }}
+      className="
+        absolute
+        w-32
+        h-32
+        rounded-full
 
-                transition={{
-                  duration: 1.8
-                }}
+        border-[4px]
+        border-cyan-300
 
-                className="
-                  absolute
-                  text-lg
-                "
-              >
-                🌸
-              </motion.div>
-
-            ))}
-          </>
-
-        )}
-        {[...Array(35)].map((_, i) => (
-
-  <motion.div
-    key={`particle-${i}`}
-    animate={{
-      y: [0, -40, 0],
-      opacity: [0.2, 1, 0.2],
-      scale: [1, 1.4, 1]
-    }}
-    transition={{
-      duration: 3 + Math.random() * 4,
-      repeat: Infinity
-    }}
-    className="
-      absolute
-      w-2
-      h-2
-      rounded-full
-      bg-pink-300
-    "
-    style={{
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`
-    }}
-  />
-
-))}
+        shadow-[0_0_100px_rgba(34,211,238,0.8)]
+      "
+    />
+  </>
+)}
 
         {/* LOTO LEGENDARIO */}
 
@@ -161,12 +175,12 @@ export default function LotusEntrance({ onEnter }) {
     justify-center
   "
   animate={
-    opening
-      ? {
-          scale: 3,
-          opacity: 0,
-          rotate: 8
-        }
+  opening
+    ? {
+        scale: 3,
+        opacity: 0,
+        rotate: 8
+      }
       : {
           scale: [1, 1.04, 1],
           y: [0, -12, 0]
