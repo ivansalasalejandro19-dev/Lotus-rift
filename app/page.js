@@ -176,10 +176,10 @@ if (!entered) {
 </h2>
 
 
-          <p className="mt-8 text-lg text-white/70 max-w-xl leading-relaxed">
-            Uɴᴇᴛᴇ ᴀ ʟᴀ ᴄᴏᴍᴜɴɪᴅᴀᴅ ᴅᴇ ᴅɪsᴄᴏʀᴅ
-          </p>
-
+        <div style={{ fontFamily: "sans-serif" }}>
+  <p className="mt-8 text-lg text-white/70 max-w-xl leading-relaxed">
+    Uɴᴇᴛᴇ ᴀ ʟᴀ ᴄᴏᴍᴜɴɪᴅᴀᴅ ᴅᴇ ᴅɪsᴄᴏʀᴅ
+  </p>
 
           <div className="flex flex-wrap gap-5 mt-12">
 
@@ -201,6 +201,8 @@ if (!entered) {
               Dɪsᴄᴏʀᴅ
             </a>
           </div>
+          </div>
+
         </div>
 
 
