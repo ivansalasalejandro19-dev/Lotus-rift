@@ -133,7 +133,9 @@ if (!user) {
       <div className="relative z-10">
   <Hero />
 
-  <div style={{ fontFamily: "var(--font-contrailOne)" }}>
+  <div style={{
+  fontFamily: "var(--font-contrail)"
+}}>
     
     <CrystalBall
       answers={crystalBallAnswers}

@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
-import { Contrail_One } from "next/font/google";
+import { Contrail_One } from "next/font/google"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const contrailOne = Contrail_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-contrail"
+})
 
 export const metadata = {
   title: "Lotus Rift | Torneo Competitivo de League of Legends",
@@ -39,12 +45,6 @@ export const metadata = {
     google: "notranslate",
   },
 };
-
-export const contrailOne = contrailOne({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-contrailOne"
-})
 
 export default function RootLayout({ children }) {
   return (
