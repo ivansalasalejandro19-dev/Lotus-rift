@@ -74,13 +74,14 @@ export default function PickemBracket({
     <button
   disabled={locked}
   onClick={onClick}
-      className={`
-        w-full
-        p-3
-        rounded-xl
-        border
-        transition-all
-        font-semibold
+  style={{ fontFamily: "sans-serif" }}
+  className={`
+    w-full
+    p-3
+    rounded-xl
+    border
+    transition-all
+    font-semibold
 
         ${locked ? "opacity-50 cursor-not-allowed" : ""}
 
