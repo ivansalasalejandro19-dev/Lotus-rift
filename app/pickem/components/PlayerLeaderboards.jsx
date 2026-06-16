@@ -4,7 +4,7 @@ export default function PlayerLeaderboards() {
 
   const leaderboards = [
     {
-      title: 'Más Daño',
+      title: 'MÁS DAÑO',
       icon: '💥',
       players: [
         { name: 'TBD', value: '0' },
@@ -13,7 +13,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: 'Mejor KDA',
+      title: 'MEJOR KDA',
       icon: '⚔️',
       players: [
         { name: 'TBD', value: '0' },
@@ -22,7 +22,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: 'Más Kills',
+      title: 'MÁS KILLS',
       icon: '💀',
       players: [
         { name: 'TBD', value: '0' },
@@ -31,7 +31,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: 'Más Asistencias ',
+      title: 'MÁS ASISTENCIAS',
       icon: '🎯',
       players: [
         { name: 'TBD', value: '0' },
@@ -40,7 +40,7 @@ export default function PlayerLeaderboards() {
       ]
     },
     {
-      title: 'Menos Muertes',
+      title: 'MENOS MUERTES',
       icon: '🛡️',
       players: [
         { name: 'TBD', value: '0' },
@@ -103,7 +103,7 @@ export default function PlayerLeaderboards() {
                 </h3>
 
                 <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
-                   Top 3
+                   TOP 3
                 </p>
 
               </div>
@@ -145,7 +145,7 @@ export default function PlayerLeaderboards() {
                       </p>
 
                       <p className="text-xs text-zinc-500">
-                        Rank #{index + 1}
+                        RANK #{index + 1}
                       </p>
 
                     </div>

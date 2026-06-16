@@ -109,11 +109,11 @@ if (!user) {
       <div className="text-center">
 
         <h1 className="text-4xl font-black mb-4">
-          🔒 Pick'Em Bloqueado
+          🔒 PICK'EM BLOQUEADO
         </h1>
 
         <p className="text-zinc-400">
-          Debes iniciar sesion para acceder.
+          DEBES INICIAR SESIÓN PARA ACCEDER.
         </p>
 
       </div>

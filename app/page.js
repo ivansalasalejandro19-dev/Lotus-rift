@@ -84,39 +84,39 @@ const [entered, setEntered] = useState(false)
   
   const schedule = [
     {
-      date: '4 ᴅᴇ Jᴜʟɪᴏ',
-      matches: 'Oᴄᴛᴀᴠᴏs 1, 2, 3 ʏ 4',
-      format: 'Bo1'
+      date: '4 DE JULIO',
+      matches: 'OCTAVOS  1, 2, 3 ʏ 4',
+      format: 'BO1'
     },
     {
-      date: '5 ᴅᴇ Jᴜʟɪᴏ',
-      matches: 'Oᴄᴛᴀᴠᴏs 5, 6, 7 ʏ 8',
-      format: 'Bo1'
+      date: '5 DE JULIO',
+      matches: 'OCTAVOS  5, 6, 7 ʏ 8',
+      format: 'BO1'
     },
     {
-      date: '11 ᴅᴇ Jᴜʟɪᴏ',
-      matches: 'Cᴜᴀʀᴛᴏs 1 ʏ 2',
-      format: 'Bo3'
+      date: '11 DE JULIO',
+      matches: 'CUARTOS 1 ʏ 2',
+      format: 'BO3'
     },
     {
-      date: '12 ᴅᴇ Jᴜʟɪᴏ',
-      matches: 'Cᴜᴀʀᴛᴏs 3 ʏ 4',
-      format: 'Bo3'
+      date: '12 DE JULIO',
+      matches: 'CUARTOS 3 ʏ 4',
+      format: 'BO3'
     },
     {
-      date: '17 ᴅᴇ Jᴜʟɪᴏ',
-      matches: 'Sᴇᴍɪғɪɴᴀʟ 1',
-      format: 'Bo5'
+      date: '17 DE JULIO',
+      matches: 'SEMIFINAL 1',
+      format: 'BO5'
     },
     {
-      date: '18 ᴅᴇ Jᴜʟɪᴏ',
-      matches: 'Sᴇᴍɪғɪɴᴀʟ 2',
-      format: 'Bo5'
+      date: '18 DE JULIO',
+      matches: 'SEMIFINAL 2',
+      format: 'BO5'
     },
     {
-      date: '25 ᴅᴇ Jᴜʟɪᴏ',
-      matches: 'Fɪɴᴀʟ',
-      format: 'Bo5'
+      date: '25 DE JULIO',
+      matches: 'FINAL',
+      format: 'BO5'
     }
   ]
 
@@ -136,8 +136,12 @@ if (!entered) {
   )
 }
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-[#09030f] via-[#14081f] to-[#050108] text-white overflow-hidden relative">
+ return (
+  <div className="min-h-screen bg-gradient-to-b from-[#09030f] via-[#14081f] to-[#050108] text-white overflow-hidden relative">
+
+    <div style={{ fontFamily: "var(--font-contrail)" }}>
+      
+    </div>
       {/* BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-pink-500/10 blur-3xl rounded-full" />
@@ -230,7 +234,7 @@ if (!entered) {
       <section className="relative z-10 px-4 sm:px-6 lg:px-20 grid grid-cols-2 md:grid-cols-4 gap-4 pb-20">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-5 sm:p-8 hover:bg-white/10 transition">
           <p className="uppercase tracking-[0.25em] text-white/40 text-sm">
-            𝐸𝑄𝑈𝐼𝑃𝑂𝑆
+            EQUIPOS
           </p>
 
 
@@ -242,19 +246,19 @@ if (!entered) {
 
         <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
           <p className="uppercase tracking-[0.25em] text-white/40 text-sm">
-            Formato
+            FORMATO
           </p>
 
 
           <h3 className="text-xl sm:text-3xl font-black mt-3 text-violet-200">
-            5vs5
+            5 VS 5
           </h3>
         </div>
 
 
         <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
           <p className="uppercase tracking-[0.25em] text-white/40 text-sm">
-            Inicio
+            INICIO
           </p>
 
 
@@ -266,12 +270,12 @@ if (!entered) {
 
         <div className="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-2xl p-8">
           <p className="uppercase tracking-[0.25em] text-white/40 text-sm">
-            Modalidad
+            MODALIDAD
           </p>
 
 
           <h3 className="text-2xl font-black mt-3 text-pink-200">
-            𝐹𝐸𝐴𝑅𝐿𝐸𝑆𝑆
+            FEARLESS
           </h3>
         </div>
       </section>
@@ -284,12 +288,12 @@ if (!entered) {
       >
         <div className="mb-12">
           <p className="uppercase tracking-[0.3em] text-pink-300 text-sm">
-            Calendario Oficial
+            CALENDARIO OFICIAL
           </p>
 
 
           <h3 className="text-3xl sm:text-5xl font-black mt-3">
-            𝐶𝑅𝑂𝑁𝑂𝐺𝑅𝐴𝑀𝐴
+            CRONOGRAMA
           </h3>
         </div>
 

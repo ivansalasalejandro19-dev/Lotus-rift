@@ -100,7 +100,7 @@ disabled:cursor-not-allowed
           <div className="p-3 border-b border-white/10">
 
             <input
-  placeholder="Buscar..."
+  placeholder="BUSCAR..."
   value={search}
   onChange={(e) =>
     setSearch(e.target.value)
@@ -131,7 +131,7 @@ disabled:cursor-not-allowed
             {filtered.length === 0 && (
 
               <div className="p-4 text-center text-white/40">
-                Sin resultados
+                SIN RESULTADOS
               </div>
 
             )}

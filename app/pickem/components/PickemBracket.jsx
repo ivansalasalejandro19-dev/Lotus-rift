@@ -118,17 +118,17 @@ console.log("EMAIL:", user?.email)
     Object.keys(semis).length !== 2 ||
     !finalWinner
   ) {
-    alert("Completa todo el bracket.")
+    alert("COMPLETA TODO EL BRACKET.")
     return
   }
 
   if (Object.keys(crystalBallAnswers).length < 39) {
-  alert("Completa todas las predicciones de Crystal Ball.")
+  alert("COMPLETA TODAS LAS PREDICCIONES DE CRYSTAL BALL.")
   return
 }
 
 if (!riotId.trim()) {
-  alert("Ingresa tu RIOT ID.")
+  alert("INGRESA TU RIOT ID.")
   return
 }
 
@@ -220,12 +220,12 @@ if (showSuccess) {
           </div>
 
           <h2 className="text-4xl font-black mb-4">
-            Predicciones guardadas
+            PREDICCIONES GUARDADAS
           </h2>
 
           <p className="text-white/70 mb-8">
-            Tus predicciones fueron registradas correctamente.
-            El Pick'Em ha quedado bloqueado
+            TUS PREDICCIONES FUERON REGISTRADAS CORRECTAMENTE.
+            EL PICK'EM HA QUEDADO BLOQUEADO.
           </p>
 
           <button
@@ -247,7 +247,7 @@ if (showSuccess) {
               transition-all
             "
           >
-            🏠 Volver al inicio
+            🏠 VOLVER AL INICIO
           </button>
 
         </div>
@@ -528,7 +528,7 @@ if (showSuccess) {
   >
 
     {locked
-      ? "✓ Predicciones bloqueadas"
+      ? "✓ PREDICCIONES BLOQUEADAS"
       : "💾 Guardar Pick'Em"}
 
   </button>

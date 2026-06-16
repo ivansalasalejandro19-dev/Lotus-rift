@@ -84,7 +84,7 @@ export default function LotusEntrance({ onEnter }) {
         {opening && (
 
           <>
-            {[...Array(30)].map((_, i) => (
+            {[...Array(120)].map((_, i) => (
 
               <motion.div
                 key={i}
@@ -110,7 +110,7 @@ export default function LotusEntrance({ onEnter }) {
 
                 className="
                   absolute
-                  text-3xl
+                  text-lg
                 "
               >
                 🌸
@@ -120,137 +120,206 @@ export default function LotusEntrance({ onEnter }) {
           </>
 
         )}
+        {[...Array(35)].map((_, i) => (
 
-        {/* Loto */}
+  <motion.div
+    key={`particle-${i}`}
+    animate={{
+      y: [0, -40, 0],
+      opacity: [0.2, 1, 0.2],
+      scale: [1, 1.4, 1]
+    }}
+    transition={{
+      duration: 3 + Math.random() * 4,
+      repeat: Infinity
+    }}
+    className="
+      absolute
+      w-2
+      h-2
+      rounded-full
+      bg-pink-300
+    "
+    style={{
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`
+    }}
+  />
+
+))}
+
+        {/* LOTO LEGENDARIO */}
+
+<motion.div
+  onClick={handleClick}
+  className="
+    relative
+    cursor-pointer
+    select-none
+    flex
+    items-center
+    justify-center
+  "
+  animate={
+    opening
+      ? {
+          scale: 3,
+          opacity: 0,
+          rotate: 8
+        }
+      : {
+          scale: [1, 1.04, 1],
+          y: [0, -12, 0]
+        }
+  }
+  transition={
+    opening
+      ? {
+          duration: 1.8
+        }
+      : {
+          duration: 5,
+          repeat: Infinity
+        }
+  }
+>
+
+  {/* Halo gigante */}
+
+  <div
+    className="
+      absolute
+      w-[900px]
+      h-[900px]
+      rounded-full
+      bg-pink-500/15
+      blur-[220px]
+    "
+  />
+
+  <div
+    className="
+      absolute
+      w-[700px]
+      h-[700px]
+      rounded-full
+      bg-fuchsia-500/15
+      blur-[180px]
+    "
+  />
+
+  {/* Círculo exterior */}
+
+  <motion.div
+    animate={{
+      rotate: 360
+    }}
+    transition={{
+      duration: 60,
+      repeat: Infinity,
+      ease: "linear"
+    }}
+    className="
+      absolute
+      w-[780px]
+      h-[780px]
+      rounded-full
+      border
+      border-pink-400/10
+    "
+  />
+
+  {/* Círculo interior */}
+
+  <motion.div
+    animate={{
+      rotate: -360
+    }}
+    transition={{
+      duration: 45,
+      repeat: Infinity,
+      ease: "linear"
+    }}
+    className="
+      absolute
+      w-[620px]
+      h-[620px]
+      rounded-full
+      border
+      border-cyan-400/10
+    "
+  />
+
+  {/* PNG */}
+
+  <img
+    src="/lotus.png"
+    alt="Lotus Rift"
+    draggable={false}
+    className="
+      relative
+
+      w-[380px]
+      sm:w-[550px]
+      lg:w-[720px]
+
+      drop-shadow-[0_0_150px_rgba(236,72,153,0.9)]
+    "
+  />
+
+</motion.div>
 
         <motion.div
-          onClick={handleClick}
-          className="
-            relative
-            cursor-pointer
-            select-none
-          "
+  animate={
+    opening
+      ? {
+          opacity: 0
+        }
+      : {
+          opacity: 1
+        }
+  }
+  className="
+    absolute
+    bottom-20
+    text-center
+  "
+>
 
-          animate={
-            opening
-              ? {
-                  scale: 1.8,
-                  opacity: 0,
-                  rotate: 20
-                }
-              : {
-                  y: [0, -20, 0]
-                }
-          }
+  <h1
+    className="
+      text-6xl
+      md:text-8xl
+      font-black
 
-          transition={
-            opening
-              ? {
-                  duration: 1.8
-                }
-              : {
-                  duration: 4,
-                  repeat: Infinity
-                }
-          }
-        >
+      tracking-[0.25em]
 
-          {/* Glow */}
+      bg-gradient-to-r
+      from-pink-300
+      via-fuchsia-300
+      to-cyan-300
 
-          <div
-            className="
-              absolute
-              inset-0
+      bg-clip-text
+      text-transparent
 
-              scale-125
+      drop-shadow-[0_0_40px_rgba(236,72,153,0.4)]
+    "
+  >
+    LOTUS RIFT
+  </h1>
 
-              bg-pink-500/20
+  <p
+    className="
+      mt-6
+      text-white/50
+      tracking-[0.5em]
+      text-sm
+    "
+  >
+    TOCA EL LOTO
+  </p>
 
-              rounded-full
-
-              blur-[100px]
-
-              animate-pulse
-            "
-          />
-
-          {/* PNG DEL LOTO */}
-
-          <img
-            src="/lotus.png"
-            alt="Lotus Rift"
-
-            draggable={false}
-
-            className="
-              relative
-
-              w-[280px]
-              sm:w-[420px]
-              lg:w-[550px]
-
-              drop-shadow-[0_0_100px_rgba(236,72,153,0.8)]
-            "
-          />
-
-        </motion.div>
-
-        {/* Logo */}
-
-        <motion.div
-
-          animate={
-            opening
-              ? {
-                  opacity: 0
-                }
-              : {
-                  opacity: 1
-                }
-          }
-
-          className="
-            absolute
-            bottom-24
-
-            text-center
-          "
-        >
-
-          <h1
-            className="
-              text-5xl
-              md:text-7xl
-
-              font-black
-
-              tracking-[0.25em]
-
-              bg-gradient-to-r
-              from-pink-300
-              via-fuchsia-300
-              to-cyan-300
-
-              bg-clip-text
-              text-transparent
-            "
-          >
-            LOTUS RIFT
-          </h1>
-
-          <p
-            className="
-              mt-6
-
-              text-white/40
-
-              tracking-[0.4em]
-            "
-          >
-            TOCA EL LOTO
-          </p>
-
-        </motion.div>
+</motion.div>
 
       </motion.main>
 
