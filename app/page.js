@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { db } from "./lib/firebase"
 import { doc, getDoc } from "firebase/firestore"
+import LotusEntrance from "./components/LotusEntrance"
 
 export default function LotusRiftTournamentPage() {
 
@@ -14,6 +15,7 @@ export default function LotusRiftTournamentPage() {
 const [roster, setRoster] = useState({})
 const [loading, setLoading] = useState(true)
 const [teamLogos, setTeamLogos] = useState({})
+const [entered, setEntered] = useState(false)
 
 
   useEffect(() => {
@@ -123,6 +125,14 @@ const [teamLogos, setTeamLogos] = useState({})
     <div className="min-h-screen flex items-center justify-center bg-black text-white">
       Cargando equipos...
     </div>
+  )
+}
+
+if (!entered) {
+  return (
+    <LotusEntrance
+      onEnter={() => setEntered(true)}
+    />
   )
 }
 
