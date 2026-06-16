@@ -84,7 +84,7 @@ export default function LotusEntrance({ onEnter }) {
         {opening && (
 
           <>
-            {[...Array(120)].map((_, i) => (
+            {[...Array(25)].map((_, i) => (
 
               <motion.div
                 key={i}
