@@ -109,11 +109,11 @@ if (!user) {
       <div className="text-center">
 
         <h1 className="text-4xl font-black mb-4">
-          🔒 𝙋𝙞𝙘𝙠❜𝙀𝙢 𝘽𝙡𝙤𝙦𝙪𝙚𝙖𝙙𝙤
+          🔒 Pick'Em Bloqueado
         </h1>
 
         <p className="text-zinc-400">
-          𝘿𝙚𝙗𝙚𝙨 𝙞𝙣𝙞𝙘𝙞𝙖𝙧 𝙨𝙚𝙨𝙞𝙤𝙣 𝙥𝙖𝙧𝙖 𝙖𝙘𝙘𝙚𝙙𝙚𝙧.
+          Debes iniciar sesion para acceder.
         </p>
 
       </div>
@@ -131,58 +131,35 @@ if (!user) {
 
       {/* 🧠 Contenido encima del fondo */}
       <div className="relative z-10">
-        <Hero />
-        <CrystalBall
-  answers={crystalBallAnswers}
-  setAnswers={setCrystalBallAnswers}
-  locked={pickemLocked}
-  teams={Object.values(teams)}
-  players={players}
-/>
+  <Hero />
 
-
-<div className="max-w-3xl mx-auto px-4 mb-12">
-  <div className="rounded-3xl border border-pink-500/20 bg-zinc-900/60 backdrop-blur-xl p-8">
+  <div className="font-[var(--font-contrail)]">
     
-    <h2 className="text-3xl font-black mb-3 bg-gradient-to-r from-pink-400 to-cyan-300 bg-clip-text text-transparent">
-      𝙍𝙞𝙤𝙩 𝙄𝘿
-    </h2>
-
-    <p className="text-zinc-400 mb-6">
-      𝙄𝙣𝙜𝙧𝙚𝙨𝙖 𝙩𝙪 𝙍𝙞𝙤𝙩 𝙄𝘿 𝙥𝙖𝙧𝙖 𝙥𝙤𝙙𝙚𝙧 𝙞𝙙𝙚𝙣𝙩𝙞𝙛𝙞𝙘𝙖𝙧𝙩𝙚 𝙨𝙞 𝙧𝙚𝙨𝙪𝙡𝙩𝙖𝙨 𝙜𝙖𝙣𝙖𝙙𝙤𝙧.
-    </p>
-
-    <input
-      type="text"
-      value={riotId}
-      disabled={pickemLocked}
-      onChange={(e) => setRiotId(e.target.value)}
-      placeholder="Ej: 𝙍𝙖𝙜𝙣𝙖𝙧𝙤𝙠#𝙏𝙧𝙤𝙡𝙡"
-      className="
-        w-full
-        px-5
-        py-4
-        rounded-2xl
-        bg-black/40
-        border
-        border-white/10
-        focus:border-pink-500
-        outline-none
-      "
+    <CrystalBall
+      answers={crystalBallAnswers}
+      setAnswers={setCrystalBallAnswers}
+      locked={pickemLocked}
+      teams={Object.values(teams)}
+      players={players}
     />
+
+    <div className="max-w-3xl mx-auto px-4 mb-12">
+      ...
+    </div>
+
+    <PickemBracket
+      user={user}
+      crystalBallAnswers={crystalBallAnswers}
+      setPickemLocked={setPickemLocked}
+      riotId={riotId}
+    />
+
+    <LotusTracker />
+
+    <PlayerLeaderboards />
+
   </div>
 </div>
-
-        <PickemBracket
-  user={user}
-  crystalBallAnswers={crystalBallAnswers}
-  setPickemLocked={setPickemLocked}
-  riotId={riotId}
-/>
-
-        <LotusTracker />
-        <PlayerLeaderboards />
-      </div>
 
     </div>
   )

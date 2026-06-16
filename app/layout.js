@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
+import { Contrail_One } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,12 @@ export const metadata = {
   },
 };
 
+export const contrailOne = Contrail_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-contrail"
+})
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -47,9 +54,16 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body
-        translate="no"
-        className="min-h-full flex flex-col bg-[#050108] text-white"
-      >
+  translate="no"
+  className={`
+    ${contrailOne.variable}
+    min-h-full
+    flex
+    flex-col
+    bg-[#050108]
+    text-white
+  `}
+>
         <AuthProvider>
           <Navbar />
 

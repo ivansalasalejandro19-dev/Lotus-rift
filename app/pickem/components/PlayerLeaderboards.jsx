@@ -4,48 +4,48 @@ export default function PlayerLeaderboards() {
 
   const leaderboards = [
     {
-      title: '𝙈𝙖𝙨 𝘿𝙖ñ𝙤',
+      title: 'Más Daño',
       icon: '💥',
       players: [
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' }
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' }
       ]
     },
     {
-      title: '𝙈𝙚𝙟𝙤𝙧 𝙆𝘿𝘼',
+      title: 'Mejor KDA',
       icon: '⚔️',
       players: [
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' }
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' }
       ]
     },
     {
-      title: '𝙈á𝙨 𝙆𝙞𝙡𝙡𝙨',
+      title: 'Más Kills',
       icon: '💀',
       players: [
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' }
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' }
       ]
     },
     {
-      title: '𝙈á𝙨 𝘼𝙨𝙞𝙨𝙩𝙚𝙣𝙘𝙞𝙖𝙨',
+      title: 'Más Asistencias ',
       icon: '🎯',
       players: [
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' }
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' }
       ]
     },
     {
-      title: '𝙈𝙚𝙣𝙤𝙨 𝙈𝙪𝙚𝙧𝙩𝙚𝙨',
+      title: 'Menos Muertes',
       icon: '🛡️',
       players: [
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' },
-        { name: '𝙏𝘽𝘿', value: '0' }
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' },
+        { name: 'TBD', value: '0' }
       ]
     }
   ]
@@ -56,11 +56,11 @@ export default function PlayerLeaderboards() {
       <div className="mb-12">
 
         <p className="uppercase tracking-[0.35em] text-pink-300 text-xs font-bold">
-            𝙇𝙀𝘼𝘿𝙀𝙍𝘽𝙊𝘼𝙍𝘿𝙎
+            Leaderboards
         </p>
 
         <h2 className="text-4xl md:text-5xl font-black">
-          𝙀𝙨𝙩𝙖𝙙𝞲𝙨𝙩𝙞𝙘𝙖𝙨 𝙙𝙚 𝙅𝙪𝙜𝙖𝙙𝙤𝙧𝙚𝙨
+          ESTADÍSTICAS DE JUGADORES
         </h2>
 
       </div>
@@ -103,7 +103,7 @@ export default function PlayerLeaderboards() {
                 </h3>
 
                 <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
-                  𝙏𝙤𝙥 𝟹
+                   Top 3
                 </p>
 
               </div>
@@ -145,7 +145,7 @@ export default function PlayerLeaderboards() {
                       </p>
 
                       <p className="text-xs text-zinc-500">
-                        𝙍𝙖𝙣𝙠 #{index + 1}
+                        Rank #{index + 1}
                       </p>
 
                     </div>

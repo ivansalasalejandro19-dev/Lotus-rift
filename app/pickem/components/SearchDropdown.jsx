@@ -58,7 +58,7 @@ disabled:cursor-not-allowed
 >
 
   <span className="truncate">
-  {value || "𝙎𝙚𝙡𝙚𝙘𝙘𝙞𝙤𝙣𝙖𝙧"}
+  {value || "Seleccionar"}
 </span>
 
   <span
@@ -100,7 +100,7 @@ disabled:cursor-not-allowed
           <div className="p-3 border-b border-white/10">
 
             <input
-  placeholder="𝘽𝙪𝙨𝙘𝙖𝙧..."
+  placeholder="Buscar..."
   value={search}
   onChange={(e) =>
     setSearch(e.target.value)
@@ -131,7 +131,7 @@ disabled:cursor-not-allowed
             {filtered.length === 0 && (
 
               <div className="p-4 text-center text-white/40">
-                𝙎𝙞𝙣 𝙧𝙚𝙨𝙪𝙡𝙩𝙖𝙙𝙤𝙨
+                Sin resultados
               </div>
 
             )}
