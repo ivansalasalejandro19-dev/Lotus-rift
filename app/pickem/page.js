@@ -133,30 +133,30 @@ if (!user) {
       <div className="relative z-10">
   <Hero />
 
-  <div style={{
-  fontFamily: "var(--font-contrail)"
-}}>
-    
-    <CrystalBall
-      answers={crystalBallAnswers}
-      setAnswers={setCrystalBallAnswers}
-      locked={pickemLocked}
-      teams={Object.values(teams)}
-      players={players}
-    />
+  <div
+  style={{
+    fontFamily: "var(--font-contrail)"
+  }}
+>
+  <CrystalBall
+    answers={crystalBallAnswers}
+    setAnswers={setCrystalBallAnswers}
+    locked={pickemLocked}
+    teams={Object.values(teams)}
+    players={players}
+  />
 
-    <PickemBracket
-      user={user}
-      crystalBallAnswers={crystalBallAnswers}
-      setPickemLocked={setPickemLocked}
-      riotId={riotId}
-    />
+  <PickemBracket
+    user={user}
+    crystalBallAnswers={crystalBallAnswers}
+    setPickemLocked={setPickemLocked}
+    riotId={riotId}
+  />
 
-    <LotusTracker />
+  <LotusTracker />
 
-    <PlayerLeaderboards />
-
-  </div>
+  <PlayerLeaderboards />
+</div>
 </div>
 
     </div>

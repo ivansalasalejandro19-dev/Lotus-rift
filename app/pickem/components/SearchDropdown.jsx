@@ -185,9 +185,15 @@ disabled:cursor-not-allowed
       className="w-8 h-8 object-contain"
     />
 
-    <span className="font-semibold">
-      {option.name}
-    </span>
+    <span
+  className="font-semibold font-sans"
+  style={{
+    fontFamily:
+      "system-ui, sans-serif"
+  }}
+>
+  {option.name}
+</span>
 
   </div>
 
@@ -211,25 +217,35 @@ disabled:cursor-not-allowed
 
   <div>
 
-    <div className="font-semibold">
+    <div
+  className="font-semibold font-sans"
+  style={{
+    fontFamily:
+      "system-ui, sans-serif"
+  }}
+>
 
-      {option.id || option.name}
+  {option.id || option.name}
 
-      {option.captain && (
-        <span className="ml-2">
-          👑
-        </span>
-      )}
+  {option.captain && (
+    <span className="ml-2">
+      👑
+    </span>
+  )}
 
-    </div>
+</div>
 
     {option.team && (
 
-      <div className="text-xs text-white/50">
-
-        {option.team} • {option.role}
-
-      </div>
+      <div
+  className="text-xs text-white/50 font-sans"
+  style={{
+    fontFamily:
+      "system-ui, sans-serif"
+  }}
+>
+  {option.team} • {option.role}
+</div>
 
     )}
 
