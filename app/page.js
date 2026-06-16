@@ -140,8 +140,7 @@ if (!entered) {
   <div className="min-h-screen bg-gradient-to-b from-[#09030f] via-[#14081f] to-[#050108] text-white overflow-hidden relative">
 
     <div style={{ fontFamily: "var(--font-contrail)" }}>
-      
-    </div>
+    
       {/* BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-pink-500/10 blur-3xl rounded-full" />
@@ -336,7 +335,7 @@ if (!entered) {
           </p>
 
           <h3 className="text-3xl sm:text-5xl font-black mt-3">
-            𝐸𝑄𝑈𝐼𝑃𝑂𝑆
+            EQUIPOS
           </h3>
         </div>
 
@@ -489,7 +488,9 @@ if (!entered) {
 
         </div>
 
+
       </section>
+      </div>
 
       <style jsx global>{`
   html,
