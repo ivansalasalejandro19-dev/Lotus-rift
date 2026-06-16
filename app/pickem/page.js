@@ -133,7 +133,7 @@ if (!user) {
       <div className="relative z-10">
   <Hero />
 
-  <div className="font-[var(--font-chewy)]">
+  <div style={{ fontFamily: "var(--font-chewy)" }}>
     
     <CrystalBall
       answers={crystalBallAnswers}
@@ -142,10 +142,6 @@ if (!user) {
       teams={Object.values(teams)}
       players={players}
     />
-
-    <div className="max-w-3xl mx-auto px-4 mb-12">
-      ...
-    </div>
 
     <PickemBracket
       user={user}

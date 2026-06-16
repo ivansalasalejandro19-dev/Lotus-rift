@@ -59,14 +59,9 @@ export default function PlayerLeaderboards() {
             Leaderboards
         </p>
 
-        <h2
-  style={{
-    fontFamily: "var(--font-chewy)"
-  }}
-  className="text-3xl font-black mb-3 bg-gradient-to-r from-pink-400 to-cyan-300 bg-clip-text text-transparent"
->
-  Ezreql
-</h2>
+        <h2 className="text-4xl md:text-5xl font-black">
+          ESTADÍSTICAS DE JUGADORES
+        </h2>
 
       </div>
 
