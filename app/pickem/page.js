@@ -133,7 +133,7 @@ if (!user) {
       <div className="relative z-10">
   <Hero />
 
-  <div className="font-[var(--font-contrail)]">
+  <div className="font-[var(--font-chewy)]">
     
     <CrystalBall
       answers={crystalBallAnswers}

@@ -7,7 +7,7 @@ import SearchDropdown from './SearchDropdown'
 const sections = [
 
   {
-    title: '🏆 Torneo ',
+    title: '🏆 TORNEO ',
     color: 'text-pink-300',
 
     questions: [
@@ -35,7 +35,7 @@ const sections = [
   },
 
   {
-    title: '⚔️ Equipos ',
+    title: '⚔️ EQUIPOS ',
     color: 'text-cyan-300',
 
     questions: [
@@ -88,7 +88,7 @@ const sections = [
   },
 
   {
-    title: '👤 Jugadores ',
+    title: '👤 JUGADORES ',
     color: 'text-violet-300',
 
     questions: [
@@ -151,7 +151,7 @@ const sections = [
   },
 
   {
-    title: '🎮 Campeones',
+    title: '🎮 CAMPEONES',
     color: 'text-yellow-300',
 
     questions: [
@@ -204,7 +204,7 @@ const sections = [
   },
 
   {
-    title: '📊 Estadísticas',
+    title: '📊 ESTADÍSTICAS',
     color: 'text-emerald-300',
 
     questions: [
