@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
       <body
   translate="no"
   className={`
-    ${contrailOne.variable}
+    ${chewy.variable}
     min-h-full
     flex
     flex-col
