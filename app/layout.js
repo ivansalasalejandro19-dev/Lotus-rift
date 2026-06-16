@@ -3,7 +3,6 @@ import "./globals.css";
 import { AuthProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
 import { Contrail_One } from "next/font/google";
-import { Chewy } from "next/font/google"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,10 +40,10 @@ export const metadata = {
   },
 };
 
-export const chewy = Chewy({
+export const contrailOne = contrailOne({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-chewy"
+  variable: "--font-contrailOne"
 })
 
 export default function RootLayout({ children }) {
@@ -52,12 +51,12 @@ export default function RootLayout({ children }) {
     <html
       lang="es"
       translate="no"
-     className={`${geistSans.variable} ${geistMono.variable} ${chewy.variable} h-full antialiased`}
+     className={`${geistSans.variable} ${geistMono.variable} ${contrailOne.variable} h-full antialiased`}
      >
       <body
   translate="no"
   className={`
-    ${chewy.variable}
+    ${contrailOne.variable}
     min-h-full
     flex
     flex-col
