@@ -321,7 +321,7 @@ if (!entered) {
           ))}
         </div>
       </section>
-
+</div>
 
       {/* EQUIPOS */}
       <section
@@ -329,15 +329,19 @@ if (!entered) {
         className="relative z-10 px-4 sm:px-6 lg:px-20 pb-16"
       >
 
-        <div className="mb-12">
-          <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
-            Participantes
-          </p>
+        <div
+  className="mb-12"
+  style={{ fontFamily: "var(--font-contrail)" }}
+>
+  <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
+    Participantes
+  </p>
 
-          <h3 className="text-3xl sm:text-5xl font-black mt-3">
-            EQUIPOS
-          </h3>
-        </div>
+  <h3 className="text-3xl sm:text-5xl font-black mt-3">
+    EQUIPOS
+  </h3>
+</div>
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
@@ -490,7 +494,7 @@ if (!entered) {
 
 
       </section>
-      </div>
+      
 
       <style jsx global>{`
   html,
