@@ -409,7 +409,6 @@ const roster = {
       {
         id: 'G7 Vanderrr#Zzz',
         role: 'JUNGLA',
-        captain: true
       },
 
       {
@@ -429,7 +428,8 @@ const roster = {
 
       {
         id: 'Chrome Dokuro#IPin',
-        role: 'SUPLENTE'
+        role: 'SUPLENTE',
+        captain: true
       },
 
       {
