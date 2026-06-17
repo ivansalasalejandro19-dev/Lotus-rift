@@ -428,12 +428,12 @@ const roster = {
       },
 
       {
-        id: 'G7 Aren Woka#Nea',
+        id: 'Chrome Dokuro#IPin',
         role: 'SUPLENTE'
       },
 
       {
-        id: 'G7 Tyki Pon#Mikk',
+        id: 'Mukuro#Lambo',
         role: 'SUPLENTE 2'
       }
 
