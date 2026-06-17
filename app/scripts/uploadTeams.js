@@ -233,7 +233,7 @@ const roster = {
       {
         id: 'Da Vinci#4034',
         role: 'SUPLENTE 2',
-      }, 
+      }
     ],
 
 
@@ -271,7 +271,7 @@ const roster = {
       {
         id: 'DoomScry#Edu',
         role: 'SUPLENTE',
-      },
+      }
     ],
 
 
@@ -310,7 +310,7 @@ const roster = {
         id: 'HTS PAN#hts',
         role: 'SUPLENTE',
 
-      }, {}
+      }
 
     ],
 
@@ -391,7 +391,7 @@ const roster = {
       {
         id: 'Twitch Sleepwrl#XXI',
         role: 'SUPLENTE',
-      }, {}
+      }
     ],
 
 
@@ -436,9 +436,6 @@ const roster = {
         id: 'Mukuro#Lambo',
         role: 'SUPLENTE 2'
       }
-
-
-
     ],
 
 
@@ -588,7 +585,7 @@ const roster = {
       {
         id: 'Hide on WęęĐ#CRC',
         role: 'SUPLENTE'
-      }, {}
+      }
     ],
 
 
