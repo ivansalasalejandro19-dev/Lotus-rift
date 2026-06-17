@@ -162,7 +162,8 @@ const roster = {
 
       {
         id: 'Jei ttv#6711',
-        role: 'JUNGLA'
+        role: 'JUNGLA',
+        captain: true
       },
 
       {
@@ -178,10 +179,18 @@ const roster = {
       {
         id: '루발  GawrNikho メ#lulu',
         role: 'SUP',
-        captain: true
       },
 
-      {}, {}
+      {
+        id: 'Atlas#Buuu',
+        role: 'SUPLENTE',
+      },
+
+      {
+        id: 'Xue#穆尼奥斯',
+        role: 'SUPLENTE 2'
+      }
+
     ],
 
 
@@ -327,20 +336,25 @@ const roster = {
       },
 
       {
-        id: 'Just Supra#Ling',
+        id: 'G7z EGO#EROS',
         role: 'ADC'
       },
 
       {
-        id: 'G7 Nestior#001',
+        id: 'Alexa#AED',
         role: 'SUP'
       },
 
       {
+        id: 'Zhxgrl#rxwtz',
+        role: 'SUPLENTE',
+      }, 
+      
+      {
         id: 'G7龙 ŽhêrØ#Ñupra',
         role: 'SUPLENTE',
         captain: true
-      }, {}
+      } 
     ],
 
 
@@ -449,23 +463,13 @@ const roster = {
       },
 
       {
-        id: 'Kino 縁#0609',
+        id: 'Vaytiu#Vayli',
         role: 'ADC'
       },
 
       {
-        id: 'The Unforgiven#NoFun',
+        id: 'Kino 縁#0609',
         role: 'SUP'
-      },
-
-      {
-        id: 'Tiffany69#LAN',
-        role: 'SUPLENTE'
-      },
-
-      {
-        id: 'Who is Jxss愛#Kensy',
-        role: 'SUPLENTE 2'
       }
     ],
 
@@ -514,11 +518,12 @@ const roster = {
     'Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ': [
       {
         id: 'Better#lvys',
-        role: 'TOP'
+        role: 'TOP',
+        captain: true
       }, 
       
       {
-        id: 'T1 Azazel#GTM',
+        id: 'SojaCarbo#1830',
         role: 'JUNGLA'
       }, 
       
@@ -538,7 +543,7 @@ const roster = {
       }, 
       
       {
-          id: 'Chicx DaSleep 火#Burra',
+          id: 'VF DaSilva 火#Vicky',
           role: 'SUPLENTE',
       }, 
       
