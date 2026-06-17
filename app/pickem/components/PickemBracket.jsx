@@ -11,14 +11,14 @@ import {
 import { db } from "../../lib/firebase"
 
 const round16Matches = [
-  ["Nᴀʜᴜᴀʟᴇs", "Fʟᴀᴡʟᴇss"],
-  ["ÆSIIR Gᴏ Lᴇɢᴇɴᴅs", "Jᴏʏɪᴛᴀ Gᴀᴍɪɴɢ"],
+  ["KT E Sᴘᴏʀᴛs", "Fʟᴀᴡʟᴇss"],
+  ["ÆSIIR Gᴏ Lᴇɢᴇɴᴅs", "Asᴛʀᴀʟ Gᴀᴍɪɴɢ"],
   ["Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ", "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs"],
   ["T502", "Sᴍᴀᴄᴋᴅᴏᴡɴ"],
   ["Cᴏsᴀ Nᴏsᴛʀᴀ", "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ"],
   ["Iᴄᴇ Gᴏʟᴅ", "Sʜᴀᴅᴏᴡ Rᴇᴀᴘᴇʀs"],
   ["Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ", "Rᴏᴋᴜʀᴏᴍɪɴᴏs"],
-  ["HᴀTsᴜ", "Nᴇᴡ Aʟʟɪᴀɴᴄᴇ"]
+  ["HᴀTsᴜ", "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ"]
 ]
 
 export default function PickemBracket({

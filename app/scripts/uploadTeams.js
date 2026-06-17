@@ -595,12 +595,12 @@ const roster = {
 
     'Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ': [
       {
-        id: 'EzLane DieGod ツ#Mich',
+        id: ' lebmont#000',
         role: 'TOP'
       },
 
       {
-        id: 'Twitch EzGiaan#Poro',
+        id: ' wrvalhalla TTV#leaf',
         role: 'JUNGLA'
       },
 
@@ -621,12 +621,12 @@ const roster = {
       },
 
       {
-        id: 'KatEvolved#HWL',
+        id: 'SS Show#Kbras',
         role: 'SUPLENTE'
       },
 
       {
-        id: 'Andy#V2007',
+        id: 'SiDaRoAl#TROLL',
         role: 'SUPLENTE 2'
       }
     ],
@@ -680,7 +680,7 @@ const roster = {
 
     'Asᴛʀᴀʟ Gᴀᴍɪɴɢ': [
       {
-        id: 'Zero#bbx',
+        id: 'G7z Vox#EzAdc',
         role: 'TOP'
       },
 
@@ -710,7 +710,7 @@ const roster = {
       },
 
       {
-        id: 'G7z Vox#EzAdc',
+        id: 'G7z AxlRose#1305',
         role: 'SUPLENTE 2'
       }
     ]
