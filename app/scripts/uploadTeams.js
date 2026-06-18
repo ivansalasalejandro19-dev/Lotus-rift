@@ -663,7 +663,7 @@ const roster = {
       }, 
       
       {
-        id: 'Tiktokdelpatio16#JG1',
+        id: 'Hottie Rorro#Luu',
         role: 'SUPLENTE',
       }, 
       
@@ -680,12 +680,12 @@ const roster = {
 
     'Asᴛʀᴀʟ Gᴀᴍɪɴɢ': [
       {
-        id: 'G7z Vox#EzAdc',
+        id: 'Feit#One',
         role: 'TOP'
       },
 
       {
-        id: 'Artemis 縁#Abi',
+        id: 'Natsu#BACK',
         role: 'JUNGLA'
       },
 
@@ -695,22 +695,22 @@ const roster = {
       },
 
       {
-        id: 'LaloSalamanca#INF',
+        id: 'WaRFecasS#Nyc',
         role: 'ADC'
       },
 
       {
-        id: 'lifes a mess#没有爱',
+        id: '春LéZing#Zing',
         role: 'SUP'
       },
 
       {
-        id: 'Ticamate#3674',
+        id: 'Yue 心向苍穹#MID',
         role: 'SUPLENTE'
       },
 
       {
-        id: 'G7z AxlRose#1305',
+        id: 'lifes a mess#没有爱',
         role: 'SUPLENTE 2'
       }
     ]
