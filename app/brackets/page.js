@@ -936,18 +936,18 @@ const percent2 = totalVotes
       </div>
       {/* VOTACIONES */}
 
-<div
-  className="mt-10"
-  style={{ fontFamily: "var(--font-contrail)" }}
->
+<div className="mt-10">
 
   <div className="flex flex-col md:flex-row items-center gap-4 md:justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
 
-    <span className="font-bold text-pink-300">
+    <span
+      className="font-bold text-pink-300"
+      style={{ fontFamily: "var(--font-contrail)" }}
+    >
       Predicción de la comunidad
     </span>
 
-    <span>
+    <span style={{ fontFamily: "var(--font-contrail)" }}>
       {totalVotes} Votos
     </span>
 
@@ -969,11 +969,11 @@ const percent2 = totalVotes
 
   <div className="flex justify-between mt-3 text-sm">
 
-    <span>
+    <span style={{ fontFamily: "sans-serif" }}>
       {selectedMatch.team1} ({percent1}%)
     </span>
 
-    <span>
+    <span style={{ fontFamily: "sans-serif" }}>
       {selectedMatch.team2} ({percent2}%)
     </span>
 
@@ -991,7 +991,13 @@ const percent2 = totalVotes
           : "bg-pink-500/20 border-pink-500/30 hover:bg-pink-500/30"
       }`}
     >
-      Votar por {selectedMatch.team1}
+      <span style={{ fontFamily: "var(--font-contrail)" }}>
+        Votar por{" "}
+      </span>
+
+      <span style={{ fontFamily: "sans-serif" }}>
+        {selectedMatch.team1}
+      </span>
     </button>
 
     <button
@@ -1004,20 +1010,32 @@ const percent2 = totalVotes
           : "bg-white/5 border-white/10 hover:bg-white/10"
       }`}
     >
-      Votar por {selectedMatch.team2}
+      <span style={{ fontFamily: "var(--font-contrail)" }}>
+        Votar por{" "}
+      </span>
+
+      <span style={{ fontFamily: "sans-serif" }}>
+        {selectedMatch.team2}
+      </span>
     </button>
 
   </div>
 
   {votedMatches[selectedMatch.id] && (
     <div className="mt-4 text-center">
-      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 font-semibold">
+      <span
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 font-semibold"
+        style={{ fontFamily: "var(--font-contrail)" }}
+      >
         ✓ Ya votaste en este partido
       </span>
     </div>
   )}
 
-  <div className="mt-4 text-center text-zinc-400 text-sm">
+  <div
+    className="mt-4 text-center text-zinc-400 text-sm"
+    style={{ fontFamily: "var(--font-contrail)" }}
+  >
     {totalVotes} Votos registrados
   </div>
 
