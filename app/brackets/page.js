@@ -936,86 +936,90 @@ const percent2 = totalVotes
       </div>
       {/* VOTACIONES */}
 
-<div className="mt-10">
+<div
+  className="mt-10"
+  style={{ fontFamily: "var(--font-contrail)" }}
+>
 
   <div className="flex flex-col md:flex-row items-center gap-4 md:justify-between rounded-[2rem] border border-pink-500/10 bg-white/[0.03] backdrop-blur-xl px-8 py-5">
 
     <span className="font-bold text-pink-300">
-      𝑃𝑟𝑒𝑑𝑖𝑐𝑐𝑖𝑜𝑛 𝑑𝑒 𝑙𝑎 𝑐𝑜𝑚𝑢𝑛𝑖𝑑𝑎𝑑
+      Predicción de la comunidad
     </span>
 
-    {totalVotes} 𝑉𝑜𝑡𝑜𝑠
+    <span>
+      {totalVotes} Votos
+    </span>
 
   </div>
 
   <div className="w-full h-5 rounded-full bg-white/5 overflow-hidden flex">
 
     <div
-  className="bg-gradient-to-r from-pink-500 to-fuchsia-500 transition-all"
-  style={{ width: `${percent1}%` }}
-/>
+      className="bg-gradient-to-r from-pink-500 to-fuchsia-500 transition-all"
+      style={{ width: `${percent1}%` }}
+    />
 
-<div
-  className="bg-zinc-700 transition-all"
-  style={{ width: `${percent2}%` }}
-/>
+    <div
+      className="bg-zinc-700 transition-all"
+      style={{ width: `${percent2}%` }}
+    />
 
   </div>
 
   <div className="flex justify-between mt-3 text-sm">
-  <span>
-    {selectedMatch.team1} ({percent1}%)
-  </span>
 
-  <span>
-    {selectedMatch.team2} ({percent2}%)
-  </span>
-</div>
+    <span>
+      {selectedMatch.team1} ({percent1}%)
+    </span>
+
+    <span>
+      {selectedMatch.team2} ({percent2}%)
+    </span>
+
+  </div>
+
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
 
-  <button
-  onClick={() => handleVote(selectedMatch.id, "team1")}
-  disabled={votedMatches[selectedMatch.id]}
-  className={`py-3 rounded-xl border font-bold transition-all
-${
-  votedMatches[selectedMatch.id]
-    ? "opacity-50 cursor-not-allowed bg-pink-500/10 border-pink-500/20"
-    : "bg-pink-500/20 border-pink-500/30 hover:bg-pink-500/30"
-}`}
->
-  𝑉𝑜𝑡𝑎𝑟 𝑝𝑜𝑟 {selectedMatch.team1}
-</button>
+    <button
+      onClick={() => handleVote(selectedMatch.id, "team1")}
+      disabled={votedMatches[selectedMatch.id]}
+      className={`py-3 rounded-xl border font-bold transition-all
+      ${
+        votedMatches[selectedMatch.id]
+          ? "opacity-50 cursor-not-allowed bg-pink-500/10 border-pink-500/20"
+          : "bg-pink-500/20 border-pink-500/30 hover:bg-pink-500/30"
+      }`}
+    >
+      Votar por {selectedMatch.team1}
+    </button>
 
-  <button
-  onClick={() => handleVote(selectedMatch.id, "team2")}
-  disabled={votedMatches[selectedMatch.id]}
-  className={`py-3 rounded-xl border font-bold transition-all
-${
-  votedMatches[selectedMatch.id]
-    ? "opacity-50 cursor-not-allowed bg-white/5 border-white/10"
-    : "bg-white/5 border-white/10 hover:bg-white/10"
-}`}
->
-  𝑉𝑜𝑡𝑎𝑟 𝑝𝑜𝑟 {selectedMatch.team2}
-</button>
+    <button
+      onClick={() => handleVote(selectedMatch.id, "team2")}
+      disabled={votedMatches[selectedMatch.id]}
+      className={`py-3 rounded-xl border font-bold transition-all
+      ${
+        votedMatches[selectedMatch.id]
+          ? "opacity-50 cursor-not-allowed bg-white/5 border-white/10"
+          : "bg-white/5 border-white/10 hover:bg-white/10"
+      }`}
+    >
+      Votar por {selectedMatch.team2}
+    </button>
 
-</div>
-
-{votedMatches[selectedMatch.id] && (
-  <div className="mt-4 text-center">
-    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 font-semibold">
-      ✓ 𝑌𝑎 𝑣𝑜𝑡𝑎𝑠𝑡𝑒 𝑒𝑛 𝑒𝑠𝑡𝑒 𝑝𝑎𝑟𝑡𝑖𝑑𝑜
-    </span>
   </div>
-)}
 
-<div className="mt-4 text-center text-zinc-400 text-sm">
+  {votedMatches[selectedMatch.id] && (
+    <div className="mt-4 text-center">
+      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 font-semibold">
+        ✓ Ya votaste en este partido
+      </span>
+    </div>
+  )}
 
-<div className="mt-4 text-center text-zinc-400 text-sm">
-  {totalVotes} 𝑉𝑜𝑡𝑜𝑠 𝑟𝑒𝑔𝑖𝑠𝑡𝑟𝑎𝑑𝑜𝑠
-</div>
-
-</div>
+  <div className="mt-4 text-center text-zinc-400 text-sm">
+    {totalVotes} Votos registrados
+  </div>
 
 </div>
 

@@ -369,7 +369,7 @@ const roster = {
       }, 
       
       {
-        id: 'Biggwall#Lzng',
+        id: 'Twitch Sleepwrl#XXI',
         role: 'JUNGLA'
       }, 
       
@@ -389,7 +389,7 @@ const roster = {
       }, 
       
       {
-        id: 'Twitch Sleepwrl#XXI',
+        id: 'Xiao#Anita',
         role: 'SUPLENTE',
       }
     ],
