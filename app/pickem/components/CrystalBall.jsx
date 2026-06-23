@@ -450,21 +450,7 @@ export default function CrystalBall({
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 overflow-visible">
-
-            <div
-  className="
-    absolute
-    inset-0
-
-    rounded-3xl
-
-    bg-gradient-to-b
-    from-white/[0.04]
-    to-transparent
-
-    pointer-events-none
-  "
-/>
+            
 
             {section.questions.map((question) => (
               <motion.div
