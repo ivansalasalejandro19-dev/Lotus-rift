@@ -487,19 +487,22 @@ export default function CrystalBall({
                 className={`
   relative
   overflow-visible
-  rounded-2xl
+
+  p-6
+
+  rounded-3xl
 
   bg-gradient-to-b
-  from-white/10
-  to-white/[0.03]
+  from-[#171B2E]
+  to-[#0B0D16]
 
   border
-  border-white/10
+  border-white/[0.06]
 
-  hover:border-pink-400/30
-  hover:bg-white/10
+  shadow-[0_10px_40px_rgba(0,0,0,.35)]
 
-  shadow-[0_0_20px_rgba(236,72,153,0.05)]
+  hover:border-pink-400/25
+  hover:shadow-[0_0_35px_rgba(236,72,153,.15)]
 
   transition-all
   duration-300
@@ -508,27 +511,58 @@ export default function CrystalBall({
 `}
               >
 
-                <div className="flex items-start justify-between gap-3">
-  <h4 className="font-bold text-base min-h-[48px]">
-    {question.title}
-  </h4>
+                <div
+  className="
+    absolute
+    top-0
+    left-0
+    right-0
 
+    h-px
+
+    bg-gradient-to-r
+    from-transparent
+    via-pink-400/50
+    to-transparent
+  "
+/>
+
+                <h4
+  className="
+    text-center
+    text-base
+    font-bold
+    text-white
+
+    min-h-[48px]
+
+    flex
+    items-center
+    justify-center
+  "
+>
+  {question.title}
+</h4>
+
+<div className="flex flex-col items-center mb-5">
   <span
     className="
-      shrink-0
-      rounded-full
-      bg-gradient-to-r
-      from-yellow-400
-      to-amber-500
       px-3
       py-1
-      text-xs
-      font-black
-      text-black
-      shadow-lg
+
+      rounded-full
+
+      bg-yellow-500/10
+      border border-yellow-400/15
+
+      text-yellow-300
+      text-[11px]
+      font-semibold
+
+      tracking-[0.25em]
     "
   >
-    +{questionPoints[question.id] || 0}
+    {questionPoints[question.id]} PTS
   </span>
 </div>
 
