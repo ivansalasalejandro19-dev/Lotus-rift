@@ -5,6 +5,19 @@ import { champions } from '../data'
 import SearchDropdown from './SearchDropdown'
 import { motion } from "framer-motion"
 
+const getPointBadge = (points) => {
+  if (points >= 20)
+    return "from-yellow-500/30 to-amber-500/20 border-yellow-400/40 text-yellow-300"
+
+  if (points >= 10)
+    return "from-purple-500/30 to-pink-500/20 border-purple-400/40 text-purple-300"
+
+  if (points >= 5)
+    return "from-cyan-500/30 to-blue-500/20 border-cyan-400/40 text-cyan-300"
+
+  return "from-zinc-500/20 to-zinc-600/20 border-zinc-400/20 text-zinc-300"
+}
+
 const questionPoints = {
   champion: 25,
   runnerup: 15,
@@ -393,8 +406,6 @@ export default function CrystalBall({
     {/* 🌌 FONDO ORÁCULO (AQUÍ VA LO BONITO) */}
     <div className="absolute inset-0 pointer-events-none">
 
-      {/* glow principal */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] animate-pulse" />
 
       {/* glow secundario */}
       <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-cyan-400/10 blur-[100px]" />
@@ -470,6 +481,7 @@ export default function CrystalBall({
     duration: 0.35
   }}
   
+  
                 className={`
                   group
   relative
@@ -480,20 +492,23 @@ export default function CrystalBall({
   rounded-3xl
 
   bg-gradient-to-b
-  bg-[#0B0D14]
+  bg-gradient-to-br
+from-[#111827]
+via-[#0B0D14]
+to-[#131A2B]
 backdrop-blur-sm
 
   border
-  border-white/[0.06]
+  border-white/10
 
   shadow-[0_25px_60px_rgba(0,0,0,.45)]
 
   hover:-translate-y-2
 hover:scale-[1.02]
 
-hover:border-white/15
+hover:border-white/20
 hover:shadow-[0_30px_70px_rgba(0,0,0,.55)]
-hover:-translate-y-1
+
 
   transition-all
   duration-300
@@ -503,19 +518,18 @@ hover:-translate-y-1
               >
 
                 <div
-  className={`
+  className="
     absolute
-    top-0
-    left-0
-    right-0
+    inset-0
 
-    h-1
+    rounded-3xl
 
-    rounded-t-3xl
+    bg-gradient-to-br
+    from-white/[0.03]
+    to-transparent
 
-    bg-gradient-to-r
-    ${getPointColor(questionPoints[question.id])}
-  `}
+    pointer-events-none
+  "
 />
 
 <div
