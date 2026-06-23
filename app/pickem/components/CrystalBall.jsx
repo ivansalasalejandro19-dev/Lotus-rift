@@ -430,7 +430,9 @@ export default function CrystalBall({
           Crystal Ball
         </p>
 
-         <h2 className="text-5xl font-black mt-3">
+         <h2 
+         style={{ fontFamily: "var(--font-contrail)" }}
+         className="text-5xl font-black mt-3">
            PREDICCIONES LOTUS RIFT
         </h2>
 
@@ -444,7 +446,9 @@ export default function CrystalBall({
         <div key={section.title} className="mb-20">
 
           <div className="mb-8">
-            <h3 className={`text-3xl font-black ${section.color}`}>
+            <h3 
+            style={{ fontFamily: "var(--font-contrail)" }}
+            className={`text-3xl font-black ${section.color}`}>
               {section.title}
             </h3>
           </div>
@@ -453,6 +457,7 @@ export default function CrystalBall({
             
 
             {section.questions.map((question) => (
+              
               <motion.div
   key={question.id}
   initial={{
@@ -470,7 +475,7 @@ export default function CrystalBall({
   
   
                 className={`
-                  font-contrail
+        
                   group
   relative
   overflow-visible
@@ -554,6 +559,7 @@ hover:shadow-[0_30px_70px_rgba(0,0,0,.55)]
 
 
                 <h4
+                style={{ fontFamily: "var(--font-contrail)" }}
   className="
     text-center
 
