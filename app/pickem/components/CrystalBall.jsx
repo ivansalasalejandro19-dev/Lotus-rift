@@ -440,23 +440,6 @@ export default function CrystalBall({
       {sections.map((section) => (
         <div key={section.title} className="mb-20">
 
-          <div
-  className="
-    absolute
-    left-1/2
-    top-0
-    -translate-x-1/2
-
-    w-[500px]
-    h-[150px]
-
-    bg-pink-500/5
-    blur-[100px]
-
-    pointer-events-none
-  "
-/>
-
           <div className="mb-8">
             <h3 className={`text-3xl font-black ${section.color}`}>
               {section.title}
@@ -492,10 +475,8 @@ export default function CrystalBall({
   rounded-3xl
 
   bg-gradient-to-b
-  bg-gradient-to-br
-from-[#111827]
-via-[#0B0D14]
-to-[#131A2B]
+  bg-[#10141D]
+border border-white/10
 backdrop-blur-sm
 
   border
@@ -518,18 +499,19 @@ hover:shadow-[0_30px_70px_rgba(0,0,0,.55)]
               >
 
                 <div
-  className="
+  className={`
     absolute
-    inset-0
+    left-0
+    top-6
+    bottom-6
 
-    rounded-3xl
+    w-1
 
-    bg-gradient-to-br
-    from-white/[0.03]
-    to-transparent
+    rounded-r-full
 
-    pointer-events-none
-  "
+    bg-gradient-to-b
+    ${getPointColor(questionPoints[question.id])}
+  `}
 />
 
 <div
