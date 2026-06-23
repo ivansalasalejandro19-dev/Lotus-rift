@@ -409,30 +409,9 @@ export default function CrystalBall({
           Crystal Ball
         </p>
 
-        <h2
-  className="
-    text-5xl
-    md:text-6xl
-    font-black
-    mt-3
-
-    bg-gradient-to-r
-    from-pink-300
-    via-fuchsia-300
-    to-cyan-300
-
-    bg-clip-text
-    text-transparent
-  "
-  style={{
-    textShadow: `
-      0 0 15px rgba(236,72,153,.25),
-      0 0 30px rgba(34,211,238,.15)
-    `
-  }}
->
-  PREDICCIONES LOTUS RIFT
-</h2>
+         <h2 className="text-5xl font-black mt-3">
+           PREDICCIONES LOTUS RIFT
+        </h2>
 
         <p className="text-white/60 mt-4 max-w-2xl">
           Predice el futuro del torneo y demuestra que conoces la Grieta mejor que nadie.
@@ -499,10 +478,13 @@ export default function CrystalBall({
   border
   border-white/[0.06]
 
-  shadow-[0_10px_40px_rgba(0,0,0,.35)]
+  shadow-[0_25px_60px_rgba(0,0,0,.45)]
 
-  hover:border-pink-400/25
-  hover:shadow-[0_0_35px_rgba(236,72,153,.15)]
+  hover:-translate-y-1
+
+hover:border-fuchsia-400/30
+
+hover:shadow-[0_20px_50px_rgba(236,72,153,.18)]
 
   transition-all
   duration-300
@@ -527,14 +509,37 @@ export default function CrystalBall({
   "
 />
 
+<div
+  className="
+    absolute
+
+    -top-20
+    left-1/2
+    -translate-x-1/2
+
+    w-40
+    h-40
+
+    bg-fuchsia-500/10
+
+    blur-[70px]
+
+    pointer-events-none
+  "
+/>
+
                 <h4
   className="
     text-center
-    text-base
-    font-bold
+
     text-white
 
-    min-h-[48px]
+    font-black
+    tracking-wide
+
+    text-lg
+
+    min-h-[60px]
 
     flex
     items-center
@@ -544,27 +549,6 @@ export default function CrystalBall({
   {question.title}
 </h4>
 
-<div className="flex flex-col items-center mb-5">
-  <span
-    className="
-      px-3
-      py-1
-
-      rounded-full
-
-      bg-yellow-500/10
-      border border-yellow-400/15
-
-      text-yellow-300
-      text-[11px]
-      font-semibold
-
-      tracking-[0.25em]
-    "
-  >
-    {questionPoints[question.id]} PTS
-  </span>
-</div>
 
                 {question.type === 'text' ? (
                   <input
