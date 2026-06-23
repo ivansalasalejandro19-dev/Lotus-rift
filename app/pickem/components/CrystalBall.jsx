@@ -129,12 +129,12 @@ const sections = [
       },
       {
         id: 'mostGoldPerMinute',
-        title: '💰  MÁS POR MINUTO',
+        title: '💰  MÁS ORO POR MINUTO',
         type: 'player'
       },
       {
         id: 'mostFirstBloods',
-        title: '🩸  MÁS FIRST BLOOD',
+        title: '🩸  MÁS PRIMERAS SANGRES',
         type: 'player'
       },
       {
@@ -273,17 +273,17 @@ export default function CrystalBall({
     return [
       '15 - 24',
       '25 - 34',
-      '35 - 44',
-      '45+'
+      '35 - 48',
+      '49+'
     ]
   }
 
   if (type === 'eldersRange') {
     return [
-      '0 - 4',
-      '5 - 9',
-      '10 - 14',
-      '15+'
+      '0 - 11',
+      '12 - 17',
+      '18 - 26',
+      '27+'
     ]
   }
 
@@ -316,8 +316,8 @@ export default function CrystalBall({
 
   if (type === 'killsRange') {
     return [
-      '700 - 899',
-      '900 - 1099',
+      '0 - 500',
+      '501 - 1099',
       '1100 - 1299',
       '1300+'
     ]

@@ -13,7 +13,7 @@ import { db } from "../../lib/firebase"
 const round16Matches = [
   ["KT E Sᴘᴏʀᴛs", "Fʟᴀᴡʟᴇss"],
   ["ÆSIIR Gᴏ Lᴇɢᴇɴᴅs", "Asᴛʀᴀʟ Gᴀᴍɪɴɢ"],
-  ["Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ", "Gᴏʟᴅᴇɴ Dʀᴀɢᴏɴs"],
+  ["Oᴠᴇʀᴇxᴛᴇɴᴅᴇᴅ", "Gᴏʟᴅᴇɴ Fenix-Z"],
   ["T502", "Sᴍᴀᴄᴋᴅᴏᴡɴ"],
   ["Cᴏsᴀ Nᴏsᴛʀᴀ", "Hᴜᴇsɪᴛᴏs Pʀᴏᴊᴇᴄᴛ"],
   ["Iᴄᴇ Gᴏʟᴅ", "Sʜᴀᴅᴏᴡ Rᴇᴀᴘᴇʀs"],
@@ -519,7 +519,7 @@ if (showSuccess) {
     disabled={locked}
     value={riotId}
     onChange={(e) => setRiotId(e.target.value)}
-    placeholder="Jugador#TAG"
+    placeholder="Ragnarok#manco"
     className="
       w-full
       rounded-2xl
