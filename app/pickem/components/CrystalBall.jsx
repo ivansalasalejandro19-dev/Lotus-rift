@@ -470,6 +470,7 @@ export default function CrystalBall({
   
   
                 className={`
+                  font-contrail
                   group
   relative
   overflow-visible
