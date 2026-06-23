@@ -3,6 +3,60 @@
 import { useState } from 'react'
 import { champions } from '../data'
 import SearchDropdown from './SearchDropdown'
+import { motion } from "framer-motion"
+
+const questionPoints = {
+  champion: 25,
+  runnerup: 15,
+  semifinal: 5,
+  quarterfinal: 3,
+  round16: 1,
+
+  tournamentMvp: 10,
+  finalMvp: 5,
+
+  bestKDA: 5,
+  bestWinrate: 3,
+  worstWinrate: 3,
+
+  mostPlayed: 3,
+  mostBanned: 3,
+
+  champMostKills: 3,
+  champMostDeaths: 3,
+  champMostAssists: 3,
+  firstPentaChampion: 5,
+  mostFlexChampion: 3,
+
+  playerMostKills: 5,
+  playerMostDeaths: 5,
+  playerMostAssists: 5,
+  mostDamage: 5,
+  mostCs: 5,
+  mostGoldPerMinute: 5,
+  mostPentas: 5,
+  mostBaronSteals: 5,
+  mostDragonSteals: 5,
+  mostFirstBloods: 5,
+
+  fastestWin: 3,
+  longestWin: 3,
+  longestGame: 3,
+
+  teamMostKills: 5,
+  teamMostTowers: 5,
+  teamMostDragons: 5,
+  teamMostBarons: 5,
+  teamMostHeralds: 5,
+  teamMostFirstBloods: 5,
+  teamLeastDeaths: 5,
+
+  totalKills: 3,
+  totalBarons: 3,
+  totalElders: 3,
+  totalTowers: 3,
+  totalPentas: 3,
+}
 
 const sections = [
 
@@ -333,10 +387,10 @@ export default function CrystalBall({
     <div className="absolute inset-0 pointer-events-none">
 
       {/* glow principal */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-purple-500/10 blur-[160px] animate-pulse" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] animate-pulse" />
 
       {/* glow secundario */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-400/10 blur-[140px]" />
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-cyan-400/10 blur-[100px]" />
 
       {/* partículas mágicas */}
       <div className="absolute top-10 left-10 w-1 h-1 bg-white/40 rounded-full animate-ping" />
@@ -355,9 +409,30 @@ export default function CrystalBall({
           Crystal Ball
         </p>
 
-        <h2 className="text-5xl font-black mt-3">
-           PREDICCIONES LOTUS RIFT
-        </h2>
+        <h2
+  className="
+    text-5xl
+    md:text-6xl
+    font-black
+    mt-3
+
+    bg-gradient-to-r
+    from-pink-300
+    via-fuchsia-300
+    to-cyan-300
+
+    bg-clip-text
+    text-transparent
+  "
+  style={{
+    textShadow: `
+      0 0 15px rgba(236,72,153,.25),
+      0 0 30px rgba(34,211,238,.15)
+    `
+  }}
+>
+  PREDICCIONES LOTUS RIFT
+</h2>
 
         <p className="text-white/60 mt-4 max-w-2xl">
           Predice el futuro del torneo y demuestra que conoces la Grieta mejor que nadie.
@@ -368,6 +443,23 @@ export default function CrystalBall({
       {sections.map((section) => (
         <div key={section.title} className="mb-20">
 
+          <div
+  className="
+    absolute
+    left-1/2
+    top-0
+    -translate-x-1/2
+
+    w-[500px]
+    h-[150px]
+
+    bg-pink-500/5
+    blur-[100px]
+
+    pointer-events-none
+  "
+/>
+
           <div className="mb-8">
             <h3 className={`text-3xl font-black ${section.color}`}>
               {section.title}
@@ -377,25 +469,68 @@ export default function CrystalBall({
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 overflow-visible">
 
             {section.questions.map((question) => (
-              <div
-                key={question.id}
+              <motion.div
+  key={question.id}
+  initial={{
+    opacity: 0,
+    y: 15
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0
+  }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 0.35
+  }}
+  
                 className={`
-                  relative
-                  overflow-visible
-                  rounded-2xl
-                  border border-white/10
-                  bg-white/5
-                  backdrop-blur-xl
-                  p-5
-                  hover:bg-white/10
-                  transition
-                  ${openDropdown === question.id ? 'z-[9999]' : 'z-0'}
-                `}
+  relative
+  overflow-visible
+  rounded-2xl
+
+  bg-gradient-to-b
+  from-white/10
+  to-white/[0.03]
+
+  border
+  border-white/10
+
+  hover:border-pink-400/30
+  hover:bg-white/10
+
+  shadow-[0_0_20px_rgba(236,72,153,0.05)]
+
+  transition-all
+  duration-300
+
+  ${openDropdown === question.id ? 'z-[9999]' : 'z-0'}
+`}
               >
 
-                <h4 className="font-bold text-base min-h-[48px]">
-                  {question.title}
-                </h4>
+                <div className="flex items-start justify-between gap-3">
+  <h4 className="font-bold text-base min-h-[48px]">
+    {question.title}
+  </h4>
+
+  <span
+    className="
+      shrink-0
+      rounded-full
+      bg-gradient-to-r
+      from-yellow-400
+      to-amber-500
+      px-3
+      py-1
+      text-xs
+      font-black
+      text-black
+      shadow-lg
+    "
+  >
+    +{questionPoints[question.id] || 0}
+  </span>
+</div>
 
                 {question.type === 'text' ? (
                   <input
@@ -433,7 +568,7 @@ export default function CrystalBall({
                   />
                 )}
 
-              </div>
+              </motion.div>
             ))}
 
           </div>
