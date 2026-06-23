@@ -472,8 +472,8 @@ export default function CrystalBall({
   rounded-3xl
 
   bg-gradient-to-b
-  from-[#171B2E]
-  to-[#0B0D16]
+  bg-[#0B0D14]
+backdrop-blur-sm
 
   border
   border-white/[0.06]
@@ -482,9 +482,9 @@ export default function CrystalBall({
 
   hover:-translate-y-1
 
-hover:border-fuchsia-400/30
-
-hover:shadow-[0_20px_50px_rgba(236,72,153,.18)]
+hover:border-white/15
+hover:shadow-[0_30px_70px_rgba(0,0,0,.55)]
+hover:-translate-y-1
 
   transition-all
   duration-300
@@ -504,29 +504,11 @@ hover:shadow-[0_20px_50px_rgba(236,72,153,.18)]
 
     bg-gradient-to-r
     from-transparent
-    via-pink-400/50
+    via-white/15
     to-transparent
   "
 />
 
-<div
-  className="
-    absolute
-
-    -top-20
-    left-1/2
-    -translate-x-1/2
-
-    w-40
-    h-40
-
-    bg-fuchsia-500/10
-
-    blur-[70px]
-
-    pointer-events-none
-  "
-/>
 
                 <h4
   className="
