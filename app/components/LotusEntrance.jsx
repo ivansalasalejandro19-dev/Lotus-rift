@@ -9,7 +9,7 @@ const [opening, setOpening] = useState(false)
 
 const handleEnter = () => {
 
-```
+
 if (opening) return
 
 setOpening(true)
@@ -17,13 +17,11 @@ setOpening(true)
 setTimeout(() => {
   onEnter()
 }, 1400)
-```
 
 }
 
 return ( <AnimatePresence>
 
-```
   <motion.main
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -250,7 +248,6 @@ return ( <AnimatePresence>
   </motion.main>
 
 </AnimatePresence>
-```
 
 )
 }
