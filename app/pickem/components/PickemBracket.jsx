@@ -20,12 +20,12 @@ const round16Matches = [
   ["Sᴇᴄʀᴇᴛ Sᴏᴄɪᴇᴛʏ", "Rᴏᴋᴜʀᴏᴍɪɴᴏs"],
   ["HᴀTsᴜ", "Vᴀʟʜᴀʟʟᴀ Lᴇɢᴀᴄʏ"]
 ]
-
 export default function PickemBracket({
   user,
   crystalBallAnswers,
   setPickemLocked,
-  riotId
+  riotId,
+  setRiotId
 }) {
   const [round16, setRound16] = useState({})
   const [quarters, setQuarters] = useState({})
@@ -178,24 +178,24 @@ const loadPickem = async () => {
   const data = snap.data()
 
   if (data.bracket) {
-
     setRound16(data.bracket.round16 || {})
     setQuarters(data.bracket.quarters || {})
     setSemis(data.bracket.semis || {})
     setFinalWinner(data.bracket.champion || null)
+  }
 
+  // 👇 AGREGA ESTO
+  if (data.riotId && setRiotId) {
+    setRiotId(data.riotId)
   }
 
   if (data.locked) {
+    setLocked(true)
 
-  setLocked(true)
-
-  if (setPickemLocked) {
-    setPickemLocked(true)
+    if (setPickemLocked) {
+      setPickemLocked(true)
+    }
   }
-
-}
-
 }
 
 if (showSuccess) {
@@ -509,6 +509,29 @@ if (showSuccess) {
           </div>
 
           <div className="mt-10 text-center">
+            <div className="max-w-md mx-auto mb-8">
+
+  <p className="text-zinc-400 mb-2 font-bold">
+    RIOT ID
+  </p>
+
+  <input
+    disabled={locked}
+    value={riotId}
+    onChange={(e) => setRiotId(e.target.value)}
+    placeholder="Jugador#TAG"
+    className="
+      w-full
+      rounded-2xl
+      bg-white/5
+      border border-white/10
+      px-4
+      py-3
+      outline-none
+      focus:border-pink-400
+    "
+  />
+</div>
 
   <button
     onClick={savePickem}

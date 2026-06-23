@@ -143,11 +143,12 @@ if (!user) {
 
 <div style={{ fontFamily: "var(--font-contrail)" }}>
   <PickemBracket
-    user={user}
-    crystalBallAnswers={crystalBallAnswers}
-    setPickemLocked={setPickemLocked}
-    riotId={riotId}
-  />
+  user={user}
+  crystalBallAnswers={crystalBallAnswers}
+  setPickemLocked={setPickemLocked}
+  riotId={riotId}
+  setRiotId={setRiotId}
+/>
 
   <LotusTracker />
 
