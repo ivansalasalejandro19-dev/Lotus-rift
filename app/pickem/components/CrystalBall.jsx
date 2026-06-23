@@ -407,6 +407,9 @@ export default function CrystalBall({
     <div className="absolute inset-0 pointer-events-none">
 
 
+{/* glow principal */}
+<div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] animate-pulse" />
+
       {/* glow secundario */}
       <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-cyan-400/10 blur-[100px]" />
 
@@ -448,6 +451,21 @@ export default function CrystalBall({
 
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 overflow-visible">
 
+            <div
+  className="
+    absolute
+    inset-0
+
+    rounded-3xl
+
+    bg-gradient-to-b
+    from-white/[0.04]
+    to-transparent
+
+    pointer-events-none
+  "
+/>
+
             {section.questions.map((question) => (
               <motion.div
   key={question.id}
@@ -475,7 +493,8 @@ export default function CrystalBall({
   rounded-3xl
 
   bg-gradient-to-b
-  bg-[#10141D]
+  bg-[#10141D]/70
+backdrop-blur-md
 border border-white/10
 backdrop-blur-sm
 
