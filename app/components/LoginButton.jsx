@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext"
 import { Disc3 } from "lucide-react"
 
 export default function LoginButton() {
-  const { user } = useAuth()
+  const { user, setDiscordUser } = useAuth()
 
   if (user) {
     const isDiscord = !!user.username // detectamos Discord
@@ -29,7 +29,7 @@ export default function LoginButton() {
         </span>
 
         <button
-          onClick={logout}
+          onClick={() => logout(setDiscordUser)}
           className="px-3 py-1 bg-red-500/20 rounded-lg text-red-300 hover:bg-red-500/30 transition"
         >
           𝐿𝑂𝐺𝑂𝑈𝑇
