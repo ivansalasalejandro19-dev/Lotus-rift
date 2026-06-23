@@ -29,11 +29,26 @@ export default function LoginButton() {
         </span>
 
         <button
-          onClick={() => logout(setDiscordUser)}
-          className="px-3 py-1 bg-red-500/20 rounded-lg text-red-300 hover:bg-red-500/30 transition"
-        >
-          𝐿𝑂𝐺𝑂𝑈𝑇
-        </button>
+  onClick={() => logout(setDiscordUser)}
+  className="
+    px-4 py-2
+    rounded-xl
+    bg-gradient-to-r
+    from-red-500
+    to-pink-500
+    text-white
+    font-extrabold
+    tracking-wider
+    shadow-lg
+    shadow-red-500/40
+    hover:shadow-red-500/70
+    hover:scale-110
+    transition-all
+    duration-300
+  "
+>
+  LOGOUT
+</button>
       </div>
     )
   }

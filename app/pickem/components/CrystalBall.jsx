@@ -512,7 +512,7 @@ hover:shadow-[0_30px_70px_rgba(0,0,0,.55)]
                 <div
   className={`
     absolute
-    left-[-1px]
+    left-[-2px]
     top-6
     bottom-6
 
