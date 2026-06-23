@@ -309,6 +309,13 @@ export default function CrystalBall({
 
   const [openDropdown, setOpenDropdown] = useState(null)
 
+  const getPointColor = (points) => {
+  if (points >= 20) return "from-yellow-400 to-amber-500"
+  if (points >= 10) return "from-purple-400 to-pink-500"
+  if (points >= 5) return "from-cyan-400 to-blue-500"
+  return "from-zinc-500 to-zinc-600"
+}
+
   const getOptions = (type) => {
 
   if (type === 'team') {
@@ -464,6 +471,7 @@ export default function CrystalBall({
   }}
   
                 className={`
+                  group
   relative
   overflow-visible
 
@@ -480,7 +488,8 @@ backdrop-blur-sm
 
   shadow-[0_25px_60px_rgba(0,0,0,.45)]
 
-  hover:-translate-y-1
+  hover:-translate-y-2
+hover:scale-[1.02]
 
 hover:border-white/15
 hover:shadow-[0_30px_70px_rgba(0,0,0,.55)]
@@ -494,20 +503,52 @@ hover:-translate-y-1
               >
 
                 <div
-  className="
+  className={`
     absolute
     top-0
     left-0
     right-0
 
-    h-px
+    h-1
+
+    rounded-t-3xl
 
     bg-gradient-to-r
-    from-transparent
-    via-white/15
-    to-transparent
-  "
+    ${getPointColor(questionPoints[question.id])}
+  `}
 />
+
+<div
+  className="
+    absolute
+    top-4
+    right-4
+
+    w-10
+    h-10
+
+    rounded-full
+
+    bg-gradient-to-br
+    from-pink-500/20
+    to-purple-500/20
+
+    border
+    border-pink-400/30
+
+    flex
+    items-center
+    justify-center
+
+    text-pink-300
+    font-black
+    text-sm
+
+    backdrop-blur-md
+  "
+>
+  {questionPoints[question.id]}
+</div>
 
 
                 <h4
@@ -521,7 +562,7 @@ hover:-translate-y-1
 
     text-lg
 
-    min-h-[60px]
+    min-h-[80px]
 
     flex
     items-center
