@@ -141,7 +141,7 @@ to-pink-500/25
   />
 
   <span className="relative z-10">
-    𝐼𝑁𝐼𝐶𝐼𝑂
+    INICIO
   </span>
 </Link>
 
@@ -199,7 +199,7 @@ to-pink-500/25
 
   <span className="relative z-10 flex items-center gap-2">
     <Swords size={16} />
-    𝐵𝑅𝐴𝐶𝐾𝐸𝑇
+    BRACKET
   </span>
 </Link>
 
@@ -253,7 +253,7 @@ to-pink-500/25
   />
 
   <span className="relative z-10">
-    📜 𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
+    📜 REGLAMENTO
   </span>
 </Link>
             {user ? (
@@ -311,7 +311,7 @@ to-pink-500/25
 
   <span className="relative z-10 flex items-center gap-2">
     <Sparkles size={16} />
-    𝑃𝐼𝐶𝐾' 𝐸𝑀
+    PICK' EM
   </span>
 </Link>
             ) : (
@@ -329,7 +329,7 @@ to-pink-500/25
                   gap-2
                 "
               >
-                🔒 𝑃𝐼𝐶𝐾' 𝐸𝑀
+                🔒 PICK' EM
               </div>
             )}
 
@@ -418,7 +418,7 @@ hover:border-pink-400/30
 transition-all
 "
             >
-              𝐼𝑁𝐼𝐶𝐼𝑂
+              INICIO
             </Link>
 
             <Link
@@ -441,7 +441,7 @@ hover:border-pink-400/30
 transition-all
 "
             >
-              𝐵𝑅𝐴𝐶𝐾𝐸𝑇
+              BRACKET
             </Link>
 
             <Link
@@ -464,7 +464,7 @@ hover:border-pink-400/30
 transition-all
 "
 >
-  𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
+  REGLAMENTO
 </Link>
 
             {user ? (
@@ -488,11 +488,11 @@ hover:border-pink-400/30
 transition-all
 "
               >
-                𝑃𝐼𝐶𝐾' 𝐸𝑀
+                PICK' EM
               </Link>
             ) : (
               <div className="px-4 py-4 rounded-xl bg-white/5 text-zinc-500">
-                🔒 𝑃𝐼𝐶𝐾' 𝐸𝑀
+                🔒 PICK' EM
               </div>
             )}
 

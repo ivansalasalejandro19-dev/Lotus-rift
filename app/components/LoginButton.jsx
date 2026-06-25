@@ -83,7 +83,7 @@ transition-all
 duration-300
 "
       >
-        𝐺𝑂𝑂𝐺𝐿𝐸
+        GOOGLE
       </button>
 
       <a
@@ -110,7 +110,7 @@ duration-300
 "
       >
         <Disc3 size={18} />
-        𝐷𝐼𝑆𝐶𝑂𝑅𝐷
+        DISCORD
       </a>
     </div>
   )
