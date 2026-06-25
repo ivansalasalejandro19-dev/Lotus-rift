@@ -70,6 +70,7 @@ duration-300
       <button
         onClick={loginGoogle}
         className="
+        font-berthold
 px-5
 py-3
 rounded-xl
@@ -88,6 +89,7 @@ duration-300
       <a
         href="/api/auth/discord"
         className="
+        font-berthold
 px-5
 py-3
 rounded-xl

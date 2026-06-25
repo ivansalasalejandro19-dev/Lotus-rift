@@ -47,7 +47,7 @@ body {
 
 @font-face {
   font-family: "BertholdBlock";
-  src: url("/fonts/BertholdBlock.ttf") format("truetype");
+  src: url("/fonts/BertholdBlock.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
