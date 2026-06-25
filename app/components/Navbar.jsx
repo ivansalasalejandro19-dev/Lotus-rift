@@ -94,7 +94,7 @@ to-black/70
             <Link
   href="/"
   className="
-  font-berthold
+  --font-contrail
     relative
     overflow-hidden
     group
@@ -116,9 +116,9 @@ to-black/70
       absolute
       inset-0
       bg-gradient-to-br
-      from-purple-950/70
-via-fuchsia-800/30
-to-pink-500/25
+      from-pink-950/70
+via-fuchsia-700/35
+to-pink-300/25
     "
   />
 
@@ -148,7 +148,7 @@ to-pink-500/25
             <Link
   href="/brackets"
   className="
-  font-berthold
+  --font-contrail
     relative
     overflow-hidden
     group
@@ -173,9 +173,9 @@ to-pink-500/25
       absolute
       inset-0
       bg-gradient-to-br
-      from-purple-950/70
-via-fuchsia-800/30
-to-pink-500/25
+      from-pink-950/70
+via-fuchsia-700/35
+to-pink-300/25
     "
   />
 
@@ -206,7 +206,7 @@ to-pink-500/25
             <Link
   href="/reglamento"
   className="
-  font-berthold
+  --font-contrail
     relative
     overflow-hidden
     group
@@ -228,9 +228,9 @@ to-pink-500/25
       absolute
       inset-0
       bg-gradient-to-br
-      from-purple-950/70
-via-fuchsia-800/30
-to-pink-500/25
+      from-pink-950/70
+via-fuchsia-700/35
+to-pink-300/25
     "
   />
 
@@ -260,7 +260,7 @@ to-pink-500/25
              <Link
   href="/pickem"
   className="
-  font-berthold
+  --font-contrail
     relative
     overflow-hidden
     group
@@ -285,9 +285,9 @@ to-pink-500/25
       absolute
       inset-0
       bg-gradient-to-br
-      from-purple-950/70
-via-fuchsia-800/30
-to-pink-500/25
+      from-pink-950/70
+via-fuchsia-700/35
+to-pink-300/25
     "
   />
 
@@ -402,7 +402,7 @@ to-black/90
               href="/"
               onClick={() => setOpen(false)}
               className="
-              font-berthold
+              --font-contrail
 relative
 overflow-hidden
 px-4
@@ -425,7 +425,7 @@ transition-all
               href="/brackets"
               onClick={() => setOpen(false)}
               className="
-              font-berthold
+              --font-contrail
 relative
 overflow-hidden
 px-4
@@ -448,7 +448,7 @@ transition-all
   href="/reglamento"
   onClick={() => setOpen(false)}
 className="
-font-berthold
+--font-contrail
 relative
 overflow-hidden
 px-4
@@ -472,7 +472,7 @@ transition-all
                 href="/pickem"
                 onClick={() => setOpen(false)}
                 className="
-                font-berthold
+                --font-contrail
 relative
 overflow-hidden
 px-4
