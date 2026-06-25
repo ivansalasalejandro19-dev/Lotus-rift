@@ -379,11 +379,15 @@ to-pink-500/25
             right-4
             z-50
             lg:hidden
-            rounded-[2rem]
+            rounded-[2.5rem]
             border
             border-white/10
-            bg-black/80
+            bg-gradient-to-br
+from-black/90
+via-purple-950/40
+to-black/90
             backdrop-blur-2xl
+            shadow-[0_0_50px_rgba(236,72,153,0.25)]
             p-6
           "
         >
@@ -393,7 +397,21 @@ to-pink-500/25
             <Link
               href="/"
               onClick={() => setOpen(false)}
-              className="px-4 py-4 rounded-xl bg-white/5"
+              className="
+relative
+overflow-hidden
+px-4
+py-4
+rounded-xl
+border
+border-white/10
+bg-gradient-to-br
+from-purple-950/60
+via-fuchsia-900/20
+to-pink-500/10
+hover:border-pink-400/30
+transition-all
+"
             >
               𝐼𝑁𝐼𝐶𝐼𝑂
             </Link>
@@ -401,7 +419,21 @@ to-pink-500/25
             <Link
               href="/brackets"
               onClick={() => setOpen(false)}
-              className="px-4 py-4 rounded-xl bg-white/5"
+              className="
+relative
+overflow-hidden
+px-4
+py-4
+rounded-xl
+border
+border-white/10
+bg-gradient-to-br
+from-purple-950/60
+via-fuchsia-900/20
+to-pink-500/10
+hover:border-pink-400/30
+transition-all
+"
             >
               𝐵𝑅𝐴𝐶𝐾𝐸𝑇
             </Link>
@@ -409,7 +441,21 @@ to-pink-500/25
             <Link
   href="/reglamento"
   onClick={() => setOpen(false)}
-  className="px-4 py-4 rounded-xl bg-white/5"
+className="
+relative
+overflow-hidden
+px-4
+py-4
+rounded-xl
+border
+border-white/10
+bg-gradient-to-br
+from-purple-950/60
+via-fuchsia-900/20
+to-pink-500/10
+hover:border-pink-400/30
+transition-all
+"
 >
   𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
 </Link>
@@ -418,7 +464,21 @@ to-pink-500/25
               <Link
                 href="/pickem"
                 onClick={() => setOpen(false)}
-                className="px-4 py-4 rounded-xl bg-white/5"
+                className="
+relative
+overflow-hidden
+px-4
+py-4
+rounded-xl
+border
+border-white/10
+bg-gradient-to-br
+from-purple-950/60
+via-fuchsia-900/20
+to-pink-500/10
+hover:border-pink-400/30
+transition-all
+"
               >
                 𝑃𝐼𝐶𝐾' 𝐸𝑀
               </Link>
