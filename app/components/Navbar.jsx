@@ -94,83 +94,222 @@ to-black/70
             <Link
   href="/"
   className="
+    relative
+    overflow-hidden
     group
     px-5
     py-3
     rounded-xl
-    text-white/70
+    text-white/80
     hover:text-white
-    hover:bg-white/10
     hover:scale-105
     transition-all
     duration-300
+    bg-white/[0.03]
+    border
+    border-white/10
   "
 >
-              𝐼𝑁𝐼𝐶𝐼𝑂
-            </Link>
+  <span
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-br
+      from-purple-950/70
+via-fuchsia-800/30
+to-pink-500/25
+    "
+  />
+
+  <span
+    className="
+      absolute
+      -left-10
+      top-0
+      h-full
+      w-16
+      rotate-12
+      bg-gradient-to-r
+      from-transparent
+      via-pink-400/30
+      to-transparent
+      group-hover:left-[120%]
+      transition-all
+      duration-700
+    "
+  />
+
+  <span className="relative z-10">
+    𝐼𝑁𝐼𝐶𝐼𝑂
+  </span>
+</Link>
 
             <Link
   href="/brackets"
   className="
+    relative
+    overflow-hidden
     group
     px-5
     py-3
     rounded-xl
-    text-white/70
+    text-white/80
     hover:text-white
-    hover:bg-white/10
     hover:scale-105
     transition-all
     duration-300
+    bg-white/[0.03]
+    border
+    border-white/10
     flex
     items-center
     gap-2
   "
 >
-              <Swords size={16} />
-              𝐵𝑅𝐴𝐶𝐾𝐸𝑇
-            </Link>
+  <span
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-br
+      from-purple-950/70
+via-fuchsia-800/30
+to-pink-500/25
+    "
+  />
+
+  <span
+    className="
+      absolute
+      -left-10
+      top-0
+      h-full
+      w-16
+      rotate-12
+      bg-gradient-to-r
+      from-transparent
+      via-pink-400/30
+      to-transparent
+      group-hover:left-[120%]
+      transition-all
+      duration-700
+    "
+  />
+
+  <span className="relative z-10 flex items-center gap-2">
+    <Swords size={16} />
+    𝐵𝑅𝐴𝐶𝐾𝐸𝑇
+  </span>
+</Link>
 
             <Link
   href="/reglamento"
   className="
-  group
-  px-5
-  py-3
-  rounded-xl
-  text-white/70
-  hover:text-white
-  hover:bg-white/10
-  hover:scale-105
-  transition-all
-  duration-300
-"
+    relative
+    overflow-hidden
+    group
+    px-5
+    py-3
+    rounded-xl
+    text-white/80
+    hover:text-white
+    hover:scale-105
+    transition-all
+    duration-300
+    bg-white/[0.03]
+    border
+    border-white/10
+  "
 >
-  📜 𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
-</Link>
+  <span
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-br
+      from-purple-950/70
+via-fuchsia-800/30
+to-pink-500/25
+    "
+  />
 
+  <span
+    className="
+      absolute
+      -left-10
+      top-0
+      h-full
+      w-16
+      rotate-12
+      bg-gradient-to-r
+      from-transparent
+      via-pink-400/30
+      to-transparent
+      group-hover:left-[120%]
+      transition-all
+      duration-700
+    "
+  />
+
+  <span className="relative z-10">
+    📜 𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
+  </span>
+</Link>
             {user ? (
-              <Link
-                href="/pickem"
-                className="
-  group
-  px-5
-  py-3
-  rounded-xl
-  text-white/70
-  hover:text-white
-  hover:bg-white/10
-  hover:scale-105
-  transition-all
-  duration-300
-  flex
-  items-center
-  gap-2
-"
-              >
-                <Sparkles size={16} />
-                𝑃𝐼𝐶𝐾' 𝐸𝑀
-              </Link>
+             <Link
+  href="/pickem"
+  className="
+    relative
+    overflow-hidden
+    group
+    px-5
+    py-3
+    rounded-xl
+    text-white/80
+    hover:text-white
+    hover:scale-105
+    transition-all
+    duration-300
+    bg-white/[0.03]
+    border
+    border-white/10
+    flex
+    items-center
+    gap-2
+  "
+>
+  <span
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-br
+      from-purple-950/70
+via-fuchsia-800/30
+to-pink-500/25
+    "
+  />
+
+  <span
+    className="
+      absolute
+      -left-10
+      top-0
+      h-full
+      w-16
+      rotate-12
+      bg-gradient-to-r
+      from-transparent
+      via-pink-400/30
+      to-transparent
+      group-hover:left-[120%]
+      transition-all
+      duration-700
+    "
+  />
+
+  <span className="relative z-10 flex items-center gap-2">
+    <Sparkles size={16} />
+    𝑃𝐼𝐶𝐾' 𝐸𝑀
+  </span>
+</Link>
             ) : (
               <div
                 className="
