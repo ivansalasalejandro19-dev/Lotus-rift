@@ -139,7 +139,9 @@ if (!entered) {
  return (
   <div className="min-h-screen bg-gradient-to-b from-[#09030f] via-[#14081f] to-[#050108] text-white overflow-hidden relative">
 
-    <div style={{ fontFamily: "var(--font-contrail)" }}>
+
+<div className="scale-[0.80] sm:scale-100 origin-top">
+  <div style={{ fontFamily: "var(--font-contrail)" }}>
     
       {/* BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -505,6 +507,7 @@ if (!entered) {
   }
 `}</style>
 
-    </div>
+  </div>
+</div>
   )
 }
