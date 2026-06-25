@@ -93,165 +93,28 @@ to-black/70
 
             <Link
   href="/"
-  className="
-  font-contrail
-    relative
-    overflow-hidden
-    group
-    px-5
-    py-3
-    rounded-xl
-    text-white/80
-    hover:text-white
-    hover:scale-105
-    transition-all
-    duration-300
-    bg-white/[0.03]
-    border
-    border-white/10
-  "
+  className="nav-button font-contrail px-5 py-3"
 >
-  <span
-    className="
-      absolute
-      inset-0
-      bg-gradient-to-br
-      from-rose-950/70
-via-pink-600/35
-to-fuchsia-300/25
-    "
-  />
-
-  <span
-    className="
-      absolute
-      -left-10
-      top-0
-      h-full
-      w-16
-      rotate-12
-      bg-gradient-to-r
-      from-transparent
-      via-pink-400/30
-      to-transparent
-      group-hover:left-[120%]
-      transition-all
-      duration-700
-    "
-  />
-
   <span className="relative z-10">
     INICIO
   </span>
 </Link>
 
-            <Link
+<Link
   href="/brackets"
-  className="
-  font-contrail
-    relative
-    overflow-hidden
-    group
-    px-5
-    py-3
-    rounded-xl
-    text-white/80
-    hover:text-white
-    hover:scale-105
-    transition-all
-    duration-300
-    bg-white/[0.03]
-    border
-    border-white/10
-    flex
-    items-center
-    gap-2
-  "
+  className="nav-button font-contrail px-5 py-3 flex items-center gap-2"
 >
-  <span
-    className="
-      absolute
-      inset-0
-      bg-gradient-to-br
-      from-[#3d0b27]
-via-[#8a2f6b]
-to-[#f7a8d7]
-    "
-  />
-
-  <span
-    className="
-      absolute
-      -left-10
-      top-0
-      h-full
-      w-16
-      rotate-12
-      bg-gradient-to-r
-      from-transparent
-      via-pink-400/30
-      to-transparent
-      group-hover:left-[120%]
-      transition-all
-      duration-700
-    "
-  />
-
   <span className="relative z-10 flex items-center gap-2">
     <Swords size={16} />
     BRACKET
   </span>
 </Link>
+            
 
             <Link
   href="/reglamento"
-  className="
-  font-contrail
-    relative
-    overflow-hidden
-    group
-    px-5
-    py-3
-    rounded-xl
-    text-white/80
-    hover:text-white
-    hover:scale-105
-    transition-all
-    duration-300
-    bg-white/[0.03]
-    border
-    border-white/10
-  "
+  className="nav-button font-contrail px-5 py-3"
 >
-  <span
-    className="
-      absolute
-      inset-0
-      bg-gradient-to-br
-      from-rose-950/70
-via-pink-600/35
-to-fuchsia-300/25
-    "
-  />
-
-  <span
-    className="
-      absolute
-      -left-10
-      top-0
-      h-full
-      w-16
-      rotate-12
-      bg-gradient-to-r
-      from-transparent
-      via-pink-400/30
-      to-transparent
-      group-hover:left-[120%]
-      transition-all
-      duration-700
-    "
-  />
-
   <span className="relative z-10">
     📜 REGLAMENTO
   </span>
@@ -259,56 +122,8 @@ to-fuchsia-300/25
             {user ? (
              <Link
   href="/pickem"
-  className="
-  font-contrail
-    relative
-    overflow-hidden
-    group
-    px-5
-    py-3
-    rounded-xl
-    text-white/80
-    hover:text-white
-    hover:scale-105
-    transition-all
-    duration-300
-    bg-white/[0.03]
-    border
-    border-white/10
-    flex
-    items-center
-    gap-2
-  "
+  className="nav-button font-contrail px-5 py-3 flex items-center gap-2"
 >
-  <span
-    className="
-      absolute
-      inset-0
-      bg-gradient-to-br
-      from-rose-950/70
-via-pink-600/35
-to-fuchsia-300/25
-    "
-  />
-
-  <span
-    className="
-      absolute
-      -left-10
-      top-0
-      h-full
-      w-16
-      rotate-12
-      bg-gradient-to-r
-      from-transparent
-      via-pink-400/30
-      to-transparent
-      group-hover:left-[120%]
-      transition-all
-      duration-700
-    "
-  />
-
   <span className="relative z-10 flex items-center gap-2">
     <Sparkles size={16} />
     PICK' EM
@@ -399,97 +214,37 @@ to-black/90
           <div className="flex flex-col gap-3">
 
             <Link
-              href="/"
-              onClick={() => setOpen(false)}
-              className="
-              font-contrail
-relative
-overflow-hidden
-px-4
-py-4
-rounded-xl
-border
-border-white/10
-bg-gradient-to-br
-from-[#3d0b27]
-via-[#8a2f6b]
-to-[#f7a8d7]/20
-hover:border-white/10
-transition-all
-"
-            >
-              INICIO
-            </Link>
+  href="/"
+  onClick={() => setOpen(false)}
+  className="mobile-nav-button font-contrail"
+>
+  INICIO
+</Link>
 
-            <Link
-              href="/brackets"
-              onClick={() => setOpen(false)}
-              className="
-              font-contrail
-relative
-overflow-hidden
-px-4
-py-4
-rounded-xl
-border
-border-white/10
-bg-gradient-to-br
-from-[#3d0b27]
-via-[#8a2f6b]
-to-[#f7a8d7]/20
-hover:border-white/10
-transition-all
-"
-            >
-              BRACKET
-            </Link>
+  <Link
+  href="/brackets"
+  onClick={() => setOpen(false)}
+  className="mobile-nav-button font-contrail"
+>
+  BRACKET
+</Link>
 
             <Link
   href="/reglamento"
   onClick={() => setOpen(false)}
-className="
-font-contrail
-relative
-overflow-hidden
-px-4
-py-4
-rounded-xl
-border
-border-white/10
-bg-gradient-to-br
-from-[#3d0b27]
-via-[#8a2f6b]
-to-[#f7a8d7]/20
-hover:border-white/10
-transition-all
-"
+  className="mobile-nav-button font-contrail"
 >
   REGLAMENTO
 </Link>
 
             {user ? (
               <Link
-                href="/pickem"
-                onClick={() => setOpen(false)}
-                className="
-                font-contrail
-relative
-overflow-hidden
-px-4
-py-4
-rounded-xl
-border
-border-white/10
-bg-gradient-to-br
-from-[#3d0b27]
-via-[#8a2f6b]
-to-[#f7a8d7]/20
-hover:border-white/10
-transition-all
-"
-              >
-                PICK' EM
-              </Link>
+  href="/pickem"
+  onClick={() => setOpen(false)}
+  className="mobile-nav-button font-contrail"
+>
+  PICK' EM
+</Link>
             ) : (
               <div className="px-4 py-4 rounded-xl bg-white/5 text-zinc-500">
                 🔒 PICK' EM
