@@ -94,6 +94,7 @@ to-black/70
             <Link
   href="/"
   className="
+  font-berthold
     relative
     overflow-hidden
     group
@@ -147,6 +148,7 @@ to-pink-500/25
             <Link
   href="/brackets"
   className="
+  font-berthold
     relative
     overflow-hidden
     group
@@ -204,6 +206,7 @@ to-pink-500/25
             <Link
   href="/reglamento"
   className="
+  font-berthold
     relative
     overflow-hidden
     group
@@ -257,6 +260,7 @@ to-pink-500/25
              <Link
   href="/pickem"
   className="
+  font-berthold
     relative
     overflow-hidden
     group
@@ -398,6 +402,7 @@ to-black/90
               href="/"
               onClick={() => setOpen(false)}
               className="
+              font-berthold
 relative
 overflow-hidden
 px-4
@@ -420,6 +425,7 @@ transition-all
               href="/brackets"
               onClick={() => setOpen(false)}
               className="
+              font-berthold
 relative
 overflow-hidden
 px-4
@@ -442,6 +448,7 @@ transition-all
   href="/reglamento"
   onClick={() => setOpen(false)}
 className="
+font-berthold
 relative
 overflow-hidden
 px-4
@@ -465,6 +472,7 @@ transition-all
                 href="/pickem"
                 onClick={() => setOpen(false)}
                 className="
+                font-berthold
 relative
 overflow-hidden
 px-4

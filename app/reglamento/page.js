@@ -39,11 +39,15 @@ export default function ReglamentoPage() {
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="
-text-6xl
-md:text-8xl
+         className="
+text-4xl
+sm:text-5xl
+md:text-7xl
+lg:text-8xl
 font-black
-tracking-widest
+tracking-normal
+sm:tracking-wide
+md:tracking-widest
 bg-gradient-to-r
 from-pink-400
 via-fuchsia-300
@@ -52,7 +56,7 @@ bg-clip-text
 text-transparent
 drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]
 "
-        >
+>
           𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
         </motion.h1>
 

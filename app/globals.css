@@ -44,3 +44,14 @@ body {
     transform: translateX(120%);
   }
 }
+
+@font-face {
+  font-family: "BertholdBlock";
+  src: url("/fonts/BertholdBlock.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-berthold {
+  font-family: "BertholdBlock", sans-serif;
+}
