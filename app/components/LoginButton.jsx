@@ -70,7 +70,7 @@ duration-300
       <button
         onClick={loginGoogle}
         className="
-        --font-contrail
+        font-contrail
 px-5
 py-3
 rounded-xl
@@ -89,7 +89,7 @@ duration-300
       <a
         href="/api/auth/discord"
         className="
-        --font-contrail
+        font-contrail
 px-5
 py-3
 rounded-xl

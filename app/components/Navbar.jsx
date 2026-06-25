@@ -94,7 +94,7 @@ to-black/70
             <Link
   href="/"
   className="
-  --font-contrail
+  font-contrail
     relative
     overflow-hidden
     group
@@ -116,9 +116,9 @@ to-black/70
       absolute
       inset-0
       bg-gradient-to-br
-      from-pink-950/70
-via-fuchsia-700/35
-to-pink-300/25
+      from-rose-950/70
+via-pink-600/35
+to-fuchsia-300/25
     "
   />
 
@@ -148,7 +148,7 @@ to-pink-300/25
             <Link
   href="/brackets"
   className="
-  --font-contrail
+  font-contrail
     relative
     overflow-hidden
     group
@@ -173,9 +173,9 @@ to-pink-300/25
       absolute
       inset-0
       bg-gradient-to-br
-      from-pink-950/70
-via-fuchsia-700/35
-to-pink-300/25
+      from-[#3d0b27]
+via-[#8a2f6b]
+to-[#f7a8d7]
     "
   />
 
@@ -206,7 +206,7 @@ to-pink-300/25
             <Link
   href="/reglamento"
   className="
-  --font-contrail
+  font-contrail
     relative
     overflow-hidden
     group
@@ -228,9 +228,9 @@ to-pink-300/25
       absolute
       inset-0
       bg-gradient-to-br
-      from-pink-950/70
-via-fuchsia-700/35
-to-pink-300/25
+      from-rose-950/70
+via-pink-600/35
+to-fuchsia-300/25
     "
   />
 
@@ -260,7 +260,7 @@ to-pink-300/25
              <Link
   href="/pickem"
   className="
-  --font-contrail
+  font-contrail
     relative
     overflow-hidden
     group
@@ -285,9 +285,9 @@ to-pink-300/25
       absolute
       inset-0
       bg-gradient-to-br
-      from-pink-950/70
-via-fuchsia-700/35
-to-pink-300/25
+      from-rose-950/70
+via-pink-600/35
+to-fuchsia-300/25
     "
   />
 
@@ -388,7 +388,7 @@ to-pink-300/25
             border-white/10
             bg-gradient-to-br
 from-black/90
-via-purple-950/40
+via-pink-950/40
 to-black/90
             backdrop-blur-2xl
             shadow-[0_0_50px_rgba(236,72,153,0.25)]
@@ -402,7 +402,7 @@ to-black/90
               href="/"
               onClick={() => setOpen(false)}
               className="
-              --font-contrail
+              font-contrail
 relative
 overflow-hidden
 px-4
@@ -411,10 +411,10 @@ rounded-xl
 border
 border-white/10
 bg-gradient-to-br
-from-purple-950/60
-via-fuchsia-900/20
-to-pink-500/10
-hover:border-pink-400/30
+from-[#3d0b27]
+via-[#8a2f6b]
+to-[#f7a8d7]/20
+hover:border-white/10
 transition-all
 "
             >
@@ -425,7 +425,7 @@ transition-all
               href="/brackets"
               onClick={() => setOpen(false)}
               className="
-              --font-contrail
+              font-contrail
 relative
 overflow-hidden
 px-4
@@ -434,10 +434,10 @@ rounded-xl
 border
 border-white/10
 bg-gradient-to-br
-from-purple-950/60
-via-fuchsia-900/20
-to-pink-500/10
-hover:border-pink-400/30
+from-[#3d0b27]
+via-[#8a2f6b]
+to-[#f7a8d7]/20
+hover:border-white/10
 transition-all
 "
             >
@@ -448,7 +448,7 @@ transition-all
   href="/reglamento"
   onClick={() => setOpen(false)}
 className="
---font-contrail
+font-contrail
 relative
 overflow-hidden
 px-4
@@ -457,10 +457,10 @@ rounded-xl
 border
 border-white/10
 bg-gradient-to-br
-from-purple-950/60
-via-fuchsia-900/20
-to-pink-500/10
-hover:border-pink-400/30
+from-[#3d0b27]
+via-[#8a2f6b]
+to-[#f7a8d7]/20
+hover:border-white/10
 transition-all
 "
 >
@@ -472,7 +472,7 @@ transition-all
                 href="/pickem"
                 onClick={() => setOpen(false)}
                 className="
-                --font-contrail
+                font-contrail
 relative
 overflow-hidden
 px-4
@@ -481,10 +481,10 @@ rounded-xl
 border
 border-white/10
 bg-gradient-to-br
-from-purple-950/60
-via-fuchsia-900/20
-to-pink-500/10
-hover:border-pink-400/30
+from-[#3d0b27]
+via-[#8a2f6b]
+to-[#f7a8d7]/20
+hover:border-white/10
 transition-all
 "
               >
