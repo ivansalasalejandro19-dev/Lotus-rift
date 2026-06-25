@@ -21,31 +21,43 @@ export default function LoginButton() {
         
         <img
           src={avatar}
-          className="w-10 h-10 rounded-full border border-pink-400/30"
+          className="
+w-11
+h-11
+rounded-full
+border-2
+border-pink-500/50
+shadow-[0_0_20px_rgba(236,72,153,0.5)]
+"
         />
 
-        <span className="text-white font-bold">
-          {name}
-        </span>
+        <div>
+  <p className="text-white font-bold">
+    {name}
+  </p>
+
+  <p className="text-xs text-pink-300">
+    ● Online
+  </p>
+</div>
 
         <button
   onClick={() => logout(setDiscordUser)}
   className="
-    px-4 py-2
-    rounded-xl
-    bg-gradient-to-r
-    from-red-500
-    to-pink-500
-    text-white
-    font-extrabold
-    tracking-wider
-    shadow-lg
-    shadow-red-500/40
-    hover:shadow-red-500/70
-    hover:scale-110
-    transition-all
-    duration-300
-  "
+px-4
+py-2
+rounded-xl
+bg-red-500/10
+border
+border-red-500/30
+text-red-300
+font-bold
+hover:bg-red-500/20
+hover:border-red-500/50
+hover:scale-105
+transition-all
+duration-300
+"
 >
   LOGOUT
 </button>
@@ -57,14 +69,43 @@ export default function LoginButton() {
     <div className="flex gap-3">
       <button
         onClick={loginGoogle}
-        className="px-4 py-2 rounded-xl bg-white/10 border border-white/10 hover:bg-white/20 transition"
+        className="
+px-5
+py-3
+rounded-xl
+bg-white
+text-black
+font-bold
+hover:scale-105
+hover:shadow-lg
+transition-all
+duration-300
+"
       >
         𝐺𝑂𝑂𝐺𝐿𝐸
       </button>
 
       <a
         href="/api/auth/discord"
-        className="px-4 py-2 rounded-xl bg-pink-500 text-white flex items-center gap-2 hover:scale-105 transition"
+        className="
+px-5
+py-3
+rounded-xl
+bg-gradient-to-r
+from-pink-500
+to-fuchsia-600
+text-white
+font-bold
+flex
+items-center
+gap-2
+shadow-lg
+shadow-pink-500/30
+hover:scale-105
+hover:shadow-pink-500/50
+transition-all
+duration-300
+"
       >
         <Disc3 size={18} />
         𝐷𝐼𝑆𝐶𝑂𝑅𝐷

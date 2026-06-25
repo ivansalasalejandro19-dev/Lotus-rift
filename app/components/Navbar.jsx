@@ -25,15 +25,19 @@ export default function Navbar() {
         </div>
 
         <div
-          className="
-            relative
-            max-w-7xl
+  className="
+    relative
+    overflow-hidden
+    max-w-7xl
             mx-auto
             h-20
             rounded-[2rem]
             border
             border-white/10
-            bg-black/40
+            bg-gradient-to-r
+from-black/70
+via-zinc-900/60
+to-black/70
             backdrop-blur-2xl
             shadow-[0_0_60px_rgba(236,72,153,0.12)]
             flex
@@ -46,70 +50,101 @@ export default function Navbar() {
           {/* LOGO */}
 
           <Link
-            href="/logos/lotuz.png"
-            className="flex items-center gap-3"
-          >
-
-            <Link
   href="/"
   className="flex items-center gap-3"
 >
-
   <div
     className="
-  relative
-  w-14
-  h-14
-  flex
-  items-center
-  justify-center
-">
+      relative
+      w-14
+      h-14
+      rounded-2xl
+      bg-gradient-to-br
+      from-pink-500/20
+      to-cyan-500/20
+      border border-white/10
+      shadow-[0_0_30px_rgba(236,72,153,0.4)]
+    "
+  >
     <Image
       src="/logos/lotuz.png"
       alt="Lotus Rift"
       fill
-      className="object-contain p-1"
+      className="object-contain p-2"
     />
+    
   </div>
+  
 
+  <div>
+    <p className="text-xs uppercase tracking-[0.35em] text-pink-300">
+      🪷𝑇𝑂𝑅𝑁𝐸𝑂 𝐿𝐴𝑁
+    </p>
+
+    <h1 className="font-black text-xl">
+      🪷𝐿𝑂𝑇𝑈𝑆 𝑅𝐼𝐹𝑇
+    </h1>
+  </div>
 </Link>
-
-            <div>
-
-              <p className="text-xs uppercase tracking-[0.35em] text-pink-300">
-                🪷𝑇𝑂𝑅𝑁𝐸𝑂 𝐿𝐴𝑁
-              </p>
-
-              <h1 className="font-black text-xl">
-                🪷𝐿𝑂𝑇𝑈𝑆 𝑅𝐼𝐹𝑇
-              </h1>
-
-            </div>
-
-          </Link>
 
           {/* DESKTOP LINKS */}
 
           <div className="hidden lg:flex items-center gap-2">
 
             <Link
-              href="/"
-              className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all"
-            >
+  href="/"
+  className="
+    group
+    px-5
+    py-3
+    rounded-xl
+    text-white/70
+    hover:text-white
+    hover:bg-white/10
+    hover:scale-105
+    transition-all
+    duration-300
+  "
+>
               𝐼𝑁𝐼𝐶𝐼𝑂
             </Link>
 
             <Link
-              href="/brackets"
-              className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
-            >
+  href="/brackets"
+  className="
+    group
+    px-5
+    py-3
+    rounded-xl
+    text-white/70
+    hover:text-white
+    hover:bg-white/10
+    hover:scale-105
+    transition-all
+    duration-300
+    flex
+    items-center
+    gap-2
+  "
+>
               <Swords size={16} />
               𝐵𝑅𝐴𝐶𝐾𝐸𝑇
             </Link>
 
             <Link
   href="/reglamento"
-  className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all"
+  className="
+  group
+  px-5
+  py-3
+  rounded-xl
+  text-white/70
+  hover:text-white
+  hover:bg-white/10
+  hover:scale-105
+  transition-all
+  duration-300
+"
 >
   📜 𝑅𝐸𝐺𝐿𝐴𝑀𝐸𝑁𝑇𝑂
 </Link>
@@ -117,7 +152,21 @@ export default function Navbar() {
             {user ? (
               <Link
                 href="/pickem"
-                className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
+                className="
+  group
+  px-5
+  py-3
+  rounded-xl
+  text-white/70
+  hover:text-white
+  hover:bg-white/10
+  hover:scale-105
+  transition-all
+  duration-300
+  flex
+  items-center
+  gap-2
+"
               >
                 <Sparkles size={16} />
                 𝑃𝐼𝐶𝐾' 𝐸𝑀
@@ -141,14 +190,6 @@ export default function Navbar() {
               </div>
             )}
 
-            <Link
-              href="/#leaderboard"
-              className="px-5 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all flex items-center gap-2"
-            >
-              <Trophy size={16} />
-              Rankings
-            </Link>
-
           </div>
 
           {/* LOGIN */}
@@ -159,14 +200,31 @@ export default function Navbar() {
 
           {/* MOBILE BTN */}
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden p-3 rounded-xl bg-white/5 border border-white/10"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* MOBILE BTN */}
 
-        </div>
+<button
+  onClick={() => setOpen(!open)}
+  className="lg:hidden p-3 rounded-xl bg-white/5 border border-white/10"
+>
+  {open ? <X size={20} /> : <Menu size={20} />}
+</button>
+
+<div
+  className="
+    absolute
+    bottom-0
+    left-1/2
+    -translate-x-1/2
+    w-[60%]
+    h-px
+    bg-gradient-to-r
+    from-transparent
+    via-pink-500
+    to-transparent
+  "
+/>
+
+</div>
 
       </nav>
 
@@ -234,6 +292,7 @@ export default function Navbar() {
             <div className="pt-3 border-t border-white/10">
               <LoginButton />
             </div>
+            
 
           </div>
 
