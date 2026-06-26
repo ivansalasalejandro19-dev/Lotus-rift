@@ -2,15 +2,15 @@
 
 import { MessageCircle } from "lucide-react"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { db } from "./lib/firebase"
 import { doc, getDoc } from "firebase/firestore"
 import LotusEntrance from "./components/LotusEntrance"
-import TeamCard from "./components/TeamCard"
 
 export default function LotusRiftTournamentPage() {
 
   const [openTeam, setOpenTeam] = useState(null)
-  
+  const [discordUser, setDiscordUser] = useState(null)
   const [teams, setTeams] = useState([])
 const [roster, setRoster] = useState({})
 const [loading, setLoading] = useState(true)
@@ -18,6 +18,23 @@ const [teamLogos, setTeamLogos] = useState({})
 const [entered, setEntered] = useState(false)
 
 
+  useEffect(() => {
+    const cookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("lotus_user="))
+
+    if (!cookie) return
+
+    try {
+      const user = JSON.parse(
+        decodeURIComponent(cookie.split("=")[1])
+      )
+
+      setDiscordUser(user)
+    } catch (err) {
+      console.error(err)
+    }
+  }, [])
 
   useEffect(() => {
   async function loadTeams() {
@@ -43,13 +60,24 @@ const [entered, setEntered] = useState(false)
   loadTeams()
 }, [])
 
+  const tournamentInfo = {
+    name: '🪷 LOTUS RIFT 🪷',
+    subtitle: 'Torneo LAN',
+    description: '',
+    season: 'Sem',
+    pricepool: '180 USDT',
+    players: '16 Equipos',
+    status: 'INSCRIPCIONES CERRADAS',
+    startTime: '19:00 PM MX'
+  }
+
 
   // =============================
   // EDITÁ TODO DESDE ACÁ
   // =============================
 
 
-  
+  const bracketLink = 'https://tus-brackets.com'
   const discordLink = 'https://discord.gg/nVyrHkeCn5'
 
 
@@ -111,7 +139,9 @@ if (!entered) {
  return (
   <div className="min-h-screen bg-gradient-to-b from-[#09030f] via-[#14081f] to-[#050108] text-white overflow-hidden relative">
 
-    <div style={{ fontFamily: "var(--font-contrail)" }}>
+
+<div className="scale-[0.80] sm:scale-100 origin-top">
+  <div style={{ fontFamily: "var(--font-contrail)" }}>
     
       {/* BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -132,7 +162,7 @@ if (!entered) {
 
 
             <span className="uppercase tracking-[0.3em] text-sm text-pink-100">
-              INSCRIPCIONES CERRADAS
+              {tournamentInfo.status}
             </span>
           </div>
 
@@ -319,20 +349,150 @@ if (!entered) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-          {teams.map((team) => (
+          {teams.map((team, index) => (
+            <div
+              key={index}
+              onClick={() => setOpenTeam(openTeam === team ? null : team)}
+              className="relative cursor-pointer rounded-[2rem] border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition text-center">
 
-  <TeamCard
-    key={team}
-    team={team}
-    logo={teamLogos[team]}
-    roster={roster[team] || []}
-    open={openTeam === team}
-    onToggle={() =>
-      setOpenTeam(openTeam === team ? null : team)
-    }
-  />
+              {/* LOTO */}
+              <div className="absolute top-3 left-3 text-3xl opacity-70">
+                🪷
+              </div>
 
-))}
+              {/* BOTÓN */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setOpenTeam(openTeam === team ? null : team)
+                }}
+                className="absolute top-3 right-3 text-xs bg-white/10 px-2 py-1 rounded-lg">
+                {openTeam === team ? 'Volver' : 'Abrir'}
+              </button>
+
+              {/* LOGO */}
+              <div className="mb-4 flex justify-center">
+                <div
+                  className="p-[3px] rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400 shadow-lg shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-cyan-400/40">
+                  <div className="bg-[#14081f] rounded-2xl p-2">
+                    <Image
+                      src={teamLogos[team]}
+                      alt={team}
+                      width={120}
+                      height={120}
+                      className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain rounded-xl"
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* NOMBRE */}
+              <h3 className="text-lg sm:text-2xl font-black text-white break-words">
+                {team}
+              </h3>
+
+              {/* ROSTER */}
+              {openTeam === team && roster[team] && (
+
+                <div className="mt-4">
+
+                  {/* TITULARES */}
+                  <div className="space-y-2">
+
+                    {roster[team]
+                      .filter(
+                        (p) =>
+                          p.role &&
+                          !p.role.includes('SUPLENTE')
+                      )
+                      .map((p, idx) => (
+
+                        <div
+                          key={idx}
+                          className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white/10 p-2 rounded-xl gap-2"
+                        >
+
+                          {/* PLAYER */}
+                          <div className="flex flex-col items-start">
+
+                            {p.captain && (
+                              <span className="text-yellow-300 text-xs font-bold">
+                                👑 CAPITÁN
+                              </span>
+                            )}
+
+                            <span className="break-all text-sm">
+                              {p.id}
+                            </span>
+
+                          </div>
+
+                          {/* ROLE */}
+                          <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
+                            {p.role}
+                          </span>
+
+                        </div>
+
+                      ))}
+
+                  </div>
+
+
+                  {/* SEPARACIÓN */}
+                  <div className="my-4 border-t border-white/10" />
+
+
+                  {/* SUPLENTES */}
+                  <div className="space-y-2">
+
+                    <div className="text-xs uppercase tracking-[0.3em] text-white/40 mb-2">
+                      Suplentes
+                    </div>
+
+                    {roster[team]
+                      .filter(
+                        (p) =>
+                          p.role &&
+                          p.role.includes('SUPLENTE')
+                      )
+                      .map((p, idx) => (
+
+                        <div
+                          key={idx}
+                          className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white/5 border border-white/10 p-2 rounded-xl mt-3 gap-2">
+
+                          {/* PLAYER */}
+                          <div className="flex flex-col items-start">
+
+                            {p.captain && (
+                              <span className="text-yellow-300 text-xs font-bold">
+                                👑 CAPITÁN
+                              </span>
+                            )}
+
+                            <span className="break-all text-sm">
+                              {p.id}
+                            </span>
+
+                          </div>
+
+                          {/* ROLE */}
+                          <span className="text-xs bg-white/10 px-2 py-1 rounded-full">
+                            {p.role}
+                          </span>
+
+                        </div>
+
+                      ))}
+
+                  </div>
+
+                </div>
+
+              )}
+
+            </div>
+          ))}
 
         </div>
 
@@ -347,6 +507,7 @@ if (!entered) {
   }
 `}</style>
 
-    </div>
+  </div>
+</div>
   )
 }
